@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph __version="3.5.0" author="Praveen.Singireddy" created="Mon Oct 24 14:22:12 IST 2016" description="Pojo To JSON" guiVersion="3.4.4.P" id="1477417458083" licenseCode="Unlicensed" licenseType="Unknown" modified="Mon Oct 24 14:22:12 IST 2016" modifiedBy="Praveen.Singireddy" name="Pojo_To_JSON" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __index="0" __referenceCounter="1" __sourcePath="{}/object/customers" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="2b567bf2-95f4-4558-b7de-8a6db774e2b3" _parent_id="__parent_id" _type="Output" id="4898ac64-af09-4ea7-885f-0cffabafa18d">
+<Record fieldDelimiter="," name="customers" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="0" __sourcePath="{}/object/customers/address" containerType="SINGLE" label="address" name="address" type="string"/>
+<Field __index="1" __sourcePath="{}/object/customers/firstName" containerType="SINGLE" label="firstName" name="firstName" type="string"/>
+<Field __index="2" __sourcePath="{}/object/customers/id" containerType="SINGLE" label="id" name="id" type="string"/>
+<Field __index="3" __sourcePath="{}/object/customers/lastName" containerType="SINGLE" label="lastName" name="lastName" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="0" __referenceCounter="1" __sourcePath="{}/list" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _type="Input" id="1d19ef53-111b-451e-aa68-01e49186825a">
+<Record fieldDelimiter="," name="list" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __index="0" __sourcePath="{}/list/address" containerType="SINGLE" label="address" name="address" type="string"/>
+<Field __index="1" __sourcePath="{}/list/firstName" containerType="SINGLE" label="firstName" name="firstName" type="string"/>
+<Field __index="2" __sourcePath="{}/list/id" containerType="SINGLE" label="id" name="id" type="string"/>
+<Field __index="3" __sourcePath="{}/list/lastName" containerType="SINGLE" label="lastName" name="lastName" type="string"/>
+</Record>
+</Metadata>
+<Metadata __index="0" __referenceCounter="0" __sourcePath="{}/object" _dataStructure="OBJECT" _id="__id" _type="Output" id="2b567bf2-95f4-4558-b7de-8a6db774e2b3">
+<Record fieldDelimiter="," name="object" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node enabled="enabled" fileURL="dict:inputPayload" guiName="Pojo READER" guiX="20" guiY="20" id="BEAN_READER0" type="BEAN_READER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context outPort="0" sequenceField="__id" xpath=".">
+  <Mapping cloverField="address" trim="true" xpath="address"/>
+  <Mapping cloverField="firstName" trim="true" xpath="firstName"/>
+  <Mapping cloverField="id" trim="true" xpath="id"/>
+  <Mapping cloverField="lastName" trim="true" xpath="lastName"/>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[JAVA]]></attr>
+<attr name="schema"><![CDATA[<?xml version="1.0" encoding="UTF-8"?><schema-object>
+  <schema-collection>
+    <typed-object-ref type-ref="com.company.poc.Customer"/>
+  </schema-collection>
+  <typed-object type="java.lang.String"/>
+  <typed-object type="com.company.poc.Customer">
+    <typed-object-ref name="address" type-ref="java.lang.String"/>
+    <typed-object-ref name="firstName" type-ref="java.lang.String"/>
+    <typed-object-ref name="id" type-ref="java.lang.String"/>
+    <typed-object-ref name="lastName" type-ref="java.lang.String"/>
+  </typed-object>
+</schema-object>
+]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Foreach 'list' -&gt; 'customers'" guiX="460" guiY="20" id="FOREACH_LIST_CUSTOMERS" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+output.__parent_id = input.__id;
+//END -> DO NOT REMOVE
+output.address = input.address;
+output.firstName = input.firstName;
+output.id = input.id;
+output.lastName = input.lastName;
+]]></attr>
+</Node>
+<Node cacheInMemory="true" charset="UTF-8" enabled="enabled" fileURL="dict:outputPayload" guiName="JSON WRITER" guiX="900" guiY="20" id="JSON_WRITER0" type="JSON_WRITER">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<object xmlns:clover="http://www.cloveretl.com/ns/xmlmapping">
+  <clover:collection clover:name="customers">
+    <item clover:inPort="0">
+      <address>$0.address</address>
+      <firstName>$0.firstName</firstName>
+      <id>$0.id</id>
+      <lastName>$0.lastName</lastName>
+    </item>
+  </clover:collection>
+</object>]]></attr>
+<attr name="__isJsonSchema"><![CDATA[true]]></attr>
+<attr name="_data_format"><![CDATA[JSON]]></attr>
+<attr name="jsonSchemaURL"><![CDATA[./src/main/resources/schemas/customerList.json]]></attr>
+</Node>
+<Edge debugMode="true" fromNode="BEAN_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="1d19ef53-111b-451e-aa68-01e49186825a" outPort="Port 0 (out)" toNode="FOREACH_LIST_CUSTOMERS:0"/>
+<Edge debugMode="true" fromNode="FOREACH_LIST_CUSTOMERS:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="4898ac64-af09-4ea7-885f-0cffabafa18d" outPort="Port 0 (out)" toNode="JSON_WRITER0:0"/>
+</Phase>
+</Graph>

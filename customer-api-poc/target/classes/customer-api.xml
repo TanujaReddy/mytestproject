@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/apikit http://www.mulesoft.org/schema/mule/apikit/current/mule-apikit.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd" version="EE-3.5.2">
+    <apikit:config name="customer-api-config" raml="customer-api.raml" consoleEnabled="true" consolePath="console" doc:name="Router"/>
+    <apikit:mapping-exception-strategy name="customer-api-apiKitGlobalExceptionMapping" doc:name="Mapping Exception Strategy">
+        <apikit:mapping statusCode="404">
+            <apikit:exception value="org.mule.module.apikit.exception.NotFoundException" />
+            <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+            <set-payload value="{ &quot;message&quot;: &quot;Resource not found&quot; }" doc:name="Set Payload"/>
+        </apikit:mapping>
+        <apikit:mapping statusCode="405">
+            <apikit:exception value="org.mule.module.apikit.exception.MethodNotAllowedException" />
+            <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+            <set-payload value="{ &quot;message&quot;: &quot;Method not allowed&quot; }" doc:name="Set Payload"/>
+        </apikit:mapping>
+        <apikit:mapping statusCode="415">
+            <apikit:exception value="org.mule.module.apikit.exception.UnsupportedMediaTypeException" />
+            <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+            <set-payload value="{ &quot;message&quot;: &quot;Unsupported media type&quot; }" doc:name="Set Payload"/>
+        </apikit:mapping>
+        <apikit:mapping statusCode="406">
+            <apikit:exception value="org.mule.module.apikit.exception.NotAcceptableException" />
+            <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+            <set-payload value="{ &quot;message&quot;: &quot;Not acceptable&quot; }" doc:name="Set Payload"/>
+        </apikit:mapping>
+        <apikit:mapping statusCode="400">
+            <apikit:exception value="org.mule.module.apikit.exception.BadRequestException" />
+            <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+            <set-payload value="{ &quot;message&quot;: &quot;Bad request&quot; }" doc:name="Set Payload"/>
+        </apikit:mapping>
+    </apikit:mapping-exception-strategy>
+    <data-mapper:config name="JSON_To_Pojo" transformationGraphPath="json_to_pojo.grf" doc:name="JSON_To_Pojo"/>
+    <data-mapper:config name="Pojo_To_JSON" transformationGraphPath="pojo_to_json.grf" doc:name="Pojo_To_JSON"/>
+    <flow name="customer-api-main" doc:name="customer-api-main">
+        <http:inbound-endpoint address="http://localhost:8081/api" doc:name="HTTP" connector-ref="httpConnector" exchange-pattern="request-response"/>
+        <apikit:router config-ref="customer-api-config" doc:name="APIkit Router"/>
+        <exception-strategy ref="customer-api-apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy"/>
+    </flow>
+    <flow name="get:/customer:customer-api-config" doc:name="get:/customer:customer-api-config">
+        <set-payload value="#[app.registry.springBeanCustomers.getCustomers()]" doc:name="get customers"/>
+        <data-mapper:transform config-ref="Pojo_To_JSON" doc:name="Pojo To JSON"/>
+        <logger message="Sending customer data as response: #[payload]" level="INFO" doc:name="Logger"/>
+        <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+        <http:response-builder status="200" contentType="application/json" doc:name="HTTP Response Builder"/>
+    </flow>
+    <flow name="post:/customer:application/json:customer-api-config" doc:name="post:/customer:application/json:customer-api-config">
+        <set-payload value="#[groovy:message.getPayloadAsString()]" doc:name="capture input"/>
+        <set-variable variableName="id" value="#[java.util.UUID.randomUUID().toString()]" doc:name="generate id"/>
+        <data-mapper:transform config-ref="JSON_To_Pojo" doc:name="JSON To Pojo">
+            <data-mapper:input-arguments>
+                <data-mapper:input-argument key="id">#[flowVars.id]</data-mapper:input-argument>
+            </data-mapper:input-arguments>
+        </data-mapper:transform>
+        <expression-component doc:name="store customer data"><![CDATA[app.registry.springBeanCustomers.addCustomer(payload);]]></expression-component>
+        <logger message="Customer #[flowVars.id] stored successfully" level="INFO" doc:name="Logger"/>
+        <set-payload value="{&quot;id&quot;: &quot;#[flowVars.id]&quot;}" doc:name="set response"/>
+        <logger message="Sending response: #[payload]" level="INFO" doc:name="Logger"/>
+        <set-property propertyName="Content-Type" value="application/json" doc:name="Property"/>
+        <http:response-builder status="200" contentType="application/json" doc:name="HTTP Response Builder"/>
+    </flow>
+</mule>
