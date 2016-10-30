@@ -20,5 +20,19 @@ version: 1.0
           application/json:
             schema: !include schemas/customerList.json
           
+  put:
+    responses:
+      200:
+        body:
+          application/json:
+            schema: !include schemas/customerUpdate.json
+  delete:
+    responses:
+      200:
+        body:
+          application/json:
+            schema: !include schemas/customerDelete.json
+            
           
+              
     

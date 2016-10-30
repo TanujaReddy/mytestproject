@@ -1,0 +1,30 @@
+{
+            "type":"object",
+            "$schema": "http://json-schema.org/draft-03/schema",
+            "id": "http://jsonschema.net",
+            "required":true,
+            "properties":{
+              "customer": {
+                "type":"object",
+                "id": "http://jsonschema.net/customer",
+                "required":true,
+                "properties":{
+                  "firstName": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/customer/firstName",
+                    "required":true
+                  },
+                  "lastName": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/customer/lastName",
+                    "required":true
+                  },
+                  "address": {
+                    "type":"string",
+                    "id": "http://jsonschema.net/customer/address",
+                    "required":false
+                  }
+                }
+              }
+            }
+          }
