@@ -1,0 +1,43 @@
+<div class="nav">
+			<button class="nav-toggle nav-trigger-open">Menu<i class="icon-hamburger"></i></button>
+			<div class="nav-container">
+			  <button class="nav-toggle nav-trigger-close">
+			    <span>
+			      <svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			        <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+			        <title>icon-close</title>
+			        <desc>Created with Sketch.</desc>
+			        <defs></defs>
+			        <g id="v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			          <g id="sm-AP-shop-draw" transform="translate(-46.000000, -36.000000)" fill="#FFFFFF">
+			            <path d="M53,40.8226241 L48.5398179,36.3614664 C48.0578627,35.8795112 47.2776128,35.8795112 46.7968902,36.3614664 L46.360542,36.7965821 C45.8798193,37.2785373 45.8798193,38.0587871 46.360542,38.5395098 L51.0075061,43.18767 C51.0023233,43.2347494 50.9998258,43.2821007 51.0000094,43.3294794 C50.9998254,43.3767837 51.0023349,43.4241156 51.0075421,43.4712163 L46.360542,48.1182164 C45.8798193,48.5989391 45.8798193,49.3804215 46.360542,49.8623768 L46.7968902,50.2962598 C47.2776128,50.778215 48.0578627,50.778215 48.5398179,50.2962598 L53,45.8360777 L57.4601821,50.2962598 C57.9421373,50.778215 58.7223872,50.778215 59.2031098,50.2962598 L59.639458,49.8623768 C60.1201807,49.3804215 60.1201807,48.5989391 59.639458,48.1182164 L54.9924579,43.4712163 C54.9976651,43.4241156 55.0001746,43.3767837 54.9999906,43.3294794 C55.0001742,43.2821007 54.9976767,43.2347494 54.9924939,43.18767 L59.639458,38.5395098 C60.1201807,38.0587871 60.1201807,37.2785373 59.639458,36.7965821 L59.2031098,36.3614664 C58.7223872,35.8795112 57.9421373,35.8795112 57.4601821,36.3614664 L53,40.8226241 Z" id="icon-close"></path>
+			          </g>
+			        </g>
+			      </svg>
+			    </span>
+			  </button>
+			  <nav class="main-nav">
+			    <sly data-sly-use.navigation="au.com.auspost.global.core.sightly.Navigation">
+				    <ul id="primary-nav" class="main-nav-list">
+						<sly data-sly-list.nav="${navigation.navItems}" >
+							<sly data-sly-use.analytics="${'au.com.auspost.global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+							<li class="main-nav-link"><a href="${nav.link}"  id="${analytics.formattedNodePath}-${nav.title}" title="${nav.title}" 
+							data-event="site interaction" data-category="header navigation" data-description="${nav.title}">${nav.title}</a></li>
+							</sly>
+						</sly>
+						<!-- Adding External Links -->
+						<div data-sly-use.linkListUtils="${'au.com.auspost.global.core.sightly.MultiFieldIterator' @ property='navAddtionalLinks'}" data-sly-unwrap>
+			              <sly data-sly-list="${linkListUtils.linkListItems}">
+			              	<sly data-sly-use.pathbrowser="${'au.com.auspost.global.core.sightly.PathBrowser' @ paramURL=item.pagePath, ctaParams=item.urlParams}">
+				              	<sly data-sly-use.analytics="${'au.com.auspost.global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+    	   							<li class="main-nav-link"><a href="${pathbrowser.formattedURL}" target="${item.newTab == 'on'?'_blank':''}" id="${analytics.formattedNodePath}-${item.title}" title="${item.title}" 
+									data-event="site interaction" data-category="header navigation" data-description="${item.title}">${item.title}</a></li>
+								</sly>
+		  					</sly>
+			              </sly>
+			            </div>					
+				    </ul>
+				</sly>
+			  </nav>
+			</div>
+		</div>

@@ -1,0 +1,76 @@
+.page-article #level1TagsSection, .page-article #level2TagsSection, .page-article #level3TagsSection, .page-article #faqtagsSection, .page-article #htgtagsSection, .page-article #transittagsSection, .page-article #pickupbookingtagsSection,
+    .page-article #srywemisstagsSection, .page-article #tracktracetagsSection {
+
+    display: block;
+    position: relative;
+    margin-bottom: 14px;
+
+    label {
+        float: left;
+        width: 27%;
+
+        box-sizing: border-box;
+
+        margin: 0;
+        line-height: 2.375rem;
+        min-width: 6.5rem;
+
+        color: #969696;
+    }
+
+    select {
+        clear: both;
+        width: 55%;
+
+        box-sizing: border-box;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: .0625rem solid;
+        -webkit-border-radius: 0;
+        border-radius: 2;
+
+        padding: .625rem;
+        min-width: 6.875rem;
+        min-height: 2.375rem;
+        font-family: adobe-clean,Helvetica,Arial,sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        vertical-align: top;
+        font-size: .8125rem;
+        line-height: 1rem;
+
+        color: #e6e6e6;
+        background-color: #505050;
+        border-color: #3c3c3c;
+    }
+}
+
+.page-article #level1TagsSection {
+    &::after {
+        content: '';
+
+        box-sizing: border-box;
+
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjExNTJweCIgaGVpZ2h0PSIxMTUycHgiIHZpZXdCb3g9IjAgMCAxMTUyIDExNTIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDExNTIgMTE1MiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxwYXRoIGQ9Ik01NzYsNjM4LjlsNDIxLjUtNDIzLjZjMTQuMS0xNC4xLDM2LjktMTQuMSw1MC45LDBsOTMuMSw5My4xYzE0LjEsMTQuMSwxNC4xLDM2LjksMCw1MC45bC01NDAsNTQyLjEKCWMtMTQuMSwxNC4xLTM2LjksMTQuMS01MC45LDBsLTU0MC01NDMuNmMtMTQuMS0xNC4xLTE0LjEtMzYuOSwwLTUwLjlsOTMuMS05My4xYzE0LjEtMTQuMSwzNi45LTE0LjEsNTAuOSwwTDU3Niw2MzguOXoiIGZpbGw9IiNmZmYiLz4KPC9zdmc+');
+        background-position: 50% 50%;
+        -webkit-background-size: .75rem .75rem;
+        -moz-background-size: .75rem .75rem;
+        background-size: .75rem .75rem;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 19%;
+        top: 0;
+        height: 100%;
+        width: 2.25rem;
+        pointer-events: none;
+        //opacity: .6;
+    }
+}
+
+.page-article .hidden {
+    display: none;
+}

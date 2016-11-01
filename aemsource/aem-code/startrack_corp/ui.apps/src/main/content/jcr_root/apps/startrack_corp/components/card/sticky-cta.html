@@ -1,0 +1,19 @@
+<sly data-sly-test="${properties.containerTypeCard=='hero' && properties.stickyCta == 'true'}" data-sly-use.scta="au.com.auspost.startrack_corp.core.components.StickyCta">
+    <div class="sticky">
+        <div class="sticky-content">
+            <nav>
+                <a class="level-up" href="${currentPage.parent.path @ extension = 'html'}">${scta.title}</a>
+             </nav>
+             <div class="cta-description">
+               <!--  <img src="${currentPage.title}.thumb.43.png" alt="" class="cta-icon"> -->
+                <img src="${properties.featureCtaImagePathRef}" alt="${properties.featureAltText}" class="cta-icon">
+                 
+                <h3 class="cta-title">${properties.stickyCTATitle}</h3>
+               
+             </div>
+             <div class="cta-column cta-button">
+                <sly data-sly-include="card-cta.html"></sly>
+             </div>
+        </div>
+   </div>
+</sly>

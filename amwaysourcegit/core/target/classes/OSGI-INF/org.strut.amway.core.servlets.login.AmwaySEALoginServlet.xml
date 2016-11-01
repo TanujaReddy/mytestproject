@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component name="org.strut.amway.core.servlets.login.AmwaySEALoginServlet">
+        <implementation class="org.strut.amway.core.servlets.login.AmwaySEALoginServlet"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+        </service>
+        <property name="sling.servlet.paths">
+            /bin/amwaytoday/login
+        </property>
+        <property name="sling.servlet.methods">
+            POST
+        </property>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="service.pid" value="org.strut.amway.core.servlets.login.AmwaySEALoginServlet"/>
+        <reference name="loginService" interface="org.strut.amway.core.services.ISEALoginService" cardinality="1..1" policy="static" bind="bindLoginService" unbind="unbindLoginService"/>
+    </scr:component>
+</components>

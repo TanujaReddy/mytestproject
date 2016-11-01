@@ -1,0 +1,52 @@
+<!--/*
+    
+    CREDITS
+    -------------------------
+    Created by: Symsoft Solutions (symsoftsolutions.com)
+    for use as a free download on AEM Toolkit (aemtoolkit.com)
+    
+    REQUIREMENTS
+    -------------------------
+    jQuery (www.jquery.com)
+    Lightbox functionality requires a lightbox javascript.
+    We used Fancybox. You can download it here: http://fancyapps.com/fancybox
+    We did not package it with this component for 2 reasons.
+        1.	We do not have permission to redistribute fancybox
+        2.	We chould have written something custom, but most sites already have 
+        	a lightbox developers can tap into. Configuration of this component to 
+        	use any other library would be easy for any developer to do.
+    
+*/-->
+
+<!--/* Allow authors to edit a iframe video when youtube added it's own right-click options  */-->
+<small data-sly-test="${wcmmode.edit && !properties.lightbox && properties.youtubeVideoID}" style="line-height:44px;">Edit video settings</small>
+
+<div  data-sly-test="${!properties.youtubeVideoID}" class="cq-youtube-placeholder"></div>	
+	
+<!--/* If lightbox was not selected show the video inline */-->
+<div class="video-player" data-sly-test="${!properties.lightbox && properties.youtubeVideoID}">	
+    <iframe class="youtube-player" src="https://www.youtube.com/embed/${properties.youtubeVideoID}" allowfullscreen></iframe>
+</div>
+
+
+<!--/* If lightbox was selected show posterframe and link */-->
+<div data-sly-test="${properties.lightbox && properties.youtubeVideoID}">
+	<a class="youtubeLightbox fancybox.iframe" href="http://www.youtube.com/embed/${properties.youtubeVideoID}?autoplay=1"><img src="http://img.youtube.com/vi/${properties.youtubeVideoID}/0.jpg" class="img-responsive"></a>
+    
+    <!--/* If using a lightbox script other than fancybox replace or delete this code. */-->
+    <script>
+        $(document).ready(function() {
+        $(".youtubeLightbox").fancybox({
+            maxWidth	: 800,
+            maxHeight	: 600,
+            fitToView	: false,
+            width		: '70%',
+            height		: '70%',
+            autoSize	: false,
+            closeClick	: false,
+            openEffect	: 'none',
+            closeEffect	: 'none'
+        });
+    });
+    </script>
+</div>

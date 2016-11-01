@@ -1,0 +1,11 @@
+{
+  "com.onigroup.gsa.settings.banner_search_destination": "/content/startrack_corp/SearchResults.html",
+  "com.onigroup.gsa.settings.gsa_host":"https://ptest.npe.startrack.com.au/searchapi/",
+  "com.onigroup.gsa.settings.gsa_port":"",
+  "com.onigroup.gsa.settings.collection":"StarTrack",
+  "com.onigroup.gsa.settings.frontend":"StarTrack",
+  "feedback_record_type_id": "012O000000015bC",
+  "help_record_type_id": "012O00000000t8e",
+  "sales_record_type_id": "01290000000X7uA",
+  "salesforce_auth_url": "https://api-ptest.startrack.com.au/shipping/v1/authentication"
+}

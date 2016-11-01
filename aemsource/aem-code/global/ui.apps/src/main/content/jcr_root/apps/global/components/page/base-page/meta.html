@@ -1,0 +1,13 @@
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"
+          data-sly-use.head="head.js"
+          data-sly-use.headlibRenderer="headlibs.html"
+          data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+    <meta name="description" content="${pageProperties.jcr:description}">
+
+	<div data-sly-use.linkListUtils="${'au.com.auspost.global.core.sightly.MultiFieldIterator' @ property='robots',addJcrContent='true', nodePath=currentPage.path}" data-sly-unwrap>
+ 			<meta name="robots" content="${linkListUtils.combinedListValue}"></meta>
+  	</div>
+  	
+  	<meta name="robots" content="NOODP" />
+    <meta name="robots" content="NOYDIR"/> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 

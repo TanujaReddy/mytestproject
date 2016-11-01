@@ -1,0 +1,64 @@
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: Edit Startrack Search here.</div>
+</div>
+<section id="search-modal" class="search no-js" role="dialog"></section>
+<template id="search">
+    <div class="search-overlay"></div>
+    <div class="search-overlay-wrapper" rel="search:reset" role="document">
+        <a class="search-close" href="#search-modal-close" title="Close search" rel="search:close" aria-label="Close search">
+            <svg class="icon svg-Close-Menu-dims">
+                <use xlink:href="#Close-Menu"></use>
+            </svg>
+        </a>
+        <div class="search-content">
+            <div class="search-ac">
+                <svg class="icon svg-Search-dims">
+                    <use xlink:href="#Search"/>
+                </svg>
+                <form name="search-ac-form" class="search-ac-form" no-validate="true">
+                    <fieldset><label class="visually-hidden" for="search-ac-input">Search</label>
+                        <input class="banner-search" id="search-ac-input" name="search-ac-input" type="text" placeholder="Start typing" autocomplete="off" role="combobox" aria-autocomplete="inline"/>
+                    </fieldset>
+                </form>
+                <ul class="search-ac-results" scroll-area='true'>
+                    <li><a href="#" title="I need help with my logistics management"> I need help with my <strong>logistics management</strong> </a></li>
+                    <li><a href="#" title="Donec congue lacinia dui logistics management a porttitor"> Donec congue lacinia dui <strong>logistics management</strong> a porttitor </a></li>
+                    <li><a href="#" title="Donec logistics dui a porttitor lectus"> Donec <strong>logistics</strong> dui a porttitor lectus </a></li>
+                    <li><a href="#" title="Donec management dui a porttitor lectus"> Donec <strong>management</strong> dui a porttitor lectus </a></li>
+                </ul>
+            </div>
+            <sly data-sly-use.searchOverlay="${'au.com.auspost.startrack_corp.core.components.SearchOverlay'}">
+                <div class="search-rel">
+                    <div class="search-rel-links" scroll-area='true'>
+                        <ul>
+                            <li><h3> ${searchOverlay.relatedServicesTitle} </h3></li>
+                            <sly data-sly-list="${searchOverlay.relatedServices}">
+                                <div data-sly-test="${item.textdisplay}" data-sly-unwrap>
+                                    <li><a href="${item.linkpath}" title="${item.textdisplay1}">${item.textdisplay}</a></li>
+                                </div>
+                            </sly>
+                        </ul>
+                        
+                        <ul>
+                            <li><h3> ${searchOverlay.popularSearchesTitle}  </h3></li>
+                            <sly data-sly-list="${searchOverlay.popularSearchUrls}">
+                                <div data-sly-test="${item.textdisplay1}" data-sly-unwrap>
+                                    <li><a href="${item.linkpath1}" title="${item.textdisplay1}">${item.textdisplay1}</a></li>
+                                </div>
+                            </sly>
+                        </ul>
+
+                        <ul>
+                            <li><h3> ${searchOverlay.relatedInsightsTitle} </h3></li>
+                            <sly data-sly-list="${searchOverlay.realtedInsights}">
+                                <div data-sly-test="${item.textdisplay2}" data-sly-unwrap>
+                                    <li><a href="${item.linkpath2}" title="${item.textdisplay2}">${item.textdisplay2}</a></li>
+                                </div>
+                            </sly>
+                        </ul>
+                    </div>
+                </div>
+            </sly>
+        </div>
+    </div>
+</template>

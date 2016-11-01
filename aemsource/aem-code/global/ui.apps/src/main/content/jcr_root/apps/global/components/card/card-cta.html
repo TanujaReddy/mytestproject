@@ -1,0 +1,17 @@
+<sly data-sly-use.linkListUtils="${'au.com.auspost.global.core.sightly.MultiFieldIterator' @ property='ctaTypeConfig'}">
+<!--Assign the unique formatted node path via au.com.auspost.global.core.sightly.Analytics for cta id-->
+	<sly data-sly-use.idgen="${'au.com.auspost.global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+		<sly data-sly-use.cta="${'au.com.auspost.global.core.sightly.SiblingAnalytics'@ childNode='card-heading-text',childNodeProperty='text'}">
+			<sly data-sly-list="${linkListUtils.linkListItems}">
+				<div class="${properties.containerType}">
+					<sly data-sly-use.pathbrowser="${'au.com.auspost.global.core.sightly.PathBrowser' @ paramURL=item.ctaURL, ctaParams=item.ctaParams}">
+						<a href="${pathbrowser.formattedURL}" target="${item.openInNewTab == 'true'?'_blank':''}" 
+						class="${item.ctaType} ${item.ctaType}-${item.ctaStyle}" id="${idgen.formattedNodePath}" 
+						title="${item.ctaTypeText}" data-event="site interaction" data-category="card|cta|${item.ctaType}|${item.ctaStyle}" 
+						data-description="${cta.titleForDataAnalytics}|${item.ctaTypeText}">${item.ctaTypeText}</a>
+					</sly>
+				</div>
+			</sly>
+		</sly>
+	</sly>
+</sly>

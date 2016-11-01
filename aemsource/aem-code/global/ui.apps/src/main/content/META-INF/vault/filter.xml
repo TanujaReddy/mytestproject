@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+	<filter root="/apps/global">
+		<exclude pattern="/apps/global/install" />
+	</filter>
+    <filter root="/etc/designs/global"/>
+	<!-- Libs has been added because resource merger not working in 6.1, need SP1 for 6.1 installed on system but that breaks UI -->
+	<filter root="/libs/wcm/core/components/finalpreview"/>
+	<filter root="/libs/wcm/core/content/editor/jcr:content/content/items/content/header/items/headerbar/items/finalPreview"/>
+
+	<!-- Multiple images upload bug resolution, this is part of SP1 as well -->	
+	<filter root="/libs/cq/gui/components/authoring/dialog/fileuploadfield"/>
+
+	<!--UI Changes to facilitate auspost workflows. - Hide Open in classic mode-->
+	<filter root="/apps/cq/gui/components/authoring/pagestatus"/>
+
+	<!--Component copy paste defect-->
+	<filter root="/apps/cq/gui/components/authoring/clientlibs/editor/js/edit"/>
+    <filter root="/apps/cq/gui/components/authoring/clientlibs/editor/js/ui"/>
+
+	<!--Overlaying for siteadmin-list view - More option -->
+	<filter root="/apps/cq/gui/components/siteadmin/admin/actions/publish/clientlibs"/>
+	<filter root="/apps/cq/gui/components/siteadmin/admin/actions/unpublish/clientlibs"/>
+	<filter root="/apps/cq/gui/components/siteadmin/admin/actions/deletepage"/>
+
+	<filter root="/apps/cq/gui/components/common/wcm/clientlibs/wcm/js/delete.js"/>
+	<filter root="/apps/cq/gui/components/common/wcm/clientlibs/wcm/js/publish.js"/>
+	<filter root="/apps/cq/gui/components/common/wcm/clientlibs/wcm/js/unpublish.js"/>
+	<!--Overlaying for dam assets-->
+	<filter root="/apps/dam/gui/components/admin/deleteasset/clientlibs/deleteasset/deleteasset.js"/>
+	<filter root="/apps/dam/gui/components/admin/publish/clientlibs/publishasset/publishasset.js"/>
+	<filter root="/apps/dam/gui/components/admin/unpublish/clientlibs/unpublishasset/unpublishasset.js"/>
+
+	<filter root="/apps/dam/gui/content/assets/jcr:content/body/assetscontent/header/items/unpublishpopovercontent/items/list/items"/>
+	<filter root="/apps/dam/gui/content/assets/jcr:content/body/assetscontent/header/items/publishpopovercontent/items/list/items"/>
+	<filter root="/apps/wcm/core/content/sites/jcr:content/body/content/header/items/selection/items/publish/items"/>
+	<filter root="/apps/wcm/core/content/sites/jcr:content/body/content/header/items/selection/items/unpublish/items"/>
+
+	<!--Overlaying InlineTextEditor to fix the issue - inline editing page scrolls to top-->
+	<filter root="/apps/cq/gui/components/authoring/clientlibs/editor/js/editors/InlineTextEditor.js"/>
+
+	<!-- There is fix for inline edit, OOTB had some problems, we fixed it. Refere to the file line 112 -->
+	<filter root="/etc/clientlibs/granite/coralui2/optional/rte/js/components/rte/ui/CuiToolbarBuilder.js"/>
+
+	<!-- ACS Commons, needs deployment each time, sometimes AEM doesn't pick it up -->
+	<filter root="/etc/packages/adobe/consulting"/>
+
+	<!-- Custom justify plugin for RTE -->
+	<filter root="/etc/clientlibs/granite/coralui2/optional/rte/js/components/rte/ui/CuiToolbarBuilder.js"/>
+	<filter root="/etc/clientlibs/granite/coralui2/optional/rte/js/core/commands/DefaultFormatting.js"/>
+	
+	<!-- rewriter configuration -->
+	<filter root="/apps/global/config/rewriter/version-clientlibs" mode="replace"/>
+	
+</workspaceFilter>

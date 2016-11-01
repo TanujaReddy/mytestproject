@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Home Page Template"
+    jcr:primaryType="cq:Template"
+    jcr:title="Home Page"
+    allowedPaths="[/content(/.*)?]"
+    allowedChildren="[/apps/global/templates/unstructured-content-page,/apps/global/templates/article-page]"
+    ranking="{Long}100">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="global/components/page/home-page">
+        <headerParsys
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/iparsys">
+            <header
+                jcr:primaryType="nt:unstructured"
+                jcr:title="microsite header "
+                sling:resourceType="global/components/header-microsites"
+                alt="Australia Post logo"
+                fileReference="/content/dam/global/we-love-delivering-logo.png"
+                height="0"
+                linkURL="#"
+                width="0"/>
+        </headerParsys>
+        <footerParsys
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/iparsys">
+            <footer
+                jcr:lastModified="{Date}2016-03-10T18:56:28.121+11:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="global/components/footer-microsites"
+                backgroundColor="rgba(83,95,103,1)"
+                corporatelinks="[{&quot;textdisplay&quot;:&quot;Help and Support&quot;\,&quot;linkpath&quot;:&quot;https://auspost.com.au/help/#/help_and_support&quot;},{&quot;textdisplay&quot;:&quot;About our site&quot;\,&quot;linkpath&quot;:&quot;http://auspost.com.au/about-us/about-our-site.html&quot;},{&quot;textdisplay&quot;:&quot;Privacy Policy&quot;\,&quot;linkpath&quot;:&quot;http://auspost.com.au/privacy.html&quot;},{&quot;textdisplay&quot;:&quot;Terms &amp; Conditions&quot;\,&quot;linkpath&quot;:&quot;http://auspost.com.au/terms-conditions.html&quot;}]"
+                socialnetwork="[{&quot;socialClass&quot;:&quot;facebook&quot;\,&quot;linkpath&quot;:&quot;https://facebook.com/australiapost&quot;},{&quot;socialClass&quot;:&quot;twitter&quot;\,&quot;linkpath&quot;:&quot;https://twitter.com/auspost&quot;},{&quot;socialClass&quot;:&quot;youtube&quot;\,&quot;linkpath&quot;:&quot;https://youtube.com/user/auspost&quot;},{&quot;socialClass&quot;:&quot;pinterest&quot;\,&quot;linkpath&quot;:&quot;https://pinterest.com/austpost/&quot;},{&quot;socialClass&quot;:&quot;instagram&quot;\,&quot;linkpath&quot;:&quot;https://instagram.com/auspost&quot;},{&quot;socialClass&quot;:&quot;googleplus&quot;\,&quot;linkpath&quot;:&quot;https://plus.google.com/+australiapost/posts&quot;},{&quot;socialClass&quot;:&quot;linkedin&quot;\,&quot;linkpath&quot;:&quot;https://linkedin.com/company/australia-post&quot;}]"/>
+        </footerParsys>
+        <content1Parsys
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <hero_banner_microsit
+                    jcr:created="{Date}2016-03-15T19:06:59.604+11:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2016-03-15T19:08:53.677+11:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="global/components/hero-banner-microsites"
+                    backgroundColor="rgba(255,255,255,1)"
+                    imageSize="large"
+                    isDecorative="true"
+                    locationHorizontal="left"
+                    locationVertical="top"
+                    showWedge="true">
+                <hero-heading-text-1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="global/components/rte-components/text-heading"
+                        description="This node has been dynamically created."
+                        name="hero-heading-text-1"/>
+                <hero-heading-text-2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="global/components/rte-components/text-heading"
+                        description="This node has been dynamically created."
+                        name="hero-heading-text-2"/>
+                <hero-body-text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="global/components/rte-components/text-body"
+                        description="This node has been dynamically created."
+                        name="hero-body-text"/>
+            </hero_banner_microsit>
+            <layout_container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="global/components/lyt-container"
+                backgroundColor="rgba(255,255,255,1)"
+                containerJustification=" "
+                layoutvariation="flex-container--single-row"/>
+        </content1Parsys>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.0.0">
+    <scr:component immediate="true" name="Amway Today SEA Login Service">
+        <implementation class="org.strut.amway.core.services.impl.TagServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="org.strut.amway.core.services.TagService"/>
+        </service>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="service.pid" value="Amway Today SEA Login Service"/>
+    </scr:component>
+</components>

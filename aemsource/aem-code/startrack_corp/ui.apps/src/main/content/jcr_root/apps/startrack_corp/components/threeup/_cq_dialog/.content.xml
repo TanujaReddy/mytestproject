@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Three-up Component"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+            <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                      fieldLabel="Heading"
+                                      name="./heading"/>
+                            <subHeading
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                      fieldLabel="Sub Heading"
+                                      name="./subHeading"/>          
+                            <imagePath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldDescription="Drag and drop from the DAM"
+                                        fieldLabel="Image Path"
+                                        fileNameParameter="./imageName"
+                                        fileReferenceParameter="./imagePathRef"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./imagePath"
+                                        required="{Boolean}true"
+                                        title="Upload Image"
+                                        useHTML5="{Boolean}true"/>
+                             <altTextImg
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Alt Text"
+                                        name="./altTextImg"/>                                      
+                             <linkText
+                                   jcr:primaryType="nt:unstructured"
+                                   sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                   fieldLabel="Link Text"
+                                   name="./linkText"/>
+                               <linkURL
+                                   jcr:primaryType="nt:unstructured"
+                                   sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                   fieldLabel="Link URL"
+                                   name="./linkURL"
+                                   rootPath="/content"/>
+                               <linkOpenInNewTab
+                                   jcr:primaryType="nt:unstructured"
+                                   sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                   fieldDescription="Please check the checkbox to open link in a new tab"
+                                   fieldLabel="Open Link in a new tab"
+                                   name="./linkOpenInNewTab"
+                                   text="Open Link in a new tab"
+                                   title="Open Link in a new tab"
+                                   value="{Boolean}true"/>
+                            
+                        </items>
+                    </column>
+                </items>
+
+        </content>
+</jcr:root>

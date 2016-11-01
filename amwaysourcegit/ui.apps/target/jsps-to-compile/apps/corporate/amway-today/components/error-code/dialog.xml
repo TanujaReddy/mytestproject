@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    title="dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <panel
+                jcr:primaryType="cq:Panel"
+                title="Error Code">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <code
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Error Code"
+                        name="./errorcode"
+                        xtype="numberfield"/>
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Title"
+                        name="./title"
+                        xtype="textfield"/>
+                    <fieldConfig
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Description"
+                        name="./description"
+                        xtype="richtext"/>
+                </items>
+            </panel>
+        </items>
+    </items>
+</jcr:root>

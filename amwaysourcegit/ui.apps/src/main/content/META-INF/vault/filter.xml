@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+	<filter root="/apps/corporate/amway-today">
+		<exclude pattern="/apps/corporate/amway-today/install" />
+	</filter>
+	<filter root="/apps/sling" />
+	<filter root="/var/classes/org/apache/jsp/apps/corporate/amway-today" />
+	<filter root="/etc/amway-today"/>
+    <filter root="/etc/designs/corporate/amway-today"/>
+    <filter root="/etc/designs/corporate/sea-amway-today"/>
+    <filter root="/etc/designs/corporate/th-amway-today"/>
+	<filter root="/etc/clientlibs/corporate/amway-today"/>
+	<filter root="/etc/workflow/models/request_for_activation" mode="replace" />
+	<filter root="/etc/workflow/models/request_for_deactivation" mode="replace" />
+    <filter root="/etc/workflow/scripts/corporate/amway-today"/>
+	<filter root="/etc/workflow/launcher/config/amway_today_distribute_statistics" mode="replace"/>
+	<filter root="/etc/workflow/launcher/config/amway_today_reverse_replicate_statistics" mode="replace"/>
+</workspaceFilter>

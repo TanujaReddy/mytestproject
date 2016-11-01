@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="26px" height="19px" viewBox="0 0 26 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_hamburger</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="m_Home-2-Copy" transform="translate(-429.000000, -34.000000)" fill="#DC1928">
+            <g id="Group-11">
+                <g id="ap-logo.min-+-icon_hamburger-+-MENU-Mask" transform="translate(367.000000, 31.000000)">
+                    <g id="icon_hamburger-+-MENU" transform="translate(0.360000, 0.600000)">
+                        <path d="M62.56,4.49625 C62.56,3.51801564 63.3467675,2.725 64.3402601,2.725 L85.2597399,2.725 C86.2429504,2.725 87.04,3.51119557 87.04,4.49625 C87.04,5.47448436 86.2532325,6.2675 85.2597399,6.2675 L64.3402601,6.2675 C63.3570496,6.2675 62.56,5.48130443 62.56,4.49625 Z M62.56,11.58125 C62.56,10.6030156 63.3467675,9.81 64.3402601,9.81 L85.2597399,9.81 C86.2429504,9.81 87.04,10.5961956 87.04,11.58125 C87.04,12.5594844 86.2532325,13.3525 85.2597399,13.3525 L64.3402601,13.3525 C63.3570496,13.3525 62.56,12.5663044 62.56,11.58125 Z M62.56,18.66625 C62.56,17.6880156 63.3467675,16.895 64.3402601,16.895 L85.2597399,16.895 C86.2429504,16.895 87.04,17.6811956 87.04,18.66625 C87.04,19.6444844 86.2532325,20.4375 85.2597399,20.4375 L64.3402601,20.4375 C63.3570496,20.4375 62.56,19.6513044 62.56,18.66625 Z" id="icon_hamburger"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

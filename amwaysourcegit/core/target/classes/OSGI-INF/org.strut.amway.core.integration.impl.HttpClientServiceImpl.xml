@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component immediate="true" name="org.strut.amway.core.integration.impl.HttpClientServiceImpl" activate="activate" deactivate="deactivate">
+        <implementation class="org.strut.amway.core.integration.impl.HttpClientServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="org.strut.amway.core.integration.HttpClientService"/>
+        </service>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="service.pid" value="org.strut.amway.core.integration.impl.HttpClientServiceImpl"/>
+    </scr:component>
+</components>

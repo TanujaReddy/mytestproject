@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Edit: Search"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+                type="nav"/>
+            <items jcr:primaryType="nt:unstructured">
+                
+            
+                <realated_services
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Related Services Config"
+                    sling:resourceType="granite/ui/components/foundation/section">
+                    <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <columns
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                    <relatedServicesText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Relataed Services Title"
+                                        defaultValue="Related Services"
+                                        name="./relatedServicesTitle"/>
+                                        <relatedservices
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                fieldLabel="Related Services Links">
+                                            <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                    acs-commons-nested=""
+                                                    name="./relatedServices">
+                                                <layout
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                        method="absolute"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/container">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <textdisplay
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                    fieldLabel="Text to display"
+                                                                    name="./textdisplay"/>
+                                                            <linkpath
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                    fieldLabel="Link Path"
+                                                                    name="./linkpath"
+                                                                    rootPath="/content/startrack_corp/"/>
+                                                        </items>
+                                                    </column>
+                                                </items>
+                                            </field>
+                                        </relatedservices>
+                                    </items>
+                                </columns>
+                            </items>
+                        </realated_services>
+                     <popular_services
+	                    jcr:primaryType="nt:unstructured"
+	                    jcr:title="Popular Services "
+	                    sling:resourceType="granite/ui/components/foundation/section">
+	                    <layout
+	                            jcr:primaryType="nt:unstructured"
+	                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+	                            <items jcr:primaryType="nt:unstructured">
+	                                <columns
+	                                        jcr:primaryType="nt:unstructured"
+	                                        sling:resourceType="granite/ui/components/foundation/container">
+	                                    <items jcr:primaryType="nt:unstructured">
+	                                     <popularSearchesText
+	                                        jcr:primaryType="nt:unstructured"
+	                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+	                                        fieldLabel="Popular Seraches Title"
+	                                        defaultValue="Popular Searches"
+	                                        name="./popularSearchesTitle"/>
+	                                        <popularUrls
+	                                                jcr:primaryType="nt:unstructured"
+	                                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+	                                                fieldLabel="Popular Serach Config">
+	                                            <field
+	                                                    jcr:primaryType="nt:unstructured"
+	                                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+	                                                    acs-commons-nested=""
+	                                                    name="./popularSearchUrls">
+	                                                <layout
+	                                                        jcr:primaryType="nt:unstructured"
+	                                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+	                                                        method="absolute"/>
+	                                                <items jcr:primaryType="nt:unstructured">
+	                                                    <column
+	                                                            jcr:primaryType="nt:unstructured"
+	                                                            sling:resourceType="granite/ui/components/foundation/container">
+	                                                        <items jcr:primaryType="nt:unstructured">
+	                                                            <textdisplay
+	                                                                    jcr:primaryType="nt:unstructured"
+	                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+	                                                                    fieldLabel="Text to display"
+	                                                                    name="./textdisplay1"/>
+	                                                            <linkpath
+	                                                                    jcr:primaryType="nt:unstructured"
+	                                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+	                                                                    fieldLabel="Link Path"
+	                                                                    name="./linkpath1"
+	                                                                    rootPath="/content/startrack_corp/"/>
+	                                                        </items>
+	                                                    </column>
+	                                                </items>
+	                                            </field>
+	                                        </popularUrls>
+	                                    </items>
+	                                </columns>
+	                            </items>
+                        </popular_services>
+                       
+					<related_insights
+	                    jcr:primaryType="nt:unstructured"
+	                    jcr:title="Related Insights"
+	                    sling:resourceType="granite/ui/components/foundation/section">
+	                    <layout
+	                            jcr:primaryType="nt:unstructured"
+	                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+	                            <items jcr:primaryType="nt:unstructured">
+	                                <columns
+	                                        jcr:primaryType="nt:unstructured"
+	                                        sling:resourceType="granite/ui/components/foundation/container">
+	                                    <items jcr:primaryType="nt:unstructured">
+	                                     <relatedInsightsText
+	                                        jcr:primaryType="nt:unstructured"
+	                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+	                                        fieldLabel="Related Insights Title"
+	                                        defaultValue="Related Insights"
+	                                        name="./relatedInsightsTitle"/>
+	                                        <popularUrls
+	                                                jcr:primaryType="nt:unstructured"
+	                                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+	                                                fieldLabel="Popular Serach Urls">
+	                                            <field
+	                                                    jcr:primaryType="nt:unstructured"
+	                                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+	                                                    acs-commons-nested=""
+	                                                    name="./realtedInsights">
+	                                                <layout
+	                                                        jcr:primaryType="nt:unstructured"
+	                                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+	                                                        method="absolute"/>
+	                                                <items jcr:primaryType="nt:unstructured">
+	                                                    <column
+	                                                            jcr:primaryType="nt:unstructured"
+	                                                            sling:resourceType="granite/ui/components/foundation/container">
+	                                                        <items jcr:primaryType="nt:unstructured">
+	                                                            <textdisplay
+	                                                                    jcr:primaryType="nt:unstructured"
+	                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+	                                                                    fieldLabel="Text to display"
+	                                                                    name="./textdisplay2"/>
+	                                                            <linkpath
+	                                                                    jcr:primaryType="nt:unstructured"
+	                                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+	                                                                    fieldLabel="Link Path"
+	                                                                    name="./linkpath2"
+	                                                                    rootPath="/content/startrack_corp/"/>
+	                                                        </items>
+	                                                    </column>
+	                                                </items>
+	                                            </field>
+	                                        </popularUrls>
+	                                    </items>
+	                                </columns>
+	                            </items>
+                        </related_insights>
+                    </items>
+                </content>
+</jcr:root>

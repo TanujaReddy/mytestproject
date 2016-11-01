@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Author Sharing"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+                type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <authorSharing
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Social Media Sharing"
+                    sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <authoringSharingMode
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/radiogroup"
+                                    fieldLabel="Author Sharing Justification"
+                                    name="./authoringSharingMode">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="AuthorSharing - Left"
+                                        value="left"
+                                        checked="{Boolean}true"/>
+                                    <bottom
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="AuthorSharing - Bottom"
+                                        value="bottom"/>
+                                </items>
+                            </authoringSharingMode>
+                            <authorName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                    fieldLabel="Author Name"
+                                    name="./authorName"/>
+                            <!-- Start: Social Sharing will be implemented, once design is finalized -->
+                            <socialMedia
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                    fieldLabel="Add Social Media">
+                                <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                        acs-commons-nested=""
+                                        name="./socialMedia">
+                                    <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                            method="absolute"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <socialClass
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                                        fieldLabel="Social Class"
+                                                        name="./socialClass">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <o1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Facebook"
+                                                                value="facebook"/>
+                                                        <o2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Twitter"
+                                                                value="twitter"/>
+                                                        <o3
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Youtube"
+                                                                value="youtube"/>
+                                                        <o4
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Pinterest"
+                                                                value="pinterest"/>
+                                                        <o5
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Instagram"
+                                                                value="instagram"/>
+                                                        <o6
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Google+"
+                                                                value="googleplus"/>
+                                                        <o7
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Linkedin"
+                                                                value="linkedin"/>
+                                                    </items>
+                                                </socialClass>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </socialMedia>
+                            <!-- End: Social Sharing will be implemented, once design is finalized -->
+                        </items>
+                    </column>
+                </items>
+            </authorSharing>
+            <Img
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/include"
+                path="/apps/global/components/shared-dialog/image-dialog/content/items/imageNoLink"/>
+            <cta
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Link Configuration"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <cta
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/include"
+                                    path="/apps/global/components/shared-dialog/cta-dialog/content/items/cta-config"/>
+                        </items>
+                    </columns>
+                </items>
+            </cta>
+        </items>
+    </content>
+</jcr:root>

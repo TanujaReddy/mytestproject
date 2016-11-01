@@ -1,0 +1,1064 @@
+<!-- tool - swmy -->
+<tool id="swmy" class="swmy no-js" name="swmy"></tool>
+
+<!-- tool template - swmy -->
+<template id="swmy-tpl" class="swmy-tpl">
+
+    <!-- swmy - step 1: consignment -->
+    <tool-step id="swmy-step--1" class="swmy-step swmy-step--1">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="swmy-step--1_heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/swmy-icon.png" alt=""></i><!--
+             --><span id="swmy-step--1_heading">Missed delivery</span>
+            </h1><!-- heading end -->
+
+            <!-- form -->
+            <form class="form" name="swmy-step--1_form" novalidate="true">
+
+                <!-- fieldset - consignment -->
+                <fieldset class="form-group"
+                          aria-labelledby="swmy-step--1_label-consignment"
+                          aria-describedby="swmy-step--1_desc-consignment">
+
+                    <!-- legend label / description -->
+                    <legend id="swmy-step--1_label-consignment" class="form-group-hd heading-h4">
+                        Enter your tracking or barcode number
+                    </legend>
+                    <p id="swmy-step--1_desc-consignment" class="hidden"> Enter your consignment type and tracking number or barcode.</p>
+
+                    <!-- field - consignment - type -->
+                    <div class="field" aria-labelledby="consignment--type_label">
+                        <label id="consignment--type_label" for="consignment--type" class="field-label">Type</label>
+                        <div for="consignment--type" class="field-select medium">
+                            <select id="consignment--type" name="consignmentType" type="select" default="Tracking" required="true">
+                                <option value="Tracking">Tracking number (consignment)</option>
+                                <option value="Barcode">Barcode</option>
+                            </select>
+                        </div>
+                        <span id="consignment--type_error" for="consignment--type" class="error-message">Select a valid type option </span>
+                    </div><!-- field end -->
+
+                    <!-- field - consignment - id -->
+                    <div class="field" aria-labelledby="consignment--id_label">
+                        <label id="consignment--id_label" for="consignment--id" class="field-label">Tracking number / barcode</label>
+                        <input id="consignment--id" name="consignmentIds" type="text" class="field-input input-text medium" placeholder="eg. 794815 or B2345678" autocomplete="off" maxlength="70" required="true" validate="id">
+                        <span id="consignment--id_error" for="consignment--id" class="error-message">Input a tracking or barcode number</span>
+                    </div><!-- field end -->
+
+                    <!-- field - not robot -->
+                    <div class="field" aria-labelledby="swmy_not-robot_label">
+                        <label id="swmy_not-robot_label" class="field-label hidden">I am not a robot</label>
+
+                        <!-- field - not robot - captcha -->
+                        <div class="field-checkbox" aria-labelledby="swmy_not-robot--captcha_label">
+                            <input id="swmy_not-robot--captcha" name="isNotRobot" type="checkbox" value="true" required="true">
+                            <label id="swmy_not-robot--captcha_label" for="swmy_not-robot--captcha">I am not a robot</label>
+                            <span id="swmy_not-robot--captcha_error" for="swmy_not-robot--captcha" class="error-message">Please confirm that you are not a robot</span>
+                        </div>
+                    </div><!-- field end -->
+
+                </fieldset><!-- fieldset -  consignment end -->
+
+                <!-- fieldset - submit -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="swmy-step--1_label-btn"
+                          aria-describedby="swmy-step--1_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="swmy-step--1_label-btn" class="hidden">Next step</legend>
+                    <p id="swmy-step--1_desc-btn" class="hidden">Click on the button below to enter parcel details</p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary btn-2" role="button" title="Next step" rel="tool:next"
+                            aria-label="Next step" aria-controls="swmy-step--2" custom="true" required="true">
+                        Next step
+                    </button>
+                </fieldset><!-- fieldset - submit end -->
+
+            </form><!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help 1 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.srywemsdyou="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:srywemisstags', pagetype='faq'}">
+                                <sly data-sly-list.item="${srywemsdyou.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.srywemissURL1 != null && properties.srywemissURL1 != ''}"  href="${properties.srywemissURL1}" target="_blank">${properties.srywemissText1}</a>
+                        <a data-sly-test="${properties.srywemissURL2 != null && properties.srywemissURL2 != ''}"  href="${properties.srywemissURL2}" target="_blank">${properties.srywemissText2}</a>
+
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- swmy - step 1 end -->
+
+    <!-- swmy - step 2: options -->
+    <tool-step id="swmy-step--2" class="swmy-step swmy-step--2">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="swmy-step--2_sub-heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/swmy-icon.png" alt=""></i><!--
+             --><span id="swmy-step--2_heading">Missed delivery</span>
+            </h1><!-- heading end -->
+
+            <!-- notifications header -->
+            <h3 id="swmy-step--2_sub-heading" class="notifications">
+                Step 1 of 4: <span class="notifications-step">Parcel Details</span>
+            </h3>
+
+            <!-- form -->
+            <form class="form" name="swmy-step--2--form" novalidate="true">
+
+                <!-- fieldset - parcel instructions -->
+                <fieldset class="form-group no-legend"
+                          aria-labelledby="swmy-step--2_label-options"
+                          aria-describedby="swmy-step--2_desc-options">
+
+                    <!-- legend label / description -->
+                    <legend id="swmy-step--2_label-options" class="form-group-hd hidden">
+                        Parcel details
+                    </legend>
+                    <p id="swmy-step--2_desc-options" class="hidden">Select a delivery or pick-up option.</p>
+
+                    <!-- field - consignment number -->
+                    <div class="field" aria-labelledby="options--consignment_label">
+                        <label id="options--consignment_label" class="field-label" for="options--consignment">Tracking number / barcode</label>
+                        <input type="text" id="options--consignment" class="field-input input-number medium" name="optionsConsignmentId" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - parcel instructions -->
+                    <div class="field" aria-labelledby="options--options_label">
+                        <label id="options--options_label" class="field-label">What would you like to do?</label>
+
+                        <!-- Redeliver -->
+                        <div id="options--redeliver_field" class="field-radio" aria-labelledby="options--redeliver_label" hidden="true" aria-hidden="true">
+                            <input id="options--redeliver" name="optionSelected" type="radio" value="redeliver" required="true">
+                            <label id="options--redeliver_label" for="options--redeliver">Redeliver to the same address</label>
+                        </div>
+
+                        <!-- Leave parcel -->
+                        <div id="options--redeliver_atl_field" class="field-radio" aria-labelledby="options--redeliver_atl_label" hidden="true" aria-hidden="true">
+                            <input id="options--redeliver_atl" name="optionSelected" type="radio" value="redeliverWithAtl" required="true">
+                            <label id="options--redeliver_atl_label" for="options--redeliver_atl">Authorise to leave parcel at same address</label>
+                        </div>
+
+                        <!-- Redirect parcel -->
+                        <div id="options--redirect_field" class="field-radio" aria-labelledby="options--redirect_label" hidden="true" aria-hidden="true">
+                            <input id="options--redirect" name="optionSelected" type="radio" value="redirect" required="true">
+                            <label id="options--redirect_label" for="options--redirect">Redirect to a different address</label>
+                        </div>
+
+                        <!-- Collect parcel -->
+                        <div id="options--collect_field" class="field-radio" aria-labelledby="options--collect_label" hidden="true" aria-hidden="true">
+                            <input id="options--collect" name="optionSelected" type="radio" value="collect" required="true">
+                            <label id="options--collect_label" for="options--collect">Collect at a StarTrack depot</label>
+                        </div>
+
+                        <span id="options--options_error" for="optionSelected" class="error-message">Select at least one option</span>
+
+                    </div><!-- field end -->
+
+
+                </fieldset><!-- fieldset -  consignment end -->
+
+                <!-- fieldset - submit -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="swmy-step--2_label-btn"
+                          aria-describedby="swmy-step--2_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="swmy-step--2_label-btn" class="hidden"> Next step </legend>
+                    <p id="swmy-step--2_desc-btn" class="hidden">Click on the button below to enter redelivery or collection details</p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary btn-2" role="button" title="Next step" rel="tool:next"
+                            aria-label="Next step" aria-controls="swmy-step--7" custom="true" required="true">
+                        Next step
+                    </button>
+                    <a href="#" class="prev" rel="swmy:prev" data-prev="0">Previous step</a>
+
+                </fieldset><!-- fieldset - submit end -->
+            </form><!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help 2 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.srywemsdyou="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:srywemisstags', pagetype='faq'}">
+                                <sly data-sly-list.item="${srywemsdyou.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.srywemissURL1 != null && properties.srywemissURL1 != ''}"  href="${properties.srywemissURL1}" target="_blank">${properties.srywemissText1}</a>
+                        <a data-sly-test="${properties.srywemissURL2 != null && properties.srywemissURL2 != ''}"  href="${properties.srywemissURL2}" target="_blank">${properties.srywemissText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- swmy - step 2 end -->
+
+    <!-- swmy - step 3: receiver -->
+    <tool-step id="swmy-step--3" class="swmy-step swmy-step--3">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="swmy-step--3--heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/swmy-icon.png" alt=""></i><!-- -->
+                <span id="swmy-step--3--heading">Missed delivery</span>
+            </h1><!-- heading end -->
+
+            <!-- notifications header -->
+            <h3 id="swmy-step--3--sub-heading" class="notifications">
+                Step 2 of 4: <span class="notifications-step">Receiver's details</span>
+            </h3>
+
+            <!-- form -->
+            <form class="form" name="swmy-step--3--form" novalidate="true">
+
+                <!-- fieldset - receiver -->
+                <fieldset class="form-group no-legend"
+                          aria-labelledby="swmy-step--3_label-receiver"
+                          aria-describedby="swmy-step--3_desc-receiver">
+
+                    <!-- legend label -->
+                    <legend id="swmy-step--3_label-receiver" class="form-group-hd heading-h4 hidden">
+                        Redirect to a different address
+                    </legend>
+                    <p id="swmy-step--3_desc-receiver" class="hidden">Enter requester's name and address to redirect to</p>
+
+                    <!-- field - receiver - consignment number -->
+                    <div class="field" aria-labelledby="receiver--tracking_label">
+                        <label id="receiver--consignment_label" class="field-label" for="receiver--consignment">Tracking number / barcode</label>
+                        <input type="text" id="receiver--consignment" class="field-input input-number medium" name="receiverConsignmentId" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - receiver - name -->
+                    <div class="field" aria-labelledby="receiver--name_label">
+                        <label id="receiver--name_label" for="receiver--name" class="field-label">Receiver's name</label>
+                        <input id="receiver--name" name="receiverName" type="text" class="field-input input-text medium" placeholder="eg. John Smith" autocomplete="off" maxlength="200" required="true">
+                        <span id="receiver--name_error" for="receiver--name" class="error-message">Enter a valid name</span>
+                    </div><!-- field end -->
+
+                    <!-- field - receiver - address line 1 -->
+                    <div class="field" aria-labelledby="receiver--address_label">
+                        <label id="receiver--address_label" for="receiver--address" class="field-label">Receiver's address</label>
+                        <input id="receiver--address" name="receiverAddress1" type="tel" class="field-input input-text medium" placeholder="1 Name St." autocomplete="off" required="true" validate="address">
+                        <span id="receiver--address_error" for="receiver--address" class="error-message">Enter a valid street</span>
+                    </div><!-- field end -->
+
+                    <!-- field - receiver - address line 2 -->
+                    <div class="field" aria-labelledby="receiver--address_label">
+                        <label id="receiver--location_label" for="receiver--location" class="field-label"><span class="hidden">Suburb, State, Postcode</span></label>
+                        <input id="receiver--location" name="receiverAddress2" type="text" class="field-input input-text medium" placeholder="Kensington, NSW, 2033" autocomplete="off" maxlength="30" required="true" validate="address" rel="tool:location">
+                        <ul class="autocomplete medium" role="listbox" rel="tool:locations-list"></ul>
+                        <input id="receiver--address_postcode" name="receiverPostcode" type="hidden" rel="tool:location-postcode">
+                        <input id="receiver--address_suburb" name="receiverSuburb" type="hidden" rel="tool:location-suburb">
+                        <input id="receiver--address_state" name="receiverState" type="hidden" rel="tool:location-state">
+                        <span id="receiver--location_error" for="receiver--location" class="error-message">Enter recipient's suburb or postcode</span>
+                    </div><!-- field end -->
+
+                    <!-- field - receiver - requester -->
+                    <div class="field" aria-labelledby="receiver--requester_label">
+                        <label id="receiver--requester_label" for="receiver--requester" class="field-label">Requested by</label>
+                        <input id="receiver--requester" name="requestedByName" type="text" class="field-input input-text medium" placeholder="eg. Jane Doe" autocomplete="off" maxlength="200" required="true">
+                        <span id="receiver--requester_error" for="receiver--requester" class="error-message">Enter a valid name</span>
+                    </div><!-- field end -->
+
+                </fieldset><!-- fieldset -  consignment end -->
+
+                <!-- fieldset - next -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="swmy-step--3_label-btn"
+                          aria-describedby="swmy-step--3_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="swmy-step--3_label-btn" class="hidden">Next step </legend>
+                    <p id="swmy-step--3_desc-btn" class="hidden">Click on the button below to enter parcel details</p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary" role="button" title="Next step" rel="tool:next"
+                            aria-label="Next step" aria-controls="swmy-step--7" custom="true" required="true">
+                        Next step
+                    </button>
+                    <a href="#" class="prev" rel="swmy:prev" data-prev="1">Previous step</a>
+
+                </fieldset><!-- fieldset - submit end -->
+
+            </form><!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help 3 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.srywemsdyou="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:srywemisstags', pagetype='faq'}">
+                                <sly data-sly-list.item="${srywemsdyou.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.srywemissURL1 != null && properties.srywemissURL1 != ''}"  href="${properties.srywemissURL1}" target="_blank">${properties.srywemissText1}</a>
+                        <a data-sly-test="${properties.srywemissURL2 != null && properties.srywemissURL2 != ''}"  href="${properties.srywemissURL2}" target="_blank">${properties.srywemissText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- swmy - step 3 end -->
+
+    <!-- swmy - step 4: redeliver -->
+    <tool-step id="swmy-step--4" class="swmy-step swmy-step--4">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="swmy-step--4--heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/swmy-icon.png" alt=""></i><!-- -->
+                <span id="swmy-step--4--heading">Missed delivery</span>
+            </h1><!-- heading end -->
+
+            <!-- notifications header -->
+            <h3 id="swmy-step--4--sub-heading" class="notifications">
+                Step 3 of 4: <span class="notifications-step">Redeliver to the same address</span>
+            </h3>
+
+            <!-- form -->
+            <form class="form" name="swmy-step--4--form" novalidate="true">
+
+                <!-- fieldset - redeliver -->
+                <fieldset class="form-group no-legend no-padding--bottom"
+                          aria-labelledby="swmy-step--4_label-redeliver"
+                          aria-describedby="swmy-step--4_desc-redeliver">
+
+                    <!-- legend label -->
+                    <legend id="swmy-step--4_label-redeliver" class="form-group-hd heading-h4 hidden">
+                        Redirect to a different address
+                    </legend>
+                    <p id="swmy-step--4_desc-redeliver" class="hidden">Enter requester's name and address to redirect to</p>
+
+                    <!-- field - redeliver - consignment number -->
+                    <div class="field" aria-labelledby="redeliver--tracking_label">
+                        <label id="redeliver--consignment_label" class="field-label" for="redeliver--consignment">Tracking number / barcode</label>
+                        <input type="text" id="redeliver--consignment" class="field-input input-number medium" name="redeliverConsignmentId" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - redeliver - name -->
+                    <div class="field" aria-labelledby="redeliver--name_label">
+                        <label id="redeliver--name_label" for="redeliver--name" class="field-label">Receiver's name</label>
+                        <input id="redeliver--name" name="redeliverName" type="text" class="field-input input-text medium" disabled="true" aria-read-only="true" maxlength="200">
+                    </div><!-- field end -->
+
+                    <!-- field - receiver - company -->
+                    <div class="field" aria-labelledby="redeliver--company_label">
+                        <label id="redeliver--company_label" for="redeliver--company" class="field-label">Receiver's company name<span class="instructions">(Optional)</span></label>
+                        <input id="redeliver--company" name="redeliverCompany" type="text" class="field-input input-text medium" placeholder="eg. Company Pty Ltd" autocomplete="off">
+                    </div><!-- field end -->
+
+                    <!-- field - redeliver - address line 1 -->
+                    <div class="field" aria-labelledby="redeliver--address_label">
+                        <label id="redeliver--address_label" for="redeliver--address" class="field-label">Receiver's address</label>
+                        <input id="redeliver--address" name="redeliverAddress1" type="text" class="field-input input-text medium" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - redeliver - address line 2 -->
+                    <div class="field" aria-labelledby="redeliver--location_label">
+                        <label id="redeliver--location_label" for="redeliver--location" class="field-label"><span class="hidden">Suburb, State, Postcode</span></label>
+                        <input id="redeliver--location" name="redeliverAddress2" type="text" class="field-input input-text medium" disabled="true" autocomplete="off">
+                    </div><!-- field end -->
+
+                    <!-- field - redeliver - number -->
+                    <div class="field" aria-labelledby="redeliver--number_label">
+                        <label id="redeliver--number_label" for="redeliver--number" class="field-label">Receiver's phone number</label>
+                        <input id="redeliver--number" name="redeliverPhone" type="text" class="field-input input-text medium" placeholder="eg. 0411222333" autocomplete="off" required="true" validate="phone">
+                        <span id="redeliver--number_error" for="redeliver--number" class="error-message">Enter a 10 digit phone number eg. 0212341234 with no spaces</span>
+                    </div><!-- field end -->
+
+                    <!-- field - receiver - email -->
+                    <div class="field" aria-labelledby="redeliver--email_label">
+                        <label id="redeliver--email_label" for="redeliver--email" class="field-label">Receiver's email address</label>
+                        <input id="redeliver--email" name="redeliverEmail" type="text" class="field-input input-text medium" placeholder="eg. email.address@email.com" autocomplete="off" required="true" validate="email">
+                        <span id="redeliver--email_error" for="redeliver--email" class="error-message">Email address is required and must be valid</span>
+                    </div><!-- field end -->
+
+                    <!-- field - redeliver date -->
+                    <div class="field" aria-labelledby="redeliver--date_label">
+                        <label id="redeliver--date_label" for="redeliver--date" class="field-label">Redelivery date</label>
+                        <input id="redeliver--date" name="redeliverDate" type="text" class="field-input input-date short" placeholder="dd/mm/yyyy" maxlength="12" autocomplete="off" required="true" validate="date,dateFuture,dateWeekdays"
+                               data-allow-input="true" data-date-format="d/m/Y" data-enable-only="weekdays">
+                        <span id="redeliver--date_error" for="redeliver--date" class="error-message">Enter a valid date that is 2 business days from today and is not a weekend or public holiday</span>
+                    </div><!-- field end -->
+
+                    <!-- field - redeliver date -->
+                    <div class="field">
+                        <div class="field-static no-label">
+                            <h3 class="field-anchor"><span>Please note:</span></h3>
+                            <p>
+                            <ul class="list">
+                                <li>Delivery will take a minimum of 2 business days if requested after 6pm</li>
+                                <li>Redeliveries and redirections will not be completed on public holidays</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                </fieldset><!-- fieldset -  consignment end -->
+
+                <!-- fieldset - redelivery - atl -->
+                <fieldset id="atl--fieldset" class="form-group no-padding--top"
+                          aria-labelledby="swmy-step--5_label-atl"
+                          aria-describedby="swmy-step--5_desc-atl">
+
+                    <!-- legend label -->
+                    <legend id="swmy-step--5_label-atl" class="form-group-hd heading-h4 hidden">
+                        Authority to leave
+                    </legend>
+
+                    <!-- field - is atl -->
+                    <div class="field-checkbox field-checkbox--last" aria-labelledby="atl--sh_label" hidden="true" aria-hidden="true">
+                        <input id="atl--required" name="isAtl" type="checkbox" required="optional" hidden="true" aria-hidden="true">
+                        <label id="atl--sh_label" for="atl--required" hidden="true" aria-hidden="true">Authority to leave</label>
+                    </div>
+
+                    <!-- field - redelivery - atl confirm -->
+                    <div class="field" aria-labelledby="atl--confirm_label" aria-describedby="atl--confirm_desc">
+                        <label class="field-label">Authority to leave</label>
+                        <div class="field-static">
+                            <p id="atl--confirm_desc">
+                                If you will not be available to receive the delivery on the date you have selected you can instruct our driver to leave the parcel.
+                                If your require this option then please check the 'Authority to Leave' box and carefully read the notes below.
+                            </p>
+                            <!-- field - confirm -->
+                            <div class="field-checkbox field-checkbox--inline" aria-labelledby="atl--confirm_label">
+                                <input id="atl--confirm" name="isAtlConfirmed" type="checkbox" value="true" required="true" validate="requiredWith:isAtl">
+                                <label id="atl--confirm_label" for="atl--confirm">Authority to Leave</label>
+                                <span id="atl--confirm_error" for="atl--confirm" class="error-message">Please confirm the driver's authority to leave the parcel</span>
+                            </div>
+                            <p><strong>Please read carefully before providing authority to leave:</strong></p>
+                            <p>
+                            <ol class="list">
+                                <li>By checking this box you authorise StarTrack to leave the consignment in your absence at the address provided above and you accept
+                                    full responsibility of the consignment.</li>
+                                <li>Please provide details of a secure area at the delivery address where the driver can leave the parcel. Please note that StarTrack
+                                    does not take responsibility for freight that has been left with authority. Additionally, our drivers will not enter the premises where
+                                    a dog is in the vicinity or there is any apparent occupational health and safety issues.</li>
+                                <li>Please note that some sender's accounts have restrictions that do not allow 'authority to leave' due to identification requirements.
+                                    We will contact you on the details provided to make alternate arrangements if this is the case.</li>
+                            </ol>
+                            </p>
+                        </div>
+                        <span id="consignment--test_error" for="consignment--test" class="error-message">Enter valid id number or barcode</span>
+                    </div><!-- field end -->
+
+                    <!-- field - redelivery - atl desc -->
+                    <div class="field" aria-labelledby="atl--instructions_label">
+                        <label id="atl--instructions_label" for="atl--instructions" class="field-label show-break--lg">Please leave my parcel in the <br>following secure location</label>
+                        <textarea id="atl--instructions" name="instructions" type="text" class="field-input input-text" rows="3" required="true" validate="requiredWith:isAtl"></textarea>
+                        <span id="atl--instructions_error" for="atl--instructions" class="error-message">We need to know the best place to leave your parcel</span>
+                    </div><!-- field end -->
+
+
+                </fieldset>
+
+                <!-- fieldset - next -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="swmy-step--4_label-btn"
+                          aria-describedby="swmy-step--4_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="swmy-step--4_label-btn" class="hidden">Next step </legend>
+                    <p id="swmy-step--4_desc-btn" class="hidden">Click on the button below to enter parcel details</p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary" role="button" title="Next step" rel="tool:next"
+                            aria-label="Next step" aria-controls="swmy-step--7" custom="true" required="true">
+                        Next step
+                    </button>
+                    <a href="#" class="prev" rel="swmy:prev" data-prev="2">Previous step</a>
+
+                </fieldset><!-- fieldset - submit end -->
+            </form><!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help 4 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.srywemsdyou="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:srywemisstags', pagetype='faq'}">
+                                <sly data-sly-list.item="${srywemsdyou.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.srywemissURL1 != null && properties.srywemissURL1 != ''}"  href="${properties.srywemissURL1}" target="_blank">${properties.srywemissText1}</a>
+                        <a data-sly-test="${properties.srywemissURL2 != null && properties.srywemissURL2 != ''}"  href="${properties.srywemissURL2}" target="_blank">${properties.srywemissText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- swmy - step 4 end -->
+
+    <!-- swmy - step 5: redirect -->
+    <tool-step id="swmy-step--5" class="swmy-step swmy-step--5">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="swmy-step--5--heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/swmy-icon.png" alt=""></i><!-- -->
+                <span id="swmy-step--5--heading">Missed delivery</span>
+            </h1><!-- heading end -->
+
+            <!-- notifications header -->
+            <h3 id="swmy-step--5--sub-heading" class="notifications">
+                Step 3 of 4: <span class="notifications-step">Redirect to a different address</span>
+            </h3>
+
+            <!-- form -->
+            <form class="form" name="swmy-step--5--form" novalidate="true">
+
+                <!-- fieldset - redirect -->
+                <fieldset class="form-group"
+                          aria-labelledby="swmy-step--5_label-redirect"
+                          aria-describedby="swmy-step--5_desc-redirect">
+
+                    <!-- legend label -->
+                    <legend id="swmy-step--5_label-redirect" class="form-group-hd heading-h4 hidden">
+                        Redirect to a different address
+                    </legend>
+                    <p id="swmy-step--5_desc-redirect" class="hidden">Enter requester's name and address to redirect to</p>
+
+                    <!-- field - redirect - consignment number -->
+                    <div class="field" aria-labelledby="redirect--tracking_label">
+                        <label id="redirect--consignment_label" class="field-label" for="redirect--consignment">Tracking number / barcode</label>
+                        <input type="text" id="redirect--consignment" class="field-input input-number medium" name="redirectConsignmentId" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - redirect - name -->
+                    <div class="field" aria-labelledby="redirect--requester_label">
+                        <label id="redirect--name_label" for="redirect--name" class="field-label">Receiver's name</label>
+                        <input id="redirect--name" name="redirectName" type="text" class="field-input input-text medium" placeholder="eg. John Smith" autocomplete="off" maxlength="200" required="true">
+                        <span id="redirect--name_error" for="redirect--name" class="error-message">Enter a valid name</span>
+                    </div><!-- field end -->
+
+                    <!-- field - redirect - company -->
+                    <div class="field" aria-labelledby="redirect--company_label">
+                        <label id="redirect--company_label" for="redirect--company" class="field-label">Receiver's company name<span class="instructions">(Optional)</span></label>
+                        <input id="redirect--company" name="receiverName" type="text" class="field-input input-text medium" placeholder="eg. Company Pty Ltd" autocomplete="off">
+                    </div><!-- field end -->
+
+                    <!-- field - redirect - address line 1 -->
+                    <div class="field" aria-labelledby="redirect--address_label">
+                        <label id="redirect--address_label" for="redirect--address" class="field-label">Receiver's address</label>
+                        <input id="redirect--address" name="redirectAddress1" type="text" class="field-input input-text medium" placeholder="1 Name St." autocomplete="off" required="true">
+                        <span id="redirect--address_error" for="redirect--address" class="error-message">Enter a valid street</span>
+                    </div><!-- field end -->
+
+                    <!-- field - redirect - address line 2 -->
+                    <div class="field" aria-labelledby="redirect--address_label">
+                        <label id="redirect--location_label" for="redirect--location" class="field-label"><span class="hidden">Suburb, State, Postcode</span></label>
+                        <input id="redirect--location" name="redirectAddress2" type="text" class="field-input input-text medium" placeholder="Kensington, NSW, 2033" autocomplete="off" maxlength="30" required="true" rel="tool:location">
+                        <ul class="autocomplete medium" role="listbox" rel="tool:locations-list"></ul>
+                        <input id="redirect--address_postcode" name="redirectPostcode" type="hidden" rel="tool:location-postcode">
+                        <input id="redirect--address_suburb" name="redirectSuburb" type="hidden" rel="tool:location-suburb">
+                        <input id="redirect--address_state" name="redirectState" type="hidden" rel="tool:location-state">
+                        <span id="redirect--location_error" for="redirect--location" class="error-message">Enter recipient's suburb or postcode</span>
+                    </div><!-- field end -->
+
+                    <!-- field - redirect - number -->
+                    <div class="field" aria-labelledby="redirect--number_label">
+                        <label id="redirect--number_label" for="redirect--number" class="field-label">Receiver's phone number</label>
+                        <input id="redirect--number" name="redirectPhone" type="text" class="field-input input-text medium" placeholder="eg. 0411222333" autocomplete="off" required="true" validate="phone">
+                        <span id="redirect--number_error" for="redirect--number" class="error-message">Enter a 10 digit phone number eg. 0212341234 with no spaces</span>
+                    </div><!-- field end -->
+
+                    <!-- field - redirect - email -->
+                    <div class="field" aria-labelledby="redirect--email_label">
+                        <label id="redirect--email_label" for="redirect--email" class="field-label">Receiver's email address</label>
+                        <input id="redirect--email" name="redirectEmail" type="text" class="field-input input-text medium" placeholder="eg. email.address@email.com" autocomplete="off" required="true" validate="email">
+                        <span id="redirect--email_error" for="redirect--email" class="error-message">Email address is required and must be valid</span>
+                    </div><!-- field end -->
+
+                    <!-- field - redirect date -->
+                    <div class="field" aria-labelledby="redirect--date_label">
+                        <label id="redirect--date_label" for="redirect--date" class="field-label">Redelivery date</label>
+                        <input id="redirect--date" name="redirectDate" type="text" class="field-input input-date short" placeholder="dd/mm/yyyy" maxlength="12" autocomplete="off" required="true" validate="date,dateFuture,dateWeekdays"
+                               data-allow-input="true" data-date-format="d/m/Y" data-enable-only="weekdays">
+                        <span id="redirect--date_error" for="redirect--date" class="error-message">Enter a valid date that is 2 business days from today and is not a weekend or public holiday</span>
+                    </div><!-- field end -->
+
+                    <!-- field - redirect date -->
+                    <div class="field">
+                        <div class="field-static no-label">
+                            <h3 class="field-anchor"><span>Please note:</span></h3>
+                            <p>
+                            <ul class="list">
+                                <li>Delivery will take a minimum of 2 business days if requested after 6pm</li>
+                                <li>Redeliveries and redirections will not be completed on public holidays</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                </fieldset><!-- fieldset -  consignment end -->
+
+                <!-- fieldset - next -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="swmy-step--5_label-btn"
+                          aria-describedby="swmy-step--5_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="swmy-step--5_label-btn" class="hidden">Next step </legend>
+                    <p id="swmy-step--5_desc-btn" class="hidden">Click on the button below to enter parcel details</p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary" role="button" title="Next step" rel="tool:next"
+                            aria-label="Next step" aria-controls="swmy-step--7" custom="true" required="true">
+                        Next step
+                    </button>
+                    <a href="#" class="prev" rel="swmy:prev" data-prev="2">Previous step</a>
+
+                </fieldset><!-- fieldset - submit end -->
+            </form><!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help 5 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.srywemsdyou="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:srywemisstags', pagetype='faq'}">
+                                <sly data-sly-list.item="${srywemsdyou.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.srywemissURL1 != null && properties.srywemissURL1 != ''}"  href="${properties.srywemissURL1}" target="_blank">${properties.srywemissText1}</a>
+                        <a data-sly-test="${properties.srywemissURL2 != null && properties.srywemissURL2 != ''}"  href="${properties.srywemissURL2}" target="_blank">${properties.srywemissText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- swmy - step 5 end -->
+
+    <!-- swmy - step 6: collection -->
+    <tool-step id="swmy-step--6" class="swmy-step swmy-step--6">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="swmy-step--6--heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/swmy-icon.png" alt=""></i><!--
+             --><span id="swmy-step--6--heading">Missed delivery</span>
+            </h1><!-- heading end -->
+
+            <!-- notifications header -->
+            <h3 id="swmy-step--6--sub-heading" class="notifications">
+                Step 2 of 4: <span class="notifications-step">Collect at a StarTrack depot</span>
+            </h3>
+
+            <!-- form -->
+            <form class="form" name="swmy-step--6--form" novalidate="true">
+
+                <!-- fieldset - consignment -->
+                <fieldset class="form-group no-legend"
+                          aria-labelledby="swmy-step--6--pickup-details_label"
+                          aria-describedby="swmy-step--6--pickup-details_desc">
+
+                    <!-- legend label -->
+                    <legend id="swmy-step--6--pickup-details_label" class="form-group-hd heading-h4 hidden">
+                        Collect at a StarTrack depot
+                    </legend>
+                    <p id="swmy-step--6--pickup-details_desc" class="hidden">Collect at a StarTrack depot</p>
+
+                    <!-- field - consignment number -->
+                    <div class="field" aria-labelledby="collect--consignment_label">
+                        <label id="collect--consignment_label" class="field-label" for="collect--consignment">Tracking number / barcode</label>
+                        <input type="text" id="collect--consignment" class="field-input input-number medium" name="optionsConsignmentId" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - collect - phone number -->
+                    <div id="collect--number_field" class="field" aria-labelledby="collect--number_label">
+                        <label id="collect--number_label" for="collect--number" class="field-label">Phone number</label>
+                        <input id="collect--number" name="collectorPhone" type="tel" class="field-input input-text medium" placeholder="eg. 0411222333" autocomplete="off" required="true" validate="phone">
+                        <span id="collect--number_error" for="collect--number" class="error-message">Enter a 10 digit phone number eg. 0212341234 with no spaces</span>
+                    </div><!-- field end -->
+
+                    <!-- field - collect - email -->
+                    <div class="field" aria-labelledby="collect--email_label">
+                        <label id="collect--email_label" for="collect--email" class="field-label">Email address</label>
+                        <input id="collect--email" name="collectorEmail" type="email" class="field-input input-text medium" placeholder="eg. email.address@email.com" autocomplete="off" required="true" validate="email">
+                        <span id="collect--email_error" for="collect--email" class="error-message">Email address is required and must be valid</span>
+                    </div><!-- field end -->
+
+                    <!-- field - collect - requester -->
+                    <div class="field" aria-labelledby="collect--requester_label">
+                        <label id="collect--requester_label" for="collect--requester" class="field-label">Requested by</label>
+                        <input id="collect--requester" name="collectorRequester" type="text" class="field-input input-text medium" placeholder="eg. Jane Doe" autocomplete="off" maxlength="200" required="true">
+                        <span id="collect--requester_error" for="collect--requester" class="error-message">Enter a valid name</span>
+                    </div><!-- field end -->
+
+                </fieldset><!-- fieldset -  consignment end -->
+
+                <!-- fieldset - next -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="swmy-step--6--label-btn"
+                          aria-describedby="swmy-step--6--desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="swmy-step--6--label-btn" class="hidden">Next step</legend>
+                    <p id="swmy-step--6--desc-btn" class="hidden">Click on the button below to enter parcel details</p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary" role="button" title="Next step" rel="tool:next"
+                            aria-label="Next step" aria-controls="swmy-step--7" custom="true" required="true">
+                        Next step
+                    </button>
+                    <a href="#" class="prev" rel="swmy:prev" data-prev="1">Previous step</a>
+
+                </fieldset><!-- fieldset - submit end -->
+            </form><!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help 6 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.srywemsdyou="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:srywemisstags', pagetype='faq'}">
+                                <sly data-sly-list.item="${srywemsdyou.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.srywemissURL1 != null && properties.srywemissURL1 != ''}"  href="${properties.srywemissURL1}" target="_blank">${properties.srywemissText1}</a>
+                        <a data-sly-test="${properties.srywemissURL2 != null && properties.srywemissURL2 != ''}"  href="${properties.srywemissURL2}" target="_blank">${properties.srywemissText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- swmy - step 6 end -->
+
+    <!-- swmy - step 7: review -->
+    <tool-step id="swmy-step--7" class="swmy-step swmy-step--7">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="swmy-step--7--heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/swmy-icon.png" alt=""></i><!-- -->
+                <span id="swmy-step--7--heading">Missed delivery</span>
+            </h1><!-- heading end -->
+
+            <!-- notifications header -->
+            <h3 id="swmy-step--7--sub-heading" class="notifications">
+                Step 3 of 4: <span class="notifications-step">Review details</span>
+            </h3>
+
+            <!-- form -->
+            <form class="form" name="swmy-step--7--form" novalidate="true">
+
+                <!-- fieldset - review -->
+                <fieldset class="form-group"
+                          aria-labelledby="swmy-step--7_label-review"
+                          aria-describedby="swmy-step--7_desc-review">
+
+                    <!-- legend label -->
+                    <legend id="swmy-step--7_label-review" class="form-group-hd heading-h4 hidden">
+                        Review details
+                    </legend>
+                    <p id="swmy-step--7_desc-review" class="hidden">Enter requester's name and address to review to</p>
+
+                    <!-- field - review - consignment number -->
+                    <div class="field" aria-labelledby="review--tracking_label">
+                        <label id="review--consignment_label" class="field-label" for="review--consignment">Tracking number / barcode</label>
+                        <input type="text" id="review--consignment" class="field-input input-number medium" name="reviewConsignmentId" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - review - name -->
+                    <div class="field" aria-labelledby="review--name_label">
+                        <label id="review--name_label" for="review--name" class="field-label">Receiver's name</label>
+                        <input id="review--name" name="reviewName" type="text" class="field-input input-text medium" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - review - company -->
+                    <div class="field" aria-labelledby="review--company_label">
+                        <label id="review--company_label" for="review--company" class="field-label">Receiver's company name</label>
+                        <input id="review--company" name="receiverName" type="text" class="field-input input-text medium" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - review - address line 1 -->
+                    <div class="field" aria-labelledby="review--address_label">
+                        <label id="review--address_label" for="review--address" class="field-label">Receiver's address</label>
+                        <input id="review--address" name="reviewAddress1" type="text" class="field-input input-text medium" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - review - address line 1 -->
+                    <div class="field no-label" aria-labelledby="review--address_label">
+                        <label id="review--location_label" for="review--address" class="field-label hidden">Suburb, State, Postcode</label>
+                        <input id="review--location" name="reviewAddress2" type="text" class="field-input input-text medium" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - review - number -->
+                    <div class="field" aria-labelledby="review--number_label">
+                        <label id="review--number_label" for="review--number" class="field-label">Receiver's phone number</label>
+                        <input id="review--number" name="receiverName" type="text" class="field-input input-text medium" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - review - email -->
+                    <div class="field" aria-labelledby="review--email_label">
+                        <label id="review--email_label" for="review--email" class="field-label">Receiver's email address</label>
+                        <input id="review--email" name="receiverName" type="text" class="field-input input-text medium" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field - review - requester -->
+                    <div class="field" aria-labelledby="review--requester_label">
+                        <label id="review--requester_label" for="review--name" class="field-label">Receiver's name</label>
+                        <input id="review--requester" name="reviewRequester" type="text" class="field-input input-text medium" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+
+                    <!-- field - redelivery - atl confirm -->
+                    <div id="review--atl_field" class="field" aria-labelledby="review--atl_label" aria-describedby="review--atl_label" hidden="true" aria-hidden="true">
+                        <label class="field-label">Authority to leave</label>
+                        <div class="field-checkbox" aria-labelledby="review--atl_label">
+                            <input id="review--atl" name="isNotRobot" type="checkbox" value="true" disabled="true" aria-read-only="true">
+                            <label id="review--atl_label" for="review--atl">Authority to leave given</label>
+                        </div>
+                    </div><!-- field end -->
+
+                    <!-- field - redelivery - atl desc -->
+                    <div id="review--atl_instructions_field" class="field" aria-labelledby="review--atl_instructions_label" hidden="true" aria-hidden="true">
+                        <label id="review--atl_instructions_label" for="review--atl_instructions" class="field-label show-break--lg">Please leave my parcel in the <br>following secure location</label>
+                        <textarea id="review--atl_instructions" name="reviewInstructions" type="text" class="field-input input-text" rows="3" disabled="true" aria-read-only="true"></textarea>
+                    </div><!-- field end -->
+
+                    <!-- field - review - date -->
+                    <div class="field" aria-labelledby="review--date_label">
+                        <label id="review--date_label" for="review--date" class="field-label">Redelivery date</label>
+                        <input id="review--date" name="reviewDate" type="text" class="field-input input-date short" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                </fieldset><!-- fieldset -  consignment end -->
+
+                <!-- fieldset - next -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="swmy-step--7_label-btn"
+                          aria-describedby="swmy-step--7_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="swmy-step--7_label-btn" class="hidden">Confirm & submit</legend>
+                    <p id="swmy-step--7_desc-btn" class="hidden">Click on the button below to enter parcel details</p>
+
+                    <!-- submit -->
+                    <button id="swmy-step--7_btn" class="btn btn-primary" role="button" title="Next step" rel="tool:next"
+                            aria-label="Next step" aria-controls="swmy-step--7" custom="true" required="optional">
+                        Confirm & submit
+                    </button>
+
+                    <a href="#" class="prev" rel="swmy:prev" data-prev="custom">Previous step</a>
+
+                    <tool-reset></tool-reset>
+
+                </fieldset><!-- fieldset - submit end -->
+            </form><!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help 7 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.srywemsdyou="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:srywemisstags', pagetype='faq'}">
+                                <sly data-sly-list.item="${srywemsdyou.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.srywemissURL1 != null && properties.srywemissURL1 != ''}"  href="${properties.srywemissURL1}" target="_blank">${properties.srywemissText1}</a>
+                        <a data-sly-test="${properties.srywemissURL2 != null && properties.srywemissURL2 != ''}"  href="${properties.srywemissURL2}" target="_blank">${properties.srywemissText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- swmy - step 7 end -->
+
+    <!-- swmy - step result -->
+    <tool-step id="swmy-step--result" class="swmy-step swmy-step--result">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="swmy-step--result_heading">
+
+            <!-- heading -->
+            <h1 class="form-heading form-heading--result" style="margin-bottom: 0; ">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/swmy-icon.png" alt=""></i><!--
+             --><span id="swmy-step--result_heading">Missed delivery</span>
+            </h1><!-- heading end -->
+
+            <!-- form -->
+            <form id="swmy-result" class="form" name="pbook-step--result_form" novalidate="true" hidden="true" aria-hidden="true">
+
+                <!-- fieldset - service type -->
+                <fieldset class="form-group no-legend" aria-labelledby="confirmation--success_title">
+
+                    <legend class="form-group-hd hidden">Pick-up booking</legend>
+
+                    <div id="swmy-confirmation--success" class="confirmation" hidden="true" aria-hidden="true">
+                        <h3 class="message-title">
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#CheckboxTick"></use></svg>
+                            <span id="confirmation--success_label">Your details have been received</span>
+                        </h3>
+                        <h4 id="confirmation--success_message" class="message-subtitle">
+                            Your reference number
+                            <span id="confirmation--success_reference" class="heading-h2 confirmation-number"></span>
+                        </h4>
+                        <hr>
+                        <!--<p class="message-body">-->
+                        <!--Your contact details have been collected and you will receive a notification from our contact centre when your parcel is ready for collection.-->
+                        <!--</p>-->
+                        <!--<a href="#" class="message message-target">Contact customer service</a>-->
+                    </div>
+
+                    <div id="swmy-confirmation--special" class="confirmation confirmation--special" hidden="true" aria-hidden="true">
+                        <h3 class="message-title">
+                            <svg class="svg-Track-dims"><use xlink:href="#Close-Menu"/></svg>
+                            <span id="confirmation--special_title">Your request needs a little extra care.</span>
+                        </h3>
+                        <h4 id="confirmation--special_details" class="message-subtitle">
+                            Please call the Contact Centre for assistance on 13 2345 between the hours of 8am and 6pm Monday to Friday.
+                        </h4>
+                        <hr>
+                        <p class="message-body">
+                            Your booking is dependent on the accuracy and completeness of the details provided
+                        </p>
+                        <a href="#" class="message message-target">Contact customer service</a>
+                    </div>
+
+                </fieldset>
+
+            </form> <!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool error -->
+        <section id="swmy-error" class="tool-message tool-message--error" aria-labelledby="swmy-error_label" aria-describedby="swmy-error_desc">
+
+            <!-- tool error inner -->
+            <div class="tool-message_inner">
+                <h3>
+                    <span id="swmy-error_label">Something went wrong.</span>
+                </h3>
+                <p id="swmy-error_desc">
+                    <span id="swmy-error_message"></span>
+                </p>
+                <p>Please try again in a while. If the problem continues, please contact us.</p>
+                <h3><a href="#help:open" title="Contact us">Contact us</a></h3>
+            </div><!-- tool error inner end -->
+
+            <!-- tool retry -->
+            <tool-retry></tool-retry>
+        </section><!-- tool error end -->
+
+        <!-- tool success -->
+        <section id="swmy-success" class="tool-message tool-message--success">
+            <!-- tool reset -->
+            <tool-reset></tool-reset>
+        </section><!-- tool success end -->
+
+        <!-- tool help 8 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.srywemsdyou="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:srywemisstags', pagetype='faq'}">
+                                <sly data-sly-list.item="${srywemsdyou.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.srywemissURL1 != null && properties.srywemissURL1 != ''}"  href="${properties.srywemissURL1}" target="_blank">${properties.srywemissText1}</a>
+                        <a data-sly-test="${properties.srywemissURL2 != null && properties.srywemissURL2 != ''}"  href="${properties.srywemissURL2}"  target="_blank">${properties.srywemissText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- pbook - step result end -->
+
+</template>

@@ -1,0 +1,32 @@
+<div data-sly-use.pullquote="au.com.auspost.global.core.sightly.Pullquote" data-sly-unwrap></div>
+
+<sly data-sly-test="${(pullquote.isEmpty && wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: Edit quote/testimonial here. This component allows you to enter text, an image (optional) and author name (optional) .</div>
+</sly>
+
+<blockquote data-sly-test="${!pullquote.isEmpty}" class="pull-quote">
+
+    <!--/* text for testimonial */-->
+    <h4 data-sly-test="${pullquote.isTestimonial}" class="pull-quote-text pull-quote-text--testimonial">${properties.text}</h4>
+
+    <!--/* text for quote */-->
+    <h3 data-sly-test="${pullquote.isQuote}" class="pull-quote-text">${properties.text}</h3>
+
+    <!--/* if it's testimonial show image and details */-->
+    <footer data-sly-test="${pullquote.isTestimonial}" class="pull-quote-author--image">
+
+        <img data-sly-test="${properties.isDecorative}" src="${properties.imagePathRef}" class="pull-quote-photo" alt="" />
+        <img data-sly-test="${!properties.isDecorative}" src="${properties.imagePathRef}" class="pull-quote-photo" data-sly-attribute.alt="${properties.imageAltText}" />
+
+        <div data-sly-test="${pullquote.hasAuthorDetails}" class="pull-quote-author--details">
+            <p data-sly-test="${pullquote.hasAuthorName}" class="pull-quote-name">${properties.authorName}</p>
+            <small data-sly-test="${pullquote.hasMeta}" class="pull-quote-meta">${properties.meta}</small>
+        </div>
+    </footer>
+
+    <!--/* if it's quote show author name */-->
+    <footer data-sly-test="${pullquote.isQuote && pullquote.hasAuthorName}" class="pull-quote-author">
+        ${properties.authorName}
+    </footer>
+
+</blockquote>

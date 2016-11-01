@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:description="This is a template to create a most popular page which contain most popular articles."
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Template"
+    jcr:title="Amway Today Most Popular Page"
+    allowedPaths="[/]"
+    ranking="{Long}100">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="corporate/amway-today/components/most-popular-page"
+        categoryType="main-blogging"/>
+</jcr:root>

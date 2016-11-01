@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Edit Contact Form"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container" class="card-image-multifield herotype1">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+
+                <items jcr:primaryType="nt:unstructured">
+                
+                    <faqURL
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="FAQ URL "
+                        name="./faqURL"
+                        rootPath="/content"
+                        required="{Boolean}true"/> 
+                        
+                   <formActionURL
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Form Action URL "
+                        name="./formActionURL"
+                        rootPath="/content"
+                        required="{Boolean}true"/>    
+                 
+                  <needHelptags
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/common/tagspicker"
+                        cq-msm-lockable="cq:tracktracetags"
+                        fieldLabel="Need Help Tags"
+                        name="./cq:helptags"
+                        required="{Boolean}true"/>    
+                    
+                     <tracktraceText1
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/foundation/form/textfield"
+                          fieldLabel="Need Help Text 1"
+                          name="./needHelpText1"/>
+                                            
+                    <tracktraceURL1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Need Help URL 1"
+                        name="./needHelpURL1"
+                        rootPath="/content"/>
+                        
+                    <tracktraceText2
+                         jcr:primaryType="nt:unstructured"
+                         sling:resourceType="granite/ui/components/foundation/form/textfield"
+                         fieldLabel="Need Help Text 2"
+                         name="./needHelpText2"/>
+                        
+                    <tracktraceURL2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Need Help URL 2"
+                        name="./needHelpURL2"
+                        rootPath="/content"/>
+                 
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,17 @@
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: Edit In Page CTA Component here.This component allows to configure In Page CTA component.</div>
+</div>
+<div class="cta">
+	<div class="cta-content">
+		<div class="cta-image">
+            <img data-sly-test="${properties.imagePathRef != null}" src="${properties.imagePathRef}" class="cta-image-src" alt="${properties.altTextImg}" />
+            <img data-sly-test="${properties.imagePathRef == null}" src="/etc/designs/startrack_corp/clientlib/img/Solution-Builder-Icon-v01.png" class="cta-image-src" alt="image" />
+		</div>
+		<h3 class="cta-copy">
+			<sly data-sly-test="${properties.ctaContent != null}">${properties.ctaContent}</sly>
+            <sly data-sly-test="${properties.ctaContent == null}">Can't find what you're looking for?</sly>
+			<a data-sly-test="${properties.linkURL != null}" href="${properties.linkURL}" target="${properties.linkOpenInNewTab == 'true'?'_blank':''}" class="cta-target" title="${properties.linkText}">${properties.linkText}</a>
+            <a data-sly-test="${properties.linkURL == null}" href="http://startrack.com.au" target="${properties.linkOpenInNewTab == 'true'?'_blank':''}" class="cta-target" title="Try our soluting builder">Try our solution builder</a>
+		</h3>
+	</div>
+</div>

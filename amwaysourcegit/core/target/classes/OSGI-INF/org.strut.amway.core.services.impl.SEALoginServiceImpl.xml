@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component immediate="true" name="org.strut.amway.core.services.impl.SEALoginServiceImpl" activate="activate">
+        <implementation class="org.strut.amway.core.services.impl.SEALoginServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="org.strut.amway.core.services.ISEALoginService"/>
+        </service>
+        <property name="dfx.host" value="dfx-uat.preprod.apac.amway.net"/>
+        <property name="dfx.protocol" value="https"/>
+        <property name="dfx.appid" value="fps_new"/>
+        <property name="dfx.appsecret" value="$2a$11$gxpnezmYfNJRYnw"/>
+        <property name="dfx.timeout" value="20000"/>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="service.pid" value="org.strut.amway.core.services.impl.SEALoginServiceImpl"/>
+    </scr:component>
+</components>

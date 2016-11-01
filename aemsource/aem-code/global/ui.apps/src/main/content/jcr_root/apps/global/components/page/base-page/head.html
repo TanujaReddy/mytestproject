@@ -1,0 +1,63 @@
+<sly data-sly-include="favicons.html" />
+
+<!-- Declaration for including the client libs -->
+<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap />
+
+    <title>${pageProperties.jcr:title} - Australia Post</title>
+    <sly data-sly-include="meta.html" />
+    <output data-sly-call="${clientLib.css @ categories='global'}" data-sly-unwrap></output>
+    <sly data-sly-include="author.html" />
+    <sly data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp" />
+    <sly data-sly-use.pathbrowser="${'au.com.auspost.global.core.sightly.PathBrowser' @ paramURL=pageProperties.canonicalUrl}">
+        <link rel="canonical" href="${pathbrowser.formattedURL}"></link>
+    </sly>
+    <script type='text/javascript' data-sly-use.analytics="analytics.js">
+      analytics = {};
+      analytics.component = {};
+      analytics.page = {};
+      analytics.page.pageData = {};
+      analytics.page.pageData.pageName = "${analytics.pageName @ context='unsafe'}" ;
+      analytics.page.pageData.pageType = "${analytics.pageType @ context='unsafe'}";
+      analytics.page.pageData.siteName = "${analytics.siteName @ context='unsafe'}";
+      analytics.page.pageData.sitePrefix = "${analytics.sitePrefix @ context='unsafe'}";
+      analytics.page.pageData.siteType = {};
+	</script>
+
+    <!--Analytics tracking to set sitetype property -->
+    <script type="text/javascript">
+        +function ($) {
+
+        // Enable strict mode
+        "use strict";
+
+        var currentBreakpoint,
+        _screenSize;
+
+        _screenSize = function(trigger, currentstate) {
+
+        if (window.matchMedia("(min-width: 0px)").matches && !window.matchMedia("(min-width: 480px)").matches){
+        currentBreakpoint = 'xsm';
+        } else if (window.matchMedia("(min-width: 480px)").matches && !window.matchMedia("(min-width: 680px)").matches) {
+        currentBreakpoint = 'sm';
+        } else if (window.matchMedia("(min-width: 680px)").matches && !window.matchMedia("(min-width: 970px)").matches) {
+        currentBreakpoint = 'lg';
+        } else if (window.matchMedia("(min-width: 970px)").matches && !window.matchMedia("(min-width: 1170px)").matches) {
+        currentBreakpoint = 'xl';
+        } else if (window.matchMedia("(min-width: 1170px)").matches) {
+        currentBreakpoint = 'xxl';
+        }
+
+        analytics.page.pageData.siteType =  currentBreakpoint + ' ' +  $(window).width() + 'px';
+        }
+
+
+        $(window).resize(function() {
+        _screenSize();
+        });
+
+        _screenSize();
+
+        }
+    </script>
+
+    ${pageProperties.dtmStartPlaceHolder @ context='unsafe'}

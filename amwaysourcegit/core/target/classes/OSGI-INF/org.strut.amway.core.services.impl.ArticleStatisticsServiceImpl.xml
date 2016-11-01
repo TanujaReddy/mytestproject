@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component name="org.strut.amway.core.services.impl.ArticleStatisticsServiceImpl">
+        <implementation class="org.strut.amway.core.services.impl.ArticleStatisticsServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="org.strut.amway.core.services.ArticleStatisticsService"/>
+        </service>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="service.pid" value="org.strut.amway.core.services.impl.ArticleStatisticsServiceImpl"/>
+        <reference name="repository" interface="org.apache.sling.jcr.api.SlingRepository" cardinality="1..1" policy="static" bind="bindRepository" unbind="unbindRepository"/>
+        <reference name="slingSettingsService" interface="org.apache.sling.settings.SlingSettingsService" cardinality="1..1" policy="static" bind="bindSlingSettingsService" unbind="unbindSlingSettingsService"/>
+        <reference name="replicator" interface="com.day.cq.replication.Replicator" cardinality="1..1" policy="static" bind="bindReplicator" unbind="unbindReplicator"/>
+        <reference name="resourceResolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" cardinality="1..1" policy="static" bind="bindResourceResolverFactory" unbind="unbindResourceResolverFactory"/>
+        <reference name="pageViewStatistics" interface="com.day.cq.wcm.core.stats.PageViewStatistics" cardinality="1..1" policy="static" bind="bindPageViewStatistics" unbind="unbindPageViewStatistics"/>
+        <reference name="articleService" interface="org.strut.amway.core.services.ArticleService" cardinality="1..1" policy="static" bind="bindArticleService" unbind="unbindArticleService"/>
+    </scr:component>
+</components>

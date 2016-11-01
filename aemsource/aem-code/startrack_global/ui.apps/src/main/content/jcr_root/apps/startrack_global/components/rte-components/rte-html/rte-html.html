@@ -1,0 +1,9 @@
+
+<sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring) && (!properties.text)}">
+    <div>Edit: HTML</div>
+</sly>
+
+<div data-sly-test="${properties.text}" data-sly-unwrap>
+    ${properties.text @ context='unsafe'}
+</div>
+

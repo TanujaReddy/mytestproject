@@ -1,0 +1,31 @@
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring) && properties.imageLocation ==null}">
+    <div>Author Hint: Edit Three-up Component here.This component allows to configure Three-up component.</div>
+</div>
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-body',nodeToBeCreated='card-body-text'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_corp/components/adpativeimage',nodeToBeCreated='adaptiveimage'}"/>
+<div class="card three-up">
+    <div class="tile">
+        <div class="tile-content">
+            <sly data-sly-test="${properties.subHeading != null}">
+                <h3 class="three-up-sub-heading">${properties.subHeading}</h3>
+            </sly>
+            <sly data-sly-test="${properties.heading != null}">    
+                <h2 class="three-up-heading">${properties.heading}</h2>
+            </sly>
+            <sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring) && properties.imagePathRef == null}">
+                <div class="tile-image">
+                    <img src="/content/dam/startrack_global/card_large.png" alt="Placeholder for Large container"/>
+                </div>
+            </sly>
+            <sly data-sly-test="${properties.imagePathRef != null}">
+                <sly data-sly-resource="${'adaptiveimage' @ resourceType='startrack_corp/components/adaptiveimage'}"/>
+            </sly>
+            <p class="three-up-copy"><div data-sly-element="${! wcmmode.edit ? 'sly' : 'div'}" data-sly-resource="${'card-body-text' @ resourceType='startrack_global/components/rte-components/text-body'}"></div></p>
+            <sly data-sly-test="${properties.linkText != null}">
+                <div class="cta-column">
+                    <a href="${properties.linkURL}" target="${properties.linkOpenInNewTab == 'true'?'_blank':''}" class="link link-primary" title="${properties.linkText}">${properties.linkText}</a>
+                </div>
+            </sly>  
+        </div>
+    </div>    
+</div>           

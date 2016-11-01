@@ -1,0 +1,222 @@
+<!-- tool - login -->
+<section role="dialog" class="tool login tool--login" id="login" name="login" aria-hidden="false">
+    <div class="tool-overlay"></div>
+    <div class="tool-wrapper" role="document">
+        <a class="tool-close" role="button" rel="login:close" href="#login" title="Close login" aria-controls="login" aria-label="Close login">
+            <svg class="icon svg-Close-Menu-dims">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Close-Menu"></use>
+            </svg>
+        </a>
+        <div class="tool-content" aria-disabled="false">
+
+            <!-- login - step 1: consignment -->
+            <div id="login-step--1" class="tool-step login-step login-step--1">
+
+                <!-- form container -->
+                <section class="form-container" aria-labelledby="login-step--1_heading">
+
+                    <!-- heading -->
+                    <h1 class="form-heading">
+                        <i><img src="/etc/designs/startrack_corp/clientlib/img/login-icon.png" alt=""></i><!--
+                     --><span id="login-step--1_heading">Log in to StarTrack services</span>
+                    </h1><!-- heading end -->
+
+                    <!-- form -->
+                    <div class="form">
+
+                        <!-- Form Selector -->
+                        <fieldset class="form-group no-padding--top no-padding--bottom"
+                                  aria-labelledby="login--type_label"
+                                  aria-describedby="login--type_desc">
+
+                            <!-- legend label / description -->
+                            <legend id="login--type_label" class="form-group-hd heading-h4 hidden">
+                                Log in to StarTrack services
+                            </legend>
+                            <p id="login--type_desc" class="hidden">Select a login type.</p>
+
+                            <!-- field - login type -->
+                            <div class="field" aria-labelledby="type_label">
+                                <label id="type_label" class="field-label">Type</label>
+
+                                <!-- my startrack online -->
+                                <div id="type--mtso_field" class="field-radio" aria-labelledby="type--mtso_label">
+                                    <input id="type--mtso" name="type" type="radio" value="mtso" required="true" rel="login:mtso" checked="checked">
+                                    <label id="type--mtso_label" for="type--mtso">My StarTrack Online</label>
+                                </div>
+
+                                <!-- startrack courier -->
+                                <div id="type--courier_field" class="field-radio" aria-labelledby="type--courier_label">
+                                    <input id="type--courier" name="type" type="radio" value="courier" required="true" rel="login:courier">
+                                    <label id="type--courier_label" for="type--courier">StarTrack Courier</label>
+                                </div>
+
+                            </div><!-- field end -->
+
+                            <div class="hr"></div>
+
+                        </fieldset><!-- fieldset -  consignment end -->
+
+                        <!-- MSTO Form // https://www.startrack.com.au/login/-->
+                        <form method="post" action="https://step1website/login/" id="form1" name="form1" enctype="multipart/form-data" novalidate="true">
+
+                            <div class="aspNetHidden">
+                                <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+                                <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+                                <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+                                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJLTM0NDEwMzgzD2QWAgIED2QWAgICD2QWAgIBD2QWCAIJDw8WAh4HVmlzaWJsZWhkZAILDw8WAh8AaGRkAg0PZBYCAgEPFgIeBFRleHQFBUxvZ2luZAIPD2QWAmYPZBYEAgkPDxYCHgtOYXZpZ2F0ZVVybAU3aHR0cHM6Ly93d3cuc3RhcnRyYWNrLmNvbS5hdS91c2VyLWFkbWluL3Jlc2V0LXBhc3N3b3JkL2RkAgsPDxYCHwIFHWh0dHBzOi8vd3d3LnN0YXJ0cmFjay5jb20uYXUvZGRkT0dF+DpTol9oec1PXxJ8PwnV89s=" />
+                            </div>
+
+                            <script type="text/javascript">
+                                //<![CDATA[
+                                var theForm = document.forms['form1'];
+                                if (!theForm) {
+                                    theForm = document.form1;
+                                    console.log(theForm);
+                                }
+                                function __doPostBack(eventTarget, eventArgument) {
+                                    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                                        theForm.__EVENTTARGET.value = eventTarget;
+                                        theForm.__EVENTARGUMENT.value = eventArgument;
+                                        theForm.submit();
+                                    }
+                                }
+                                //]]>
+                            </script>
+
+                            <div class="aspNetHidden">
+                                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+                                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAATJlrLBdZ4JjzvhNRzQY932oUxR2gKfqO0LM1xI3bF75V4ZLWBaOGowOrLZIifoOzYAS+9mTsHPnx4Tbf5IE/D3IWdbK0a06s2GTUKcMt+fzNTZ4Ro=" />
+                            </div>
+
+                            <!-- fieldset - mtso -->
+                            <fieldset class="form-group no-padding--top"
+                                      aria-labelledby="login--mtso_label"
+                                      aria-describedby="login--mtso_desc">
+
+                                <!-- legend label / description -->
+                                <legend id="login--mtso_label" class="form-group-hd heading-h4 hidden">
+                                    Log in to My StarTrack Online
+                                </legend>
+                                <p id="login--mtso_desc" class="hidden">Enter you username and password.</p>
+
+                                <!-- field - username -->
+                                <div class="field" aria-labelledby="username_label">
+                                    <label id="username--mtso_label" for="__c1_txtUsername" class="field-label">Username</label>
+                                    <input id="__c1_txtUsername" name="_$c1$txtUsername" type="text" class="field-input input-text medium" placeholder="Username" autocomplete="off" maxlength="20" required="true">
+                                    <span id="username--mtso_error" for="__c1_txtUsername" class="error-message">Username is required</span>
+                                </div><!-- field end -->
+
+                                <!-- field - password -->
+                                <div class="field" aria-labelledby="password_label">
+                                    <label id="password--mtso_label" for="__c1_txtPassword" class="field-label">Password</label>
+                                    <input id="__c1_txtPassword" name="_$c1$txtPassword" type="password" class="field-input input-text medium" placeholder="Password" autocomplete="off" required="true">
+                                    <span id="password--mtso_error" for="password" class="error-message">Password is required</span>
+                                </div><!-- field end -->
+
+                                <!-- field - password -->
+                                <a href="https://www.startrack.com.au/user-admin/reset-password" class="forgot">Forgot Password</a>
+
+                            </fieldset><!-- fieldset -  consignment end -->
+
+                            <!-- fieldset - mtso submit -->
+                            <fieldset class="form-group text-center bg-colour--mid-tan"
+                                      aria-labelledby="login--mtso_btn_label"
+                                      aria-describedby="login--mtso_btn_desc">
+
+                                <!-- legend label / description -->
+                                <legend id="login--mtso_btn_label" class="hidden">Login</legend>
+                                <p id="login--mtso_btn_desc" class="hidden">Click on the button below to login</p>
+
+                                <!-- submit -->
+                                <button id="__c1_lnkbtnLogin" class="btn btn-primary btn-2" role="button" title="Login"
+                                        aria-label="Login" aria-controls="login" custom="true" required="true">
+                                    Login
+                                </button>
+                            </fieldset><!-- fieldset - submit end -->
+
+                        </form>
+
+                        <!-- My Courier Form -->
+                        <form method="post" action="https://bookings.startrackcourier.com.au/act/dmiis.dll" id="FormMyCourier" enctype="text/plain" encoding="text/plain" novalidate="true" hidden="true" aria-hidden="true">
+
+                            <!-- fieldset - consignment -->
+                            <fieldset class="form-group no-padding--top"
+                                      aria-labelledby="login--courier_label"
+                                      aria-describedby="login--courier_desc">
+
+                                <!-- legend label / description -->
+                                <legend id="login--courier_label" class="form-group-hd heading-h4 hidden">
+                                    Log in to StarTrack Courier
+                                </legend>
+                                <p id="login--courier_desc" class="hidden">Enter your state, client code and password.</p>
+
+                                <!-- field - state -->
+                                <div class="field" aria-labelledby="pbook_collection--point_label">
+                                    <label id="state_label" class="field-label" for="DMStateSelect">State</label>
+                                    <div class="field-select medium">
+                                        <select id="DMStateSelect" name="state" type="select" default="act" required="true" rel="login:type">
+                                            <option value="act">ACT</option>
+                                            <option value="nsw">NSW</option>
+                                            <option value="qld">QLD</option>
+                                            <option value="sa">SA</option>
+                                            <option value="tas">TAS</option>
+                                            <option value="vic">VIC</option>
+                                            <option value="wa">WA</option>
+                                        </select>
+                                    </div>
+                                    <span id="DMStateSelect_error" for="DMStateSelect" class="error-message">Please select a state</span>
+                                </div><!-- field end -->
+
+                                <!-- field - client code -->
+                                <div class="field" aria-labelledby="clientcode_label">
+                                    <label id="clientcode_label" for="custInput" class="field-label">Client Code</label>
+                                    <input id="custInput" name="custno" type="text" class="field-input input-text medium" placeholder="Client Code" autocomplete="off" required="true">
+                                    <input type="hidden" name="submit.x" value="2" />
+                                    <input type="hidden" name="submit.y" value="3" />
+                                    <input type="hidden" name="dmID" value="Login" />
+                                    <span id="clientcode_error" for="clientcode" class="error-message">Client code is required</span>
+                                </div><!-- field end -->
+
+                                <!-- field - password -->
+                                <div class="field" aria-labelledby="password_label">
+                                    <label id="password_label" for="pinno" class="field-label">Password</label>
+                                    <input id="pinno" name="pinno" type="password" class="field-input input-text medium" placeholder="Password" autocomplete="off" maxlength="70" required="true">
+                                    <span id="password_error" for="password" class="error-message">Password is required</span>
+                                </div><!-- field end -->
+
+                            </fieldset><!-- fieldset -  consignment end -->
+
+                            <!-- fieldset - submit -->
+                            <fieldset class="form-group text-center bg-colour--mid-tan"
+                                      aria-labelledby="login--courier_btn_label"
+                                      aria-describedby="login--courier_btn_desc">
+
+                                <!-- legend label / description -->
+                                <legend id="login--courier_btn_label" class="hidden">Login</legend>
+                                <p id="login--courier_btn_desc" class="hidden">Click on the button below to login</p>
+
+                                <!-- submit -->
+                                <button id="submitCourierBtn" href="javascript:;"
+                                        class="btn btn-primary btn-2" role="button" title="Login"
+                                        aria-label="Login" aria-controls="login" custom="true" required="true">
+                                    Login
+                                </button>
+                            </fieldset><!-- fieldset - submit end -->
+
+                        </form>
+
+                    </div>
+
+                </section><!-- form container end -->
+
+                <!-- tool help -->
+                <section class="tool-help">
+                    <br/><br/><br/>
+                </section><!-- tool help end -->
+
+            </div><!-- login - step 1 end -->
+
+        </div>
+    </div>
+</section>

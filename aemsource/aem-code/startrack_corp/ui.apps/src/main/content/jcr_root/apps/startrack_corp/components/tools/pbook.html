@@ -1,0 +1,884 @@
+<!-- tool - pbook -->
+<tool id="pbook" class="pbook no-js" name="pbook"></tool>
+
+<!-- tool template - pbook -->
+<template id="pbook-tpl" class="pbook-tpl">
+
+    <!-- pbook - step 1 -->
+    <tool-step id="pbook-step--1" class="pbook-step pbook-step--1">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="pbook-step--1_heading" aria-describedby="pbook-step--1_desc">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/pb-icon.png" alt=""></i><!--
+                 --><span id="pbook-step--1_heading">Pick-up booking</span>
+            </h1><!-- heading end -->
+
+            <!-- notifications header -->
+            <h3 id="pbook-step--1_desc" class="notifications">
+                Step 1 of 3: <span class="notifications-step">Your details</span>
+            </h3>
+
+            <!-- form -->
+            <form class="form" name="pbook-step--1_form" novalidate="true">
+
+                <!-- fieldset - consignment -->
+                <fieldset class="form-group no-padding--bottom" aria-labelledby="pbook-step--1_label-consignment">
+
+                    <!-- legend label -->
+                    <legend id="pbook-step--1_label-consignment" class="hidden">
+                        Enter your account or tracking number
+                    </legend>
+
+                    <!-- field - consignment - type -->
+                    <div class="field" aria-labelledby="pbook_consignment--type_label">
+                        <label id="pbook_consignment--type_label" for="pbook_consignment--type" class="field-label">Type</label>
+                        <div class="field-select medium">
+                            <select id="pbook_consignment--type" name="consignmentType" type="select" default="Account" required="true">
+                                <option value="Account">Account</option>
+                                <option value="Tracking">Tracking number (consignment)</option>
+                            </select>
+                        </div>
+                        <span id="pbook_consignment--type_error" for="pbook_consignment--type" class="error-message">Select a valid type option</span>
+                    </div><!-- field end -->
+
+                    <!-- field - consignment - id -->
+                    <div id="pbook_consignment--id_field" class="field" aria-labelledby="pbook_consignment--id_label">
+                        <label id="pbook_consignment--id_label" for="pbook_consignment--id" class="field-label">Account number</label>
+                        <input id="pbook_consignment--id" name="consignment-id" type="text" class="field-input input-text medium" placeholder="eg. ABC456" autocomplete="off" maxlength="70" required="true" validate="id">
+                        <span id="pbook_consignment--id_error" for="pbook_consignment--id" class="error-message">Enter valid account or tracking number</span>
+                    </div><!-- field end -->
+
+                    <!-- field - contact - number -->
+                    <div id="pbook_contact--number_field" class="field" aria-labelledby="pbook_consignment--number_label">
+                        <label id="pbook_contact--number_label" for="pbook_contact--number" class="field-label">Phone number</label>
+                        <input id="pbook_contact--number" name="contact-number" type="tel" class="field-input input-text medium" placeholder="eg. 0411222333" autocomplete="off" required="true" validate="phone">
+                        <span id="pbook_contact--number_error" for="pbook_contact--number" class="error-message">Enter a 10 digit phone number eg. 0212341234 with no spaces</span>
+                    </div><!-- field end -->
+
+                </fieldset>
+
+                <!-- fieldset - contact -->
+                <fieldset class="form-group no-padding--top" aria-labelledby="pbook-step--1_label-requirement">
+
+                    <!-- legend label -->
+                    <legend id="pbook-step--1_label-contact" class="hidden">
+                        Enter your contact details
+                    </legend>
+                    <div class="hr"></div>
+
+                    <!-- field - contact - company -->
+                    <div class="field" aria-labelledby="pbook_contact--company_label">
+                        <label id="pbook_contact--company_label" for="pbook_contact--company" class="field-label">Company name<span class="instructions"></span></label>
+                        <input id="pbook_contact--company" name="contact-company" type="text" class="field-input input-text medium" placeholder="eg. Company Pty Ltd" autocomplete="off" required="true">
+                        <span id="pbook_contact--company_error" for="pbook_contact--company" class="error-message">Company name is required</span>
+                    </div><!-- field end -->
+
+                    <!-- field - contact - name -->
+                    <div class="field" aria-labelledby="pbook_consignment--name_label">
+                        <label id="pbook_contact--name_label" for="pbook_contact--name" class="field-label">Contact name</label>
+                        <input id="pbook_contact--name" name="contact-name" type="text" class="field-input input-text medium" placeholder="eg. John Smith" autocomplete="off" required="true">
+                        <span id="pbook_contact--name_error" for="pbook_contact--name" class="error-message">Enter a valid name</span>
+                    </div><!-- field end -->
+
+                    <!-- field - contact - email -->
+                    <div class="field" aria-labelledby="pbook_contact--email_label">
+                        <label id="pbook_contact--email_label" for="pbook_contact--email" class="field-label">Email address</label>
+                        <input id="pbook_contact--email" name="contact-email" type="text" class="field-input input-text medium" placeholder="eg. email.address@email.com" autocomplete="off" required="true" validate="email">
+                        <span id="pbook_contact--email_error" for="pbook_contact--email" class="error-message">Email address is required and must be valid</span>
+                    </div><!-- field end -->
+
+                    <!-- field - not robot -->
+                    <div class="field" aria-labelledby="pbook_not-robot_label">
+                        <label id="pbook_not-robot_label" class="field-label hidden">I am not a robot</label>
+
+                        <!-- field - not robot - captcha -->
+                        <div class="field-checkbox" aria-labelledby="pbook_not-robot--captcha_label">
+                            <input id="pbook_not-robot--captcha" name="isNotRobot" type="checkbox" value="true" required="true">
+                            <label id="pbook_not-robot--captcha_label" for="pbook_not-robot--captcha">I am not a robot</label>
+                            <span id="pbook_not-robot--captcha_error" for="pbook_not-robot--captcha" class="error-message">Please confirm that you are not a robot</span>
+                        </div>
+                    </div><!-- field end -->
+
+                </fieldset><!-- fieldset - contact end -->
+
+                <!-- fieldset - submit -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="pbook-step--1_label-btn"
+                          aria-describedby="pbook-step--1_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="pbook-step--1_label-btn" class="hidden">Next step</legend>
+                    <p id="pbook-step--1_desc-btn" class="hidden">Click on the button below to enter collection details</p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary" role="button" title="Next step" rel="tool:next"
+                            aria-label="Next step" aria-controls="pbook-step--result" custom="true" required="true">
+                        Next step
+                    </button>
+                </fieldset><!-- fieldset - submit end -->
+
+            </form> <!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help -- 1 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.pickupbooking="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:pickupbookingtags', pagetype='faq'}">
+                                <sly data-sly-list.item="${pickupbooking.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.pickupbookingURL1 != null && properties.pickupbookingURL1 != ''}"  href="${properties.pickupbookingURL1}" target="_blank">${properties.pickupbookingText1}</a>
+                        <a data-sly-test="${properties.pickupbookingURL2 != null && properties.pickupbookingURL2 != ''}"  href="${properties.pickupbookingURL2}" target="_blank">${properties.pickupbookingText2}</a>
+
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- pbook - step 1 end -->
+
+    <!-- pbook - step 2 -->
+    <tool-step id="pbook-step--2" class="pbook-step pbook-step--2">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="pbook-step--2_heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/pb-icon.png" alt=""></i><!--
+                 --><span id="pbook-step--2_heading">Pickup booking</span>
+            </h1><!-- heading end -->
+
+            <!-- notifications header -->
+            <h3 id="pbook-step--2_desc" class="notifications">
+                Step 2 of 3: <span class="notifications-step">Collection details</span>
+            </h3>
+
+            <!-- form -->
+            <form class="form" name="pbook-step--2_form" novalidate="true">
+
+                <!-- fieldset - collection details -->
+                <fieldset class="form-group no-padding--bottom" aria-labelledby="pbook-step--2_label-contact">
+
+                    <!-- legend label -->
+                    <legend id="pbook-step--2_label-contact" class="hidden">
+                        Enter your collection point contact details.
+                    </legend>
+
+                    <!-- field - collection - company -->
+                    <div class="field" aria-labelledby="pbook_collection--company_label">
+                        <label id="pbook_collection--company_label" for="pbook_collection--company" class="field-label">Company name<span class="instructions"></span></label>
+                        <input id="pbook_collection--company" name="collection-company" type="text" class="field-input input-text medium" placeholder="eg. Company Pty Ltd" autocomplete="off" required="true">
+                        <span id="pbook_collection--company_error" for="pbook_collection--company" class="error-message">Enter your company name or N/A if there is no company</span>
+                    </div><!-- field end -->
+
+                    <!-- field - collection - contact name -->
+                    <div class="field" aria-labelledby="pbook_collection--name_label">
+                        <label id="pbook_collection--name_label" for="pbook_contact--name" class="field-label">Contact name</label>
+                        <input id="pbook_collection--name" name="collection-contact-name" type="text" class="field-input input-text medium" placeholder="eg. Jane Doe" autocomplete="off" required="true">
+                        <span id="pbook_collection--name_error" for="pbook_collection--name" class="error-message">Enter a valid name</span>
+                    </div><!-- field end -->
+
+                    <!-- field - contact - number -->
+                    <div id="pbook_collection--number_field" class="field" aria-labelledby="pbook_collection--number_label">
+                        <label id="pbook_collection--number_label" for="pbook_collection--number" class="field-label">Phone number</label>
+                        <input id="pbook_collection--number" name="collection-contact-number" type="tel" class="field-input input-text medium" placeholder="eg. 0411222333" autocomplete="off" required="true" validate="phone">
+                        <span id="pbook_collection--number_error" for="pbook_collection--number" class="error-message">Enter a 10 digit phone number eg. 0212341234 with no spaces</span>
+                    </div><!-- field end -->
+
+                </fieldset>
+
+                <!-- fieldset - address -->
+                <fieldset class="form-group no-padding--top no-padding--bottom" aria-labelledby="pbook-step--2_label-address">
+
+                    <!-- legend label -->
+                    <legend id="pbook-step--2_label-address" class="hidden">
+                        Enter your collection point contact and address details.
+                    </legend>
+
+                    <!-- field - redirect - address line 1 -->
+                    <div class="field" aria-labelledby="pbook_address--street_label">
+                        <label id="pbook_address--street_label" for="pbook_address--street" class="field-label"><span class="hidden">Street </span>Address</label>
+                        <input id="pbook_address--street" name="address-street" type="text" class="field-input input-text medium" placeholder="eg. 1 Example St." autocomplete="off" required="true" validate="address">
+                        <span id="pbook_address--street_error" for="pbook_address--street" class="error-message">Enter a valid street name</span>
+                    </div><!-- field end -->
+
+                    <!-- field - sender - address line 2 -->
+                    <div class="field" aria-labelledby="pbook_address--location_label">
+                        <label id="pbook_address--location_label" for="pbook_address--location" class="field-label"><span class="hidden">Suburb, State, Postcode</span></label>
+                        <input id="pbook_address--location" name="address-location" type="text" class="field-input input-text medium" placeholder="eg. Kensington, NSW, 2033" autocomplete="off" maxlength="50" required="true" validate="address" rel="tool:location">
+                        <ul class="autocomplete medium" role="listbox" rel="tool:locations-list"></ul>
+                        <input id="pbook_address--postcode" name="address-postcode" type="hidden" rel="tool:location-postcode">
+                        <input id="pbook_address--suburb" name="address-suburb" type="hidden" rel="tool:location-suburb">
+                        <input id="pbook_address--state" name="address-state" type="hidden" rel="tool:location-state">
+                        <span id="pbook_address--location_error" for="pbook_address--location" class="error-message">Enter recipient's suburb or postcode</span>
+                    </div><!-- field end -->
+
+                </fieldset>
+
+                <!-- fieldset - collection -->
+                <fieldset class="form-group no-padding--top no-padding--bottom" aria-labelledby="pbook-step--2_label-collection">
+
+                    <!-- legend label -->
+                    <legend id="pbook-step--2_label-collection" class="hidden">
+                        Enter your collection details
+                    </legend>
+                    <div class="hr"></div>
+
+                    <!-- field - collection - collection point -->
+                    <div class="field" aria-labelledby="pbook_collection--point_label">
+                        <label id="pbook_collection--point_label" class="field-label" for="pbook_collection--point">Collection point</label>
+                        <input id="pbook_collection--point" name="collection-point" type="text" class="field-input input-text medium" placeholder="eg. Collect from business premises" autocomplete="off" required="true">
+                        <!--<div class="field-select medium">-->
+                        <!--<select id="pbook_collection--point" name="collection-point" type="select" default="Collect from the front door" required="true">-->
+                        <!--<option value="Collect from the front door">Collect from the front door</option>-->
+                        <!--<option value="Collect from business premises">Collect from business premises</option>-->
+                        <!--<option value="Drop at depot">Drop at depot</option>-->
+                        <!--</select>-->
+                        <!--</div>-->
+                        <span id="pbook_collection--point_error" for="pbook_collection--point" class="error-message">Specify a collection point</span>
+                    </div><!-- field end -->
+
+                    <!-- field - collection - instructions -->
+                    <div class="field" aria-labelledby="pbook_collection--instructions_label">
+                        <label id="pbook_collection--instructions_label" for="pbook_collection--instructions" class="field-label">Special instructions <span class="instructions">(Optional)</span></label>
+                        <input id="pbook_collection--instructions" name="collection-instructions" type="text" class="field-input input-text medium" placeholder="eg. Is there a security door access number?" autocomplete="off" required="optional">
+                        <!--
+                            <textarea id="pbook_collection--instructions" cols="5" rows="5" class="field-input input-textarea medium" name="collection-instructions" placeholder="eg. Is there a security door access number?" required="optional"></textarea>
+                        -->
+                    </div><!-- field end -->
+
+                    <!-- field - private residence -->
+                    <div class="field" aria-labelledby="pbook_collection--private-residence_label">
+                        <div class="field-checkbox no-label">
+                            <input id="pbook_collection--private-residence" type="checkbox" name="private-residence">
+                            <label id="pbook_collection--private-residence_label" for="pbook_collection--private-residence">This is a private residence</label>
+                        </div>
+                    </div>
+
+                    <!-- field - special requirements -->
+                    <div class="field" aria-labelledby="pbook_requirements--field_label">
+
+                        <label id="pbook_requirements--field_label" class="field-label">Special requirements</label>
+
+                        <!-- field - special requirements - dg -->
+                        <div class="field-checkbox field-checkbox--last" aria-labelledby="pbook_requirements--dg_label">
+                            <input id="pbook_requirements--dg" name="isDangerousGoods" type="checkbox" required="optional" rel="pbook:spl">
+                            <label id="pbook_requirements--dg_label" for="pbook_requirements--dg">Dangerous goods</label>
+                            <span id="pbook_requirements--dg_error" for="pbook_requirements--dg" class="error-message">Select at least one requirement</span>
+                        </div>
+
+                        <!-- field - requirements - dg - class -->
+                        <div class="field qtr-padding--top" id="pbook_requirements--class_field" aria-labelledby="pbook_requirements--class_label" hidden="true" aria-hidden="true">
+                            <label id="pbook_requirements--1--class_label" for="pbook_requirements--class" class="field-label">Class</label>
+                            <div class="field-select medium">
+                                <select id="pbook_requirements--class" name="dg-class" default="-1" type="select" required="true" validate="requiredWith:isDangerousGoods">
+                                    <option value="1">Class 1 - Explosives</option>
+                                    <option value="2">Class 2 - Gases</option>
+                                    <option value="3">Class 3 - Flammable Liquids</option>
+                                    <option value="4">Class 4 - Flammable Solids</option>
+                                    <option value="5">Class 5 - Oxidizing Substances</option>
+                                    <option value="6">Class 6 - Toxic & Infectious Substances</option>
+                                    <option value="7">Class 7 - Radioactive Material</option>
+                                    <option value="8">Class 8 - Corrosives</option>
+                                    <option value="9">Class 9 - Miscellaneous</option>
+                                </select>
+                            </div>
+                            <span id="pbook_requirements--class_error" for="pbook_requirements--class" class="error-message">Please select a dangerous goods class</span>
+                        </div><!-- field end -->
+
+                        <!-- field - requirements - dg - un -->
+                        <div class="field" id="pbook_requirements--un_field" aria-labelledby="pbook_requirements--un_label" hidden="true" aria-hidden="true">
+                            <label id="pbook_requirements--un_label" for="pbook_requirements--un" class="field-label">UN</label>
+                            <input id="pbook_requirements--un" name="dg-un" type="number" class="field-input input-text short" placeholder="eg. 1234" autocomplete="off" required="true" validate="requiredWith:isDangerousGoods|digitsLength:4">
+                            <span id="pbook_requirements--un_error" for="pbook_requirements--un" class="error-message">Please enter a valid UN number</span>
+                        </div><!-- field end -->
+
+                    </div><!-- field end -->
+
+                    <!-- field - collection date -->
+                    <div class="field">
+                        <div class="field-static no-label">
+                            <h3 class="field-anchor"><span>Please note:</span></h3>
+                            <p>
+                            <ul class="list">
+                                <li>Delivery will take a minimum of 2 business days if requested after 6pm</li>
+                                <li>Redeliveries and redirections will not be completed on public holidays</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- field - collection date -->
+                    <div class="field" aria-labelledby="pbook_collection--date_label">
+                        <label id="pbook_collection--date_label" for="pbook_collection--date" class="field-label">Collection date</label>
+                        <input id="pbook_collection--date" name="collection-date" type="text" class="field-input input-date short" placeholder="dd/mm/yyyy" maxlength="12" autocomplete="off" required="true" validate="date,dateFuture,dateWeekdays"
+                               data-allow-input="true" data-date-format="d/m/Y" data-enable-only="weekdays">
+                        <span id="pbook_collection--date_error" for="pbook_collection--date" class="error-message">Enter a valid date that is not a weekend or public holiday</span>
+                    </div><!-- field end -->
+
+                    <!-- field - collection time -->
+                    <div class="field">
+                        <label class="pbook_collection--time_label" for="pbook_collection--time">My office closes at</label>
+                        <div class="field-select short">
+                            <select id="pbook_collection--time" name="collection-time" type="select" required="true">
+                                <option value="08:00">08:00</option>
+                                <option value="08:15">08:15</option>
+                                <option value="08:30">08:30</option>
+                                <option value="08:45">08:45</option>
+                                <option value="09:00">09:00</option>
+                                <option value="09:15">09:15</option>
+                                <option value="09:30">09:30</option>
+                                <option value="09:45">09:45</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:15">10:15</option>
+                                <option value="10:30">10:30</option>
+                                <option value="10:45">10:45</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:15">11:15</option>
+                                <option value="11:30">11:30</option>
+                                <option value="11:45">11:45</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:15">12:15</option>
+                                <option value="12:30">12:30</option>
+                                <option value="12:45">12:45</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:15">13:15</option>
+                                <option value="13:30">13:30</option>
+                                <option value="13:45">13:45</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:15">14:15</option>
+                                <option value="14:30">14:30</option>
+                                <option value="14:45">14:45</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:15">15:15</option>
+                                <option value="15:30">15:30</option>
+                                <option value="15:45">15:45</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:15">16:15</option>
+                                <option value="16:30">16:30</option>
+                                <option value="16:45">16:45</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:15">17:15</option>
+                                <option value="17:30">17:30</option>
+                                <option value="17:45">17:45</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+						<span id="pbook_collection--time_error" for="pbook_collection--time" class="error-message">Specify office closing time</span>
+                    </div>
+
+
+                </fieldset><!-- fieldset - consignment end -->
+
+                <!-- fieldset - submit -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="pbook-step--2_label-btn"
+                          aria-describedby="pbook-step--2_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="pbook-step--2_label-btn" class="hidden">Next step</legend>
+                    <p id="pbook-step--2_desc-btn" class="hidden">Click on the button below to enter booking accepted</p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary" role="button" title="Next step" rel="tool:next"
+                            aria-label="Next step" aria-controls="pbook-step--result" custom="true" required="true">
+                        Next step
+                    </button>
+
+                    <a href="#" class="prev" rel="tool:prev">Previous step</a>
+
+                </fieldset><!-- fieldset - submit end -->
+
+            </form> <!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help -- 2 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.pickupbooking="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:pickupbookingtags', pagetype='faq'}">
+                                <sly data-sly-list.item="${pickupbooking.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.pickupbookingURL1 != null && properties.pickupbookingURL1 != ''}"  href="${properties.pickupbookingURL1}" target="_blank">${properties.pickupbookingText1}</a>
+                        <a data-sly-test="${properties.pickupbookingURL2 != null && properties.pickupbookingURL2 != ''}"  href="${properties.pickupbookingURL2}" target="_blank">${properties.pickupbookingText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- pbook - step 2 end -->
+
+    <!-- pbook - step 3 -->
+    <tool-step id="pbook-step--3" class="pbook-step pbook-step--3">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="pbook-step--3_heading" aria-describedby="pbook-step--3_desc">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/pb-icon.png" alt=""></i><!--
+             --><span id="pbook-step--3_heading">Pick-up booking</span>
+            </h1><!-- heading end -->
+
+            <!-- notifications header -->
+            <h3 id="pbook-step--3_desc" class="notifications">
+                Step 3 of 3: <span class="notifications-step">Freight details</span>
+            </h3>
+
+            <!-- form -->
+            <form class="form" name="pbook-step--3_form" novalidate="true">
+
+                <!-- fieldset - service type -->
+                <fieldset class="form-group no-padding--bottom" aria-labelledby="pbook-step--3_label-service">
+
+                    <!-- legend label -->
+                    <legend id="pbook-step--3_label-service" class="hidden">
+                        Select a service type option
+                    </legend>
+
+                    <!-- field - service - type -->
+                    <div class="field" aria-labelledby="pbook_service--service_label">
+						<label id="pbook_service--type_label" for="pbook_service--type" class="field-label">Service type</label>
+						<div class="field-select medium">
+							<select id="pbook_service--type" name="service-type" type="select" default="EXP" required="true">
+							</select>
+						</div>
+						<span id="pbook_service--type_error" for="pbook_service--type" class="error-message">Please select the service type</span>
+                    </div><!-- field end -->
+
+                </fieldset>
+
+                <!-- fieldset - items -->
+                <fieldset id="pbook-items" class="form-group no-padding--top no-padding--bottom" aria-labelledby="pbook-step--3_label-items">
+
+                    <!-- legend label / description -->
+                    <legend id="pbook-step--3_label-items" class="hidden">
+                        List of freight items
+                    </legend>
+
+                    <!-- fieldset - items--1 -->
+                    <fieldset id="pbook-item--1" class="form-group no-padding" name="freight-items[]" aria-labelledby="pbook-item--1_label">
+
+                        <!-- legend label / description -->
+                        <legend id="pbook-item--1_label" class="hidden">
+                            Item 1 details
+                        </legend>
+                        <div class="hr"></div>
+
+                        <!-- field - item - description -->
+                        <div class="field" aria-labelledby="pbook_item--1--desc_label">
+                            <label id="pbook_item--1--desc_label" for="pbook_item--1--desc" class="field-label">Item description</label>
+                            <div class="field-select medium">
+                                <select id="pbook_item--1--desc" name="desc-item--1" type="select" default="" required="true">
+                                    <option value="BOX">Box</option>
+                                    <option value="BUNDLE">Bundle</option>
+                                    <option value="CARTON">Carton</option>
+                                    <option value="CASE/TRUNK">Case / Trunk</option>
+                                    <option value="DRUM">Drum</option>
+                                    <option value="JIFFY">Jiffy</option>
+                                    <option value="PALLET">Pallet</option>
+                                    <option value="PRE-PAID SATCHEL 1KG">Pre-Paid Satchel 1Kg</option>
+                                    <option value="PRE-PAID SATCHEL 3KG">Pre-Paid Satchel 3Kg</option>
+                                    <option value="PRE-PAID SATCHEL 5KG">Pre-Paid Satchel 5Kg</option>
+                                    <option value="SATCHEL">Satchel</option>
+                                    <option value="SKID">Skid</option>
+                                    <option value="OTHER">Other</option>
+                                </select>
+                            </div>
+                            <span id="pbook_item--1--desc_error" for="pbook_item--1--desc" class="error-message">Please select the item description</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - length -->
+                        <div class="field" aria-labelledby="pbook_item--1--length_label">
+                            <label id="pbook_item--1--length_label" for="pbook_item--1--length" class="field-label">Length (mm)</label>
+                            <input id="pbook_item--1--length" name="length-item--1" type="text" class="field-input input-text short" placeholder="eg. 410" autocomplete="off" required="true" validate="min:1">
+                            <span id="pbook_item--1--length_error" for="pbook_item--1--length" class="error-message">Enter whole numbers only with no decimal point</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - width -->
+                        <div class="field" aria-labelledby="pbook_item--1--width_label">
+                            <label id="pbook_item--1--width_label" for="pbook_item--1--width" class="field-label">Width (mm)</label>
+                            <input id="pbook_item--1--width" name="width-item--1" type="text" class="field-input input-text short" placeholder="eg. 310" autocomplete="off" required="true" validate="min:1">
+                            <span id="pbook_item--1--width_error" for="pbook_item--1--width" class="error-message">Enter whole numbers only with no decimal point</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - height -->
+                        <div class="field" aria-labelledby="pbook_item--1--height_label">
+                            <label id="pbook_item--1--height_label" for="pbook_item--1--height" class="field-label">Height (mm)</label>
+                            <input id="pbook_item--1--height" name="height-item--1" type="text" class="field-input input-text short" placeholder="eg. 450" autocomplete="off" required="true" validate="min:1">
+                            <span id="pbook_item--1--height_error" for="pbook_item--1--height" class="error-message">Enter whole numbers only with no decimal point</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - qty -->
+                        <div class="field" aria-labelledby="pbook_item--1--qty_label">
+                            <label id="pbook_item--1--qty_label" for="pbook_item--1--qty" class="field-label">Quantity</label>
+                            <input id="pbook_item--1--qty" name="qty-item--1" type="text" class="field-input input-text short" placeholder="eg. 1" autocomplete="off" required="true" validate="min:1">
+                            <span id="pbook_item--1--qty_error" for="pbook_item--1--qty" class="error-message">Enter whole numbers only with no decimal point</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - weight -->
+                        <div class="field" aria-labelledby="pbook_contact--weight_label">
+                            <label id="pbook_item--1--weight_label" for="pbook_item--1--width" class="field-label">Total weight (kg)</label>
+                            <input id="pbook_item--1--weight" name="weight-item--1" type="text" class="field-input input-text short" placeholder="eg. 20" autocomplete="off" required="true" validate="min:1">
+                            <span id="pbook_item--1--weight_error" for="pbook_item--1--width" class="error-message">Enter the total weight of all items (kg)</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - heaviest -->
+                        <div class="field" aria-labelledby="pbook_contact--heaviest_label">
+                            <label id="pbook_item--1--heaviest_label" for="pbook_item--1--heaviest" class="field-label">Heaviest item (kg)</label>
+                            <input id="pbook_item--1--heaviest" name="heaviest-item--1" type="text" class="field-input input-text short" placeholder="eg. 15" autocomplete="off" required="true">
+                            <span id="pbook_item--1--heaviest_error" for="pbook_item--1--heaviest" class="error-message">Enter the heaviest item weight (kg)</span>
+                        </div><!-- field end -->
+
+                        <!-- field - requirements -->
+                        <div class="field" aria-labelledby="pbook_item--1--options_label">
+
+                            <label id="pbook_item--1_label" class="field-label">Other requirements</label>
+
+                            <!-- field - requirements - pk -->
+                            <div class="field-checkbox" aria-labelledby="pbook_item--1--pk_label">
+                                <input id="pbook_item--1--pk" name="pk-item--1" type="checkbox" required="optional" rel="pbook:spl">
+                                <label id="pbook_item--1--pk_label" for="pbook_item--1--pk">Packaging</label>
+                            </div>
+
+                            <!-- field - requirements - tg -->
+                            <div class="field-checkbox" aria-labelledby="pbook_item--1--tg_label">
+                                <input id="pbook_item--1--tg" name="tg-item--1" type="checkbox" required="optional" rel="pbook:spl">
+                                <label id="pbook_item--1--tg_label" for="pbook_item--1--tg">Tailgate</label>
+                            </div>
+
+                            <!-- field - requirements - sh -->
+                            <div class="field-checkbox" aria-labelledby="pbook_item--1_--sh_label">
+                                <input id="pbook_item--1--sh" name="sh-item--1" type="checkbox" required="optional" rel="pbook:spl">
+                                <label id="pbook_item--1--sh_label" for="pbook_item--1--sh">Special handling</label>
+                            </div>
+
+                        </div><!-- field end -->
+
+                    </fieldset><!-- fieldset - items--1 -->
+
+                </fieldset><!-- fieldset - contact end -->
+
+                <!-- fieldset - add items -->
+                <fieldset class="form-group no-padding--top no-padding-v--lg" aria-labelledby="pbook_item--add_label">
+
+                    <!-- legend label / description -->
+                    <legend id="pbook_item--add_label" class="hidden">Add another item</legend>
+
+                    <!-- add another item -->
+                    <a href="#" class="add" rel="pbook:add" aria-controls="pbook_items" role="button">
+                        <svg class="svg-Add-dims"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Add"></use></svg><span>Add another item</span>
+                    </a>
+
+                    <!-- fieldset - items--n -->
+                    <fieldset id="pbook-item--n" class="form-group no-padding" aria-labelledby="pbook-item--n_label" hidden="true" aria-hidden="true">
+
+                        <!-- legend label / description -->
+                        <legend id="pbook-item--n_label" class="hidden">
+                            Item 1 details
+                        </legend>
+
+                        <!-- add another item -->
+                        <a id="pbook_item--n--remove_button" href="#" class="remove" rel="pbook:remove" aria-controls="pbook_items" role="button">
+                            <svg class="svg-Close-dims"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Close"></use></svg><span>Remove item</span>
+                        </a>
+
+                        <!-- field - item - description -->
+                        <div class="field" aria-labelledby="pbook_item--n--desc_label">
+                            <label id="pbook_item--n--desc_label" for="pbook_item--n--desc" class="field-label">Item description</label>
+                            <div class="field-select medium">
+                                <select id="pbook_item--n--desc" name="desc-item--n" type="select" default="" required="optional">
+                                    <option value="BOX">Box</option>
+                                    <option value="BUNDLE">Bundle</option>
+                                    <option value="CARTON">Carton</option>
+                                    <option value="CASE/TRUNK">Case / Trunk</option>
+                                    <option value="DRUM">Drum</option>
+                                    <option value="JIFFY">Jiffy</option>
+                                    <option value="PALLET">Pallet</option>
+                                    <option value="PRE-PAID SATCHEL 1KG">Pre-Paid Satchel 1Kg</option>
+                                    <option value="PRE-PAID SATCHEL 3KG">Pre-Paid Satchel 3Kg</option>
+                                    <option value="PRE-PAID SATCHEL 5KG">Pre-Paid Satchel 5Kg</option>
+                                    <option value="SATCHEL">Satchel</option>
+                                    <option value="SKID">Skid</option>
+                                    <option value="OTHER">Other</option>
+                                </select>
+                                <span id="pbook_item--n--desc_error" for="pbook_item--n--desc" class="error-message">Enter the item's description</span>
+                            </div>
+                        </div><!-- field end -->
+
+                        <!-- field - item - length -->
+                        <div class="field" aria-labelledby="pbook_item--n--length_label">
+                            <label id="pbook_item--n--length_label" for="pbook_item--n--length" class="field-label">Length</label>
+                            <input id="pbook_item--n--length" name="length-item--n" type="text" class="field-input input-text short" placeholder="eg. 410" autocomplete="off" required="optional">
+                            <span id="pbook_item--n--length_error" for="pbook_item--n--length" class="error-message">Enter whole numbers only with no decimal point</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - width -->
+                        <div class="field" aria-labelledby="pbook_item--n--width_label">
+                            <label id="pbook_item--n--width_label" for="pbook_item--n--width" class="field-label">Width</label>
+                            <input id="pbook_item--n--width" name="width-item--n" type="text" class="field-input input-text short" placeholder="eg. 310" autocomplete="off" required="optional">
+                            <span id="pbook_item--n--width_error" for="pbook_item--n--width" class="error-message">Enter whole numbers only with no decimal point</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - height -->
+                        <div class="field" aria-labelledby="pbook_item--n--height_label">
+                            <label id="pbook_item--n--height_label" for="pbook_item--n--height" class="field-label">Height</label>
+                            <input id="pbook_item--n--height" name="height-item--n" type="text" class="field-input input-text short" placeholder="eg. 450" autocomplete="off" required="optional">
+                            <span id="pbook_item--n--height_error" for="pbook_item--n--height" class="error-message">Enter whole numbers only with no decimal point</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - qty -->
+                        <div class="field" aria-labelledby="pbook_item--n--qty_label">
+                            <label id="pbook_item--n--qty_label" for="pbook_item--n--qty" class="field-label">Quantity</label>
+                            <input id="pbook_item--n--qty" name="qty-item--n" type="text" class="field-input input-text short" placeholder="eg. 1" autocomplete="off" required="optional">
+                            <span id="pbook_item--n--qty_error" for="pbook_item--n--qty" class="error-message">Enter whole numbers only with no decimal point</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - weight -->
+                        <div class="field" aria-labelledby="pbook_contact--weight_label">
+                            <label id="pbook_item--n--weight_label" for="pbook_item--n--width" class="field-label">Total weight (kg)</label>
+                            <input id="pbook_item--n--weight" name="weight-item--n" type="text" class="field-input input-text short" placeholder="eg. 20" autocomplete="off" required="optional">
+                            <span id="pbook_item--n--weight_error" for="pbook_item--n--width" class="error-message">Enter the total weight of all items (kg)</span>
+                        </div><!-- field end -->
+
+                        <!-- field - item - heaviest -->
+                        <div class="field" aria-labelledby="pbook_contact--heaviest_label">
+                            <label id="pbook_item--n--heaviest_label" for="pbook_item--n--heaviest" class="field-label">Heaviest item (kg)</label>
+                            <input id="pbook_item--n--heaviest" name="heaviest-item--n" type="text" class="field-input input-text short" placeholder="eg. 15" autocomplete="off" required="optional">
+                            <span id="pbook_item--n--heaviest_error" for="pbook_item--n--heaviest" class="error-message">Enter the heaviest item weight (kg)</span>
+                        </div><!-- field end -->
+
+                        <!-- field - requirements -->
+                        <div class="field" aria-labelledby="pbook_item--n--options_label">
+
+                            <label id="pbook_item--n_label" class="field-label">Other requirements</label>
+
+                            <!-- field - requirements - pk -->
+                            <div class="field-checkbox" aria-labelledby="pbook_item--n--pk_label">
+                                <input id="pbook_item--n--pk" name="pk-item--n" type="checkbox" required="optional" rel="pbook:spl">
+                                <label id="pbook_item--n--pk_label" for="pbook_item--n--pk">Packaging</label>
+                            </div>
+
+                            <!-- field - requirements - tg -->
+                            <div class="field-checkbox" aria-labelledby="pbook_item--n--tg_label">
+                                <input id="pbook_item--n--tg" name="tg-item--n" type="checkbox" required="optional" rel="pbook:spl">
+                                <label id="pbook_item--n--tg_label" for="pbook_item--n--tg">Tailgate</label>
+                            </div>
+
+                            <!-- field - requirements - sh -->
+                            <div class="field-checkbox" aria-labelledby="pbook_item--n_--sh_label">
+                                <input id="pbook_item--n--sh" name="sh-item--n" type="checkbox" required="optional" rel="pbook:spl">
+                                <label id="pbook_item--n--sh_label" for="pbook_item--n--sh">Special handling</label>
+                            </div>
+
+                        </div><!-- field end -->
+
+                    </fieldset><!-- fieldset - items--n -->
+
+                </fieldset><!-- fieldset - submit end -->
+
+                <!-- fieldset - special requirements -->
+                <fieldset id="pbook_requirements--confirm" class="form-group no-legend" aria-labelledby="pbook_requirements--confirm_label" hidden="true" aria-hidden="true">
+
+                    <!-- field - special requirements - sh -->
+                    <div class="field-checkbox field-checkbox--last" aria-labelledby="pbook_requirements--sh_label" hidden="true" aria-hidden="true">
+                        <input id="pbook_requirements--sh" name="isSpecialHandling" type="checkbox" required="optional" hidden="true" aria-hidden="true">
+                        <label id="pbook_requirements--sh_label" for="pbook_requirements--sh" hidden="true" aria-hidden="true">Special handling</label>
+                    </div>
+
+                    <!-- field - special requirements - confirmation -->
+                    <div class="field field-static no-label" aria-labelledby="pbook_requirements--confirm_label">
+                        <!-- label - spl -->
+                        <span id="pbook_requirements--confirm_label">
+                            Additional requirements are considered a special services booking. We will take your booking, however special services will contact you to advise rates and pickup timing.
+                        </span>
+                        <!-- field - spl -->
+                        <div class="field-checkbox" aria-labelledby="pbook_requirements--spl_label">
+                            <input id="pbook_requirements--spl" name="isSpecialConfirmed" type="checkbox" value="true" required="true" validate="requiredWith:isSpecialHandling|requiredWith:isDangerousGoods">
+                            <label id="pbook_requirements--spl_label" for="pbook_requirements--spl">I confirm this pickup is a special services booking</label>
+                            <span id="pbook_requirements--spl_error" for="pbook_requirements--spl" class="error-message">Please confirm that this pickup is a special services booking</span>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <!-- fieldset - confirmation -->
+                <fieldset class="form-group no-legend" aria-labelledby="pbook_confirm--ready_label">
+
+                    <!-- field - requirements - spl -->
+                    <div class="field field-static no-label" aria-labelledby="pbook_confirm--ready_label">
+                        <!-- field - confirm - ready -->
+                        <div class="field-checkbox no-margin--top" aria-labelledby="pbook_confirm--ready_label">
+                            <input id="pbook_confirm--ready" name="isReadyConfirmed" type="checkbox" value="true" required="true">
+                            <label id="pbook_confirm--ready_label" for="pbook_confirm--ready">I confirm that my parcel(s) have been packaged, labelled and ready to be picked up.</label>
+                            <span id="pbook_confirm--ready_error" for="pbook_confirm--ready" class="error-message">
+                                Please confirm that your parcel(s) have been packaged, labelled and ready to be picked up.
+                            </span>
+                        </div>
+                    </div>
+
+                </fieldset><!-- fieldset - confirmation end -->
+
+                <!-- fieldset - submit -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="pbook-step--3_label-btn"
+                          aria-describedby="pbook-step--3_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="pbook-step--3_label-btn" class="hidden">Make a booking</legend>
+                    <p id="pbook-step--3_desc-btn" class="hidden">Click on the button below to complete your pickup booking request</p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary" role="button" title="Make a booking" rel="tool:next"
+                            aria-label="Next step" aria-controls="pbook-step--result" custom="true" required="true">
+                        Make a booking
+                    </button>
+
+                    <a href="#" class="prev" rel="tool:prev">Previous step</a>
+
+                </fieldset><!-- fieldset - submit end -->
+
+            </form> <!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help -- 3 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.pickupbooking="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:pickupbookingtags', pagetype='faq'}">
+                                <sly data-sly-list.item="${pickupbooking.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.pickupbookingURL1 != null && properties.pickupbookingURL1 != ''}"  href="${properties.pickupbookingURL1}" target="_blank">${properties.pickupbookingText1}</a>
+                        <a data-sly-test="${properties.pickupbookingURL2 != null && properties.pickupbookingURL2 != ''}"  href="${properties.pickupbookingURL2}" target="_blank">${properties.pickupbookingText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- pbook - step 3 end -->	
+
+    <!-- pbook - step result -->
+    <tool-step id="pbook-step--result" class="pbook-step pbook-step--result">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="tat-step--result_heading" aria-describedby="tat-step--result_summary">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/pb-icon.png" alt=""></i><!--
+             --><span id="pbook-step--result_heading">Pick-up booking</span>
+            </h1><!-- heading end -->
+
+            <h3 id="pbook-step--result_summary" class="notifications">&nbsp;</h3>
+
+            <!-- form -->
+            <form id="pbook-result" class="form" name="pbook-step--result_form" novalidate="true" hidden="true" aria-hidden="true">
+
+                <!-- fieldset - service type -->
+                <fieldset class="form-group no-legend">
+                    <legend class="form-group-hd hidden">Pick-up booking</legend>
+                    <div class="confirmation">
+                        <h3 class="message-title">
+                            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#CheckboxTick"></use></svg>
+                            <span>Your booking has been accepted</span>
+                        </h3>
+                        <div id="pbook-result-message"></div>
+                        <h4 class="message-subtitle">
+                            Booking Number: <span id="pbook-success-reference"></span>
+                            <span id="pbook-success-info"></span>
+                        </h4>
+                        <hr>
+                        <p class="message-body">
+                            Your booking is dependent on the accuracy and completeness of the details provided
+                        </p>
+                    </div>
+                </fieldset>
+
+            </form> <!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool error -->
+        <section id="pbook-error" class="tool-message tool-message--error" aria-labelledby="pbook-error_label" aria-describedby="pbook-error_desc">
+            <!-- tool error inner -->
+            <div class="tool-message_inner">
+                <h3>
+                    <span id="pbook-error_label">Something went wrong.</span>
+                </h3>
+                <p id="pbook-error_desc">
+                    <span id="pbook-error_message">There was an error processing your request.</span>
+                </p>
+                <p>Please try again in a while. If the problem continues, please contact us.</p>
+                <h3><a href="#help:open" title="Contact us">Contact us</a></h3>
+            </div><!-- tool error inner end -->
+
+            <!-- tool retry -->
+            <tool-retry></tool-retry>
+        </section><!-- tool error end -->
+
+        <!-- tool success -->
+        <section id="pbook-success" class="tool-message tool-message--success">
+            <!-- tool reset -->
+            <tool-reset></tool-reset>
+        </section><!-- tool success end -->
+
+        <!-- tool help -- 4 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.pickupbooking="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:pickupbookingtags', pagetype='faq'}">
+                                <sly data-sly-list.item="${pickupbooking.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.pickupbookingURL1 != null && properties.pickupbookingURL1 != ''}"  href="${properties.pickupbookingURL1}" target="_blank">${properties.pickupbookingText1}</a>
+                        <a data-sly-test="${properties.pickupbookingURL2 != null && properties.pickupbookingURL2 != ''}"  href="${properties.pickupbookingURL2}" target="_blank">${properties.pickupbookingText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- pbook - step result end -->
+
+</template>

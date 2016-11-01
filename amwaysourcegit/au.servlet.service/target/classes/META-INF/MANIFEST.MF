@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1477888386398
+Build-Jdk: 1.7.0_80
+Built-By: reddyt
+Bundle-Description: AU servlet service bundle for strut-amway
+Bundle-ManifestVersion: 2
+Bundle-Name: strut-amway - AU Servlet Service
+Bundle-SymbolicName: org.strut.amway.strut-amway.au.servlet.service
+Bundle-Version: 2.0.2.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.strut.amway.au.servlets;uses:="javax.servlet,org.apa
+ che.sling.api,org.strut.amway.core.integration,org.strut.amway.core.ser
+ vlets";version="2.0.2"
+Import-Package: javax.net.ssl,javax.security.auth.x500,javax.servlet,jav
+ ax.servlet.http,org.apache.commons.codec.binary,org.apache.commons.lang
+ 3;version="[3.0,4)",org.apache.commons.logging,org.apache.sling.api;ver
+ sion="[2.1,3)",org.apache.sling.api.resource;version="[2.1,3)",org.stru
+ t.amway.core.exception;version="[2.0,3)",org.strut.amway.core.integrati
+ on;version="[2.0,3)",org.strut.amway.core.json.parser;version="[2.0,3)"
+ ,org.strut.amway.core.json.parser.login;version="[2.0,3)",org.strut.amw
+ ay.core.model;version="[2.0,3)",org.strut.amway.core.servlets;version="
+ [2.0,3)",org.strut.amway.core.util;version="[2.0,3)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+Service-Component: OSGI-INF/org.strut.amway.au.servlets.LogoutServlet.xm
+ l,OSGI-INF/org.strut.amway.au.servlets.LoginServlet.xml
+Tool: Bnd-2.3.0.201405100607

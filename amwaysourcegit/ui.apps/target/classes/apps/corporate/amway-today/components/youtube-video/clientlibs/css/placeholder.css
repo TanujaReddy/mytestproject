@@ -1,0 +1,13 @@
+/* TOOLKIT PLACEHOLDERS */
+.cq-youtube-placeholder {
+  	border: 2px dashed #cccccc;
+  	margin: 2px 0;
+  	width: 100%;
+  	-webkit-box-sizing: border-box; /* Safari/Chrome, WebKit */
+  	-moz-box-sizing: border-box; /* Firefox, Gecko */
+  	box-sizing: border-box;
+    min-height: 96px;
+  	max-height: 96px;
+  	height: 96px;
+  	background: url("../images/cq-youtube-placeholder.png") no-repeat scroll 50% 50%;
+}

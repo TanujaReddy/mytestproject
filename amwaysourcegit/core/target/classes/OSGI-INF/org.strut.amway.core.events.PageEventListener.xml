@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component immediate="true" name="org.strut.amway.core.events.PageEventListener" activate="activate" deactivate="deactivate">
+        <implementation class="org.strut.amway.core.events.PageEventListener"/>
+        <service servicefactory="false">
+            <provide interface="org.osgi.service.event.EventHandler"/>
+        </service>
+        <property name="event.topics">
+            org/apache/sling/api/resource/Resource/ADDED
+            org/apache/sling/api/resource/Resource/CHANGED
+        </property>
+        <property name="service.vendor" value="Adobe"/>
+        <property name="service.pid" value="org.strut.amway.core.events.PageEventListener"/>
+        <reference name="repository" interface="org.apache.sling.jcr.api.SlingRepository" cardinality="1..1" policy="static" bind="bindRepository" unbind="unbindRepository"/>
+    </scr:component>
+</components>

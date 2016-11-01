@@ -1,0 +1,45 @@
+/* Strut-amway CSS */
+
+.error-code{
+    overflow: hidden;
+}
+.error-code p{
+    margin:auto
+}
+.error-code .code{
+    font-size: 130px;
+    font-weight: bold;
+    color: #999;
+}
+
+.error-code .description .title{
+    font-size:25px;
+    font-weight:bold;
+    color: #666666;
+    padding-top: 40px;
+}
+.error-code .description a{
+    color: #f24167;
+}
+.error-code .description .content{
+    font-size:19px;
+    color: #666666;
+    padding-top: 10px;
+    line-height:26px;
+}
+.error-code .description .content li{
+    font-size:16px;
+    list-style:initial;
+}
+.error-code .description .content ul{
+    padding: 3px 0 0 20px;
+    list-style-type:initial;
+}
+@media(max-width: 991px){
+.error-code .description{
+            text-align: center;
+        }
+        .error-code .description .title{
+    padding-top: 0;
+}
+}

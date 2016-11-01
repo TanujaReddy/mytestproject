@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Edit Tools"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[ST_touch_ui]">
+     <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container" class="card-image-multifield herotype1 page-article">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+            
+         <items jcr:primaryType="nt:unstructured">
+         
+         </items>
+        <items jcr:primaryType="nt:unstructured">
+        
+        	
+        
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Edit Tools"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">     
+                        
+                        
+                        	 
+                               
+                               <ctaTypeText
+                                   jcr:primaryType="nt:unstructured"
+                                   sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                   fieldLabel="CTA Text"
+                                   name="./ctaTypeText"/>
+                               <URL
+                                   jcr:primaryType="nt:unstructured"
+                                   sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                   fieldLabel="URL"
+                                   rootPath = "/content"
+                                   name="./ctaURL"/>
+                               
+                               <openNewTab
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                       fieldDescription="Please check the checkbox to open CTA link in a new tab"
+                                       fieldLabel="Open CTA in a new tab"
+                                       name="./openInNewTab"
+                                       text="Open CTA link in a new tab"
+                                       title="Open CTA link in a new tab"
+                                       value="{Boolean}true" />                                            
+                         
+		                    <videoUrl
+		                        jcr:primaryType="nt:unstructured"
+		                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+		                        fieldLabel="Video Url"
+		                        name="./videoUrl"
+		                        rootPath="/content"/>
+		                    
+		                     <imagePath
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/fileupload"
+									autoStart="{Boolean}false"
+									class="cq-droptarget"
+									fieldDescription="Drag and drop from the DAM"
+									fieldLabel="Image"
+									fileNameParameter="./imageName"
+									fileReferenceParameter="./imagePathRef"
+									mimeTypes="[image]"
+									multiple="{Boolean}false"
+									name="./imagePath"
+									required="{Boolean}true"
+									title="Upload Image"
+									useHTML5="{Boolean}true"/>
+		                    
+		                     <serviceUrl
+		                        jcr:primaryType="nt:unstructured"
+		                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+		                        fieldLabel="Fabric API URL"
+		                        name="./fabricAPIUrl"
+		                        required="true"/>
+		                    <serviceAAEUrl
+		                        jcr:primaryType="nt:unstructured"
+		                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+		                        fieldLabel="AAE URL"
+		                        name="./AaeUrl"
+		                        required="true"/>
+
+                 </items>
+                    </columns>
+                </items>
+            </tab1>
+            
+           
+            
+            <tab2
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Track and Trace"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">                           
+                           
+                      <!-- Track and Trace -->
+                    <tracktracetags
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/common/tagspicker"
+                        cq-msm-lockable="cq:tracktracetags"
+                        fieldLabel="Track and Trace Tags"
+                        name="./cq:tracktracetags"
+                        class="hidden1"/>
+
+                    <tracktracetagsSection jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/libs/granite/ui/components/foundation/section"
+                        id = 'tracktracetagsSection'
+                        name="./tracktracetagsSection"/>
+                    
+                     <tracktraceText1
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/foundation/form/textfield"
+                          fieldLabel="Track and Trace Text 1"
+                          name="./tracktraceText1"/>
+                                            
+                    <tracktraceURL1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Track and Trace URL 1"
+                        name="./tracktraceURL1"
+                        rootPath="/content"/>
+                        
+                    <tracktraceText2
+                         jcr:primaryType="nt:unstructured"
+                         sling:resourceType="granite/ui/components/foundation/form/textfield"
+                         fieldLabel="Track and Trace Text 2"
+                         name="./tracktraceText2"/>
+                        
+                    <tracktraceURL2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Track and Trace URL 2"
+                        name="./tracktraceURL2"
+                        rootPath="/content"/>
+                       
+                   <!-- Track and Trace END-->
+
+                 </items>
+                    </columns>
+                </items>
+            </tab2>
+            
+               <tab3
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Sorry We Missed You"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">                           
+                           
+                    <srywemisstags
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/common/tagspicker"
+                        cq-msm-lockable="cq:srywemisstags"
+                        fieldLabel="Sorry We Missed Tags"
+                        name="./cq:srywemisstags"
+                        class="hidden2"/>
+
+                    <srywemisstagsSection jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/libs/granite/ui/components/foundation/section"
+                        id = 'srywemisstagsSection'
+                        name="./srywemisstagsSection"/>
+
+                        
+                      <srywemissText1
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/foundation/form/textfield"
+                          fieldLabel="Sry We Missed U Text 1"
+                          name="./srywemissText1"/>
+                                            
+                    <srywemissURL1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Sry We Missed U URL 1"
+                        name="./srywemissURL1"
+                        rootPath="/content"/>
+                        
+                    <srywemissText2
+                         jcr:primaryType="nt:unstructured"
+                         sling:resourceType="granite/ui/components/foundation/form/textfield"
+                         fieldLabel="Sry We Missed U Text 2"
+                         name="./srywemissText2"/>
+                        
+                    <srywemissURL2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Sry We Missed U URL 2"
+                        name="./srywemissURL2"
+                        rootPath="/content"/>   
+                    
+                     <!-- Sorry We Missed You END -->
+
+                 </items>
+                    </columns>
+                </items>
+            </tab3>
+            
+               <tab4
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Pick Up Booking"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">                           
+                           
+                     <!-- Pick Up Booking  -->     
+                     <pickupbookingtags
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/common/tagspicker"
+                        cq-msm-lockable="cq:pickupbookingtags"
+                        fieldLabel="Pickup booking Tags"
+                        name="./cq:pickupbookingtags"
+                        class="hidden3"/>
+
+                    <pickupbookingtagsSection jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/libs/granite/ui/components/foundation/section"
+                        id = 'pickupbookingtagsSection'
+                        name="./pickupbookingtagsSection"/>
+                        
+                     <pickupbookingText1
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/foundation/form/textfield"
+                          fieldLabel="Pick up Booking Text 1"
+                          name="./pickupbookingText1"/>
+                                            
+                    <pickupbookingURL1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Pick up Booking URL 1"
+                        name="./pickupbookingURL1"
+                        rootPath="/content"/>
+                        
+                    <pickupbookingText2
+                         jcr:primaryType="nt:unstructured"
+                         sling:resourceType="granite/ui/components/foundation/form/textfield"
+                         fieldLabel="Pick up Booking Text 2"
+                         name="./pickupbookingText2" />
+                        
+                    <pickupbookingURL2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Pick up Booking URL 2"
+                        name="./pickupbookingURL2"
+                        rootPath="/content"/>   
+                    
+                     <!-- Pick Up Booking END --> 
+
+                 </items>
+                    </columns>
+                </items>
+            </tab4>
+            
+            
+               <tab5
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Transit Time"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">                           
+                           
+                       <!--Transit Time  -->                      
+                     <transittags
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/common/tagspicker"
+                        cq-msm-lockable="cq:transittags"
+                        fieldLabel="Transit Tags"
+                        name="./cq:transittags"
+                        class="hidden4"/>
+
+                    <transittagsSection jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/libs/granite/ui/components/foundation/section"
+                        id = 'transittagsSection'
+                        name="./transittagsSection"/>
+
+                        
+                    <transitText1
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/foundation/form/textfield"
+                          fieldLabel="Transit Time Text 1"
+                          name="./transitText1"/>
+                                            
+                    <transitURL1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Transit Time URL 1"
+                        name="./transitURL1"
+                        rootPath="/content"/>
+                        
+                    <transitText2
+                         jcr:primaryType="nt:unstructured"
+                         sling:resourceType="granite/ui/components/foundation/form/textfield"
+                         fieldLabel="Transit Time Text 2"
+                         name="./transitText2"/>
+                        
+                    <transitURL2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Transit Time URL 2"
+                        name="./transitURL2"
+                        rootPath="/content"/>   
+                    
+                     <!-- Transit Time END -->  
+
+                 </items>
+                    </columns>
+                </items>
+            </tab5>
+            
+            
+            
+        </items>
+    </content>
+</jcr:root>

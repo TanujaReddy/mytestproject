@@ -1,0 +1,8 @@
+{
+  "grant_type": "password",
+  "client_id": "3MVG9Nvmjd9lcjRkvA6eMBD2O9IJYCG.ynSUCTgdmUFo4cq6OV8I9X1wnZtNLmDVQO62ZCauFqedqCKY1rpxh",
+  "client_secret": "6610934155688112250",
+  "username": "josh.hemmett@vml.com.au.ptest",
+  "password": "M1n1c00p3r!",
+  "tokenUrl": "https://auspost--ptest.cs5.my.salesforce.com/services/oauth2/token"
+}

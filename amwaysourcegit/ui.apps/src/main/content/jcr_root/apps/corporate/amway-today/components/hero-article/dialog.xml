@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    title="dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <panel
+                jcr:primaryType="cq:Panel"
+                title="Hero Article">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <linkURL
+                        jcr:primaryType="cq:Widget"
+                        editable="{Boolean}false"
+                        fieldDescription="Select an article for Hero Article section"
+                        fieldLabel="Link to"
+                        name="./linkURL"
+                        rootPath="content"
+                        xtype="pathfield"/>
+                    <image
+                        jcr:primaryType="cq:Widget"
+                        cropParameter="./imageCrop"
+                        ddGroups="[media]"
+                        fieldLabel="Choose image"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./fileReference"
+                        height="{Long}335"
+                        mapParameter="./imageMap"
+                        name="./file"
+                        requestSuffix=".img.png"
+                        rotateParameter="./imageRotate"
+                        title="Image"
+                        width="200"
+                        xtype="html5smartimage"/>
+                </items>
+            </panel>
+        </items>
+    </items>
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        beforesubmit="function(dialog, pathfield) {          var pathfield = dialog.findByType('pathfield');          var path = pathfield[0].getValue();          var pathParts = path.split('/');          if (pathParts.length != 10)          {           alert ('This page is not article. Please choose article again!');           return false;          }                   };"/>
+</jcr:root>

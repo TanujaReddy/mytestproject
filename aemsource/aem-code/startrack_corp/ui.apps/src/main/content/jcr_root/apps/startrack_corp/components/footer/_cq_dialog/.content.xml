@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Edit: Footer - Microsites"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+                type="nav"/>
+            <items jcr:primaryType="nt:unstructured">
+                
+            
+                <corporate
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Corporate Links"
+                    sling:resourceType="granite/ui/components/foundation/section">
+                    <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <columns
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <corporatelinks
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                fieldLabel="Corporate Links">
+                                            <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                    acs-commons-nested=""
+                                                    name="./corporatelinks">
+                                                <layout
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                        method="absolute"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/container">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <textdisplay
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                    fieldLabel="Text to display"
+                                                                    name="./textdisplay"/>
+                                                            <linkpath
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                    fieldLabel="Link Path"
+                                                                    name="./linkpath"
+                                                                    rootPath="/content/startrack_corp/"/>
+                                                        </items>
+                                                    </column>
+                                                </items>
+                                            </field>
+                                        </corporatelinks>
+                                    </items>
+                                </columns>
+                            </items>
+                        </corporate>
+                     <corporate1
+	                    jcr:primaryType="nt:unstructured"
+	                    jcr:title="Corporate Urls"
+	                    sling:resourceType="granite/ui/components/foundation/section">
+	                    <layout
+	                            jcr:primaryType="nt:unstructured"
+	                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+	                            <items jcr:primaryType="nt:unstructured">
+	                                <columns
+	                                        jcr:primaryType="nt:unstructured"
+	                                        sling:resourceType="granite/ui/components/foundation/container">
+	                                    <items jcr:primaryType="nt:unstructured">
+	                                        <corporateUrls
+	                                                jcr:primaryType="nt:unstructured"
+	                                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+	                                                fieldLabel="Corporate Urls">
+	                                            <field
+	                                                    jcr:primaryType="nt:unstructured"
+	                                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+	                                                    acs-commons-nested=""
+	                                                    name="./corporateUrls">
+	                                                <layout
+	                                                        jcr:primaryType="nt:unstructured"
+	                                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+	                                                        method="absolute"/>
+	                                                <items jcr:primaryType="nt:unstructured">
+	                                                    <column
+	                                                            jcr:primaryType="nt:unstructured"
+	                                                            sling:resourceType="granite/ui/components/foundation/container">
+	                                                        <items jcr:primaryType="nt:unstructured">
+	                                                            <textdisplay
+	                                                                    jcr:primaryType="nt:unstructured"
+	                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+	                                                                    fieldLabel="Text to display"
+	                                                                    name="./textdisplay1"/>
+	                                                            <linkpath
+	                                                                    jcr:primaryType="nt:unstructured"
+	                                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+	                                                                    fieldLabel="Link Path"
+	                                                                    name="./linkpath1"
+	                                                                    rootPath="/content/startrack_corp/"/>
+	                                                        </items>
+	                                                    </column>
+	                                                </items>
+	                                            </field>
+	                                        </corporateUrls>
+	                                    </items>
+	                                </columns>
+	                            </items>
+                        </corporate1>
+                        <social
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Social Network"
+                                sling:resourceType="granite/ui/components/foundation/section">
+                            <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <socialnetwork
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                fieldLabel="Social Network">
+                                            <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                    acs-commons-nested=""
+                                                    name="./socialnetwork">
+                                                <layout
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                        method="absolute"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/container">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <socialClass
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                fieldLabel="Social Class"
+                                                                name="./socialClass">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <o1
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="LinkedIn"
+                                                                            value="LinkedIn"/>
+                                                                    <o2
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="GooglePlus"
+                                                                            value="GooglePlus"/>
+                                                                    <o3
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Youtube"
+                                                                            value="Youtube"/>
+                                                                    <o4
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Facebook"
+                                                                            value="facebook"/>
+                                                                    <o5
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Twitter"
+                                                                            value="twitter"/>
+                                                                    
+                                                                    <o6
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Pinterest"
+                                                                            value="pinterest"/>
+                                                                    <o7
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            text="Instagram"
+                                                                            value="instagram"/>
+                                                                    
+                                                                    
+                                                                </items>
+                                                            </socialClass>
+                                                            <linkpath
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                    fieldLabel="Link Path"
+                                                                    name="./linkpath"
+                                                                    rootPath="/content"/>
+                                                        </items>
+                                                    </column>
+                                                </items>
+                                            </field>
+                                        </socialnetwork>
+                                    </items>
+                                </column>
+                            </items>
+                        </social>
+                    </items>
+                </content>
+</jcr:root>

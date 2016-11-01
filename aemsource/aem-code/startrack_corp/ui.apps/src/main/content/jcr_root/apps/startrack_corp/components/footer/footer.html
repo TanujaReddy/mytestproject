@@ -1,0 +1,62 @@
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}" data-sly-unwrap>
+    <div>Author Hint: Edit Startrack footer here, you can edit corporate and social links.</div>
+</div>
+<div data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading',nodeToBeCreated='copyright-text'}" data-sly-unwrap></div>
+	<!-- .container -->
+	<!--googleoff: all-->
+	
+	<!--googleon: all-->
+<footer class="outline-footer">
+    <sly data-sly-use.analytics="${'au.com.auspost.startrack_global.core.sightly.Analytics' @ currentNodePath=currentNode.path}" data-sly-use.footer="${'au.com.auspost.startrack_corp.core.components.Footer'}">
+        <div class="flex-container flex-container--multi-50">
+            <div>
+                <div class="footer-logos" itemscope="" itemtype="http://schema.org/Organization">
+                    <a itemprop="url" href="/" title="Return to the Homepage">
+                      <svg height="52" viewBox="0 0 250 52"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#startrack-logo_inverted"></use></svg>
+                    </a>
+                    <a itemprop="url" href="http://www.auspost.com.au" title="Australi Post" target="_blank">
+                        <svg height="52" viewBox="50 0 250 52"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#AP-Negative"></use></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="links">
+                <nav>
+                    <ul>
+                       <sly data-sly-list="${footer.corporateLinks}">
+                            <div data-sly-test="${item.textdisplay}" data-sly-unwrap>
+                                <li><a href="${item.linkpath}" id="${footer.formattedNodePath}" title="${item.textdisplay}" data-event="site interaction" data-category="footer navigation" data-description="${item.textdisplay}" class="footer-link">${item.textdisplay}</a></li>
+                            </div>
+                        </sly>
+                    </ul>
+                </nav>
+                <ul>
+                    <sly data-sly-list="${footer.corporateUrls}">
+                        <div data-sly-test="${item.textdisplay1}" data-sly-unwrap>
+                            <li><a href="${item.linkpath1}" id="${footer.formattedNodePath}" title="${item.textdisplay1}" data-event="site interaction" data-category="footer navigation" data-description="${item.textdisplay1}" class="footer-link">${item.textdisplay1}</a></li>
+                        </div>
+                    </sly>
+                 </ul>
+            </div>
+            <div class="copyright">
+                <sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+                    <div data-sly-resource="${'copyright-text' @ resourceType='startrack_global/components/rte-components/text-body'}"></div>
+                </sly>
+                <sly data-sly-test="${(!wcmmode.edit && !wcmInit.isTouchAuthoring)}">
+                    ${footer.copyrightText @ context='html'}
+                </sly>
+            </div>
+            <div class="social">
+                <sly data-sly-list="${footer.socialNetworks}">
+                    <div data-sly-test="${item.socialClass}" data-sly-unwrap>
+                        <a itemprop="url" href="${item.linkpath}" title="Return to the Homepage">
+                            <svg height="52" viewBox="0 0 64 64"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#${item.socialClass}"></use></svg>
+                        </a>
+                    </div>
+                </sly>
+            </div> 
+        </div>
+    </sly>
+</footer>
+<!--googleoff: all-->
+<!--googleon: all-->
+<!-- .container -->

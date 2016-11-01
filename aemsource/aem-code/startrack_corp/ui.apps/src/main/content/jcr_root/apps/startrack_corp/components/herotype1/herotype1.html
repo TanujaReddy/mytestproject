@@ -1,0 +1,42 @@
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}" data-sly-unwrap>
+    <div>Author Hint: Edit Hero Type1 here</div>
+</div>
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading',nodeToBeCreated='welcome-text'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading',nodeToBeCreated='welcome-sub-text'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_corp/components/adpativeimage',nodeToBeCreated='adaptiveimage'}"/>
+<div class="hero hero-type-1">
+    <div class="hero-right"> 
+        <ul class="hero-right-content">
+            <sly data-sly-use.linkIterator="${'au.com.auspost.startrack_global.core.sightly.MultiFieldIterator' @ property='ctaLinks'}" data-sly-unwrap>						
+                <sly data-sly-list.item="${linkIterator.linkListItems}">
+                    <li>
+                        <a href="${item.linkUrl}" title="${item.linkTitle}">
+                            <picture><img alt="icon" src="${item.linkImage}"></picture>
+                            <h2>${item.linkTitle}</h2>
+                            <p>${item.linkText}</p>
+                        </a>
+                    </li>
+                </sly>
+            </sly>
+        </ul>
+    </div>
+    <div class="hero-left"> 
+        <div class="hero-left-image">
+            <div data-sly-test="${properties.videoImagePathRef == null}" class="hero-bg-image" style="background-image: url('/etc/designs/startrack_corp/clientlib/img/hero_01.jpg')"></div>
+            <div data-sly-test="${properties.videoImagePathRef != null}" class="hero-bg-image" style="${'background-image: url(\'{0}.auspostimage.680.medium.jpg\')' @ format=properties.videoImagePathRef, context='unsafe'}"></div> 
+            <a data-sly-test="${properties.videoUrl != null && properties.videoUrl != ''}" class="no-underline video" href="${properties.videoUrl}" title="Open video">
+                <svg class="hero-bg-icon svg-Play-Large-dims">
+                    <use xlink:href="#Play-Large"/>
+                </svg>
+            </a>
+        </div>
+        <div class="hero-left-content">
+            <h1 data-sly-resource="${'welcome-text' @ resourceType='startrack_global/components/rte-components/text-body'}"></h1>
+            <p data-sly-resource="${'welcome-sub-text' @ resourceType='startrack_global/components/rte-components/text-body'}">
+            </p>
+            <a href="${properties.ctaUrl}" class="btn btn-primary" role="button" aria-label="${properties.ctaTitle}" title="${properties.ctaTitle}"> 
+                ${properties.ctaTitle} 
+            </a>
+        </div>
+    </div>
+</div>

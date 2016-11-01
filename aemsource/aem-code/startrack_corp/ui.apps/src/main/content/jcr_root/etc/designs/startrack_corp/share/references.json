@@ -1,0 +1,51 @@
+{
+    "footer": {
+        "copyrightPath": "/content/startrack_corp/startrack/jcr:content/footer/copyright-text",
+        "footerPath": "/content/startrack_corp/startrack/jcr:content/footer",
+        "corporateUrls": "corporateUrls",
+        "corporateLinks": "corporatelinks",
+        "socialNetworks": "socialnetwork"
+    },
+    "tools": {
+        "imagePathRef": "layoutContainerParsys/card/imagePathRef",
+        "cardHeadingText": "layoutContainerParsys/card/card-heading-text/text",
+        "cardBodyText": "layoutContainerParsys/card/card-body-text/text",
+        "lastModified": "layoutContainerParsys/card/jcr:lastModified",
+        "ctaTypeConfig": "layoutContainerParsys/card/ctaTypeConfig"
+    },
+    "faq": {
+        "imagePathRef": "layoutContainerParsys/card/imagePathRef",
+        "cardHeadingText": "layoutContainerParsys/card/card-heading-text/text",
+        "cardBodyText": "layoutContainerParsys/card/card-body-text/text",
+        "lastModified": "layoutContainerParsys/card/jcr:lastModified",
+        "ctaTypeConfig": "layoutContainerParsys/card/ctaTypeConfig"
+    },
+    "faqquestions": {
+        "imagePathRef": "layoutContainerParsys/card/imagePathRef",
+        "cardHeadingText": "layoutContainerParsys/card/card-heading-text/text",
+        "cardBodyText": "layoutContainerParsys/card/card-body-text/text",
+        "lastModified": "layoutContainerParsys/card/jcr:lastModified",
+        "ctaTypeConfig": "layoutContainerParsys/card/ctaTypeConfig"
+    },
+    "dynamic-carousel": {
+        "imagePathRef": "layoutContainerParsys/card/imagePathRef",
+        "cardHeadingText": "layoutContainerParsys/card/card-heading-text/text",
+        "cardBodyText": "layoutContainerParsys/card/card-body-text/text",
+        "lastModified": "layoutContainerParsys/card/jcr:lastModified",
+        "ctaTypeConfig": "layoutContainerParsys/card/ctaTypeConfig"
+    },
+    "page-article": {
+        "imagePathRef": "layoutContainerParsys/card/imagePathRef",
+        "cardHeadingText": "layoutContainerParsys/card/card-heading-text/text",
+        "cardBodyText": "layoutContainerParsys/card/card-body-text/text",
+        "lastModified": "layoutContainerParsys/card/jcr:lastModified",
+        "ctaTypeConfig": "layoutContainerParsys/card/ctaTypeConfig"
+    },
+    "page-home": {
+        "imagePathRef": "layoutContainerParsys/card/imagePathRef",
+        "cardHeadingText": "layoutContainerParsys/card/card-heading-text/text",
+        "cardBodyText": "layoutContainerParsys/card/card-body-text/text",
+        "lastModified": "layoutContainerParsys/card/jcr:lastModified",
+        "ctaTypeConfig": "layoutContainerParsys/card/ctaTypeConfig"
+    }
+}

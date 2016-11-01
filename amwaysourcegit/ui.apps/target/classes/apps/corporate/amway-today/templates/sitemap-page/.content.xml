@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:description="The Amway Today Site Map Page Template"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Template"
+    jcr:title="Amway Today Site Map Page Templete"
+    allowedPaths=""
+    ranking="{Long}100">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="corporate/amway-today/components/sitemap-page"/>
+</jcr:root>

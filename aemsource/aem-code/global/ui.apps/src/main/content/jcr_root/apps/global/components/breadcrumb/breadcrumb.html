@@ -1,0 +1,17 @@
+<sly data-sly-use.breadcrumb="${'au.com.auspost.global.core.sightly.Breadcrumb'}"></sly>
+<sly data-sly-use.linkId="${'au.com.auspost.global.core.sightly.Analytics' @ currentNodePath=currentNode.path}"></sly>
+
+<section class="breadcrumbs-container">
+    <div class="breadcrumbs-container-wrapper">
+        <ol class="breadcrumbs">
+            <sly data-sly-list="${breadcrumb.breadcrumbList}">
+                <li class="crumb">
+                    <a class="crumb-link" id="${linkId.formattedNodePath}" href="${item.path}.html" title="${item.name}" data-event="site interaction" data-category="navigation | breadcrumb" data-description="${item.name}">${ item.title ? item.title : item.navigationTitle }</a>
+                </li>
+            </sly>
+        </ol>
+    </div>
+</section>
+
+
+

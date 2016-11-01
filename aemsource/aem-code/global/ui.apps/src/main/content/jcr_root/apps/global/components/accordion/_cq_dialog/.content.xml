@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Accordion"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="http://www.adobe.com/go/aem6_1_docs_component_en#Image - Sightly">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <appearance
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Appearance of the accordion"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <decorative
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="You can select if the accordion is opened or closed by default."
+                                name="./isOpen"
+                                text="Keep the accordion open"
+                                value="true"/>
+                            <allowedComponent
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                    fieldLabel="Allowed component"
+                                    fieldDescription="Please select the component from the list which needs to be configured with accordion"
+                                    name="./allowedComponent">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <rte
+                                            jcr:primaryType="nt:unstructured"
+                                            text="RTE Heavy Text component"
+                                            value="global/components/rte-components/text-heavy"/>
+                                    <!-- todo : following options have been removed from release 5.0. This needs to be put back in the next release.
+                                    <card
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Card component"
+                                            value="global/components/card"/>
+
+                                            video
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Video component"
+                                            value="global/components/youtube-player"/-->
+                                   </items>
+                            </allowedComponent>
+                        </items>
+                    </column>
+                </items>
+            </appearance>
+        </items>
+    </content>
+</jcr:root>

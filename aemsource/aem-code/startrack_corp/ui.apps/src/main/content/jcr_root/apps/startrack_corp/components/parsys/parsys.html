@@ -1,0 +1,31 @@
+<!--/*
+
+  ADOBE CONFIDENTIAL
+  __________________
+
+   Copyright 2014 Adobe Systems Incorporated
+   All Rights Reserved.
+
+  NOTICE:  All information contained herein is, and remains
+  the property of Adobe Systems Incorporated and its suppliers,
+  if any.  The intellectual and technical concepts contained
+  herein are proprietary to Adobe Systems Incorporated and its
+  suppliers and are protected by trade secret or copyright law.
+  Dissemination of this information or reproduction of this material
+  is strictly forbidden unless prior written permission is obtained
+  from Adobe Systems Incorporated.
+
+  Default sightly parsys component
+
+*/-->
+<sly data-sly-use.parsysComponent="parsys.js" data-sly-list.paragraph="${parsysComponent.renderInfo}">
+    <div data-sly-test="${paragraph.columns}" data-sly-list.column="${paragraph.items}" class="${paragraph.columnsContainerCss}">
+        <div class="${column.cssClasses}" data-sly-list.columnItem="${column.children}">
+            <div data-sly-test="${columnItem.resourceType && columnItem.cssClasses}" class="${columnItem.cssClasses}" data-sly-resource="${columnItem.resourcePath @ resourceType=columnItem.resourceType, decorationTagName=''}"></div>
+            <sly data-sly-test="${columnItem.resourceType && !columnItem.cssClasses}" data-sly-resource="${columnItem.resourcePath @ resourceType=columnItem.resourceType, decorationTagName='div'}" />
+        </div>
+    </div>
+    <div data-sly-test="${paragraph.columns}" style='clear:both'></div>
+    <div data-sly-test="${!paragraph.columns && paragraph.resourceType && paragraph.cssClasses}" class="${paragraph.cssClasses}" data-sly-resource="${paragraph.resourcePath @ resourceType=paragraph.resourceType, decorationTagName=''}"></div>
+	<sly data-sly-test="${!paragraph.columns && paragraph.resourceType && !paragraph.cssClasses}" data-sly-resource="${paragraph.resourcePath @ resourceType=paragraph.resourceType, decorationTagName=!wcmmode.disabled ?'div' : ''}" />
+</sly>

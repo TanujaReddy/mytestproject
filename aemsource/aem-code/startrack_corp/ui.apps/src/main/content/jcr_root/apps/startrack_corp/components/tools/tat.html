@@ -1,0 +1,186 @@
+<!-- tool - tat -->
+<tool id="tat" class="tat no-js" name="tat"></tool>
+
+<!-- tool template - tat -->
+<template id="tat-tpl" class="tat-tpl">
+	<!-- tat - step 1 -->
+	<tool-step id="tat-step--1" class="tat-step tat-step--1">
+		
+		<!-- form container -->
+		<section class="form-container" aria-labelledby="tat-step--1_heading">
+
+			<!-- heading -->
+			<h1 class="form-heading">
+				<i><img src="/etc/designs/startrack_corp/clientlib/img/tat-icon.png" alt=""></i><!--
+			 --><span id="tat-step--1_heading">Track & trace</span>
+			</h1><!-- heading end -->
+
+
+			<!-- form -->
+			<form class="form" name="tat-step--1_form" novalidate="true">
+				
+				<!-- fieldset - consignment -->
+				<fieldset class="form-group" aria-labelledby="tat-step--1_label-consignment" aria-describedby="tat-step--1_desc-consignment">
+
+					<!-- legend label -->
+					<legend id="tat-step--1_label-consignment" class="form-group-hd heading-h4">
+						Enter your tracking or reference number(s)
+					</legend>
+
+					<!-- field - consignment - type -->
+					<div class="field" aria-labelledby="tat_consignment--type_label">
+						<label id="tat_consignment--type_label" for="tat_consignment--type" class="field-label"> Type </label>
+						<div for="tat_consignment--type" class="field-select medium">
+							<select id="tat_consignment--type" name="consignmentType" type="select" default="Tracking" required="true">
+								<option value="Tracking"> Tracking </option>
+								<option value="Reference"> Reference </option>
+							</select>
+						</div>
+						<span id="tat_consignment--type_error" for="tat_consignment--type" class="error-message"> Select a valid type option  </span>
+					</div><!-- field end -->
+
+					<!-- field - consignment - ids -->
+					<div class="field" aria-labelledby="tat_consignment--ids_label">
+						<label id="tat_consignment--ids_label" for="tat_consignment--ids" class="field-label"> Tracking / reference number(s) </label>
+						<textarea id="tat_consignment--ids" name="consignmentIds" type="text" class="field-input input-text medium" placeholder="ABCDE, 123456" autocomplete="off" maxlength="300" required="true" validate="ids" rows="5"></textarea>
+						<span id="tat_consignment--ids_error" for="tat_consignment--ids" class="error-message"> Enter valid tracking or reference number(s) </span>
+					</div><!-- field end -->
+
+					<p id="tat-step--1_desc-consignment" class="no-label">
+						Please separate multiple numbers by a comma eg. ABCDE, 123456
+					</p>
+
+					<!-- field - not robot -->
+					<div class="field" aria-labelledby="tat_not-robot_label">
+						<label id="tat_not-robot_label" class="field-label hidden"> I am not a robot </label>
+						
+						<!-- field - not robot - captcha -->
+						<div class="field-checkbox" aria-labelledby="tat_not-robot--captcha_label">
+							<input id="tat_not-robot--captcha" name="isNotRobot" type="checkbox" value="true" required="true">
+							<label id="tat_not-robot--captcha_label" for="tat_not-robot--captcha"> I am not a robot </label>
+							<span id="tat_not-robot--captcha_error" for="tat_not-robot--captcha" class="error-message"> Please confirm that you are not a robot </span>
+						</div>
+					</div><!-- field end -->
+
+				</fieldset><!-- fieldset -  consignment end -->
+				
+				<!-- fieldset - submit -->
+				<fieldset class="form-group text-center bg-colour--mid-tan"
+						  aria-labelledby="tat-step--1_label-btn"
+						  aria-describedby="tat-step--1_desc-btn">
+
+					<!-- legend label / description -->
+					<legend id="tat-step--1_label-btn" class="hidden"> Track now </legend>
+					<p id="tat-step--1_desc-btn" class="hidden"> Click on the button below to track now </p>
+					
+					<!-- submit -->
+					<button class="btn btn-primary" role="button" title="Track now" rel="tool:next"
+							aria-label="Track now" aria-controls="tat-step--result" custom="true" required="true">
+						Track now
+					</button>
+				</fieldset><!-- fieldset - submit end -->
+			</form><!-- form end -->
+
+		</section><!-- form container end -->
+
+		<!-- tool help 1 -->
+		<section class="tool-help">
+			<form class="form">
+				<!-- Need Help Start -->
+				<!-- add after the last fieldset containing the submit button-->
+				<fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+					<h3 class="need-help-title">Need Help?</h3>
+					<section class="need-help-body">
+						<ul class="need-help-list">
+                            <sly data-sly-use.trackandtrace="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:tracktracetags', pagetype='faq'}">
+                                <sly data-sly-list.item="${trackandtrace.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+						</ul>
+						<a data-sly-test="${properties.tracktraceURL1 != null && properties.tracktraceURL1 != ''}"  href="${properties.tracktraceURL1}" target="_blank">${properties.tracktraceText1}</a>
+						<a data-sly-test="${properties.tracktraceURL2 != null && properties.tracktraceURL2 != ''}"  href="${properties.tracktraceURL2}" target="_blank">${properties.tracktraceText2}</a>
+
+					</section>
+				</fieldset>
+				<!-- Need Help End -->
+			</form>
+		</section><!-- tool help end -->
+
+	</tool-step><!-- tat - step 1 end -->
+	
+	<!-- tat - step result -->
+	<tool-step id="tat-step--result" class="tat-step tat-step--result">
+
+		<!-- form container -->
+		<section class="form-container" aria-labelledby="tat-step--result_heading" aria-describedby="tat-step--result_summary">
+
+			<!-- heading -->
+			<h1 class="form-heading">
+				<i><img src="/etc/designs/startrack_corp/clientlib/img/tat-icon.png" alt=""></i><!--
+             --><span id="tat-step--result_heading">Track & trace</span>
+			</h1><!-- heading end -->
+			
+			<!-- notifications header -->
+			<h3 id="tat-step--result_summary" class="notifications">
+				You have <span id="tat-tracking_total" class="notifications-count">0</span> delivery item<span id="tat-tracking_plural"></span> in your result
+			</h3><!-- notifications header end -->
+
+		</section><!-- form container end -->
+
+		<!-- tracking -->
+		<section id="tat-tracking" class="tracking"></section>
+		<!-- tracking end -->
+
+		<!-- tool error -->
+		<section id="tat-error" class="tool-message tool-message--error" aria-labelledby="tat-error_label" aria-describedby="tat-error_desc">
+			<!-- tool error inner -->
+			<div class="tool-message_inner">
+				<h3>
+					<span id="tat-error_label">Something went wrong.</span>
+				</h3>
+				<p id="tat-error_desc">
+					<span id="tat-error_message">There was an error processing your request.</span>
+				</p>
+				<p>
+					Please try again in a while. If the problem continues, please contact us.
+				</p>
+				<h3><a href="#help-form" title="Contact us">Contact us</a></h3>
+			</div><!-- tool error inner end -->
+
+			<!-- tool retry -->
+			<tool-retry></tool-retry>
+		</section><!-- tool error end -->
+
+		<!-- tool success -->
+		<section id="tat-success" class="tool-message tool-message--success">
+			<!-- tool reset -->
+			<tool-reset></tool-reset>
+		</section><!-- tool success end -->
+
+		<!-- tool help 2 -->
+		<section class="tool-help">
+			<form class="form">
+				<!-- Need Help Start -->
+				<!-- add after the last fieldset containing the submit button-->
+				<fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+					<h3 class="need-help-title">Need Help?</h3>
+					<section class="need-help-body">
+						<ul class="need-help-list">
+                            <sly data-sly-use.trackandtrace="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:tracktracetags', pagetype='faq'}">
+                                <sly data-sly-list.item="${trackandtrace.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+						</ul>
+						<a data-sly-test="${properties.tracktraceURL1 != null && properties.tracktraceURL1 != ''}"  href="${properties.tracktraceURL1}" target="_blank">${properties.tracktraceText1}</a>
+						<a data-sly-test="${properties.tracktraceURL2 != null && properties.tracktraceURL2 != ''}"  href="${properties.tracktraceURL2}" target="_blank">${properties.tracktraceText2}</a>
+
+					</section>
+				</fieldset>
+				<!-- Need Help End -->
+			</form>
+		</section><!-- tool help end -->
+
+	</tool-step><!-- tat - step result end -->
+</template>

@@ -1,0 +1,222 @@
+<!-- tool - help form -->
+<tool id="help-form" class="help no-js" name="help-form"></tool>
+
+<!-- tool template - help -->
+<template id="help-tpl" class="tat-tpl">
+
+    <!-- help - entry -->
+    <tool-step id="help--entry" class="help-step help-forms">
+
+        <!-- top section -->
+        <section class="form-container" >
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/contact-icon.png" alt="Help with deliveries icon"></i><!--
+                             --><span id="tat-enquiry_heading">Help with Deliveries</span>
+            </h1>
+            <div class="form-group no-padding">
+                <fieldset class="form-group text-center no-padding">
+                    <p>To talk to sales support call 13 2345 8:00am to 6:00pm weekdays AEST <br>
+                        (excluding National and NSW Public Holidays).</p>
+                </fieldset>
+            </div>
+            <!-- heading end -->
+
+            <!-- Need Help -->
+            <div class="form-group need-help">
+                <h3 class="need-help-title">FAQs</h3>
+                <section class="need-help-body">
+                    <sly data-sly-use.cfg="${'au.com.auspost.startrack_corp.core.components.FormsConfig'@ pagetype='test'}"  data-sly-use.needhelp="${'au.com.auspost.startrack_corp.core.components.Carousel' @ pagetype='faq'}">
+                        <ul class="need-help-list">
+                            <sly data-sly-list.item="${needHelp.items}">
+                                <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                            </sly>
+                        </ul>
+                        <a href="${cfg.item.url1}">${cfg.item.title1 @ context="unsafe"}</a>
+                        <a data-sly-test="${cfg.item.title2 != ''}" href="${cfg.item.url2}">${cfg.item.title2 @ context="unsafe"}</a>
+                        <hr>
+                    </sly>
+                </section>
+            </div>
+
+        </section>
+
+        <!-- form container -->
+        <section class="form-container no-padding--top" >
+            <!-- form -->
+            <form id="help--entry_form" class="form form-active" name="help--entry_form" novalidate="true">
+
+                <!-- fieldset - help form -->
+                <fieldset class="form-group no-padding--top">
+                    <!-- Enquiry Type -->
+                    <div class="field" aria-labelledby="help-forms_label">
+                        <label id="help-forms_label" for="Feedback_Reason__c" class="field-label"> I need help with </label>
+                        <div for="help-forms-select" class="field-select medium">
+                            <select id="Feedback_Reason__c" name="Feedback_Reason__c" type="select"  required="true">
+                                <option disabled="disabled" hidden="hidden"> Please Select </option>
+                                <option value="Tracking Enquiry" selected="selected"> Track & Trace </option>
+                                <option value="Pick-up Enquiry"> Pick-ups </option>
+                                <option value="Missed Delivery Enquiry"> Missed Delivery </option>
+                                <option value="Other Enquiry"> Other </option>
+                            </select>
+                        </div>
+                        <span id="tat_consignment--type_error" for="tat_consignment--type" class="error-message">Select enquiry type</span>
+                    </div>
+                    <!-- Tracking Number -->
+                    <div class="field first-field" aria-labelledby="Connote_number__c_label">
+                        <label id="Connote_number__c_label" for="Connote_number__c" class="field-label"> Reference </label>
+                        <input id="Connote_number__c" name="Connote_number__c" type="text" class="field-input input-text medium" placeholder="e.g. A tracking, booking, barcode number" autocomplete="off" maxlength="70">
+                        <span id="Connote_number__c_error" for="Connote_number__c" class="error-message"> Please enter valid tracking, booking or barcode number(s) </span>
+                    </div>
+                    <!-- Description -->
+                    <div class="field" aria-labelledby="Description_label">
+                        <label id="Description_label" for="Description" class="field-label"> How can we help you? </label>
+                        <textarea cols="5" rows="5" id="Description" name="Description" type="text" class="field-input input-textarea medium" required="true"></textarea>
+                        <span id="Description_error" for="Description" class="error-message"> Please enter your message </span>
+                    </div>
+                    <!-- First Name -->
+                    <div class="field" aria-labelledby="Recent_Caller_First_Name__c_label">
+                        <label id="Recent_Caller_First_Name__c_label" for="Recent_Caller_First_Name__c" class="field-label">First name</label>
+                        <input id="Recent_Caller_First_Name__c" name="Recent_Caller_First_Name__c" type="text" class="field-input input-text medium" placeholder="First name" required="true" validate="alpha">
+                        <span id="Recent_Caller_First_Name__c_error" for="Recent_Caller_First_Name__c" class="error-message">First name is required and must consist of alphabetical text</span>
+                    </div>
+                    <!-- Last Name -->
+                    <div class="field" aria-labelledby="Recent_Caller_Last_Name__c_label">
+                        <label id="Recent_Caller_Last_Name__c_label" for="Recent_Caller_Last_Name__c" class="field-label">Last name</label>
+                        <input id="Recent_Caller_Last_Name__c" name="Recent_Caller_Last_Name__c" type="text" class="field-input input-text medium" placeholder="Last name" required="true" validate="alpha">
+                        <span id="Recent_Caller_Last_Name__c_error" for="Recent_Caller_Last_Name__c" class="error-message">Last name is required and must consist of alphabetical text</span>
+                    </div>
+                    <!-- Job Title -->
+                    <div class="field" aria-labelledby="Title__c_label">
+                        <label id="Title__c_label" for="Title__c" class="field-label">Position / title <span class="instructions">(Optional)</span></label>
+                        <input id="Title__c" name="Title__c" type="text" class="field-input input-text medium" placeholder="Position / title">
+                    </div>
+                    <!-- Company -->
+                    <div class="field" aria-labelledby="company_label">
+                        <label id="company_label" for="Subject" class="field-label">Company name <span class="instructions">(Optional)</span></label>
+                        <input id="Subject" name="Subject" type="text" class="field-input input-text medium" placeholder="Company name">
+                    </div>
+                    <!-- Postcode -->
+                    <div class="field" aria-labelledby="help-forms-postcode_label">
+                        <label class="help-forms-postcode_label" for="help-forms-postcode">Postcode</label>
+                        <input id="help-forms-postcode" name="postcode" class="field-input input-text medium" type="text" placeholder="Postcode" required="true" validate="postcode">
+                        <span id="help-forms-postcode_error" for="help-forms-postcode" class="error-message">Please enter a valid postcode</span>
+                    </div>
+                    <!-- Channel -->
+                    <div class="field" aria-labelledby="Channel_Preference__c_label">
+                        <label id="Channel_Preference__c_label" for="Channel_Preference__c" class="field-label"> Please contact me via </label>
+                        <div for="help-forms-contact-type" class="field-select medium">
+                            <select id="Channel_Preference__c" name="Channel_Preference__c" type="select" default="Email" required="true">
+                                <option value="Email"> Email </option>
+                                <option value="Phone"> Phone </option>
+                            </select>
+                            <span id="Channel_Preference__c_error" for="Channel_Preference__c" class="error-message"> Please select a contact type </span>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="field" aria-labelledby="email_label">
+                        <label id="email_label" for="Recent_Caller_Email__c" class="field-label">Email</label>
+                        <input id="Recent_Caller_Email__c" name="Recent_Caller_Email__c" type="email" class="field-input input-text medium" placeholder="Email" required="true" validate="email">
+                        <span id="email_error" for="Recent_Caller_Email__c" class="error-message"> Email address is required and must be valid</span>
+                    </div>
+                    <!-- Phone -->
+                    <div class="field" aria-labelledby="phone_label">
+                        <label id="phone_label" for="Recent_Caller_Phone_number__C" class="field-label">Phone</label>
+                        <input id="Recent_Caller_Phone_number__C" name="Recent_Caller_Phone_number__C" type="tel" class="field-input input-text medium" placeholder="Phone" required="true" validate="phone">
+                        <span id="phone_error" for="Recent_Caller_Phone_number__C" class="error-message">Enter a 10 digit phone number eg. 0212341234 with no spaces</span>
+                    </div>
+                    <!-- field - not robot -->
+                    <div class="field" aria-labelledby="help_not-robot_label">
+                        <label id="help_not-robot_label" class="field-label hidden"> I am not a robot </label>
+
+                        <!-- field - not robot - captcha -->
+                        <div class="field-checkbox" aria-labelledby="help_not-robot--captcha_label">
+                            <input id="help_not-robot--captcha" name="isNotRobot" type="checkbox" value="true" required="true">
+                            <label id="help_not-robot--captcha_label" for="help_not-robot--captcha"> I am not a robot </label>
+                            <span id="help_not-robot--captcha_error" for="help_not-robot--captcha" class="error-message"> Please confirm that you are not a robot </span>
+                        </div>
+                    </div><!-- field end -->
+
+                </fieldset><!-- fieldset -  consignment end -->
+
+                <!-- fieldset - submit -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="help-step--1_label-btn"
+                          aria-describedby="help-step--1_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="help-step--1_label-btn" class="hidden"> Feedback </legend>
+                    <p id="help-step--1_desc-btn" class="hidden"> Click on the button below to send feedback </p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary" role="button" title="Send Enquiry" rel="tool:next"
+                            aria-label="Send Enquiry" aria-controls="help--result" custom="true" required="true"
+                            onclick="analytics.component.form.name='feedback'; analytics.component.form.step='confirm'; _satellite.track('startrack-tools');">
+                        Send
+                    </button>
+                </fieldset><!-- fieldset - submit end -->
+
+            </form><!-- form end -->
+
+        </section><!-- form container end -->
+
+    </tool-step>
+
+    <!-- feedback - result -->
+    <tool-step id="help--result" class="feedback-step help-forms help-result">
+
+        <!-- header -->
+        <section class="form-container" aria-labelledby="feedback--result_heading">
+            <!-- heading -->
+            <h1 class="form-heading">
+                <!--"/etc/designs/startrack_corp/clientlib/img/contact-icon.png"-->
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/contact-icon.png" alt="Feedback icon"></i><!--
+                             --><span id="feedback--result_heading">Help with deliveries</span>
+            </h1>
+            <!-- heading end -->
+        </section>
+        <!-- header end -->
+
+        <!-- tool error -->
+        <section id="help--error" class="tool-message tool-message--error" aria-labelledby="help--error_label" aria-describedby="help--error_desc">
+            <!-- tool error inner -->
+            <div class="tool-message_inner">
+                <h3>
+                    <svg><use xlink:href="#Close-Menu"/></svg><!--
+                 --><span id="help--error_label">Something went wrong.</span>
+                </h3>
+                <p id="feedback--error_desc">
+                    <span id="help--error_message">There was an error processing your request.</span>
+                </p>
+                <p>
+                    Please try again in a while. If the problem continues, please contact us.
+                </p>
+                <h3><a href="#support:open" title="Contact us">Contact us</a></h3>
+            </div><!-- tool error inner end -->
+
+            <!-- tool retry -->
+            <tool-retry></tool-retry>
+        </section><!-- tool error end -->
+
+        <!-- tool success -->
+        <section id="help--success" class="tool-message tool-message--success">
+            <!-- tool error inner -->
+            <div class="tool-message_inner">
+                <h3>
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#CheckboxTick"></use></svg><!--
+                    --><span id="help--success_label">Your enquiry has been successfully submitted.</span>
+                </h3>
+                <h4 class="message-subtitle">Thank you for your enquiry.<br>
+                    We will aim to get back to you within 2 business days.<br><br>
+                    Enquiry Id: <b id="help--enquiry_id">ABC123</b>
+                </h4>
+            </div><!-- tool error inner end -->
+
+            <!-- tool reset -->
+            <tool-reset></tool-reset>
+        </section><!-- tool success end -->
+
+    </tool-step>
+
+</template>

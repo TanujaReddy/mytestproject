@@ -1,0 +1,187 @@
+.photo-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+
+.photo-carousel-container .photo-carousel-list-container{
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.6);
+	max-height:500px;
+    transition: max-height 0.5s ease-in;
+}
+
+.photo-carousel-container .photo-carousel-list-container.closed{
+	max-height: 0px;
+    transition: max-height 0.5s ease-out;
+}
+
+.photo-carousel-container .slick-prev:hover:before, 
+.photo-carousel-container .slick-prev:focus:before, 
+.photo-carousel-container .slick-next:hover:before, 
+.photo-carousel-container .slick-next:focus:before {
+    color: #ec174c;
+}
+
+.photo-carousel-container .slick-next {
+    right: 5px;
+}
+
+.photo-carousel-container .slick-prev {
+    left: 5px;
+}
+
+.photo-carousel-container .slick-next:before {
+    color: #004271;
+}
+
+.photo-carousel-container .slick-prev:before {
+    color: #004271;
+}
+
+.photo-carousel-container .slick-prev:before, 
+.photo-carousel-container .slick-next:before{
+    opacity:0.75;
+}
+
+.photo-carousel-container .slick-slider{
+    margin-bottom:0;
+}
+
+.current-image-widget{
+    border:solid 10px white;
+}
+
+.current-image-widget .current-image-container{
+    overflow:hidden;
+}
+
+.current-image-widget .current-image-container .photo-image{
+    width:100%;
+    height: auto;
+}
+
+.photo-carousel-container .current-image-widget .backdrop{
+    background-color: rgba(0,0,0,0.5);
+    display:none;
+}
+
+.image-carousel-list{
+    padding: 10px 30px 10px 30px;
+}
+
+.photo-gallery-image-wrapper{
+	cursor: pointer;
+}
+
+.current-image-widget{
+	position:relative;
+}
+
+.photo-gallery-image-wrapper{
+	position:relative;
+    box-shadow: 2px 2px 5px #888888;
+}
+
+.photo-carousel-container .backdrop{
+	position:absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    left: 0;
+    top: 0;
+}
+
+.image-carousel-list .photo-gallery-image-widget{
+	padding:10px;
+}
+
+.image-carousel-list .slick-current.photo-gallery-image-widget .backdrop{
+    background-color: rgba(0,0,0,0);
+}
+
+.image-carousel-list .photo-gallery-image-widget:focus {
+    outline: none;
+}
+
+/*arrow bouncing*/
+
+.photo-carousel-container .bouncing-arrow{
+	width:40px;
+    height:40px;
+    border-radius:50%;
+    background-color: #004271;
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    cursor:pointer;
+    opacity: 0.75;
+}
+
+.photo-carousel-container .arrow-down:after {
+  	content: '';
+    display: inline-block;
+    margin-top: 0.6em;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.2em solid #333;
+    border-right: 0.2em solid #333;
+    border-color:white;
+    -moz-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+
+    position: absolute;
+    left: 12px;
+    top: 1px;
+}
+
+.photo-carousel-container .bounce {
+	-webkit-animation-name: bounce;
+	-moz-animation-name: bounce;
+	-o-animation-name: bounce;
+	animation-name: bounce;
+}
+.photo-carousel-container .animated{
+    -webkit-animation-fill-mode:both;
+    -moz-animation-fill-mode:both;
+    -ms-animation-fill-mode:both;
+    -o-animation-fill-mode:both;
+    
+    animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    
+    animation-fill-mode:both;
+    -webkit-animation-duration:2s;
+    -moz-animation-duration:2s;
+    -ms-animation-duration:2s;
+    -o-animation-duration:2s;
+    animation-duration:2s;
+}
+
+
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}	40% {-webkit-transform: translateY(-30px);}
+	60% {-webkit-transform: translateY(-10px);}
+}
+
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-15px);}
+	60% {-moz-transform: translateY(-10px);}
+}
+
+@-o-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-15px);}
+	60% {-o-transform: translateY(-10px);}
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-15px);}
+	60% {transform: translateY(-10px);}
+}

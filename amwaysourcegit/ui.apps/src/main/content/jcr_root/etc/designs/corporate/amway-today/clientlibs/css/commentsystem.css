@@ -1,0 +1,270 @@
+/******** composer styles ************/
+.scf-composer-avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	float: left;
+}
+.scf-commentsystem header {
+	
+}
+.scf-composer-block {
+	padding: 10px;
+}
+
+.scf-composer-block.scf-is-collapsed input, .scf-composer-block.scf-is-collapsed label {
+	display: none;
+}
+.scf-is-collapsed .scf-composer-msg {
+	border: 1px solid #B4B4B4;
+	height: 30px;
+	margin-top: 5px;
+	display: inline;
+}
+.scf-is-collapsed .scf-rte-composer {
+	display: none;
+}
+.scf-composer-block.scf-is-collapsed .scf-rte-placeholder {
+	display: inline;
+}
+.scf-composer-msg {
+	display: inline;
+	width: 100%;
+	box-sizing: border-box;
+	resize: none;
+	height: 200px;
+}
+
+input.scf-composer-msg {
+	height: 30px;
+}
+
+.scf-composer-msg::-webkit-input-placeholder:before {
+	font-family: AdobeIcons;
+	content: "\f15a\00a0\00a0";
+}
+
+.scf-composer-msg:-moz-placeholder:before { 
+	font-family: AdobeIcons;
+	content: "\f15a\00a0\00a0";
+}
+
+.scf-composer-msg::-moz-placeholder:before {  
+	font-family: AdobeIcons;
+	content: "\f15a\00a0\00a0";
+}
+
+.scf-composer-msg:-ms-input-placeholder:before {
+	font-family: AdobeIcons;
+	content: "\f15a\00a0\00a0";
+}
+
+.scf-is-collapsed .scf-composer-toolbar {
+	display: none;
+}
+.scf-composer-toolbar {
+	position: relative;
+	margin-top: 10px;
+}
+.scf-composer {
+	margin: 0 0 0 50px;
+}
+.scf-composer.scf-edit-composer {
+	margin: 0px;
+}
+
+.scf-composer-actions {
+	text-align: right;
+}
+.scf-comment-attachment-input {
+	display: none;
+	float: left;
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	cursor: pointer;
+	width: 100px;	
+}
+.scf-composer-attach {
+	float: left;
+	cursor: pointer;
+}
+.scf-composer-attach:before {
+	font-family: AdobeIcons;
+	font-size: 20px;
+	margin-right: 5px;
+	content: "ï„Ÿ";
+	color: #595959;
+	cursor: pointer;
+}
+
+.scf-attachment-list {
+	margin: 0px;
+	padding: 10px 0px 10px 0px;
+	list-style: none;
+}
+.scf-is-attached {
+	background: #969696;
+	color: #FFFFFF;
+	padding: 5px 10px;
+	font-size: 12px;
+	display: inline-block;
+	margin: 0 5px;
+}
+.scf-is-rem-att {
+	font-size: 10px;
+	padding-left: 5px;
+	cursor: pointer;
+}
+.scf-rte-placeholder {
+	display: none;
+}
+.scf-composer .scf-input {
+	display: block;
+}
+/****** ckeditor styles ********/
+.scf .cke {
+	margin-bottom: 10px;
+	border: 0;
+	-webkit-box-shadow: 0 0 0 0;
+	box-shadow: 0 0 0 0;
+}
+.scf .cke_contents {
+	border: 1px solid #B3B3B3;
+}
+.scf .cke_top {
+	border-bottom: 0px;
+	padding: 0px;
+	white-space: normal;
+	-moz-box-shadow: 0 0 0 0;
+	-webkit-box-shadow: 0 0 0 0;
+	box-shadow: 0 0 0 0;
+	background: transparent;
+	background-image: none;
+	filter: none;
+}
+.scf .cke_toolgroup {
+	float: left;
+	margin: 0 6px 5px 0;
+	border: 0;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px
+	border-radius: 0px;
+	-moz-box-shadow: 0 0 0 0;
+	-webkit-box-shadow: 0 0 0 0;
+	box-shadow: 0 0 0 0;
+	background: transparent;
+	background-image: none;
+	filter: none;
+}
+/******** comments list ************/
+
+.scf-comments-list {
+	padding: 10px 0 0 0;
+	margin: 0px;
+	list-style: none;
+	
+}
+
+/******* comment style *************/
+
+.scf-comment {
+	padding: 10px;
+	padding-right: 0px;
+	
+}
+
+.scf-comment-author {
+	float: left;
+}
+.scf-comment-body {
+	margin-right: 50px;
+}
+.scf-comment-avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+}
+.scf-comment-avatar.withTopLevel {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+}
+.scf-comment-data {
+	margin-left: 50px;
+	position: relative;
+}
+.scf-comment-data.withTopLevel {
+	margin-left: 60px;
+}
+.scf-comment-replies .scf-comments-list.withTopLevel {
+	margin-left: 60px;
+	
+}
+.scf-comment-replies .scf-comments-list {
+	margin-left: 50px;
+	margin-top: 10px;
+	
+}
+
+.scf-comment-votes {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.scf-comment-msg {
+	margin-top: 10px;
+}
+.scf-comment-img-att {
+	max-width: 60%;
+	border: 1px solid #E6E6E6;
+	width: auto;
+	display: inline-block;
+	margin: 10px 0px;
+}
+
+.scf-comment-attachment-img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.scf-comment-att .scf-comment-att-link{
+	margin-left: 10px;
+}
+.scf-comment-att-name {
+	background-color: #E6E6E6;
+	line-height: 18px;
+	padding: 10px;
+}
+.scf-is-new {
+	background-color: #EBF0DC;
+}
+
+/****** comment toolbar styles ******/
+.scf-comment-toolbar {
+	margin-top: 10px;
+}
+.scf-comment-action {
+	display: inline-block;
+	margin-right: 25px;
+	cursor: pointer;
+}
+
+/***** pubmod styles *****/
+.scf-comment-status-text {
+	margin: 10px 0;
+	color: #969696;
+	font-style: italic;
+}
+.scf-flag-reasons th {
+	font-weight: 300;
+	padding-right: 20px;
+	border-bottom: 1px solid #969696;
+}
+.scf-flag-reasons tr {
+	font-weight: 100;
+	border-bottom: 1px solid #B4B4B4;
+}
+.scf-flag-reasons td {
+	padding-right: 10px;
+}

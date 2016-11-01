@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Pull Quote"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+                type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+
+            <tab1
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Configuration"
+                    sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <imagePath
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                    autoStart="{Boolean}false"
+                                    class="cq-droptarget"
+                                    fieldDescription="Drag and drop image from DAM. If you set an image, component will become a testimonial."
+                                    fieldLabel="Image"
+                                    fileNameParameter="./imageName"
+                                    fileReferenceParameter="./imagePathRef"
+                                    mimeTypes="[image]"
+                                    multiple="{Boolean}false"
+                                    name="./imagePath"
+                                    required="{Boolean}true"
+                                    title="Upload Image"
+                                    useHTML5="{Boolean}true"/>
+                            <imageAltText
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                    fieldDescription="Provide a textual alternative of the content and function of the image."
+                                    fieldLabel="Image alt text"
+                                    name="./imageAltText"
+                                    required="{Boolean}false"/>
+                            <decorative
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                    fieldDescription="Check if the image should be ignored by assistive technology. This applies to decorative images only."
+                                    name="./isDecorative"
+                                    text="Image is decorative"
+                                    value="true"/>
+                            <authorName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                    fieldDescription="Provide author name of quote or testimonial. In quote mode, this will be displayed underneath the quote text and in testimonial mode this will be displayed next to the image."
+                                    fieldLabel="Author name"
+                                    name="./authorName"
+                                    required="{Boolean}false"/>
+                            <meta
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                    fieldDescription="This text will be displayed only in testimonial mode and will be located underneath the author name."
+                                    fieldLabel="Meta information"
+                                    name="./meta"
+                                    required="{Boolean}false"/>
+                        </items>
+                    </columns>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

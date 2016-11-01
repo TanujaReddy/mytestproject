@@ -1,0 +1,83 @@
+{{!
+
+ ADOBE CONFIDENTIAL
+ __________________
+
+  Copyright 2014 Adobe Systems Incorporated
+  All Rights Reserved.
+
+ NOTICE:  All information contained herein is, and remains
+ the property of Adobe Systems Incorporated and its suppliers,
+ if any.  The intellectual and technical concepts contained
+ herein are proprietary to Adobe Systems Incorporated and its
+ suppliers and are protected by trade secret or copyright law.
+ Dissemination of this information or reproduction of this material
+ is strictly forbidden unless prior written permission is obtained
+ from Adobe Systems Incorporated.
+
+}}
+<li class="scf-comment {{#if _isNew}}scf-is-new{{/if}}" data-component-id="{{id}}" data-scf-component = 'social/commons/components/hbs/comments/comment'>
+    <aside class="scf-comment-author">
+        <img class="scf-comment-avatar {{#if topLevel}}withTopLevel{{/if}}" src="{{author.avatarUrl}}"></img>
+    </aside>
+    <div class="scf-comment-data {{#if topLevel}}withTopLevel{{/if}}">
+		<div class="scf-comment-body">
+        <div class="scf-comment-content">
+        <div class="scf-comment-author-name">
+            <a class="scf-link" href="{{author.profileUrl}}">{{author.name}}</a>
+        </div>
+        <time class="scf-comment-time scf-quiet">{{pretty-time created}}</time>
+		{{#if totalSize}}<div class="scf-replies-count scf-quiet">&nbsp;|&nbsp;&nbsp;<span class="scf-icon-comment"></span>&nbsp;<span data-attrib = "items-count">{{totalSize}}</span></div>{{/if}}    
+            {{include this template="status"}}
+		<div class="scf-comment-msg scf-js-comment-msg">	
+			<div data-translate-prop="jcr:description" data-translate-respath="{{id}}">
+			{{#if this.configuration.isRTEEnabled}}
+                {{{message}}}
+            {{else}}
+                {{message}}
+            {{/if}}
+            </div>
+            {{#if this.configuration.isAttachmentAllowed}}
+                {{#if attachments}}
+                	<div class="scf-comment-attachments">
+                        {{#each attachments}}
+
+                        		{{#if this.image}}
+	                            <div class="scf-comment-img-att">
+	                            	<img src="{{this.path}}" class="scf-comment-attachment-img" />
+	                            	<div class="scf-comment-att-name"><a href="{{this.path}}" target="_blank" class="scf-link">{{name}}</a></div>
+	                            </div>
+	                            {{else}}
+	                            <div class="scf-comment-att scf-icon-attachment scf-small "><a class="scf-link scf-comment-att-link" href="{{this.path}}" target="_blank">{{this.name}}</a></div>
+	                            {{/if}}
+	                        
+                        {{/each}}
+                    </div>
+                {{/if}}
+            {{/if}}
+        </div>
+        </div>
+        {{include this template="toolbar"}}
+    </div>
+
+    	{{#if configuration.isVotingAllowed}}
+        <div class="scf-comment-votes">
+        	    {{include this.votes resourceType='social/tally/components/hbs/voting'}}
+        </div>
+	 	{{/if}}
+    </div>
+
+
+        <div class="scf-comment-replies">
+    		{{#if items}}
+            <ul class="scf-comments-list">
+            {{#each items}}
+                {{#if isVisible}}
+                    {{include this resourceType='social/commons/components/hbs/comments/comment'}}
+                {{/if}} 
+            {{/each}}
+            </ul>
+    		{{/if}}
+        </div>
+        {{#loadmore this}}<a class="scf-link scf-load-more" data-page-suffix="{{suffix}}" evt="click=loadMore" href="{{moreURL}}"><span class="scf-icon-dblright"></span>&nbsp;{{i18n "Load replies"}}</a>{{/loadmore}}
+</li>

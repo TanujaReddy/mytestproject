@@ -1,0 +1,4 @@
+#base=js
+# Extension for page authoring client library to go to final preview mode with wcmmode=disabled
+
+finalPreview.js

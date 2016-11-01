@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <bootstrap.min.js/>
+    <javascript.js/>
+    <jquery-migrate-1.2.1.min.js/>
+    <jquery.min.js/>
+    <placeholder.js/>
+    <bootstrap-select.min.js/>
+    <bootstrap.popup.min.js/>
+    <underscore.js/>
+    <list.min.js/>
+    <underscore.min.js/>
+    <jquery.cookie.js/>
+</jcr:root>

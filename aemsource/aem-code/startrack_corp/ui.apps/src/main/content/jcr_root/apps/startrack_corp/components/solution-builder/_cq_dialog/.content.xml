@@ -1,0 +1,2768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured" jcr:title="Edit Solutions Builder" sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container" class="card-image-multifield solutions-builder herotype1">
+        <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/tabs" type="nav" />
+        <items jcr:primaryType="nt:unstructured" sling:hideChildren="[column]">
+            <!--<tab1 jcr:primaryType="nt:unstructured" jcr:title="Questions Configuration" sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <questionsBuilder jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                fieldLabel="Questions group">
+
+                                <field jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested=""
+                                    name="./questionsBuilder">
+
+                                    <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <heroImage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="Hero Image"
+                                                    fileNameParameter="./heroImage"
+                                                    fileReferenceParameter="./heroImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="Hero Image"
+                                                    useHTML5="{Boolean}true" />
+
+                                                <heroTitle jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Hero Title"
+                                                    name="./heroTitle"
+                                                    required="true" />
+
+                                                <heroText jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Hero Text"
+                                                    name="./heroText"
+                                                    required="true" />
+
+                                                <questionsTitle jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Questions Title"
+                                                    name="./questionsTitle"
+                                                    required="true" />
+
+                                                <question1Title jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Question 1 Title"
+                                                    name="./question1Title"
+                                                    required="true" />
+
+                                                <question1Text jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Question 1 Text"
+                                                    name="./question1Text"
+                                                    required="true" />
+                                                    
+                                                <question1Image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="Question 1 Image"
+                                                    fileNameParameter="./question1Image"
+                                                    fileReferenceParameter="./question1ImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="Question 1 Image"
+                                                    useHTML5="{Boolean}true" />
+
+                                                <question2Title jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Question 2 Title"
+                                                    name="./question2Title" />
+
+                                                <question2Text jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Question 2 Text"
+                                                    name="./question2Text" />
+                                                    
+                                                <question2Image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="Question 2 Image"
+                                                    fileNameParameter="./question2Image"
+                                                    fileReferenceParameter="./question2ImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="Question 2 Image"
+                                                    useHTML5="{Boolean}true" />
+
+                                                <question3Title jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Question 3 Title"
+                                                    name="./question3Title" />
+
+                                                <question3Text jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Question 3 Text"
+                                                    name="./question3Text" />
+                                                    
+                                                <question3Image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="Question 3 Image"
+                                                    fileNameParameter="./question3Image"
+                                                    fileReferenceParameter="./question3ImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="Question 3 Image"
+                                                    useHTML5="{Boolean}true" />
+
+                                                <question4Title jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Question 4 Title"
+                                                    name="./question4Title" />
+
+                                                <question4Text jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Question 4 Text"
+                                                    name="./question4Text" />
+                                                    
+                                                <question4Image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="Question 4 Image"
+                                                    fileNameParameter="./question4Image"
+                                                    fileReferenceParameter="./question4ImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="Question 4 Image"
+                                                    useHTML5="{Boolean}true" />
+
+                                                <question5Title jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Question 5 Title"
+                                                    name="./question5Title" />
+
+                                                <question5Text jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Question 5 Text"
+                                                    name="./question5Text" />
+                                                    
+                                                <question5Image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="Question 5 Image"
+                                                    fileNameParameter="./question5Image"
+                                                    fileReferenceParameter="./question5ImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="Question 5 Image"
+                                                    useHTML5="{Boolean}true" />
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </questionsBuilder>
+                        </items>
+                    </column>
+                </items>
+            </tab1>-->
+            <!--<tab2 jcr:primaryType="nt:unstructured" jcr:title="Recomendations Configuration" sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" margin="{Boolean}false" />
+                <items jcr:primaryType="nt:unstructured">
+                    <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <recomendationsBuilder jcr:primaryType="nt:unstructured"
+                            	sling:resourceType="granite/ui/components/foundation/form/multifield"
+                            	fieldLabel="Recomendations group">
+
+                                <field jcr:primaryType="nt:unstructured"
+                                	sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                	acs-commons-nested=""
+                                	name="./recomendationsBuilder">
+                                	
+                                    <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <recomendationsImage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="Recomendations Image"
+                                                    fileNameParameter="./recomendationsImage"
+                                                    fileReferenceParameter="./recomendationsImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="Recomendations Image"
+                                                    useHTML5="{Boolean}true" />
+
+                                                <recomendationsTitle jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Recomendations Title"
+                                                    name="./recomendationsTitle"
+                                                    required="true" />
+
+                                                <recomendationsText jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Recomendations Text"
+                                                    name="./recomendationsText"
+                                                    required="true" />
+                                                    
+                                                <recomendationsLinkText jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Recomendations Link Text"
+                                                    name="./recomendationsLinkText"
+                                                    required="true" />
+
+                                                <recomendationsLinkUrl jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Recomendations Link Url"
+                                                    name="./recomendationsLinkUrl"
+                                                    required="true" />
+
+                                                <recomendation1Title jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Recomendation 1 Title"
+                                                    name="./recomendation1Title"
+                                                    required="true" />
+                                                    
+                                                <recomendation1Url jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Recomendation 1 Url"
+                                                    name="./recomendation1Url"
+                                                    required="true" />
+                                                    
+                                                <recomendation1Image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="recomendation 1 Image"
+                                                    fileNameParameter="./recomendation1Image"
+                                                    fileReferenceParameter="./recomendation1ImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="recomendation 1 Image"
+                                                    useHTML5="{Boolean}true" />
+
+
+                                                <recomendation2Title jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="recomendation 2 Title"
+                                                    name="./recomendation2Title" />
+
+                                                <recomendation2Url jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="recomendation 2 Url"
+                                                    name="./recomendation2Url" />
+
+                                                <recomendation2Image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="recomendation 2 Image"
+                                                    fileNameParameter="./recomendation2Image"
+                                                    fileReferenceParameter="./recomendation2ImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="recomendation 2 Image"
+                                                    useHTML5="{Boolean}true" />
+
+                                                <recomendation3Title jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="recomendation 3 Title"
+                                                    name="./recomendation3Title" />
+                                                    
+                                                <recomendation3Url jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="recomendation 3 Url"
+                                                    name="./recomendation3Url" />
+                                                    
+                                                <recomendation3Image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="recomendation 3 Image"
+                                                    fileNameParameter="./recomendation3Image"
+                                                    fileReferenceParameter="./recomendation3ImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="recomendation 3 Image"
+                                                    useHTML5="{Boolean}true" />
+
+                                                <recomendation4Title jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="recomendation 4 Title"
+                                                    name="./recomendation4Title" />
+                                                    
+                                                <recomendation4Url jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="recomendation 4 Url"
+                                                    name="./recomendation4Url" />
+                                                    
+                                                <recomendation4Image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="recomendation 4 Image"
+                                                    fileNameParameter="./recomendation4Image"
+                                                    fileReferenceParameter="./recomendation4ImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="recomendation 4 Image"
+                                                    useHTML5="{Boolean}true" />
+
+                                                <recomendation5Title jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Recomendation 5 Title"
+                                                    name="./recomendation5Title" />
+                                                    
+                                                <recomendation5Url jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="recomendation 5 Url"
+                                                    name="./recomendation5Url" />
+                                                    
+                                                <recomendation4Image
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Drag and drop from the DAM"
+                                                    fieldLabel="recomendation 5 Image"
+                                                    fileNameParameter="./recomendation5Image"
+                                                    fileReferenceParameter="./recomendation5ImageRef"
+                                                    mimeTypes="[image]"
+                                                    multiple="{Boolean}false"
+                                                    required="{Boolean}true"
+                                                    title="recomendation 5 Image"
+                                                    useHTML5="{Boolean}true" />
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </recomendationsBuilder>
+                        </items>
+                    </column>
+                </items>
+            </tab2>-->
+            <tab3 jcr:primaryType="nt:unstructured" jcr:title="Recomendations Configuration" sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" margin="{Boolean}false" />
+                <items jcr:primaryType="nt:unstructured">
+                    <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <field1 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 1"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations1" />
+
+                            <recomendationsImage1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage1"
+                                fileReferenceParameter="./recomendationsImageRef1"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Recomendations Image 1"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle1"
+                                required="true" />
+
+                            <recomendationsText1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText1"
+                                required="true" />
+
+                            <recomendationsHeading1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading1"
+                                required="true" />
+
+                            <recomendationsLinkText1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText1"
+                                required="true" />
+
+                            <recomendationsLinkUrl1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl1"
+                                required="true" />
+
+                            <recomendation11Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation11Title" />
+                                
+                            <recomendation11Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation11Url" />
+                                
+                            <recomendation11Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation11Image"
+                                fileReferenceParameter="./recomendation11ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation12Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation12Title" />
+
+                            <recomendation12Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation12Url" />
+
+                            <recomendation12Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation12Image"
+                                fileReferenceParameter="./recomendation12ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation13Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation13Title" />
+
+                            <recomendation13Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation13Url" />
+
+                            <recomendation13Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation13Image"
+                                fileReferenceParameter="./recomendation13ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field2 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 2"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations2" />
+
+                            <recomendationsImage2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage2"
+                                fileReferenceParameter="./recomendationsImageRef2"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle2"
+                                required="true" />
+
+                            <recomendationsText2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText2"
+                                required="true" />
+
+                            <recomendationsHeading2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading2"
+                                required="true" />
+
+                            <recomendationsLinkText2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText2"
+                                required="true" />
+
+                            <recomendationsLinkUrl2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl2" />
+
+                            <recomendation21Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation21Title" />
+                                
+                            <recomendation21Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation21Url" />
+                                
+                            <recomendation21Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation21Image"
+                                fileReferenceParameter="./recomendation21ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation22Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation22Title" />
+
+                            <recomendation22Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation22Url" />
+
+                            <recomendation22Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation22Image"
+                                fileReferenceParameter="./recomendation22ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation23Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation23Title" />
+
+                            <recomendation23Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation23Url" />
+
+                            <recomendation23Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation23Image"
+                                fileReferenceParameter="./recomendation23ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field3 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 3"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations3" />
+
+                            <recomendationsImage3
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage3"
+                                fileReferenceParameter="./recomendationsImageRef3"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle3 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle3"
+                                required="true" />
+
+                            <recomendationsText3 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText3"
+                                required="true" />
+
+                            <recomendationsHeading3 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading3"
+                                required="true" />
+
+                            <recomendationsLinkText3 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText3"
+                                required="true" />
+
+                            <recomendationsLinkUrl3 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl3" />
+
+                            <recomendation31Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation31Title" />
+                                
+                            <recomendation31Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation31Url" />
+                                
+                            <recomendation31Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation31Image"
+                                fileReferenceParameter="./recomendation31ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation32Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation32Title" />
+
+                            <recomendation32Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation32Url" />
+
+                            <recomendation32Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation32Image"
+                                fileReferenceParameter="./recomendation32ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation33Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation33Title" />
+
+                            <recomendation33Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation33Url" />
+
+                            <recomendation33Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation33Image"
+                                fileReferenceParameter="./recomendation33ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field4 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 4"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations4" />
+
+                            <recomendationsImage4
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage4"
+                                fileReferenceParameter="./recomendationsImageRef4"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle4 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle4"
+                                required="true" />
+
+                            <recomendationsText4 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText4"
+                                required="true" />
+
+                            <recomendationsHeading4 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading4"
+                                required="true" />
+
+                            <recomendationsLinkText4 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText4"
+                                required="true" />
+
+                            <recomendationsLinkUrl4 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl4"
+                                required="true" />
+
+                            <recomendation41Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation41Title" />
+                                
+                            <recomendation41Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation41Url" />
+                                
+                            <recomendation41Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation41Image"
+                                fileReferenceParameter="./recomendation41ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation42Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation42Title" />
+
+                            <recomendation42Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation42Url" />
+
+                            <recomendation42Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation42Image"
+                                fileReferenceParameter="./recomendation42ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation43Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation43Title" />
+
+                            <recomendation43Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation43Url" />
+
+                            <recomendation43Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation43Image"
+                                fileReferenceParameter="./recomendation43ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field5 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 5"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations5" />
+
+                            <recomendationsImage5
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage5"
+                                fileReferenceParameter="./recomendationsImageRef5"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle5 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle5"
+                                required="true" />
+
+                            <recomendationsText5 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText5"
+                                required="true" />
+
+                            <recomendationsHeading5 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading5"
+                                required="true" />
+
+                            <recomendationsLinkText5 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText5"
+                                required="true" />
+
+                            <recomendationsLinkUrl5 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl5" />
+
+                            <recomendation51Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation51Title" />
+                                
+                            <recomendation51Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation51Url" />
+                                
+                            <recomendation51Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation51Image"
+                                fileReferenceParameter="./recomendation51ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation52Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation52Title" />
+
+                            <recomendation52Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation52Url" />
+
+                            <recomendation52Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation52Image"
+                                fileReferenceParameter="./recomendation52ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation53Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation53Title" />
+
+                            <recomendation53Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation53Url" />
+
+                            <recomendation53Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation53Image"
+                                fileReferenceParameter="./recomendation53ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field6 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 6"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations6" />
+
+                            <recomendationsImage6
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage6"
+                                fileReferenceParameter="./recomendationsImageRef6"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle6 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle6"
+                                required="true" />
+
+                            <recomendationsText6 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText6"
+                                required="true" />
+
+                            <recomendationsHeading6 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading6"
+                                required="true" />
+
+                            <recomendationsLinkText6 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText6"
+                                required="true" />
+
+                            <recomendationsLinkUrl6 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl6" />
+
+                            <recomendation61Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation61Title" />
+                                
+                            <recomendation61Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation61Url" />
+                                
+                            <recomendation61Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation61Image"
+                                fileReferenceParameter="./recomendation61ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation62Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation62Title" />
+
+                            <recomendation62Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation62Url" />
+
+                            <recomendation62Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation62Image"
+                                fileReferenceParameter="./recomendation62ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation63Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation63Title" />
+
+                            <recomendation63Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation63Url" />
+
+                            <recomendation63Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation63Image"
+                                fileReferenceParameter="./recomendation63ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+
+                            <field7 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 7"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations7" />
+
+                            <recomendationsImage7
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage7"
+                                fileReferenceParameter="./recomendationsImageRef7"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle7 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle7"
+                                required="true" />
+
+                            <recomendationsText7 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText7"
+                                required="true" />
+
+                            <recomendationsHeading7 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading7"
+                                required="true" />
+
+                            <recomendationsLinkText7 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText7"
+                                required="true" />
+
+                            <recomendationsLinkUrl7 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl7" />
+
+                            <recomendation71Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation71Title" />
+                                
+                            <recomendation71Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation71Url" />
+                                
+                            <recomendation71Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation71Image"
+                                fileReferenceParameter="./recomendation71ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation72Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation72Title" />
+
+                            <recomendation72Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation72Url" />
+
+                            <recomendation72Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation72Image"
+                                fileReferenceParameter="./recomendation72ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation73Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation73Title" />
+
+                            <recomendation73Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation73Url" />
+
+                            <recomendation73Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation73Image"
+                                fileReferenceParameter="./recomendation73ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field8 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 8"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations8" />
+
+                            <recomendationsImage8
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage8"
+                                fileReferenceParameter="./recomendationsImageRef8"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle8 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle8"
+                                required="true" />
+
+                            <recomendationsText8 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText8"
+                                required="true" />
+
+                            <recomendationsHeading8 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading8"
+                                required="true" />
+
+                            <recomendationsLinkText8 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText8"
+                                required="true" />
+
+                            <recomendationsLinkUrl8 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl8"
+                                required="true" />
+
+                            <recomendation81Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation81Title" />
+                                
+                            <recomendation81Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation81Url" />
+                                
+                            <recomendation81Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation81Image"
+                                fileReferenceParameter="./recomendation81ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation82Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation82Title" />
+
+                            <recomendation82Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation82Url" />
+
+                            <recomendation82Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation82Image"
+                                fileReferenceParameter="./recomendation82ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation83Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation83Title" />
+
+                            <recomendation83Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation83Url" />
+
+                            <recomendation83Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation83Image"
+                                fileReferenceParameter="./recomendation83ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field9 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 9"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations9" />
+
+                            <recomendationsImage9
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage9"
+                                fileReferenceParameter="./recomendationsImageRef9"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle9 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle9"
+                                required="true" />
+
+                            <recomendationsText9 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText9"
+                                required="true" />
+
+                            <recomendationsHeading9 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading9"
+                                required="true" />
+
+                            <recomendationsLinkText9 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText9"
+                                required="true" />
+
+                            <recomendationsLinkUrl9 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl9" />
+
+                            <recomendation91Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation91Title" />
+                                
+                            <recomendation91Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation91Url" />
+                                
+                            <recomendation91Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation91Image"
+                                fileReferenceParameter="./recomendation91ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation92Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation92Title" />
+
+                            <recomendation92Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation92Url" />
+
+                            <recomendation92Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation92Image"
+                                fileReferenceParameter="./recomendation92ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation93Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation93Title" />
+
+                            <recomendation93Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation93Url" />
+
+                            <recomendation93Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation93Image"
+                                fileReferenceParameter="./recomendation93ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field10 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 10"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations10" />
+
+
+                            <recomendationsImage10
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage10"
+                                fileReferenceParameter="./recomendationsImageRef10"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle10 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle10"
+                                required="true" />
+
+                            <recomendationsText10 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText10"
+                                required="true" />
+
+                            <recomendationsHeading10 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading10"
+                                required="true" />
+
+                            <recomendationsLinkText10 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText10"
+                                required="true" />
+
+                            <recomendationsLinkUrl10 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl10"
+                                required="true" />
+
+                            <recomendation101Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation101Title" />
+                                
+                            <recomendation101Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation101Url" />
+                                
+                            <recomendation101Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation101Image"
+                                fileReferenceParameter="./recomendation101ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation102Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation102Title" />
+
+                            <recomendation102Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation102Url" />
+
+                            <recomendation102Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation102Image"
+                                fileReferenceParameter="./recomendation102ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation103Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation103Title" />
+
+                            <recomendation103Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation103Url" />
+
+                            <recomendation103Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation103Image"
+                                fileReferenceParameter="./recomendation103ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field11 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 11"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations11" />
+
+                            <recomendationsImage11
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image 11"
+                                fileNameParameter="./recomendationsImage11"
+                                fileReferenceParameter="./recomendationsImageRef11"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle11 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle11"
+                                required="true" />
+
+                            <recomendationsText11 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText11"
+                                required="true" />
+
+                            <recomendationsHeading11 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading11"
+                                required="true" />
+
+                            <recomendationsLinkText11 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText11"
+                                required="true" />
+
+                            <recomendationsLinkUrl11 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Recomendations Link Url"
+                                name="./recomendationsLinkUrl11" />
+
+                            <recomendation111Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation111Title" />
+                                
+                            <recomendation111Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation111Url" />
+                                
+                            <recomendation111Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation111Image"
+                                fileReferenceParameter="./recomendation111ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation112Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation112Title" />
+
+                            <recomendation112Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation112Url" />
+
+                            <recomendation112Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation112Image"
+                                fileReferenceParameter="./recomendation112ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation113Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation113Title" />
+
+                            <recomendation113Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation113Url" />
+
+                            <recomendation113Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation113Image"
+                                fileReferenceParameter="./recomendation113ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field12 jcr:primaryType="nt:unstructured"
+                                fieldLabel="12"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations12" />
+
+                            <recomendationsImage12
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage12"
+                                fileReferenceParameter="./recomendationsImageRef12"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle12 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle12"
+                                required="true" />
+
+                            <recomendationsText12 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText12"
+                                required="true" />
+
+                            <recomendationsHeading12 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading12"
+                                required="true" />
+
+                            <recomendationsLinkText12 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText12"
+                                required="true" />
+
+                            <recomendationsLinkUrl12 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl12" />
+
+                            <recomendation121Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation121Title" />
+                                
+                            <recomendation121Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation121Url" />
+                                
+                            <recomendation121Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation121Image"
+                                fileReferenceParameter="./recomendation121ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation122Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation122Title" />
+
+                            <recomendation122Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation122Url" />
+
+                            <recomendation122Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation122Image"
+                                fileReferenceParameter="./recomendation122ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation123Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation123Title" />
+
+                            <recomendation123Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation123Url" />
+
+                            <recomendation123Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation123Image"
+                                fileReferenceParameter="./recomendation123ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field13 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 13"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations13" />
+
+                            <recomendationsImage13
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage13"
+                                fileReferenceParameter="./recomendationsImageRef13"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image "
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle13 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle13"
+                                required="true" />
+
+                            <recomendationsText13 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText13"
+                                required="true" />
+
+                            <recomendationsHeading13 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading13"
+                                required="true" />
+
+                            <recomendationsLinkText13 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText13"
+                                required="true" />
+
+                            <recomendationsLinkUrl13 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl13" />
+
+                            <recomendation131Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation131Title" />
+                                
+                            <recomendation131Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation131Url" />
+                                
+                            <recomendation131Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation131Image"
+                                fileReferenceParameter="./recomendation131ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation132Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation132Title" />
+
+                            <recomendation132Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation132Url" />
+
+                            <recomendation132Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation132Image"
+                                fileReferenceParameter="./recomendation132ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation133Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation133Title" />
+
+                            <recomendation133Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation133Url" />
+
+                            <recomendation133Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation133Image"
+                                fileReferenceParameter="./recomendation133ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+
+                            <field14 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 14"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations14" />
+
+                            <recomendationsImage14
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage14"
+                                fileReferenceParameter="./recomendationsImageRef14"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle14 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title 14"
+                                name="./recomendationsTitle14"
+                                required="true" />
+
+                            <recomendationsText14 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText14"
+                                required="true" />
+
+                            <recomendationsHeading14 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading14"
+                                required="true" />
+
+                            <recomendationsLinkText14 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText14"
+                                required="true" />
+
+                            <recomendationsLinkUrl14 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl14" />
+
+                            <recomendation141Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation141Title" />
+                                
+                            <recomendation141Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation141Url" />
+                                
+                            <recomendation141Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation141Image"
+                                fileReferenceParameter="./recomendation141ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation142Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation142Title" />
+
+                            <recomendation142Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation142Url" />
+
+                            <recomendation142Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation142Image"
+                                fileReferenceParameter="./recomendation142ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation143Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation143Title" />
+
+                            <recomendation143Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation143Url" />
+
+                            <recomendation143Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation143Image"
+                                fileReferenceParameter="./recomendation143ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <field15 jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recomendations 15"
+                                sling:resourceType="granite/ui/components/foundation/form/field"
+                                name="./recomendations15" />
+
+                            <recomendationsImage15
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image"
+                                fileNameParameter="./recomendationsImage15"
+                                fileReferenceParameter="./recomendationsImageRef15"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Image"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendationsTitle15 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./recomendationsTitle15"
+                                required="true" />
+
+                            <recomendationsText15 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Text"
+                                name="./recomendationsText15"
+                                required="true" />
+
+                            <recomendationsHeading15 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Meta"
+                                name="./recomendationsHeading15"
+                                required="true" />
+
+                            <recomendationsLinkText15 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Text"
+                                name="./recomendationsLinkText15"
+                                required="true" />
+
+                            <recomendationsLinkUrl15 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Cta Url"
+                                name="./recomendationsLinkUrl15" />
+
+                            <recomendation151Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 1"
+                                name="./recomendation151Title" />
+                                
+                            <recomendation151Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 1"
+                                name="./recomendation151Url" />
+                                
+                            <recomendation151Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 1"
+                                fileNameParameter="./recomendation151Image"
+                                fileReferenceParameter="./recomendation151ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 1"
+                                useHTML5="{Boolean}true" />
+
+
+                            <recomendation152Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 2"
+                                name="./recomendation152Title" />
+
+                            <recomendation152Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 2"
+                                name="./recomendation152Url" />
+
+                            <recomendation152Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 2"
+                                fileNameParameter="./recomendation152Image"
+                                fileReferenceParameter="./recomendation152ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <recomendation153Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Title 3"
+                                name="./recomendation153Title" />
+
+                            <recomendation153Url jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Link Url 3"
+                                name="./recomendation153Url" />
+
+                            <recomendation153Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Link Image 3"
+                                fileNameParameter="./recomendation153Image"
+                                fileReferenceParameter="./recomendation153ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Link Image 3"
+                                useHTML5="{Boolean}true" />
+
+                        </items>
+                    </column>
+                </items>
+            </tab3>
+            <tab4 jcr:primaryType="nt:unstructured" class="questions-title" jcr:title="Questions Configuration" sling:resourceType="granite/ui/components/foundation/section">
+                <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heroImage1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Hero Image 1"
+                                fileNameParameter="./heroImage1"
+                                fileReferenceParameter="./heroImage1Ref"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Hero Image 1"
+                                useHTML5="{Boolean}true" />
+
+                            <heroTitle1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Hero Title 1"
+                                name="./heroTitle1"
+                                required="true" />
+
+                            <heroText1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Hero Text 1"
+                                name="./heroText1"
+                                required="true" />
+
+                            <questionsTitle1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Questions Title 1"
+                                name="./questionsTitle1"
+                                required="true" />
+
+                            <question11Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 11 Title"
+                                name="./question11Title"
+                                required="true" />
+
+                            <question11Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 11 Text"
+                                name="./question11Text"
+                                required="true" />
+                                
+                            <question11Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 11 Image"
+                                fileNameParameter="./question11Image"
+                                fileReferenceParameter="./question11ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 11 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <question12Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 12 Title"
+                                name="./question12Title" />
+
+                            <question12Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 12 Text"
+                                name="./question12Text" />
+                                
+                            <question12Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 12 Image"
+                                fileNameParameter="./question12Image"
+                                fileReferenceParameter="./question12ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 12 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <heroImage2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Hero Image 2"
+                                fileNameParameter="./heroImage2"
+                                fileReferenceParameter="./heroImage2Ref"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Hero Image 2"
+                                useHTML5="{Boolean}true" />
+
+                            <heroTitle2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Hero Title 2"
+                                name="./heroTitle2"
+                                required="true" />
+
+                            <heroText2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Hero Text 2"
+                                name="./heroText2"
+                                required="true" />
+
+                            <questionsTitle2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Questions Title 2"
+                                name="./questionsTitle2"
+                                required="true" />
+
+                            <question21Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 21 Title"
+                                name="./question21Title"
+                                required="true" />
+
+                            <question21Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 21 Text"
+                                name="./question21Text"
+                                required="true" />
+                                
+                            <question21Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 21 Image"
+                                fileNameParameter="./question21Image"
+                                fileReferenceParameter="./question21ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 21 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <question22Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 22 Title"
+                                name="./question22Title" />
+
+                            <question22Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 22 Text"
+                                name="./question22Text" />
+                                
+                            <question22Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 22 Image"
+                                fileNameParameter="./question22Image"
+                                fileReferenceParameter="./question22ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 22 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <heroImage3
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Hero Image 3"
+                                fileNameParameter="./heroImage3"
+                                fileReferenceParameter="./heroImage3Ref"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Hero Image 3"
+                                useHTML5="{Boolean}true" />
+
+                            <heroTitle3 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Hero Title 3"
+                                name="./heroTitle3"
+                                required="true" />
+
+                            <heroText3 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Hero Text 3"
+                                name="./heroText3"
+                                required="true" />
+
+                            <questionsTitle3 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Questions Title 3"
+                                name="./questionsTitle3"
+                                required="true" />
+
+                            <question31Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 31 Title"
+                                name="./question31Title"
+                                required="true" />
+
+                            <question31Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 31 Text"
+                                name="./question31Text"
+                                required="true" />
+                                
+                            <question31Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 31 Image"
+                                fileNameParameter="./question31Image"
+                                fileReferenceParameter="./question31ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 31 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <question32Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 32 Title"
+                                name="./question32Title" />
+
+                            <question32Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 32 Text"
+                                name="./question32Text" />
+                                
+                            <question32Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 32 Image"
+                                fileNameParameter="./question32Image"
+                                fileReferenceParameter="./question32ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 32 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <question33Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 33 Title"
+                                name="./question33Title" />
+
+                            <question33Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 33 Text"
+                                name="./question33Text" />
+                                
+                            <question33Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 33 Image"
+                                fileNameParameter="./question33Image"
+                                fileReferenceParameter="./question33ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 33 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <question34Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 34 Title"
+                                name="./question34Title" />
+
+                            <question34Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 34 Text"
+                                name="./question34Text" />
+                                
+                            <question34Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 34 Image"
+                                fileNameParameter="./question34Image"
+                                fileReferenceParameter="./question34ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 34 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <heroImage4
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Hero Image 4"
+                                fileNameParameter="./heroImage4"
+                                fileReferenceParameter="./heroImage4Ref"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Hero Image 4"
+                                useHTML5="{Boolean}true" />
+
+                            <heroTitle4 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Hero Title 4"
+                                name="./heroTitle4"
+                                required="true" />
+
+                            <heroText4 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Hero Text 4"
+                                name="./heroText4"
+                                required="true" />
+
+                            <questionsTitle4 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Questions Title 4"
+                                name="./questionsTitle4"
+                                required="true" />
+
+                            <question41Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 41 Title"
+                                name="./question41Title"
+                                required="true" />
+
+                            <question41Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 41 Text"
+                                name="./question41Text"
+                                required="true" />
+                                
+                            <question41Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 41 Image"
+                                fileNameParameter="./question41Image"
+                                fileReferenceParameter="./question41ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 41 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <question42Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 42 Title"
+                                name="./question42Title" />
+
+                            <question42Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 42 Text"
+                                name="./question42Text" />
+                                
+                            <question42Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 42 Image"
+                                fileNameParameter="./question42Image"
+                                fileReferenceParameter="./question42ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 42 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <heroImage5
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Hero Image 5"
+                                fileNameParameter="./heroImage5"
+                                fileReferenceParameter="./heroImage5Ref"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Hero Image 5"
+                                useHTML5="{Boolean}true" />
+
+                            <heroTitle5 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Hero Title 5"
+                                name="./heroTitle5"
+                                required="true" />
+
+                            <heroText5 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Hero Text 5"
+                                name="./heroText5"
+                                required="true" />
+
+                            <questionsTitle5 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Questions Title 5"
+                                name="./questionsTitle5"
+                                required="true" />
+
+                            <question51Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 51 Title"
+                                name="./question51Title"
+                                required="true" />
+
+                            <question51Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 51 Text"
+                                name="./question51Text"
+                                required="true" />
+                                
+                            <question51Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 51 Image"
+                                fileNameParameter="./question51Image"
+                                fileReferenceParameter="./question51ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 51 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <question52Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 52 Title"
+                                name="./question52Title" />
+
+                            <question52Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 52 Text"
+                                name="./question52Text" />
+                                
+                            <question52Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 52 Image"
+                                fileNameParameter="./question52Image"
+                                fileReferenceParameter="./question52ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 52 Image"
+                                useHTML5="{Boolean}true" />
+
+                            <question53Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 53 Title"
+                                name="./question53Title" />
+
+                            <question53Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 53 Text"
+                                name="./question53Text" />
+                                
+                            <question53Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 53 Image"
+                                fileNameParameter="./question53Image"
+                                fileReferenceParameter="./question53ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 53 Image"
+                                useHTML5="{Boolean}true" />
+
+
+                            <question54Title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 54 Title"
+                                name="./question54Title" />
+
+                            <question54Text jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Question 54 Text"
+                                name="./question54Text" />
+                                
+                            <question54Image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Question 54 Image"
+                                fileNameParameter="./question54Image"
+                                fileReferenceParameter="./question54ImageRef"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                required="{Boolean}true"
+                                title="Question 54 Image"
+                                useHTML5="{Boolean}true" />
+                        </items>
+                    </column>
+                </items>
+            </tab4>
+        </items>
+    </content>
+ </jcr:root>

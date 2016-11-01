@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:ClientLibraryFolder"
+    categories="[apps.strut-amway.th.all]"
+    embed="[apps.strut-amway.th,apps.strut-amway.article-list,apps.strut-amway.hero-article,apps.strut-amway.sitemap,apps.strut-amway.hero-art-carousel,apps.sea.amwaytoday.login]"/>
