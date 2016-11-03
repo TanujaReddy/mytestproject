@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0" jcr:primaryType="cq:Dialog" xtype="dialog">
+	<items jcr:primaryType="nt:unstructured" title="Comments" xtype="tabpanel">
+		<items jcr:primaryType="cq:WidgetCollection">
+			<props jcr:primaryType="cq:Panel" title="Comments">
+				<items jcr:primaryType="cq:WidgetCollection">
+					<allowReplies jcr:primaryType="cq:Widget" fieldLabel="Allow replies"
+						fieldLabel_commentI18n="Allow replies to comments" name="./allowRepliesToComments"
+						type="checkbox" xtype="selection" />
+					<allowRepliesHint jcr:primaryType="cq:Widget"
+						ignoreData="true" name="./allowRepliesToComments@TypeHint" value="Boolean"
+						xtype="hidden" />
+					<maxPerPage jcr:primaryType="cq:Widget"
+						fieldDescription="Defines the number of comments shown per page. Default is 10."
+						fieldLabel="Comments Per Page" name="./maxPerPage" regex="/^[0-9]*$/"
+						regexText="Please enter a positive integer number." xtype="textfield" />
+					<allowFileUploads jcr:primaryType="cq:Widget"
+						defaultValue="false" fieldLabel="Allow File Uploads"
+						fieldLabel_commentI18n="Allow file uploads to comments" name="./allowFileUploads"
+						type="checkbox" xtype="selection" />
+					<maxFileSize jcr:primaryType="cq:Widget" defaultValue="104857600"
+						fieldDescription="Maximum number of bytes a file may have. Default: 104857600 (10 Mb)."
+						fieldLabel="Max File Size" name="./maxFileSize" xtype="numberfield" />
+					<maxMessageLength jcr:primaryType="cq:Widget"
+						defaultValue="4096"
+						fieldDescription="Maximum number of characters a comment message text may have. Default: 4096."
+						fieldLabel="Max Message Length" name="./maxMessageLength" xtype="numberfield" />
+					<acceptFileTypes jcr:primaryType="cq:Widget"
+						fieldDescription="Comma seperated file extensions with dots, ex .jpg, .jpeg, .png, .doc, .docx, .ppt, .zip, .rar Default: allow all file types."
+						fieldLabel="Allowed File Types" name="./acceptFileTypes" xtype="textfield" />
+					<richTextEditor jcr:primaryType="cq:Widget"
+						defaultValue="false" fieldLabel="Rich Text Editor" name="./rteEnabled"
+						type="checkbox" xtype="selection" />
+					<allowVoting jcr:primaryType="cq:Widget" defaultValue="false"
+						fieldLabel="Allow Voting" name="./allowVoting" type="checkbox"
+						xtype="selection" />
+				</items>
+			</props>
+			<userMod jcr:primaryType="cq:Panel" title="User Moderation">
+				<items jcr:primaryType="cq:WidgetCollection">
+					<moderate jcr:primaryType="cq:Widget" defaultValue="false"
+						fieldDescription="If checked, comments must be approved before they are posted"
+						fieldLabel="Pre-Moderation" fieldLabel_commentI18n="Pre-Moderation"
+						name="./moderateComments" type="checkbox" xtype="selection" />
+					<allowDeleteComments jcr:primaryType="cq:Widget"
+						defaultValue="false" fieldDescription="Allow users to delete their own comments"
+						fieldLabel="Delete Comments" name="./allowDeleteComments" type="checkbox"
+						xtype="selection" />
+					<allowDenyComments jcr:primaryType="cq:Widget"
+						defaultValue="false" fieldDescription="Allow publish-side moderators to deny comments"
+						fieldLabel="Deny Comments" name="./allowDenyComments" type="checkbox"
+						xtype="selection" />
+					<allowCloseComments jcr:primaryType="cq:Widget"
+						defaultValue="false"
+						fieldDescription="Allow publish-side moderators to close and reopen comments"
+						fieldLabel="Close / Reopen Comments" name="./allowCloseComments"
+						type="checkbox" xtype="selection" />
+					<allowUserFlagging jcr:primaryType="cq:Widget"
+						defaultValue="false" fieldDescription="Allow users to flag comments as inappropriate"
+						fieldLabel="Flag Comments" name="./allowFlagComments" type="checkbox"
+						xtype="selection" />
+					<useFlagReasonList jcr:primaryType="cq:Widget"
+						defaultValue="false" fieldDescription="Allow users to choose a flagging reason from a list"
+						fieldLabel="Flag Reason List" name="./useFlagReasonList" type="checkbox"
+						xtype="selection" />
+					<useFlagReasonFreeformText
+						jcr:primaryType="cq:Widget" defaultValue="false"
+						fieldDescription="Allow users to enter a custom flag reason"
+						fieldLabel="Custom Flag Reason" name="./allowCustomFlagReason"
+						type="checkbox" xtype="selection" />
+					<flagModerateThreshold jcr:primaryType="cq:Widget"
+						defaultValue="1"
+						fieldDescription="Number of times a comment is flagged by users before moderators are notified. Default: 1."
+						fieldLabel="Moderation Threshold" name="./flagModerateThreshold"
+						xtype="numberfield" />
+					<flagViewThreshold jcr:primaryType="cq:Widget"
+						defaultValue="5"
+						fieldDescription="Number of times a comment is flagged but before it is hidden from public view (value must be at least as large as the Moderation Threshold). Default: 5."
+						fieldLabel="Flagging Limit" name="./flagViewThreshold" xtype="numberfield" />
+				</items>
+			</userMod>
+		</items>
+	</items>
+</jcr:root>

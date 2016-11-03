@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <jcr:content
+            cq:lastModified="{Date}2015-03-26T08:36:18.660+11:00"
+            cq:lastModifiedBy="admin"
+            cq:template="/apps/corporate/amway-today/templates/blank-page"
+            jcr:isCheckedOut="{Boolean}true"
+            jcr:mixinTypes="[mix:versionable]"
+            jcr:primaryType="cq:PageContent"
+            jcr:title="Errors"
+            jcr:uuid="6505e4ce-32c7-4d40-859d-20148e63cbce"
+            sling:resourceType="corporate/amway-today/components/blank-page"
+            hideInNav="true">
+        <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="foundation/components/parsys"/>
+    </jcr:content>
+    <_x0034_04/>
+    <_x0035_00/>
+    <_x0034_03/>
+</jcr:root>

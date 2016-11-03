@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <country
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Enter the 2 letter country code (my/sg/bn/vn/id/ph/th/au/nz)"
+                        fieldLabel="Country Code"
+                        name="./country"
+                        xtype="textfield"/>
+                    <errormessage
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Error message for login failure"
+                        fieldLabel="Error Message"
+                        name="./errormessagelogin"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

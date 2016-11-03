@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    cq:actions="[EDIT,COPYMOVE,DELETE,INSERT]"
+    jcr:primaryType="cq:EditConfig"
+    cq:disableTargeting="true">
+    
+    <cq:listeners
+        jcr:primaryType="cq:EditListenersConfig"
+        afterinsert="REFRESH_PAGE"/>
+        <cq:actionConfigs jcr:primaryType="nt:unstructured">
+<separator0 jcr:primaryType="nt:unstructured" xtype="tbseparator"/>
+<manage jcr:primaryType="nt:unstructured" handler="function(){CQ.soco.commons.openModeration();}" text="Manage comments"/>
+</cq:actionConfigs>
+</jcr:root>

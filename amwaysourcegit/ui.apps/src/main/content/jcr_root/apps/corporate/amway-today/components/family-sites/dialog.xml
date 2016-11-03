@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="familyDialogTitle"
+    width="650"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="familySiteTabTitle">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <map
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="urlInputDescription"
+                        fieldLabel="familySiteManagementPanel"
+                        hideLabel="false"
+                        name="./map"
+                        title="familySiteTitleAndLink"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            hideLabel="true"
+                            layout="form"
+                            padding="10px"
+                            width="1000"
+                            xtype="familysitespanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <title-value
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="false"
+                                    dName="title"
+                                    fieldLabel="familySiteTitleInput"
+                                    width="230"
+                                    xtype="textfield"/>
+                                <href-value
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="false"
+                                    dName="href"
+                                    fieldLabel="familySiteLinkInput"
+                                    width="230"
+                                    xtype="textfield"/>
+                            </items>
+                        </fieldConfig>
+                    </map>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

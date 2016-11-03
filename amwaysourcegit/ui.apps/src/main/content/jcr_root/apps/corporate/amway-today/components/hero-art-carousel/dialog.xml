@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="500"
+    title="dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <panel
+                jcr:primaryType="cq:Panel"
+                title="Hero Article Carousel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <articles
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Articles"
+                        name="./articles"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="nt:unstructured"
+                            xtype="herocomposite"/>
+                    </articles>
+                </items>
+            </panel>
+            <tab2
+                jcr:primaryType="cq:Panel"
+                title="Content Target Config">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <target
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Target Content?"
+                        name="./target"
+                        type="checkbox"
+                        xtype="selection"/>
+                </items>
+            </tab2>
+        </items>
+    </items>
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        beforesubmit="function(dialog) {         /* Make sure all composite components values are up to date */         dialog.findByType('herocomposite', undefined).forEach(function (element, index, array) { element.updateHidden();} );          /* Validate article's path */         var articles = dialog.findBy( function (component, container) { return component.validatePath });         for (var i = 0, l = articles.length; i &lt; l; i++) {             var comp = articles[i];             var pathParts = comp.value.split('/');             if (pathParts.length != 10) {                 alert('This page is not an article: ' + comp.value);                 return false;             }         }     };"/>
+</jcr:root>

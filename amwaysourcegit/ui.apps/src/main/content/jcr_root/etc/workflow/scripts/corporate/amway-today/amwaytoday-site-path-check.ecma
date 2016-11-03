@@ -1,0 +1,20 @@
+function check() {
+    log.info("amwaytoday-site-path-check script executing now, Payload: " + workflowData.getPayload().toString());
+    if (workflowData.getPayloadType() == "JCR_PATH") {
+         var path = workflowData.getPayload().toString();
+         var nodePath = jcrSession.getItem(path).getPath();
+
+         if ((nodePath.indexOf("/content") >= 0 && nodePath.indexOf("amway-today") >= 0)
+                || (nodePath.indexOf("/content/dam") >= 0 && nodePath.indexOf("amway-today") >= 0)
+                || nodePath.indexOf("/etc/tags/Amway") >= 0) {
+            log.info("amwaytoday-site-path-check found a match for Payload: " + workflowData.getPayload().toString());
+            return true;
+         } else {
+            log.info("amwaytoday-site-path-check no match for Payload: " + workflowData.getPayload().toString());
+            return false;
+         }
+     } else {
+        log.info("amwaytoday-site-path-check payload type not jcr_path");
+        return false;
+     }
+}

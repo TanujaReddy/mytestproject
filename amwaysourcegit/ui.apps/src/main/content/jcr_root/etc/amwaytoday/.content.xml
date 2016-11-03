@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <pinlevel jcr:primaryType="nt:unstructured">
+        <direct_distributor
+            jcr:primaryType="nt:unstructured"
+            group="Platinum"/>
+        <platinum
+            jcr:primaryType="nt:unstructured"
+            group="Platinum"/>
+        <distributor
+            jcr:primaryType="nt:unstructured"
+            group="ABO"/>
+        <diamond
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <founders_diamond
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <executive_diamond
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <founders_executive_diamond
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <double_diamond
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <founders_double_diamond
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <triple_diamond
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <founders_triple_diamond
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <crown
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <founders_crown
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <crown_ambassador
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+        <founders_crown_ambassador
+            jcr:primaryType="nt:unstructured"
+            group="Diamond"/>
+    </pinlevel>
+</jcr:root>

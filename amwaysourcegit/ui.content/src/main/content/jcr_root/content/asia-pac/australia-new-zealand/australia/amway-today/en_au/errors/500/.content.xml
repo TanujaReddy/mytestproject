@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2015-10-15T09:51:11.410+11:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/corporate/amway-today/templates/blank-page"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Internal server error - 500"
+        jcr:uuid="e73a2e3e-3ef4-4f00-9291-de9e9926f77d"
+        sling:resourceType="corporate/amway-today/components/blank-page"
+        hideInNav="true">
+            <error_code
+                jcr:created="{Date}2015-10-15T09:07:55.261+11:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2015-10-15T09:51:11.408+11:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="corporate/amway-today/components/error-code"
+                description="&lt;p>We've encountered a server issue and are looking into it&lt;/p>&#xa;&lt;ul>&#xa;&lt;li>Try to refresh the page, the problem may be temporary&lt;/li>&#xa;&lt;li>If problem persists, please &lt;a href=&quot;/content/asia-pac/australia-new-zealand/australia/amway-today/en_au/toolbar/contact-us.html&quot;>contact&lt;/a> us&lt;/li>&#xa;&lt;/ul>&#xa;"
+                errorcode="500"
+                title="Sorry, The Server Encountered An Error"/>
+    </jcr:content>
+</jcr:root>
