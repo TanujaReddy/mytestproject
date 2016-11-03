@@ -1,4 +1,0 @@
-#base=js
-
-javascript.js
-slick.min.js

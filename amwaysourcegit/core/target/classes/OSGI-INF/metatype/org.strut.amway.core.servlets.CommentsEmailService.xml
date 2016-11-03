@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/org.strut.amway.core.servlets.CommentsEmailService">
-    <OCD id="org.strut.amway.core.servlets.CommentsEmailService" name="%org.strut.amway.core.servlets.CommentsEmailService.name" description="%org.strut.amway.core.servlets.CommentsEmailService.description">
-        <AD id="sling.auth.requirements" type="String" default="-/bin/CommentsEmailServlet" name="%org.strut.amway.core.servlets.CommentsEmailService.sling.auth.requirements.name" description="%org.strut.amway.core.servlets.CommentsEmailService.sling.auth.requirements.description"/>
-    </OCD>
-    <Designate pid="org.strut.amway.core.servlets.CommentsEmailService">
-        <Object ocdref="org.strut.amway.core.servlets.CommentsEmailService"/>
-    </Designate>
-</metatype:MetaData>

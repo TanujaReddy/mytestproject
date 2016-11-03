@@ -1,5 +1,0 @@
-#base=css
-
-slick-theme.css
-slick.css
-components.css

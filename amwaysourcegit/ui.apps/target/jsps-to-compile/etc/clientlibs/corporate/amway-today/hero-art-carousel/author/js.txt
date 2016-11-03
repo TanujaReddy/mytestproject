@@ -1,3 +1,0 @@
-#base=js
-
-custom-widget.js

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/org.strut.amway.core.integration.config.HttpClientConfig">
-    <OCD id="org.strut.amway.core.integration.impl.HttpClientServiceImpl" name="%org.strut.amway.core.integration.impl.HttpClientServiceImpl.name" description="%org.strut.amway.core.integration.impl.HttpClientServiceImpl.description">
-        <AD id="httpclient.maxConnectionPerHost" type="String" default="100" name="%org.strut.amway.core.integration.impl.HttpClientServiceImpl.httpclient.maxConnectionPerHost.name" description="%org.strut.amway.core.integration.impl.HttpClientServiceImpl.httpclient.maxConnectionPerHost.description"/>
-        <AD id="httpclient.maxTotalConnections" type="String" default="100" name="%org.strut.amway.core.integration.impl.HttpClientServiceImpl.httpclient.maxTotalConnections.name" description="%org.strut.amway.core.integration.impl.HttpClientServiceImpl.httpclient.maxTotalConnections.description"/>
-    </OCD>
-    <Designate pid="org.strut.amway.core.integration.impl.HttpClientServiceImpl" factoryPid="org.strut.amway.core.integration.impl.HttpClientServiceImpl">
-        <Object ocdref="org.strut.amway.core.integration.impl.HttpClientServiceImpl"/>
-    </Designate>
-</metatype:MetaData>

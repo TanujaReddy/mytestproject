@@ -1,1 +1,0 @@
-//Set height for parsys of div.article-list
