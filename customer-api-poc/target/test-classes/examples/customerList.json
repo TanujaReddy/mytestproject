@@ -1,0 +1,16 @@
+{
+    "customers": [
+        {
+            "address": "21 2nd Street New York",
+            "firstName": "Mike",
+            "id": "9edba51c-a9b1-4445-847d-d3510b2af599",
+            "lastName": "Andrews"
+        },
+        {
+            "address": "24 1st Street New York",
+            "firstName": "Richard",
+            "id": "3d5ec277-339d-4389-ba19-1bea28ea0123",
+            "lastName": "Crossley"
+        }
+    ]
+}
