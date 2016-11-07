@@ -1,0 +1,20 @@
+<div class="wrapper-body">
+    <div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap />
+
+    <sly data-sly-include="header.html" data-sly-unwrap></sly>
+    <div class="main-content">
+        <!--/* This hides all <h1></h1> for screenreaders in the page. */-->
+        <h1 class="sr-only">${pageProperties.jcr:title}</h1>
+
+        <sly data-sly-include="content.html" data-sly-unwrap></sly>
+    </div>
+    <sly data-sly-include="footer.html" data-sly-unwrap></sly>
+
+    <output data-sly-call="${clientLib.js @ categories='cq.jquery'}" data-sly-unwrap></output>
+    <output data-sly-call="${clientLib.js @ categories='global'}" data-sly-unwrap></output>
+    <output data-sly-call="${clientLib.js @ categories='signup-module'}" data-sly-unwrap></output>
+
+
+
+    <sly data-sly-include="body-extension.html" data-sly-unwrap></sly>
+</div>

@@ -1,0 +1,8 @@
+
+<sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring) && (!properties.text)}">
+    <div>Author Hint: Edit text here. This component allows Rich Text editing.</div>
+</sly>
+
+<div data-sly-test="${properties.text}" data-sly-unwrap>
+	<p data-sly-use.text="text-heavy.js" data-sly-unwrap="${text.context == text.CONST.CONTEXT_HTML}" class="${text.cssClass}" data-emptytext="Rich Text">${text.text @ context=text.context}</p>
+</div>

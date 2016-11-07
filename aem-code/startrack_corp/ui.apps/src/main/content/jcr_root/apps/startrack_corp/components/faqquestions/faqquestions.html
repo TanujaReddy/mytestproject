@@ -1,0 +1,61 @@
+<sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: FAQ here</div>
+</sly>
+<sly data-sly-use.inlineedit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading',nodeToBeCreated='welcome-text'}" />
+<sly data-sly-use.inlineedit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading',nodeToBeCreated='welcome-sub-text'}" />
+
+<div class="faq-heading">
+    <h2 class="heading-h2">
+        <sly data-sly-resource="${'welcome-text' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+    </h2>
+    <p class="sub-heading">
+        <sly data-sly-resource="${'welcome-sub-text' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+    </p>
+</div>
+
+<div class="faq-container">
+    <div class="accordion">
+        <div class="accordion-item flex-container flex-container--multi-50 active">
+            <div class="accordion-left accordion-heading ">
+                <h2>
+                    <img src="/etc/designs/startrack_corp/clientlib/img/faq01.png" alt="" class="hidden-xs" width="131" alt="">
+                    <span>Frequently Asked Questions</span>
+                </h2>
+            </div>
+            <div class="accordion-right accordion-body">
+                <ul>
+                    <sly data-sly-use.faq="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='faqtags', pagetype='faq'}">
+                        <sly data-sly-list.item="${faq.items}">
+                            <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                        </sly>
+                    </sly>
+                </ul>
+                <a data-sly-test="${properties.viewAllUrlFaq != null && properties.viewAllUrlFaq != ''}"
+                   class="view-all" href="${properties.viewAllUrlFaq}"
+                   title="Open view all" target="_blank">View all</a>
+            </div>
+        </div>
+        <div class="accordion-item flex-container flex-container--multi-50 active">
+            <div class="accordion-left accordion-heading">
+                <h2>
+                    <img src="/etc/designs/startrack_corp/clientlib/img/faq02.png" alt="" class="hidden-xs" width="131" alt="">
+                    <span>How-to guides</span>
+                </h2>
+            </div>
+            <div class="accordion-right accordion-body">
+                <ul>
+                    <sly data-sly-use.howtoguide="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='htgtags', pagetype='how-to'}">
+                        <sly data-sly-list.item="${howtoguide.items}">
+                            <li>
+                                <a href="${item.finalPath}" target="_blank">${item.title}</a>
+                            </li>
+                        </sly>
+                    </sly>
+                </ul>
+                <a data-sly-test="${properties.viewAllUrlHtg != null && properties.viewAllUrlHtg != ''}"
+                   class="view-all" href="${properties.viewAllUrlHtg}"
+                   title="Open view all" target="_blank">View all</a>
+            </div>
+        </div>
+    </div>
+</div>

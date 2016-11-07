@@ -1,0 +1,47 @@
+<sly data-sly-use.inlineEdit="${'au.com.auspost.global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='global/components/rte-components/text-heavy',nodeToBeCreated='youtube-transcript'}"></sly>
+
+<sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: Edit youtube-player tag line here.This field is required. You can author Video Id for youtube-player .</div>
+</sly>
+
+<sly data-sly-use.youtube="${'au.com.auspost.global.core.sightly.Analytics' @ currentNodePath=currentNode.path}"></sly>
+<div class="video-player">
+    <div class="vp-wrapper">
+        <div class="player" id="${properties.videoId}"></div>
+    </div>
+</div>
+
+<div class="expandable-block expandable-block--video">
+    <div class="expandable-block-header expandable-block-header-video">
+        <p>
+            <button class="expandable-block-trigger expandable-block-trigger--video" id="expandable-block-${youtube.formattedNodePath}" aria-expanded="false" title=”link title or parent title or parent analytics title field “ data-event=”site interaction” data-category=”youtube | video | accordion” data-description=”read transcript | video title“>
+                <svg id="ReadTranscript" width="16" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.482 19"><path class="st0" d="M13.982 0H3.5C1.57 0 0 1.57 0 3.5v12C0 17.43 1.57 19 3.5 19h10.482c1.93 0 3.5-1.57 3.5-3.5v-12c0-1.93-1.57-3.5-3.5-3.5zm2.5 15.5c0 1.38-1.12 2.5-2.5 2.5H3.5C2.12 18 1 16.88 1 15.5v-12C1 2.122 2.12 1 3.5 1h10.482c1.38 0 2.5 1.122 2.5 2.5v12z"/><path class="st0" d="M3.86 8.85h1.085v1.084H3.86zM3.86 5.596h1.085V6.68H3.86zM3.86 12.103h1.085v1.084H3.86zM6.572 5.596h7.048V6.68H6.572zM6.572 12.103h7.048v1.084H6.572zM6.572 8.85h7.048v1.084H6.572z"/></svg>
+                    <span class="video-trigger-text">
+                        <sly data-sly-test="${properties.accordionTitle == null}">
+                            Read transcript
+                        </sly>
+                        <sly data-sly-test="${properties.accordionTitle != null}">
+                            ${properties.accordionTitle}
+                        </sly>
+                    </span>
+                <svg width="11" height="7" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" class="expandable-arrow-up"><title>Arrow Up</title><path d="M0 6.23h11.014L5.507 0 0 6.23z" fill-rule="evenodd"/></svg> <svg width="11" height="7" viewBox="0 0 11 7" class="expandable-arrow-down" xmlns="http://www.w3.org/2000/svg"><title>Arrow Down</title><path d="M0 0h11.014L5.507 6.23 0 0z" fill-rule="evenodd"/></svg>
+            </button>
+        </p>
+    </div>
+    <sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+        <article class="expandable-block-content expandable-block-content--video expandable-block-content--author-mode" id="expandable-block-${youtube.formattedNodePath}">
+    </sly>
+
+    <sly data-sly-test="${!(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+        <article class="expandable-block-content expandable-block-content--video" id="expandable-block-${youtube.formattedNodePath}" >
+    </sly>
+        <div class="expandable-block-content-inner">
+            <sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+                <div data-sly-resource="${'youtube-transcript' @ resourceType='global/components/rte-components/text-heavy'}"></div>
+            </sly>
+            <sly data-sly-test="${!(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+                <sly data-sly-resource="${'youtube-transcript' @ resourceType='global/components/rte-components/text-heavy'}"></sly>
+            </sly>
+        </div>
+    </article>
+</div>

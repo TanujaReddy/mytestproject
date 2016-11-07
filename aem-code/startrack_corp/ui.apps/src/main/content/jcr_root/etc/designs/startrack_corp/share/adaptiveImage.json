@@ -1,0 +1,39 @@
+{
+    "card": {
+        "imagePropName": "imagePathRef",
+        "additionalProp": "imageLocation",
+        "altTextProp": "imageAltText",
+        "bottom": {
+            "480": "680[1x]"
+        },
+        "top": {
+            "480": "680[1x]"
+        },
+        "left": {
+            "480": "680[1x]"
+        },
+        "right": {
+            "480": "680[1x]"
+        }
+    },
+    "herotype1": {
+        "imagePropName": "videoImagePathRef",
+        "altTextProp": "imageAltText",
+        "default": {
+            "480": "680[1x]"
+        }
+    },
+    "threeup": {
+        "imagePropName": "imagePathRef",
+        "altTextProp": "imageAltText",
+        "default": {
+            "480": "680[1x]"
+        }
+    },
+    "article-blade": {
+        "imagePropName": "imagePathRef",
+        "default": {
+            "480": "680[1x]"
+        }
+    }
+}

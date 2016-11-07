@@ -1,0 +1,39 @@
+.herotype1 {
+    overflow-x: hidden !important;
+}
+
+.herotype1 .coral-Multifield {
+    width: 100%;
+}
+
+.herotype1 .cq-FileUpload .coral-FileUpload-trigger {
+    display: none;
+}
+
+.herotype1 .cq-FileUpload .cq-FileUpload-thumbnail {
+    display: block;
+}
+
+.solutions-builder {
+    overflow-x: hidden !important;
+}
+
+.solutions-builder .coral-Multifield {
+    width: 100%;
+}
+
+.solutions-builder .cq-FileUpload .coral-FileUpload-trigger {
+    display: none;
+}
+
+.solutions-builder .cq-FileUpload .cq-FileUpload-thumbnail {
+    display: block;
+}
+
+.solutions-builder .questions-title {
+    display: none;
+}
+
+.solutions-builder nav:nth-child(1) {
+    display: none;
+}

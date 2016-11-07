@@ -1,0 +1,328 @@
+<!-- tool - ttime -->
+<tool id="ttime" class="ttime no-js" name="ttime"></tool>
+
+<!-- tool template - ttime -->
+<template id="ttime-tpl" class="ttime-tpl">
+
+    <!-- ttime - step 1 -->
+    <tool-step id="ttime-step--1" class="ttime-step ttime-step--1">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="ttime-step--1_heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/tt-icon.png" alt=""></i><!--
+             --><span id="ttime-step--1_heading">Transit time</span>
+            </h1><!-- heading end -->
+
+            <!-- form -->
+            <form class="form" name="ttime-step--1_form" novalidate="true">
+
+                <!-- fieldset - location -->
+                <fieldset class="form-group no-padding-v" aria-labelledby="ttime-step--1_label-location">
+
+                    <!-- legend label -->
+                    <legend id="ttime-step--1_label-location" class="hidden">
+                        Enter senders and receivers suburb or postcode
+                    </legend>
+
+                    <!-- field - sender - address -->
+                    <div class="field" aria-labelledby="ttime_sender--address_label">
+                        <label id="ttime_sender--address_label" for="ttime_sender--address" class="field-label"> Sender's location</label>
+                        <input id="ttime_sender--address" name="senderAddress" type="text" class="field-input input-text medium" placeholder="Kensington, NSW, 2033" autocomplete="off" maxlength="30" required="true" validate="address" rel="tool:location"><!--
+
+                     --><ul class="autocomplete medium" role="listbox" rel="tool:locations-list"></ul><!--
+                     --><input id="ttime_sender--postcode" name="senderPostcode" type="hidden" rel="tool:location-postcode">
+                        <input id="ttime_sender--suburb" name="senderSuburb" type="hidden" rel="tool:location-suburb">
+                        <input id="ttime_sender--state" name="senderState" type="hidden" rel="tool:location-state">
+
+                        <span id="ttime_sender--postcode_error" for="ttime_sender--postcode" class="error-message"> Enter sender's location </span>
+                    </div><!-- field end -->
+
+                    <!-- field - receiver - address -->
+                    <div class="field" aria-labelledby="ttime_receiver--address_label">
+                        <label id="ttime_receiver--address_label" for="ttime_receiver--address" class="field-label"> Receiver's location</label>
+                        <input id="ttime_receiver--address" name="receiverAddress" type="text" class="field-input input-text medium" placeholder="Kensington, NSW, 2033" autocomplete="off" maxlength="30" required="true" validate="address" rel="tool:location"><!--
+
+                     --><ul class="autocomplete medium" role="listbox" rel="tool:locations-list"></ul><!--
+                     --><input id="ttime_receiver--postcode" name="receiverPostcode" type="hidden" rel="tool:location-postcode">
+                        <input id="ttime_receiver--suburb" name="receiverSuburb" type="hidden" rel="tool:location-suburb">
+                        <input id="ttime_receiver--state" name="receiverState" type="hidden" rel="tool:location-state">
+
+						<span id="ttime_receiver--postcode_error" for="ttime_receiver--postcode" class="error-message"> Enter receiver's location </span>
+                    </div><!-- field end -->
+
+                </fieldset><!-- fieldset - location end -->
+
+                <!-- fieldset - services -->
+                <fieldset class="form-group no-padding-v" aria-labelledby="ttime-step--1_label-service">
+
+                    <!-- legend label -->
+                    <legend id="ttime-step--1_label-service" class="hidden">
+                        Select Service(s)
+                    </legend>
+
+                    <!-- field - service -->
+                    <div class="field" aria-labelledby="ttime_services_label">
+                        <label id="ttime_services_label" class="field-label"> Select service(s) </label>
+
+                        <!-- field - service - exp -->
+                        <div class="field-checkbox" aria-labelledby="ttime_services--exp_label">
+                            <input id="ttime_services--exp" name="services[]" type="checkbox" value="EXP" required="true">
+                            <label id="ttime_services--exp_label" for="ttime_services--exp"> Express </label>
+                        </div>
+
+                        <!-- field - service - fpp -->
+                        <div class="field-checkbox" aria-labelledby="ttime_services--fpp_label">
+                            <input id="ttime_services--fpp" name="services[]" type="checkbox" value="FPP" required="true">
+                            <label id="ttime_services--fpp_label" for="ttime_services--fpp"> Fixed Price Premium </label>
+                        </div>
+
+                        <!-- field - service - prm -->
+                        <div class="field-checkbox" aria-labelledby="ttime_services--prm_label">
+                            <input id="ttime_services--prm" name="services[]" type="checkbox" value="PRM" required="true">
+                            <label id="ttime_services--prm_label" for="ttime_services--prm"> Premium </label>
+                        </div>
+
+                        <!-- field - service - arl -->
+                        <div class="field-checkbox" aria-labelledby="ttime_services--arl_label">
+                            <input id="ttime_services--arl" name="services[]" type="checkbox" value="ARL" required="true">
+                            <label id="ttime_services--arl_label" for="ttime_services--arl"> Airlock </label>
+                        </div>
+
+                        <!-- field - service - fpa -->
+                        <div class="field-checkbox" aria-labelledby="ttime_services--fpa_label">
+                            <input id="ttime_services--fpa" name="services[]" type="checkbox" value="FPA" required="true">
+                            <label id="ttime_services--fpa_label" for="ttime_services--fpa"> Fixed Price Airlock </label>
+                        </div>
+
+                        <!-- field - service - itl -->
+                        <div class="field-checkbox" aria-labelledby="ttime_services--itl_label">
+                            <input id="ttime_services--itl" name="services[]" type="checkbox" value="ITL" required="true">
+                            <label id="ttime_services--itl_label" for="ttime_services--itl"> International Documents and Packaging </label>
+                        </div>
+
+                        <!-- field - service - stb -->
+                        <div class="field-checkbox field-checkbox--last" aria-labelledby="ttime_services--stb_label">
+                            <input id="ttime_services--stb" name="services[]" type="checkbox" value="STB" required="true">
+                            <label id="ttime_services--stb_label" for="ttime_services--stb"> StarTrack Premium Box </label>
+                            <span id="ttime_services_error" for="ttime_services" class="error-message"> Select at least one service  </span>
+                        </div>
+                    </div><!-- field end -->
+
+                </fieldset><!-- fieldset - services - end -->
+
+                <!-- fieldset - calc -->
+                <fieldset class="form-group no-padding-v--top" aria-labelledby="ttime-step--1_label-calc_label">
+
+                    <!-- legend label -->
+                    <legend id="ttime-step--1_label-calc_label" class="hidden">
+                        Calculate from and date
+                    </legend>
+
+                    <!-- field - calculate from -->
+                    <div class="field" aria-labelledby="ttime_calc--from_label">
+                        <label id="ttime_calc--from_label" for="ttime_calc--from" class="field-label"> Calculate from </label>
+                        <div for="ttime_calc--from" class="field-select medium">
+                            <select id="ttime_calc--from" name="calculateFrom" type="select" default="Arrival date" required="true">
+                                <option value="Arrival date"> Arrival date </option>
+                                <option value="Dispatch date"> Dispatch date </option>
+                            </select>
+                        </div>
+                        <span id="ttime_calc--from_error" for="ttime_calc--from" class="error-message"> Select a valid from option  </span>
+                    </div><!-- field end -->
+
+                    <!-- field - calculate from date -->
+                    <div class="field" aria-labelledby="ttime_calc--from-date_label">
+                        <label id="ttime_calc--from-date_label" for="ttime_calc--from-date" class="field-label"> Date </label>
+                        <input id="ttime_calc--from-date" name="calculateFromDate" type="text" class="field-input input-date short" placeholder="dd/mm/yyyy" maxlength="12" autocomplete="off" required="true" validate="date,dateWeekdays"
+                               data-allow-input="true" data-date-format="d/m/Y" data-enable-only="weekdays">
+                        <span id="ttime_calc--from-date_error" for="ttime_calc--from-date" class="error-message">Date is required and must not be a weekend or public holiday</span>
+                    </div><!-- field end -->
+
+                </fieldset><!-- fieldset - calc - end -->
+
+                <!-- fieldset - submit -->
+                <fieldset class="form-group text-center bg-colour--mid-tan"
+                          aria-labelledby="ttime-step--1_label-btn"
+                          aria-describedby="ttime-step--1_desc-btn">
+
+                    <!-- legend label / description -->
+                    <legend id="ttime-step--1_label-btn" class="hidden"> Get transit time </legend>
+                    <p id="ttime-step--1_desc-btn" class="hidden"> Click on the button below to get transit time </p>
+
+                    <!-- submit -->
+                    <button class="btn btn-primary" role="button" title="Get transit time" rel="tool:next"
+                            aria-label="Get transit time" aria-controls="ttime-step--result" custom="true" required="true">
+                        Get transit time
+                    </button>
+                </fieldset><!-- fieldset - submit end -->
+            </form><!-- form end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool help 1 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.transittime="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:transittags', pagetype='faq'}">
+                                <sly data-sly-list.item="${transittime.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.transitURL1 != null && properties.transitURL1 != ''}"  href="${properties.transitURL1}" target="_blank">${properties.transitText1}</a>
+                        <a data-sly-test="${properties.transitURL2 != null && properties.transitURL2 != ''}"  href="${properties.transitURL2}" target="_blank">${properties.transitText2}</a>
+
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- ttime - step 1 end -->
+
+    <!-- ttime - step result -->
+    <tool-step id="ttime-step--result" class="ttime-step ttime-step--result">
+
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="ttime-step--result_heading" aria-describedby="ttime-step--result_summary">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/tt-icon.png" alt=""></i><!--
+             --><span id="ttime-step--result_heading">Transit time</span>
+            </h1><!-- heading end -->
+
+            <!-- notifications header -->
+            <h3 id="ttime-step--result_summary" class="notifications">
+                You have <span id="ttime-transit_count" class="notifications-count">3</span> estimate<span id="ttime-transit_plural">s</span> in your results
+            </h3><!-- notifications header end -->
+
+            <!-- transit -->
+            <form id="ttime-transit" class="form transit" no-validate="true" disabled="true">
+                <!-- fieldset -->
+                <fieldset class="form-group no-padding-v" aria-labelledby="ttime-transit_main_label">
+
+                    <!-- legend label -->
+                    <legend id="ttime-transit_main_label" class="hidden">
+                        Transit time estimated results
+                    </legend>
+
+                    <!-- field -->
+                    <div class="field" aria-labelledby="ttime-transit_sender_label">
+                        <label id="ttime-transit_sender_label" for="ttime-transit_sender" class="field-label disabled" aria-read-only="true"> Sender's location </label>
+                        <input id="ttime-transit_sender" type="text" class="field-input input-text medium disabled" value="2033, Kensington, NSW" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field -->
+                    <div class="field" aria-labelledby="ttime-transit_receiver_label">
+                        <label id="ttime-transit_receiver_label" for="ttime-transit_receiver" class="field-label disabled" aria-read-only="true"> Receiver's location </label>
+                        <input id="ttime-transit_receiver" type="text" class="field-input input-text medium disabled" value="2033, Kensington, NSW" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- field -->
+                    <div class="field" aria-labelledby="ttime-transit_services_label">
+                        <label id="ttime-transit_services_label" for="ttime-transit_services" class="field-label disabled" aria-read-only="true"> Selected service(s) </label>
+                        <textarea id="ttime-transit_services" type="text" class="field-input input-text disabled medium" disabled="true" aria-read-only="true" rows="5"></textarea>
+                    </div><!-- field end -->
+
+                    <!-- field -->
+                    <div class="field" aria-labelledby="ttime-transit_calc-from_label">
+                        <label id="ttime-transit_calc-from_label" for="ttime-transit_calc-from" class="field-label disabled" aria-read-only="true"> Calculated from </label>
+                        <input id="ttime-transit_calc-from" type="text" class="field-input input-text medium disabled" value="Arrive Date dd/mm/yyyy" disabled="true" aria-read-only="true">
+                    </div><!-- field end -->
+
+                    <!-- table -->
+                    <div class="table no-label">
+                        <table aria-read-only="true">
+                            <thead class="table-head">
+                            <tr>
+                                <th> Service </th>
+                                <th> Estimated arrival date </th>
+                                <th> Estimated dispatch date </th>
+                            </tr>
+                            </thead>
+                            <tbody class="ttime-transit_estimates">
+                            <tr>
+                                <td> Express </td>
+                                <td> dd mm yy </td>
+                                <td> dd mm yy </td>
+                            </tr>
+                            <tr>
+                                <td> Fixed Price Premium </td>
+                                <td> dd mm yy </td>
+                                <td> dd mm yy </td>
+                            </tr>
+                            <tr>
+                                <td> Premium </td>
+                                <td> dd mm yy </td>
+                                <td> dd mm yy </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- table end -->
+
+                </fieldset><!-- fieldset end -->
+            </form><!-- transit end -->
+
+        </section><!-- form container end -->
+
+        <!-- tool error -->
+        <section id="ttime-error" class="tool-message tool-message--error" aria-labelledby="ttime-error_label" aria-describedby="ttime-error_desc">
+            <!-- tool error inner -->
+            <div class="tool-message_inner">
+                <h3>
+                    <span id="ttime-error_label">Something went wrong.</span>
+                </h3>
+                <p id="ttime-error_desc">
+                    <span id="ttime-error_message">There was an error processing your request.</span>
+                </p>
+                <p>
+                    Please try again in a while. If the problem continues, please contact us.
+                </p>
+                <h3><a href="#help:open" title="Contact us">Contact us</a></h3>
+            </div><!-- tool error inner end -->
+
+            <!-- tool retry -->
+            <tool-retry></tool-retry>
+        </section><!-- tool error end -->
+
+        <!-- tool success -->
+        <section id="ttime-success" class="tool-message tool-message--success">
+            <!-- tool reset -->
+            <tool-reset></tool-reset>
+        </section><!-- tool success end -->
+
+        <!-- tool help 2 -->
+        <section class="tool-help">
+            <form class="form">
+                <!-- Need Help Start -->
+                <!-- add after the last fieldset containing the submit button-->
+                <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                    <h3 class="need-help-title">Need Help?</h3>
+                    <section class="need-help-body">
+                        <ul class="need-help-list">
+                            <sly data-sly-use.transittime="${'au.com.auspost.startrack_corp.core.components.Carousel' @ tagproperty='cq:transittags', pagetype='faq'}">
+                                <sly data-sly-list.item="${transittime.items}">
+                                    <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <a data-sly-test="${properties.transitURL1 != null && properties.transitURL1 != ''}"  href="${properties.transitURL1}" target="_blank">${properties.transitText1}</a>
+                        <a data-sly-test="${properties.transitURL2 != null && properties.transitURL2 != ''}"  href="${properties.transitURL2}" target="_blank">${properties.transitText2}</a>
+                    </section>
+                </fieldset>
+                <!-- Need Help End -->
+            </form>
+        </section><!-- tool help end -->
+
+    </tool-step><!-- ttime - step result end -->
+
+</template>

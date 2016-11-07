@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Edit Card"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container" class="card-image-multifield">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Card Configuration"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">                           
+                            <containerType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".card-option-containertype-showhide-target"
+                                fieldLabel="Component Type"
+                                name="./containerTypeCard">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <card
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:hideResource="{Boolean}true"
+                                        text="Card"
+                                        value="card"/>
+                                    <tile
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Tile"
+                                        value="tile"/>
+                                    <casestudy
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Case Study"
+                                        value="casestudy"/>
+                                    <marketingtile
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Marketing Tile"
+                                        value="marketingtile"/>    
+                                    <hero
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Hero"
+                                        value="hero"/>
+                                    <oneup1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Oneup1"
+                                        value="oneup1"/>
+                                    <oneup
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Oneup2"
+                                        value="oneup"/>
+                                </items>
+                            </containerType>
+                            <imageLocation
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Image Location"
+                                name="./imageLocation">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <top
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:hideResource="{Boolean}true"
+                                        text="Top"
+                                        value="top"/>
+                                    <bottom
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:hideResource="{Boolean}true"
+                                        text="Bottom"
+                                        value="bottom"/>
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="left"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="right"/>
+                                </items>
+                            </imageLocation>
+
+
+
+ 							<casestudy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hidden card-option-containertype-showhide-target"
+                                showhidetargetvalue="casestudy">
+                                <items jcr:primaryType="nt:unstructured">
+                                <videoUrl
+				                        jcr:primaryType="nt:unstructured"
+				                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+				                        fieldLabel="Video Url"
+				                        name="./videoUrl"
+				                        rootPath="/content"/>
+                                </items>
+                            </casestudy>
+
+
+
+
+                            <hero
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hidden card-option-containertype-showhide-target"
+                                showhidetargetvalue="hero">
+                                <items jcr:primaryType="nt:unstructured">
+                                	
+                                    <featureLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Feature Label"
+                                        name="./featureLabel"/>
+                                    <readTime
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Read Time Text"
+                                        name="./readTime"/>
+                                    <featureImagePath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldDescription="Drag and drop from the DAM"
+                                        fieldLabel="Icon Path"
+                                        fileReferenceParameter="./featureImagePathRef"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        required="{Boolean}true"
+                                        title="Upload Image"
+                                        useHTML5="{Boolean}true"/>
+                                    <featureAltText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Icon Alt Text"
+                                        name="./featureAltText"/>
+                                    <featurePath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Feature Image Link"
+                                        name="./featurePath"
+                                        rootPath="/content"/>
+                                    <featureOpenInNewTab
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        fieldDescription="Please check the checkbox to open link in a new tab"
+                                        fieldLabel="Open Link in a new tab"
+                                        name="./featureOpenInNewTab"
+                                        text="Open link in a new tab"
+                                        title="Open link in a new tab"
+                                        value="{Boolean}true"/>
+                                    <stickyCta
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        fieldDescription="Please check the checkbox to select Sticky CTA"
+                                        fieldLabel="Sticky CTA"
+                                        name="./stickyCta"
+                                        text="Sticky CTA"
+                                        title="Sticky"
+                                        value="{Boolean}true"/>
+                                     <featureCtaImagePath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldDescription="Drag and drop from the DAM"
+                                        fieldLabel="Sticky CTA Thumbnail"
+                                        fileReferenceParameter="./featureCtaImagePathRef"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        required="{Boolean}true"
+                                        title="Upload Image"
+                                        useHTML5="{Boolean}true"/>
+                                      <stickyCTATitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Sticky CTA Title"
+                                        name="./stickyCTATitle"/>
+                                </items>
+                            </hero>
+                            <oneup1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hidden card-option-containertype-showhide-target"
+                                showhidetargetvalue="oneup1">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <theme
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Theme"
+                                        name="./theme1">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <o1
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Tan"
+                                                value="theme-tan"/>
+                                            <o2
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Yellow"
+                                                value="theme-yellow"/>
+                                            <o3
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Blue"
+                                                value="theme-blue"/>
+                                            <o4
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Teal"
+                                                value="theme-teal"/>
+                                            <o5
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Dark"
+                                                value="theme-dark"/>
+                                            <o6
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Light"
+                                                value="theme-light"/>
+                                        </items>
+                                    </theme>
+                                </items>
+                            </oneup1>
+                            <oneup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hidden card-option-containertype-showhide-target"
+                                showhidetargetvalue="oneup">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <theme
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Theme"
+                                        name="./theme">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <o1
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Tan"
+                                                value="theme-tan"/>
+                                            <o2
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Yellow"
+                                                value="theme-yellow"/>
+                                            <o3
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Blue"
+                                                value="theme-blue"/>
+                                            <o4
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Teal"
+                                                value="theme-teal"/>
+                                            <o5
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Dark"
+                                                value="theme-dark"/>
+                                            <o6
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Light"
+                                                value="theme-light"/>
+                                        </items>
+                                    </theme>
+                                    <relatedLinkTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Related Links Title"
+                                        name="./relatedLinkTitle"/>
+                                    <related-link-config
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                        fieldLabel="Related Links">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            acs-commons-nested=""
+                                            name="./relatedLinkConfig">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <linkText
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            fieldLabel="Link Text"
+                                                            name="./linkText"
+                                                            required="true"/>
+                                                        <linkURL
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                            fieldLabel="Link URL"
+                                                            name="./linkURL"
+                                                            rootPath="/content"/>
+                                                        <linkOpenInNewTab
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                            fieldDescription="Please check the checkbox to open link in a new tab"
+                                                            fieldLabel="Open Link in a new tab"
+                                                            name="./linkOpenInNewTab"
+                                                            text="Open Link in a new tab"
+                                                            title="Open Link in a new tab"
+                                                            value="{Boolean}true"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </related-link-config>
+                                    <relatedPageTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Related Pages Title"
+                                        name="./relatedPageTitle"/>
+                                    <related-page-config
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                        fieldLabel="Related Pages">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            acs-commons-nested=""
+                                            name="./relatedPageConfig">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <pageText
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            fieldLabel="Page Text"
+                                                            name="./pageText"
+                                                            required="true"/>
+                                                        <pageURL
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                            fieldLabel="Page URL"
+                                                            name="./pageURL"
+                                                            rootPath="/content"/>
+                                                        <pageOpenInNewTab
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                            fieldDescription="Please check the checkbox to open page in a new tab"
+                                                            fieldLabel="Open Page in a new tab"
+                                                            name="./pageOpenInNewTab"
+                                                            text="Open Page in a new tab"
+                                                            title="Open Page in a new tab"
+                                                            value="{Boolean}true"/>
+                                                        <pageImagePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                                            autoStart="{Boolean}false"
+                                                            class="cq-droptarget"
+                                                            fieldDescription="Drag and drop from the DAM"
+                                                            fieldLabel="Icon Path"
+                                                            fileNameParameter="./pageImagePath"
+                                                            fileReferenceParameter="./pageImagePathRef"
+                                                            mimeTypes="[image]"
+                                                            multiple="{Boolean}false"
+                                                            name="./pageImage"
+                                                            required="{Boolean}true"
+                                                            title="Upload Image"
+                                                            useHTML5="{Boolean}false"/>
+                                                        <pageAltText
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            fieldLabel="Icon Alt Text"
+                                                            name="./pageAltText"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </related-page-config>
+                                </items>
+                            </oneup>
+                        </items>
+                    </columns>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

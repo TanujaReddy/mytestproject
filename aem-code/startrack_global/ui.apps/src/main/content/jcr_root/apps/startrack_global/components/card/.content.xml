@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="A card is consist of Heading (optional), text description (optional) , image (optional) and CTA button/link (optional)."
+    jcr:primaryType="cq:Component"
+    jcr:title="Card"
+    allowedParents="[*/parsys]"
+    componentGroup="lyt-container-only-all-temp"/>

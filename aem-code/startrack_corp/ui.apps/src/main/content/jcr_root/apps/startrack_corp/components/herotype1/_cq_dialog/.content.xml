@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Edit Hero Type1"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container" class="card-image-multifield herotype1">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <ctaTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        fieldLabel="Cta Title"
+                        name="./ctaTitle"
+                        required="true"/>
+
+                    <ctaUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Cta Url"
+                        name="./ctaUrl"
+                        rootPath="/content"/>
+
+                    <videoImagePath
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fieldDescription="Drag and drop from the DAM"
+                        fieldLabel="Video Image"
+                        fileNameParameter="./videoImagePath"
+                        fileReferenceParameter="./videoImagePathRef"
+                        mimeTypes="[image]"
+                        multiple="{Boolean}false"
+                        name="./videoImagePath"
+                        required="{Boolean}true"
+                        title="Upload Image"
+                        useHTML5="{Boolean}false"/>
+
+                    <videoUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Video Url"
+                        name="./videoUrl"
+                        rootPath="/content"/>
+
+                    <ctaLinks
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                        fieldLabel="Cta Links">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                            acs-commons-nested=""
+                            name="./ctaLinks">
+                            <layout
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                method="absolute"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <linkTitle
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                            fieldLabel="Link Title"
+                                            name="./linkTitle"
+                                            required="true"/>
+                                            
+                                            
+                                        <linkText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                            fieldLabel="Link Text"
+                                            name="./linkText"
+                                            required="true"/>
+                                        <linkURL
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                            fieldLabel="Link URL"
+                                            name="./linkUrl"
+                                            rootPath="/content"/>
+                                        <linkImage
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                            autoStart="{Boolean}false"
+                                            class="cq-droptarget"
+                                            fieldDescription="Drag and drop from the DAM"
+                                            fieldLabel="Link Image"
+                                            fileNameParameter="./linkImagePath"
+                                            fileReferenceParameter="./linkImagePathRef"
+                                            mimeTypes="[image]"
+                                            multiple="{Boolean}false"
+                                            name="./linkImage"
+                                            required="{Boolean}true"
+                                            title="Upload Image"
+                                            useHTML5="{Boolean}false"/>
+
+                                    </items>
+                                </column>
+                            </items>
+                        </field>
+                    </ctaLinks>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

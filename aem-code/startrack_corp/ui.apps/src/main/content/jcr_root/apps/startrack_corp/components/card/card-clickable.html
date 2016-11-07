@@ -1,0 +1,16 @@
+<sly data-sly-use.pathbrowser="${'au.com.auspost.startrack_global.core.sightly.PathBrowser' @ paramURL=properties.linkpath,ctaParams=properties.urlParams}">
+   <sly data-sly-use.analytics="${'au.com.auspost.startrack_global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+   		<sly data-sly-use.siblingAnalytics="${'au.com.auspost.startrack_global.core.sightly.SiblingAnalytics'@ childNode='card-heading-text',childNodeProperty='text'}">
+   			<sly data-sly-test="${siblingAnalytics.titleForDataAnalytics}">
+ 	   					<a class="tile-card-link" href="${pathbrowser.formattedURL}" id="${analytics.formattedNodePath}"
+ 	   					   data-event="site interaction" data-category="card"  data-description="${siblingAnalytics.titleForDataAnalytics}"
+ 	   					   target="${properties.clickableCard == 'on'?'_blank':''}">${siblingAnalytics.titleForDataAnalytics}</a>
+   			</sly>
+   			<sly data-sly-test="${!siblingAnalytics.titleForDataAnalytics}">
+ 	   					<a class="tile-card-link" href="${pathbrowser.formattedURL}" id="${analytics.formattedNodePath}"
+ 	   					   data-event="site interaction" data-category="card"  data-description="${properties.analyticsTitle}"
+ 	   					   target="${properties.clickableCard == 'on'?'_blank':''}">${properties.analyticsTitle}</a>
+   			</sly>
+   		</sly>
+   </sly>
+</sly>

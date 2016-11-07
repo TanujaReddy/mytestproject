@@ -1,0 +1,33 @@
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}" data-sly-unwrap>
+    <div>Author Hint: Edit microsites footer here, you can edit corporate and social links.</div>
+
+</div>
+
+<sly data-sly-use.colorMap="${'au.com.auspost.global.core.sightly.ColorMappingReader'}">
+    <footer class="footer bg-colour${colorMap.colorClass}">
+        <sly data-sly-use.footer="${'au.com.auspost.global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+            <div class="container">
+                <div data-sly-use.linkListUtils="${'au.com.auspost.global.core.sightly.MultiFieldIterator' @ property='corporatelinks'}" data-sly-unwrap>
+                    <ul class="footer-list">
+                        <sly data-sly-list="${linkListUtils.linkListItems}">
+                            <div data-sly-test="${item.textdisplay}" data-sly-unwrap>
+                                <li><a href="${item.linkpath}" id="${footer.formattedNodePath}" title="${item.textdisplay}" data-event="site interaction" data-category="footer navigation" data-description="${item.textdisplay}" class="footer-link">${item.textdisplay}</a></li>
+                            </div>
+                        </sly>
+                    </ul>
+                </div>
+                <div data-sly-use.linkListUtils="${'au.com.auspost.global.core.sightly.MultiFieldIterator' @ property='socialnetwork'}" data-sly-unwrap>
+                    <ul class="footer-list footer-list--social">
+                        <sly data-sly-list="${linkListUtils.linkListItems}">
+                            <div data-sly-test="${item.socialClass}" data-sly-unwrap>
+                                <div data-sly-use.socialStyle="${'au.com.auspost.global.core.sightly.DesignStyleIterator' @ property=item.socialClass}" data-sly-unwrap>
+                                    <li><a href="${item.linkpath}" id="${footer.formattedNodePath}" title="${item.socialClass}" data-event="site interaction" data-category="footer navigation" data-description="${item.socialClass}" class="footer-link footer-link--${item.socialClass}">${socialStyle.socialHtml @context="unsafe"}</a></li>
+                                </div>
+                            </div>
+                        </sly>
+                    </ul>
+                </div>
+            </div>
+        </sly>
+    </footer>
+</sly>

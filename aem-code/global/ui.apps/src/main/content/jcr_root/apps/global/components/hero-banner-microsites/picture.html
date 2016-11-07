@@ -1,0 +1,44 @@
+<picture class="hero-img">
+    <!-- 16:9 crop -->
+    <source
+            media="(min-width: 73.13rem)"
+            srcset="${properties.imagePathRefDesktop} 3x,
+                  ${properties.imagePathRefDesktop} 2x,
+                  ${properties.imagePathRefDesktop}" />
+    <source
+            media="(min-width: 60.63rem)"
+            srcset="${properties.imagePathRefDesktop} 3x,
+                  ${properties.imagePathRefDesktop} 2x,
+                  ${properties.imagePathRefDesktop}" />
+
+    <source
+            media="(min-width: 42.5rem)"
+            srcset="${properties.imagePathRefDesktop} 3x,
+                  ${properties.imagePathRefDesktop} 2x,
+                  ${properties.imagePathRefDesktop}" />
+
+    <!-- square crop -->
+    <source
+            media="(min-width: 30rem)"
+            srcset="${properties.imagePathRefMobile} 3x,
+                  ${properties.imagePathRefMobile} 2x,
+                  ${properties.imagePathRefMobile}" />
+
+    <source
+            srcset="${properties.imagePathRefMobile} 3x,
+                  ${properties.imagePathRefMobile} 2x,
+                  ${properties.imagePathRefMobile}" />
+
+    <sly data-sly-test="${(properties.imagePathRefMobile != null || properties.imagePathRefDesktop != null)  && properties.isDecorative != 'true'}">
+        <img
+                src="${properties.imagePathRefDesktop}"
+                alt="${properties.imageAltTextDesktop}" />
+    </sly>
+
+    <sly data-sly-test="${(properties.imagePathRefMobile != null || properties.imagePathRefDesktop != null)  && properties.isDecorative == 'true'}">
+        <img
+                src="${properties.imagePathRefDesktop}"
+                alt="" />
+    </sly>
+
+</picture>

@@ -1,0 +1,24 @@
+<sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: Edit Eror here</div>
+</sly>
+<section class="layout-container bg-colour--light-tan">
+    <div class="layout-container-wrapper">
+        <div class="flex-container flex-container--single-row">
+            <div class="card hero error-page">
+                <div class="tile tile--image-side tile--image-right text-center">
+                    <picture class="tile-image">
+                        <img class="tile-image-src" src="${properties.errorImagePathRef}" alt="${properties.errorTitle}">
+                    </picture>
+                    <div class="tile-content">
+                        <h5> <strong>${properties.errorTitle}</strong></h5>
+                        <h1> ${properties.errorSubTitle}</h1>
+                        <p>${properties.errorBody}</p>
+                        <div class="cta-column">
+                            <a href="${properties.erorHomeUrl}" class="btn btn-primary" role="button" title="Back to home" aria-label="Back to home"> Back to home </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

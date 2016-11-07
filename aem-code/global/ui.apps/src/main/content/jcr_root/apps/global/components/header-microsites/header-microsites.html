@@ -1,0 +1,62 @@
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}" data-sly-unwrap>
+    <div>Author Hint: Edit microsites header here, you can edit the logo.</div>
+</div>
+
+<div class="skiplinks">
+    <a href="#content" class="visually-hidden focusable">Skip to content</a>
+</div>
+
+<header class="header" id="header">
+    <div data-sly-test="${properties.fileReference == null}" data-sly-unwrap>
+        <img src="/content/dam/global/ms-header.png" alt="Placeholder for MS Header Logo">
+    </div>
+    <div class="header-container">
+        <div data-sly-use.image="image.js">
+            <sly data-sly-use.pathbrowser="${'au.com.auspost.global.core.sightly.PathBrowser' @ paramURL=image.linkUrl}">
+                <a href="${pathbrowser.formattedURL}" title="${image.title}" data-sly-unwrap="${!image.linkUrl}" class="header-logo-link">
+                    <img src="${image.src}" class="header-logo-img" alt="${image.alt}">
+                </a>
+            </sly>
+        </div>
+      <sly data-sly-test="${properties.disableNavForPages!=currentPage.path}">
+		  <sly data-sly-use.navigation_items="au.com.auspost.global.core.sightly.Navigation">
+			  <sly data-sly-test="${navigation_items.navItems}" >
+			<button class="nav-toggle nav-trigger-open">Menu<i class="icon-hamburger"></i></button>
+			<div class="nav-container">
+			  <button class="nav-toggle nav-trigger-close">
+			    <span>
+			      <svg width="14" height="15" viewBox="0 0 14 15" xmlns="http://www.w3.org/2000/svg"><title>icon-close</title><path d="M7 4.823L2.54.36a1.23 1.23 0 0 0-1.743 0L.36.798a1.233 1.233 0 0 0 0 1.743L5.01 7.188a1.252 1.252 0 0 0 0 .283L.36 12.12c-.48.48-.48 1.262 0 1.744l.437.434a1.23 1.23 0 0 0 1.743 0L7 9.836l4.46 4.46a1.23 1.23 0 0 0 1.743 0l.436-.434c.48-.482.48-1.263 0-1.744L8.99 7.47a1.246 1.246 0 0 0 0-.282L13.64 2.54c.48-.48.48-1.26 0-1.743L13.202.36a1.23 1.23 0 0 0-1.743 0L7 4.824z" fill="#FFF" fill-rule="evenodd"/></svg>
+			    </span>
+			  </button>
+			  <nav class="main-nav">
+				  <div class="main-nav-logo">
+					  <a href="/" class="main-nav-logo-link">
+						  <img src="${image.src}" class="header-logo-img" alt="${image.alt}"></a>
+				  </div>
+			    <sly data-sly-use.navigation="au.com.auspost.global.core.sightly.Navigation">
+				    <ul id="primary-nav" class="main-nav-list">
+						<sly data-sly-list.nav="${navigation.navItems}" >
+							<sly data-sly-use.analytics="${'au.com.auspost.global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+							<li class="main-nav-item ${nav.path == currentPage.path ?'active':''}"><a class="main-nav-link" href="${nav.link}"  id="${analytics.formattedNodePath}-${nav.title}" title="${nav.title}"
+							data-event="site interaction" data-category="header navigation" data-description="${nav.title}">${nav.title}</a></li>
+							</sly>
+						</sly>
+						<div data-sly-use.linkListUtils="${'au.com.auspost.global.core.sightly.MultiFieldIterator' @ property='navAddtionalLinks'}" data-sly-unwrap>
+			              <sly data-sly-list="${linkListUtils.linkListItems}">
+			              	<sly data-sly-use.pathbrowser="${'au.com.auspost.global.core.sightly.PathBrowser' @ paramURL=item.pagePath, ctaParams=item.urlParams}">
+				              	<sly data-sly-use.analytics="${'au.com.auspost.global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+    	   							<li class="main-nav-item"><a class="main-nav-link" href="${pathbrowser.formattedURL}" target="${item.newTab == 'on'?'_blank':''}" id="${analytics.formattedNodePath}-${item.title}" title="${item.title}"
+									data-event="site interaction" data-category="header navigation" data-description="${item.title}">${item.title}</a></li>
+								</sly>
+		  					</sly>
+			              </sly>
+			            </div>					
+				    </ul>
+				</sly>
+			  </nav>
+			</div>
+				  </sly>
+			  </sly>
+	</sly>
+</div>
+</header>

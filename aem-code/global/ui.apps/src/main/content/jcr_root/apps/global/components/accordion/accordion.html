@@ -1,0 +1,55 @@
+<div data-sly-use.inlineEdit="${'au.com.auspost.global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='global/components/rte-components/text-heading',nodeToBeCreated='accordion-heading-text'}"
+     data-sly-unwrap></div>
+<sly data-sly-test="${properties.allowedComponent != null}" >
+<div data-sly-use.inlineEdit="${'au.com.auspost.global.core.sightly.InlineEditNodeGenerator'@ paramNodeType=properties.allowedComponent,nodeToBeCreated='accordion-component'}"
+     data-sly-unwrap></div>
+</sly>
+<sly data-sly-test.areaExpanded="false" ></sly>
+<sly data-sly-test.areaHidden="" ></sly>
+ <sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring) && (!properties.text)}">
+    <div>Author Hint: Edit accordion tag line here.This field is required. You can select if the accordion is opened or closed by default in the dialog.</div>
+</sly>
+
+<sly data-sly-use.accordion="${'au.com.auspost.global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+    <!--Keep the accordion open if the wcmmode is in author mode-->
+    <sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div class="expandable-block is-open">
+     <sly data-sly-test.areaExpanded="true" ></sly>
+        <sly data-sly-test.areaHidden="" ></sly>
+    </sly>
+
+    <!--Keep the accordion open/close based on the user input if the wcmmode is in publish/preview mode-->
+    <sly data-sly-test="${!(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+        <div class="expandable-block ${properties.isOpen == 'true'?'is-open':''}">
+        <sly data-sly-test.areaExpanded="${properties.isOpen == 'true'?'true':'false'}" ></sly>
+            <sly data-sly-test.areaHidden="${properties.isOpen == 'true'?'':'is-hidden'}" ></sly>
+    </sly>
+
+    <h4 class="expandable-block-header" >
+        <sly data-sly-use.siblingAnalyticsTitle="${'au.com.auspost.global.core.sightly.SiblingAnalytics'@ childNode='accordion-heading-text',childNodeProperty='text'}">
+
+            <button class="expandable-block-trigger"
+                aria-expanded="${areaExpanded}"
+                id="${accordion.currentNodeName}" title="${siblingAnalyticsTitle.titleForDataAnalytics}"
+                data-event="site interaction"
+                data-category="accordion"
+                data-description="${siblingAnalyticsTitle.titleForDataAnalytics}"><sly data-sly-resource="${'accordion-heading-text' @ resourceType='global/components/rte-components/text-heading'}" ></sly></button>
+        <i class="arrow-toggle">
+            <svg width="11" height="7" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg"><title>arrow</title><path d="M0 0h11.014L5.507 6.23 0 0z" fill="#807370" fill-rule="evenodd"/></svg>
+        </i>
+
+        </sly>
+    </h4>
+
+    <!--set is-hidden value based on accordion status - open/closed-->
+    <article class="expandable-block-content ${areaHidden}">
+        <div class="expandable-block-content-inner">
+            <sly data-sly-test="${properties.allowedComponent != null}" >
+                <sly data-sly-resource="${'accordion-component' @ resourceType=properties.allowedComponent}" data-sly-unwrap></sly>
+            </sly>
+        </div>
+    </article>
+
+
+</div>
+</sly>

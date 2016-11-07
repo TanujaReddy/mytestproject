@@ -1,0 +1,281 @@
+<sly data-sly-use.card="${ 'card.js' @ hideCard=properties.hideCard, wcmmode=wcmmode.edit, preview=wcmmode.preview, touch=wcmInit.isTouchAuthoring, imageLocation=properties.imageLocation, type=properties.containerTypeCard, linkpath=properties.properties.linkpath, metaText=properties.metaText, metaLocation=properties.metaLocation, theme=properties.theme}" data-sly-test="${card.editing || properties.hideCard==null}">
+
+	<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading', nodeToBeCreated='card-heading-text'}" />
+	<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-body', nodeToBeCreated='card-body-text'}" />
+	<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-body', nodeToBeCreated='casestudy-body-text'}" />
+	<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_corp/components/adpativeimage',nodeToBeCreated='adaptiveimage'}"/>
+
+    <div data-sly-test="${properties.containerTypeCard == 'marketingtile'}" class="card marketing-tile">
+        <div class="${card.className}">
+            <sly data-sly-test="${properties.hideImage == null}">
+                <sly data-sly-resource="${'adaptiveimage' @ resourceType='startrack_corp/components/adaptiveimage'}"/>
+            </sly>
+            <sly data-sly-test="${properties.hideContent == null}">
+                <div class="tile-content tile--card-content">
+                    <p class="tile-meta-info">${properties.metaText}</p>
+                    <h3 data-sly-element="${card.editing ? 'h3':'h3'}" class="tile--card-title">
+                        <sly data-sly-element="${card.editing ? 'div':'sly'}" data-sly-resource="${'card-heading-text' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+                    </h3>
+                    <p data-sly-element="${card.editing ? 'div':'p'}">
+                        <sly data-sly-resource="${'card-body-text' @ resourceType='startrack_global/components/rte-components/text-body'}"></sly>
+                    </p>
+                    <sly data-sly-test="${properties.showCta =='true'}">
+                        <sly data-sly-use.linkListUtils="${'au.com.auspost.startrack_global.core.sightly.MultiFieldIterator' @ property='ctaTypeConfig'}">
+                            <sly data-sly-use.idgen="${'au.com.auspost.startrack_global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+                                <sly data-sly-use.cta="${'au.com.auspost.startrack_global.core.sightly.SiblingAnalytics'@ childNode='card-heading-text',childNodeProperty='text'}">
+                                    <sly data-sly-list="${linkListUtils.linkListItems}">
+                                        <sly data-sly-use.pathbrowser="${'au.com.auspost.startrack_global.core.sightly.PathBrowser' @ paramURL=item.ctaURL, ctaParams=item.ctaParams}">
+                                            <a href="${pathbrowser.formattedURL}" target="${item.openInNewTab == 'true'?'_blank':''}" 
+                                            id="${idgen.formattedNodePath}" title="${item.ctaTypeText}" data-event="site interaction" data-category="card|cta|${item.ctaType}|${item.ctaStyle}" 
+                                            class="${item.ctaType} ${item.ctaType}-${item.ctaStyle}" data-description="${cta.titleForDataAnalytics}|${item.ctaTypeText}">${item.ctaTypeText}</a>
+                                        </sly>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </sly>
+                    </sly>
+                </div>
+            </sly>
+        </div>
+    </div>
+
+    <div data-sly-test="${properties.containerTypeCard == 'tile'}" class="card tiles">
+        <sly data-sly-test="${card.editing == false}">
+            <sly data-sly-use.pathbrowser="${'au.com.auspost.startrack_global.core.sightly.PathBrowser' @ paramURL=properties.linkpath, ctaParams=properties.urlParams}">
+                <sly data-sly-use.analytics="${'au.com.auspost.startrack_global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+                    <sly data-sly-use.siblingAnalytics="${'au.com.auspost.startrack_global.core.sightly.SiblingAnalytics'@ childNode='card-heading-text', childNodeProperty='text'}">
+                        <sly data-sly-test="${siblingAnalytics.titleForDataAnalytics}">
+                            <a class="no-underline" href="${pathbrowser.formattedURL}" id="${analytics.formattedNodePath}"
+                               data-event="site interaction" data-category="card"  data-description="${siblingAnalytics.titleForDataAnalytics}"
+                               target="${properties.clickableCard == 'on'?'_blank':''}" title="">
+                        </sly>
+                        <sly data-sly-test="${!siblingAnalytics.titleForDataAnalytics}">
+                            <a class="no-underline" href="${pathbrowser.formattedURL}" id="${analytics.formattedNodePath}"
+                               data-event="site interaction" data-category="card"  data-description="${properties.analyticsTitle}"
+                               target="${properties.clickableCard == 'on'?'_blank':''}" title="">
+                        </sly>
+                        
+                    </sly>
+                </sly>
+            </sly>
+        </sly>
+        <div class="${card.className}">
+            <sly data-sly-test="${properties.hideImage == null}">
+                <sly data-sly-resource="${'adaptiveimage' @ resourceType='startrack_corp/components/adaptiveimage'}" />
+            </sly>
+            <sly data-sly-test="${properties.hideContent == null}">
+                <div class="tile-content">
+                    <h3 data-sly-element="${card.editing ? 'h3':'h3'}" class="tile--card-title">
+                        <sly data-sly-element="${card.editing ? 'div':'sly'}" data-sly-resource="${'card-heading-text' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+                    </h3>
+                    <p class="tile-meta-info">${properties.metaText}</p>
+                    
+                </div>
+            </sly>
+            
+        </div>
+        
+        <sly data-sly-test="${card.editing == false}">
+            </a>
+        </sly>
+    </div>
+    
+    
+   <div data-sly-test="${properties.containerTypeCard == 'casestudy'}" class="card tiles">   
+    
+   
+              
+   	 <a data-sly-test="${properties.videoUrl == null || properties.videoUrl == ''}" class="no-underline" href="${properties.linkpath}" id="${analytics.formattedNodePath}"
+                               data-event="site interaction" data-category="card"  data-description="${siblingAnalytics.titleForDataAnalytics}"
+                               target="${properties.clickableCard == 'on'?'_blank':''}" title="" >
+     	<div class="tile tile--card tile--clickable">
+            <div class="tile-image"><img src="${properties.imagePathRef}" alt="" class="tile-image-src tile-image-src--rounded"></div>
+                <div class="tile-content">
+                    <h3 data-sly-element="${card.editing ? 'h3':'h3'}" class="tile--card-title">
+                        <sly data-sly-element="${card.editing ? 'div':'sly'}" data-sly-resource="${'card-heading-text' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+                    </h3>
+                     <p data-sly-element="${card.editing ? 'div':'p'}">
+                        <sly data-sly-resource="${'casestudy-body-text' @ resourceType='startrack_global/components/rte-components/text-body'}"></sly>
+                    </p>
+                    <p class="tile-meta-info">${properties.metaText}</p>
+                </div>
+           </div>    
+                
+        </a>  
+ 
+    
+    
+     	<a data-sly-test="${properties.videoUrl != null && properties.videoUrl != ''}" class="no-underline video" href="${properties.videoUrl}" title="play video">
+     	<div class="tile tile--card tile--clickable">
+            <div class="tile-image"><img src="${properties.imagePathRef}" alt="" class="tile-image-src tile-image-src--rounded"></div>
+                <div class="tile-content">
+                    <h3 data-sly-element="${card.editing ? 'h3':'h3'}" class="tile--card-title">
+                        <sly data-sly-element="${card.editing ? 'div':'sly'}" data-sly-resource="${'card-heading-text' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+                    </h3>
+                    <p data-sly-element="${card.editing ? 'div':'p'}">
+                        <sly data-sly-resource="${'casestudy-body-text' @ resourceType='startrack_global/components/rte-components/text-body'}"></sly>
+                    </p>
+                    <p class="tile-meta-info">${properties.metaText}</p>
+                </div>
+                </div>
+        </a>  
+        
+    </div>
+    
+
+    <div data-sly-test="${properties.containerTypeCard == 'oneup1'}" class="card one-up">
+        <div class="${card.className} ${properties.theme1}">
+            <sly data-sly-test="${properties.hideImage == null}">
+                <sly data-sly-resource="${'adaptiveimage' @ resourceType='startrack_corp/components/adaptiveimage'}" />
+            </sly>
+            <sly data-sly-test="${properties.hideContent == null}">
+                <div class="tile-content tile--card-content">
+                    <h2 data-sly-element="${card.editing ? 'h2':'h2'}" class="tile--card-title">
+                        <sly data-sly-element="${card.editing ? 'div':'sly'}" data-sly-resource="${'card-heading-text' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+                    </h2>
+                    <p data-sly-element="${card.editing ? 'div':'p'}">
+                        <sly data-sly-resource="${'card-body-text' @ resourceType='startrack_global/components/rte-components/text-body'}"></sly>
+                    </p>
+                    <sly data-sly-test="${properties.showCta =='true'}">
+                        <div class="cta-column">
+                            <sly data-sly-use.linkListUtils="${'au.com.auspost.startrack_global.core.sightly.MultiFieldIterator' @ property='ctaTypeConfig'}">
+                                <sly data-sly-use.idgen="${'au.com.auspost.startrack_global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+                                    <sly data-sly-use.cta="${'au.com.auspost.startrack_global.core.sightly.SiblingAnalytics'@ childNode='card-heading-text',childNodeProperty='text'}">
+                                        <sly data-sly-list="${linkListUtils.linkListItems}">
+                                            <sly data-sly-use.pathbrowser="${'au.com.auspost.startrack_global.core.sightly.PathBrowser' @ paramURL=item.ctaURL, ctaParams=item.ctaParams}">
+                                                <a href="${pathbrowser.formattedURL}" target="${item.openInNewTab == 'true'?'_blank':''}" 
+                                                class="${item.ctaType} ${item.ctaType}-${item.ctaStyle}" id="${idgen.formattedNodePath}" 
+                                                title="${item.ctaTypeText}" data-event="site interaction" data-category="card|cta|${item.ctaType}|${item.ctaStyle}" 
+                                                data-description="${cta.titleForDataAnalytics}|${item.ctaTypeText}">${item.ctaTypeText}</a>
+                                            </sly>
+                                        </sly>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </div>
+                    </sly>
+                </div>
+            </sly>
+        </div>
+    </div>
+
+    <div data-sly-test="${properties.containerTypeCard == 'hero'}" class="card hero hero-type-2">
+        <div class="${card.className}">
+            <sly data-sly-test="${properties.hideImage == null}">
+                <sly data-sly-resource="${'adaptiveimage' @ resourceType='startrack_corp/components/adaptiveimage'}" />
+            </sly>
+            <sly data-sly-test="${properties.hideContent == null}">
+                <div class="tile-content">
+                    <sly data-sly-test="${properties.featureImagePathRef != null}">
+                            <div class="tile-meta-icon">
+                                <img src="${properties.featureImagePathRef}" alt="${properties.featureAltText}"/>
+                            </div>  
+                     </sly>
+                    <h5>
+                        <sly data-sly-test="${properties.featureLabel != null } ">
+                            <strong>${properties.featureLabel}</strong>
+                        </sly>
+                        <sly data-sly-test="${properties.readTime != null } ">
+                            ${properties.readTime}
+                        </sly>
+                    </h5>
+                    <h1 data-sly-element="${card.editing ? 'h1':'h1'}">
+                        <sly data-sly-element="${card.editing ? 'div':'sly'}" data-sly-resource="${'card-heading-text' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+                    </h1>
+                    <p data-sly-element="${card.editing ? 'div':'p'}">
+                        <sly data-sly-resource="${'card-body-text' @ resourceType='startrack_global/components/rte-components/text-body'}"></sly>
+                    </p>
+                    <sly data-sly-test="${properties.showCta =='true'}">
+                        <div class="cta-column">
+                            <sly data-sly-use.linkListUtils="${'au.com.auspost.startrack_global.core.sightly.MultiFieldIterator' @ property='ctaTypeConfig'}">
+                                <sly data-sly-use.idgen="${'au.com.auspost.startrack_global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+                                    <sly data-sly-use.cta="${'au.com.auspost.startrack_global.core.sightly.SiblingAnalytics'@ childNode='card-heading-text',childNodeProperty='text'}">
+                                        <sly data-sly-list="${linkListUtils.linkListItems}">
+                                            <sly data-sly-use.pathbrowser="${'au.com.auspost.startrack_global.core.sightly.PathBrowser' @ paramURL=item.ctaURL, ctaParams=item.ctaParams}">
+                                                <a href="${pathbrowser.formattedURL}" target="${item.openInNewTab == 'true'?'_blank':''}" 
+                                                class="${item.ctaType} ${item.ctaType}-${item.ctaStyle}" role="button" id="${idgen.formattedNodePath}" 
+                                                title="${item.ctaTypeText}" aria-label="${item.ctaTypeText}"
+                                                data-event="site interaction" data-category="card|cta|${item.ctaType}|${item.ctaStyle}"
+                                                data-description="${cta.titleForDataAnalytics}|${item.ctaTypeText}">${item.ctaTypeText}</a>
+                                            </sly>
+                                        </sly>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </div>
+                    </sly>
+                </div>
+            </sly>
+        </div>
+    </div>
+    
+    <div data-sly-test="${properties.containerTypeCard == null || properties.containerTypeCard == 'card' || properties.containerTypeCard == 'oneup'}" class="${card.parentClassName}">
+        <div class="${card.className}">
+
+        <sly data-sly-test="${properties.hideImage == null}">
+            <sly data-sly-test="${card.editing && properties.imagePathRef == null}">
+                <div class="tile-image">
+                    <img src="/etc/designs/startrack_corp/clientlib/img/card_large.png" alt="Placeholder for Large container"/>
+                </div>
+            </sly>
+
+            <sly data-sly-test="${properties.imagePathRef != null}">
+                <sly data-sly-resource="${'adaptiveimage' @ resourceType='startrack_corp/components/adaptiveimage'}"></sly>
+            </sly>
+        </sly>
+
+        <sly data-sly-test="${properties.hideContent == null}">
+            <div class="tile-content ${properties.containerTypeCard=='oneup' ? 'tile--card-content':''}">
+                    <sly data-sly-test="${properties.metaText != null && properties.metaLocation =='aboveHeading'}">
+                        <p class="tile-meta-info">${properties.metaText}</p>
+                    </sly>
+                    <sly data-sly-test="${properties.containerTypeCard !='hero' } ">
+                        <h1 data-sly-element="${properties.containerTypeCard=='oneup' ? 'h2':'h3'}" class="tile--card-title">
+                    </sly>
+                    <sly data-sly-test="${properties.containerTypeCard =='hero' } ">
+                        <h1>
+                    </sly>
+                    <sly data-sly-element="${card.editing ? 'div':'sly'}" data-sly-resource="${'card-heading-text' @ resourceType='startrack_global/components/rte-components/text-heading'}"></sly>
+                    </h1>
+                    <sly data-sly-test="${properties.metaText != null && properties.metaLocation =='belowHeading'}">
+                        <p class="tile-meta-info">${properties.metaText}</p>
+                    </sly>
+                    <p><sly data-sly-element="${card.editing ? 'div':'sly'}" data-sly-resource="${'card-body-text' @ resourceType='startrack_global/components/rte-components/text-body'}"></sly></p>
+
+                <sly data-sly-test="${properties.containerTypeCard != null && properties.containerTypeCard == 'oneup'}">            
+                     <sly data-sly-test="${properties.showCta =='true'}">
+                    <sly data-sly-include="card-cta.html"></sly>
+                	</sly>
+                    <sly data-sly-test="${properties.relatedLinkTitle != null } ">
+                        <h5>${properties.relatedLinkTitle}</h5>
+                    </sly>
+                    <div data-sly-use.linkIterator="${'au.com.auspost.startrack_global.core.sightly.MultiFieldIterator' @ property='relatedLinkConfig'}" data-sly-unwrap>                       
+                        <sly data-sly-list.linkItem="${linkIterator.linkListItems}">
+                            <a href="${linkItem.linkURL}" target="${linkItem.linkOpenInNewTab == 'true'?'_blank':''}" class="article-link" >${linkItem.linkText}</a>
+                        </sly>
+                    </div>
+                    <sly data-sly-test="${properties.relatedPageTitle != null } ">
+                        <h5>${properties.relatedPageTitle}</h5>
+                    </sly>
+                    <div data-sly-use.pageIterator="${'au.com.auspost.startrack_global.core.sightly.MultiFieldIterator' @ property='relatedPageConfig'}" data-sly-unwrap>                       
+                        <sly data-sly-list.pageItem="${pageIterator.linkListItems}">
+                            <a href="${pageItem.pageURL}" target="${pageItem.pageOpenInNewTab == 'true'?'_blank':''}" class="product-link" >
+                                <sly data-sly-test="${pageItem.pageImage != null && pageItem.pageImage != ''}">
+                                    <img src="${pageItem.pageImage}" alt="${pageItem.pageAltText}" />
+                                </sly>    
+                                ${pageItem.pageText}
+                            </a>
+                        </sly>
+                    </div>
+               </sly>
+               
+            </div>
+
+            <sly data-sly-test="${card.editing == false && properties.linkpath !=null}">
+                <sly data-sly-include="card-clickable.html"></sly>
+            </sly>
+        </sly>
+    </div>
+  </div>
+</sly>
+<sly data-sly-include="sticky-cta.html"></sly>

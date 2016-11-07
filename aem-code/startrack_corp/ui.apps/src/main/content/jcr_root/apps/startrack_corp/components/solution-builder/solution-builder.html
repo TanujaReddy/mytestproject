@@ -1,0 +1,761 @@
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}" data-sly-unwrap>
+    <div>Author Hint: edit Solution Builder here</div>
+</div>
+<sly data-sly-use.solutionsbuilder="${'au.com.auspost.startrack_corp.core.components.SolutionsBuilder'}"/>
+<div data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading',nodeToBeCreated='welcome-text'}" data-sly-unwrap />
+<div data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading',nodeToBeCreated='welcome-sub-text'}" data-sly-unwrap />
+
+<div class="sb-main no-js"></div>
+                
+<template id="sb-main">
+    <div class="sb-images">
+        <div class="sb-image sb-image-1" aria-readonly="true">
+            <picture>
+                <source media="(min-width: 480px)" srcset="${properties.heroImage1Ref}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.heroImage1Ref, context='unsafe'}</sly>
+            </picture>
+            <h1>${properties.heroTitle1}</h1>
+            <p>${properties.heroText1}</p>
+        </div>
+        <div class="sb-image sb-image-2" aria-readonly="true">
+            <picture>
+                <source media="(min-width: 480px)" srcset="${properties.heroImage2Ref}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.heroImage2Ref, context='unsafe'}</sly>
+            </picture>
+            <h1>${properties.heroTitle2}</h1>
+            <p>${properties.heroText2}</p>
+        </div>
+        <div class="sb-image sb-image-3" aria-readonly="true">
+            <picture>
+                <source media="(min-width: 480px)" srcset="${properties.heroImage3Ref}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.heroImage3Ref, context='unsafe'}</sly>
+            </picture>
+            <h1>${properties.heroTitle3}</h1>
+            <p>${properties.heroText3}</p>
+        </div>
+        <div class="sb-image sb-image-4" aria-readonly="true">
+            <picture>
+                <source media="(min-width: 480px)" srcset="${properties.heroImage4Ref}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.heroImage4Ref, context='unsafe'}</sly>
+            </picture>
+            <h1>${properties.heroTitle4}</h1>
+            <p>${properties.heroText4}</p>
+        </div>
+        <div class="sb-image sb-image-5" aria-readonly="true">
+            <picture>
+                <source media="(min-width: 480px)" srcset="${properties.heroImage5Ref}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.heroImage5Ref, context='unsafe'}</sly>
+            </picture>
+            <h1>${properties.heroTitle5}</h1>
+            <p>${properties.heroText5}</p>
+        </div>
+        <div class="sb-image sb-image-summary" aria-readonly="true">
+            <picture><img src="/etc/designs/startrack_corp/clientlib/img/test-rectangle-4-3.png" alt=""></picture>
+            <h1> We've got a great solution for you ! </h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo. </p>
+        </div>
+    </div>
+    <div class="sb-steps">
+        <!-- step -->
+        <div id="sb-step-1" class="sb-step sb-step-1" aria-labelledby="sb-step-1-label" aria-describedby="sb-step-1-desc">  
+            <p id="sb-step-1-label"> Step 1 of 5 </p>
+            
+            <form name="sb-form-step-1" no-validate="true">
+                <fieldset>
+                    <legend id="sb-step-1-desc" class="heading-h2"><span> ${properties.questionsTitle1} </span></legend>
+                    
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question11ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="radio" id="sb-radio-step-1-1" name="sb-radio-step-1" value="11" autocomplete="off" required="true">
+                        <label class="heading-h3" for="sb-radio-step-1-1">${properties.question11Title}<span>${properties.question11Text}</span></label>
+                    </div>
+                    
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question12ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="radio" id="sb-radio-step-1-2" name="sb-radio-step-1" value="12" autocomplete="off" required="true">
+                        <label class="heading-h3" for="sb-radio-step-1-2">${properties.question12Title}<span>${properties.question12Text}</span></label>
+                    </div>
+                </fieldset>
+
+                <button class="btn btn-primary" title="Next step" rel="sb:next" role="button" aria-label="Next step" aria-controls="sb-step-2" required="true"> Next step </button>
+            </form>
+        </div><!-- step end -->
+
+        <!-- step -->
+        <div id="sb-step-2" class="sb-step sb-step-2" aria-labelledby="sb-step-2-label" aria-describedby="sb-step-2-desc">  
+            <p id="sb-step-2-label"> Step 2 of 5 </p>
+            
+            <form name="sb-form-step-2" no-validate="true">
+                <fieldset>
+                    <legend id="sb-step-2-desc" class="heading-h2"><span> ${properties.questionsTitle2} </span></legend>
+                    
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question21ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="radio" id="sb-radio-step-2-1" name="sb-radio-step-2" value="21" autocomplete="off" required="true">
+                        <label class="heading-h3" for="sb-radio-step-2-1">${properties.question21Title}<span>${properties.question21Text}</span></label>
+                    </div>
+                    
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question22ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="radio" id="sb-radio-step-2-2" name="sb-radio-step-2" value="22" autocomplete="off" required="true">
+                        <label class="heading-h3" for="sb-radio-step-2-2">${properties.question22Title}<span>${properties.question22Text}</span></label>
+                    </div>
+                </fieldset>
+
+                <button class="btn btn-primary" title="Next step" rel="sb:next" role="button" aria-label="Next step" aria-controls="sb-step-3" required="true"> Next step </button>
+            </form>
+        </div><!-- step end -->
+        
+        <!-- step -->
+        <div id="sb-step-3" class="sb-step sb-step-3" aria-labelledby="sb-step-3-label" aria-describedby="sb-step-3-desc">  
+            <p id="sb-step-3-label"> Step 3 of 5 </p>
+            
+            <form name="sb-form-step-3" no-validate="true">
+                <fieldset>
+                    <legend id="sb-step-3-desc" class="heading-h2"><span> ${properties.questionsTitle3} </span></legend>
+                    
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question31ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="radio" id="sb-radio-step-3-1" name="sb-radio-step-3" value="31" autocomplete="off" required="true">
+                        <label class="heading-h3" for="sb-radio-step-3-1">${properties.question31Title}<span>${properties.question31Text}</span></label>
+                    </div>
+
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question32ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="radio" id="sb-radio-step-3-2" name="sb-radio-step-3" value="32" autocomplete="off" required="true">
+                        <label class="heading-h3" for="sb-radio-step-3-2">${properties.question32Title}<span>${properties.question32Text}</span></label>
+                    </div>
+
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question33ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="radio" id="sb-radio-step-3-3" name="sb-radio-step-3" value="33" autocomplete="off" required="true">
+                        <label class="heading-h3" for="sb-radio-step-3-3">${properties.question33Title}<span>${properties.question33Text}</span></label>
+                    </div>
+
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question34ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="radio" id="sb-radio-step-3-4" name="sb-radio-step-3" value="34" autocomplete="off" required="true">
+                        <label class="heading-h3" for="sb-radio-step-3-4">${properties.question34Title}<span>${properties.question34Text}</span></label>
+                    </div>
+                </fieldset>
+
+                <button class="btn btn-primary" title="Next step" rel="sb:next" role="button" aria-label="Next step" aria-controls="sb-step-4" required="true"> Next step </button>
+            </form>
+        </div><!-- step end -->
+
+        <!-- step -->
+        <div id="sb-step-4" class="sb-step sb-step-4" aria-labelledby="sb-step-4-label" aria-describedby="sb-step-4-desc">  
+            <p id="sb-step-4-label"> Step 4 of 5 </p>
+            
+            <form name="sb-form-step-4" no-validate="true">
+                <fieldset>
+                    <legend id="sb-step-4-desc" class="heading-h2"><span>${properties.questionsTitle4} </span></legend>
+                    
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question41ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="radio" id="sb-radio-step-4-1" name="sb-radio-step-4" value="41" autocomplete="off" required="true">
+                        <label class="heading-h3" for="sb-radio-step-4-1">${properties.question41Title} <span>${properties.question41Text}</span></label>
+                    </div>
+
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question42ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="radio" id="sb-radio-step-4-2" name="sb-radio-step-4" value="42" autocomplete="off" required="true">
+                        <label class="heading-h3" for="sb-radio-step-4-2">${properties.question42Title} <span>${properties.question42Text}</span></label>
+                    </div>
+
+                </fieldset>
+
+                <button class="btn btn-primary" title="Next step" rel="sb:next" role="button" aria-label="Next step" aria-controls="sb-step-5" required="true"> Next step </button>
+            </form>
+        </div><!-- step end -->
+
+        <!-- step -->
+        <div id="sb-step-5" class="sb-step sb-step-5" aria-labelledby="sb-step-1-label" aria-describedby="sb-step-5-desc">  
+            <p id="sb-step-5-label"> Step 5 of 5 <span>(Optional)</span></p>
+            
+            <form name="sb-form-step-5" no-validate="true">
+                <fieldset>
+                    <legend id="sb-step-5-desc" class="heading-h2"><span> ${properties.questionsTitle5} </span></legend>
+                    
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question51ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="checkbox" id="sb-radio-step-5-1" name="sb-radio-step-5" value="51" autocomplete="off">
+                        <label class="heading-h3" for="sb-radio-step-5-1">${properties.question51Title} <span>${properties.question51Text}</span></label>
+                    </div>
+
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question52ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="checkbox" id="sb-radio-step-5-2" name="sb-radio-step-5" value="52" autocomplete="off">
+                        <label class="heading-h3" for="sb-radio-step-5-2">${properties.question52Title} <span>${properties.question52Text}</span></label>
+                    </div>
+
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question53ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="checkbox" id="sb-radio-step-5-3" name="sb-radio-step-5" value="53" autocomplete="off">
+                        <label class="heading-h3" for="sb-radio-step-5-3">${properties.question53Title} <span>${properties.question53Text}</span></label>
+                    </div>
+
+                    <div class="sb-form-row">
+                        <div class="sb-form-image"><picture>
+                            <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.question54ImageRef, context='unsafe'}</sly>
+                        </picture></div>
+                        <input type="checkbox" id="sb-radio-step-5-4" name="sb-radio-step-5" value="54" autocomplete="off">
+                        <label class="heading-h3" for="sb-radio-step-5-4">${properties.question54Title} <span>${properties.question54Text}</span></label>
+                    </div>
+                </fieldset>
+
+                <button class="btn btn-primary" title="Next step" rel="sb:next" role="button" aria-label="Next step" aria-controls="sb-step-summary"> Next step </button>
+            </form>
+        </div>
+        <div id="sb-step-summary" class="sb-step sb-step-summary" aria-labelledby="sb-step-summary-label" aria-describedby="sb-step-summary-desc">  
+            <p id="sb-step-summary-label" class="sb-summary-meta"> Thanks for that! </p>
+
+            <h2 id="sb-step-summary-desc" class="sb-summary-title"> 
+                We have built a solution based on your answers below 
+            </h2>
+            
+            <div class="sb-summary">
+                <div class="sb-form-row">
+                    <span class="sb-label-no"> 1 </span>
+                    <p class="sb-label">This will be replaced by the user's selected question <span>with the selected answers</span></p>
+                </div>
+
+                <div class="sb-form-row">
+                    <span class="sb-label-no"> 2 </span>
+                    <p class="sb-label">This will be replaced by the user's selected question <span>with the selected answers</span></p>
+                </div>
+
+                <div class="sb-form-row">
+                    <span class="sb-label-no"> 3 </span>
+                    <p class="sb-label">This will be replaced by the user's selected question <span>with the selected answers</span></p>
+                </div>
+            </div>   
+
+            <p><a href="#start-over" title="Start over" rel="sb:reset">Start over</a> or scroll to view your solution</p>
+            <a class="btn btn-primary sb-btn" href="#solution" title="Scroll to solution" rel="sb:solution" role="button" aria-label="Scroll to solution"></a>
+        </div>
+        <loader name="sb-loader"></loader>
+    </div>
+</template>
+
+<div class="sb-solution no-js"></div>
+                    
+<template id="sb-solution">
+    <div class="card one-up sb-one-up" value="11">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef1}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef1, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading1} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle1} </h2>
+                <p> ${properties.recomendationsText1} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl1, currentPage.Name, properties.recomendationsLinkText1], context='unsafe'}
+                ${properties.recomendationsLinkText1} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation11Title != null && properties.recomendation11Title != ''}" title="${properties.recomendation11Title}" class="product-link" href="${properties.recomendation11Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation11ImageRef, context='unsafe'}</sly data-sly-unwrap>
+                        ${properties.recomendation11Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation12Title != null && properties.recomendation12Title != ''}" title="${properties.recomendation12Title}" class="product-link" href="${properties.recomendation12Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation12ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation12Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation13Title != null && properties.recomendation13Title != ''}" title="${properties.recomendation13Title}" class="product-link" href="${properties.recomendation13Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation13ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation13Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card one-up sb-one-up" value="11">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef2}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef2, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading2} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle2} </h2>
+                <p> ${properties.recomendationsText2} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl2, currentPage.Name, properties.recomendationsLinkText2], context='unsafe'}
+                ${properties.recomendationsLinkText2} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation21Title != null && properties.recomendation21Title != ''}" title="${properties.recomendation21Title}" class="product-link" href="${properties.recomendation21Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation21ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation21Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation22Title != null && properties.recomendation22Title != ''}" title="${properties.recomendation22Title}" class="product-link" href="${properties.recomendation22Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation22ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation22Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation23Title != null && properties.recomendation23Title != ''}" title="${properties.recomendation23Title}" class="product-link" href="${properties.recomendation23Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation23ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation23Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card one-up sb-one-up" value="11">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef3}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef3, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading3} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle3} </h2>
+                <p> ${properties.recomendationsText3} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl3, currentPage.Name, properties.recomendationsLinkText3], context='unsafe'}
+                ${properties.recomendationsLinkText3} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation31Title != null && properties.recomendation31Title != ''}" title="${properties.recomendation31Title}" class="product-link" href="${properties.recomendation31Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation31ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation31Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation32Title != null && properties.recomendation32Title != ''}" title="${properties.recomendation32Title}" class="product-link" href="${properties.recomendation32Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation32ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation32Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation33Title != null && properties.recomendation33Title != ''}" title="${properties.recomendation33Title}" class="product-link" href="${properties.recomendation33Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation33ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation33Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card one-up sb-one-up" value="21">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef4}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef4, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading4} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle4} </h2>
+                <p> ${properties.recomendationsText4} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl4, currentPage.Name, properties.recomendationsLinkText4], context='unsafe'}
+                ${properties.recomendationsLinkText4} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation41Title != null && properties.recomendation41Title != ''}" title="${properties.recomendation41Title}" class="product-link" href="${properties.recomendation41Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation41ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation41Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation42Title != null && properties.recomendation42Title != ''}" title="${properties.recomendation42Title}" class="product-link" href="${properties.recomendation42Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation42ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation42Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation43Title != null && properties.recomendation43Title != ''}" title="${properties.recomendation43Title}" class="product-link" href="${properties.recomendation43Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation43ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation43Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="22">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef5}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef5, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading5} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle5} </h2>
+                <p> ${properties.recomendationsText5} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl5, currentPage.Name, properties.recomendationsLinkText5], context='unsafe'}
+                ${properties.recomendationsLinkText5} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation51Title != null && properties.recomendation51Title != ''}" title="${properties.recomendation51Title}" class="product-link" href="${properties.recomendation51Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation51ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation51Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation52Title != null && properties.recomendation52Title != ''}" title="${properties.recomendation52Title}" class="product-link" href="${properties.recomendation52Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation52ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation52Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation53Title != null && properties.recomendation53Title != ''}" title="${properties.recomendation53Title}" class="product-link" href="${properties.recomendation53Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation53ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation53Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="31">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef6}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef6, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading6} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle6} </h2>
+                <p> ${properties.recomendationsText6} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl6, currentPage.Name, properties.recomendationsLinkText6], context='unsafe'}
+                ${properties.recomendationsLinkText6} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation61Title != null && properties.recomendation61Title != ''}" title="${properties.recomendation61Title}" class="product-link" href="${properties.recomendation61Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation61ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation61Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation62Title != null && properties.recomendation62Title != ''}" title="${properties.recomendation62Title}" class="product-link" href="${properties.recomendation62Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation62ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation62Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation63Title != null && properties.recomendation63Title != ''}" title="${properties.recomendation63Title}" class="product-link" href="${properties.recomendation63Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation63ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation63Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="31">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef7}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef7, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading7} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle7} </h2>
+                <p> ${properties.recomendationsText7} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl7, currentPage.Name, properties.recomendationsLinkText7], context='unsafe'}
+                ${properties.recomendationsLinkText7} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation71Title != null && properties.recomendation71Title != ''}" title="${properties.recomendation71Title}" class="product-link" href="${properties.recomendation71Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation71ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation71Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation72Title != null && properties.recomendation72Title != ''}" title="${properties.recomendation72Title}" class="product-link" href="${properties.recomendation72Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation72ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation72Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation73Title != null && properties.recomendation73Title != ''}" title="${properties.recomendation73Title}" class="product-link" href="${properties.recomendation73Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation73ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation73Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="32">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef8}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef8, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading8} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle8} </h2>
+                <p> ${properties.recomendationsText8} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl8, currentPage.Name, properties.recomendationsLinkText8], context='unsafe'}
+                ${properties.recomendationsLinkText8} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation81Title != null && properties.recomendation81Title != ''}" title="${properties.recomendation81Title}" class="product-link" href="${properties.recomendation81Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation81ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation81Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation82Title != null && properties.recomendation82Title != ''}" title="${properties.recomendation82Title}" class="product-link" href="${properties.recomendation82Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation82ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation82Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation83Title != null && properties.recomendation83Title != ''}" title="${properties.recomendation83Title}" class="product-link" href="${properties.recomendation83Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation83ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation83Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="33">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef9}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef9, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading9} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle9} </h2>
+                <p> ${properties.recomendationsText9} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl9, currentPage.Name, properties.recomendationsLinkText9], context='unsafe'}
+                ${properties.recomendationsLinkText9} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation91Title != null && properties.recomendation91Title != ''}" title="${properties.recomendation91Title}" class="product-link" href="${properties.recomendation91Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation91ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation91Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation92Title != null && properties.recomendation92Title != ''}" title="${properties.recomendation92Title}" class="product-link" href="${properties.recomendation92Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation92ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation92Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation93Title != null && properties.recomendation93Title != ''}" title="${properties.recomendation93Title}" class="product-link" href="${properties.recomendation93Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation93ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation93Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="34">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef10}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef10, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading10} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle10} </h2>
+                <p> ${properties.recomendationsText10} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl10, currentPage.Name, properties.recomendationsLinkText10], context='unsafe'}
+                ${properties.recomendationsLinkText10} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation101Title != null && properties.recomendation101Title != ''}" title="${properties.recomendation101Title}" class="product-link" href="${properties.recomendation101Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation101ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation101Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation102Title != null && properties.recomendation102Title != ''}" title="${properties.recomendation102Title}" class="product-link" href="${properties.recomendation102Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation102ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation102Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation103Title != null && properties.recomendation103Title != ''}" title="${properties.recomendation103Title}" class="product-link" href="${properties.recomendation103Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation103ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation103Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="41">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef11}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef11, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading11} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle11} </h2>
+                <p> ${properties.recomendationsText11} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl11, currentPage.Name, properties.recomendationsLinkText11], context='unsafe'}
+                ${properties.recomendationsLinkText11} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation111Title != null && properties.recomendation111Title != ''}" title="${properties.recomendation111Title}" class="product-link" href="${properties.recomendation111Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation111ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation111Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation112Title != null && properties.recomendation112Title != ''}" title="${properties.recomendation112Title}" class="product-link" href="${properties.recomendation112Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation112ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation112Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation113Title != null && properties.recomendation113Title != ''}" title="${properties.recomendation113Title}" class="product-link" href="${properties.recomendation113Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation113ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation113Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="51">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef12}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef12, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading12} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle12} </h2>
+                <p> ${properties.recomendationsText12} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl12, currentPage.Name, properties.recomendationsLinkText12], context='unsafe'}
+                ${properties.recomendationsLinkText12} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation121Title != null && properties.recomendation121Title != ''}" title="${properties.recomendation121Title}" class="product-link" href="${properties.recomendation121Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation121ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation121Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation122Title != null && properties.recomendation122Title != ''}" title="${properties.recomendation122Title}" class="product-link" href="${properties.recomendation122Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation122ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation122Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation123Title != null && properties.recomendation123Title != ''}" title="${properties.recomendation123Title}" class="product-link" href="${properties.recomendation123Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation123ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation123Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="52">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef13}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef13, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading13} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle13} </h2>
+                <p> ${properties.recomendationsText13} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl13, currentPage.Name, properties.recomendationsLinkText13], context='unsafe'}
+                ${properties.recomendationsLinkText13} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation131Title != null && properties.recomendation131Title != ''}" title="${properties.recomendation131Title}" class="product-link" href="${properties.recomendation131Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation131ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation131Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation132Title != null && properties.recomendation132Title != ''}" title="${properties.recomendation132Title}" class="product-link" href="${properties.recomendation132Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation132ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation132Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation133Title != null && properties.recomendation133Title != ''}" title="${properties.recomendation133Title}" class="product-link" href="${properties.recomendation133Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation133ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation133Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="53">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef14}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef14, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading14} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle14} </h2>
+                <p> ${properties.recomendationsText14} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl14, currentPage.Name, properties.recomendationsLinkText14], context='unsafe'}
+                ${properties.recomendationsLinkText14} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation141Title != null && properties.recomendation141Title != ''}" title="${properties.recomendation141Title}" class="product-link" href="${properties.recomendation141Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation141ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation141Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation142Title != null && properties.recomendation142Title != ''}" title="${properties.recomendation142Title}" class="product-link" href="${properties.recomendation142Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation142ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation142Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation143Title != null && properties.recomendation143Title != ''}" title="${properties.recomendation143Title}" class="product-link" href="${properties.recomendation143Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation143ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation143Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card one-up sb-one-up" value="54">
+        <div class="tile tile--card">
+            <picture class="tile-image">
+                <source media="(min-width: 480px)" srcset="${properties.recomendationsImageRef15}.auspostimage.680.medium.png" />
+                <sly>${'<img alt=\"\" class=\"tile-image-src\" src=\"{0}.auspostimage.480.medium.png\"/>' @ format=properties.recomendationsImageRef15, context='unsafe'}</sly>
+            </picture>
+            <div class="tile-content tile--card-content">
+                <p class="sb-one-up-meta"> ${properties.recomendationsHeading15} </p>
+
+                <h2 class="tile--card-title"> ${properties.recomendationsTitle15} </h2>
+                <p> ${properties.recomendationsText15} </p>
+
+                ${'<a class="btn btn-primary" role="button"  href="{0}?source={1}" title="{2}">' @ format=[properties.recomendationsLinkUrl15, currentPage.Name, properties.recomendationsLinkText15], context='unsafe'}
+                ${properties.recomendationsLinkText15} </a>
+
+                <p class="sb-one-up-links">
+                    <a data-sly-test="${properties.recomendation151Title != null && properties.recomendation151Title != ''}" title="${properties.recomendation151Title}" class="product-link" href="${properties.recomendation151Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation151ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation151Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation152Title != null && properties.recomendation152Title != ''}" title="${properties.recomendation152Title}" class="product-link" href="${properties.recomendation152Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation152ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation152Title}
+                    </a>
+                    <a data-sly-test="${properties.recomendation153Title != null && properties.recomendation153Title != ''}" title="${properties.recomendation153Title}" class="product-link" href="${properties.recomendation153Url}">
+                        <sly>${'<img alt=\"\" src=\"{0}\"/>' @ format=properties.recomendation153ImageRef, context='unsafe'}</sly>
+                        ${properties.recomendation153Title}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</template>

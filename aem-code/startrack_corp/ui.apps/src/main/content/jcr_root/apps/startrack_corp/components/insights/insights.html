@@ -1,0 +1,91 @@
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: Edit Insights Component here.This component allows to configure Insights component.</div>
+</div>
+<section class="form-group insights-filter" data-sly-use.insights="${'au.com.auspost.startrack_corp.core.components.Insights'}">
+    <div class="filter-col">
+        <label>Filter by</label>
+        <div class="field-select medium">
+            <select>
+                <option>All Topics</option>
+                <sly data-sly-list="${insights.filters}">
+                    <option value="${item.filter}">${item.name}</option>
+                </sly>
+            </select>
+        </div>
+    </div>
+    <div class="filter-col">
+        <label>Search by</label>
+        <input class="field-input input-text medium" type="text" id="keywords" name="keywords" placeholder="Keywords">
+    </div>
+</section>
+<!--/ Filter -->
+
+<!-- Article List -->
+<section class="insights-list">
+    
+    <!-- Article -->
+    <article>
+        <figure>
+          <img src="/etc/designs/startrack_corp/clientlib/img/article-list-01.png" alt="">
+        </figure>
+        <div class="insights-list-item">
+            <h3>What's in store for retail in 2016</h3>
+            <p>From mobile commerce to fully visible inventory to in-store beacons, we take a look at what's in store for retail in 2016</p>
+            <a href="#">Read more</a>
+        </div>
+    </article>
+    <!--/ Article -->
+
+    <!-- Article -->
+    <article>
+        <figure>
+          <img src="/etc/designs/startrack_corp/clientlib/img/article-list-02.png" alt="">
+        </figure>
+        <div class="insights-list-item">
+            <h3>Supply chain managers wish list for 2016</h3>
+            <p>If you could have one new tool for your supply chain in 2016, what would it be? 
+            Take a look at our wish list for supply chain managers in 2016 </p>
+            <a href="#">Read more</a>
+        </div>
+    </article>
+    <!--/ Article -->
+
+    <!-- Article -->
+    <article>
+        <figure>
+          <img src="/etc/designs/startrack_corp/clientlib/img/article-list-01.png" alt="">
+        </figure>
+        <div class="insights-list-item">
+            <h3>What's in store for retail in 2016</h3>
+            <p>From mobile commerce to fully visible inventory to in-store beacons, we take a look at what's in store for retail in 2016</p>
+            <a href="#">Read more</a>
+        </div>
+    </article>
+    <!--/ Article -->
+
+    <!-- Article -->
+    <article>
+        <figure>
+          <img src="/etc/designs/startrack_corp/clientlib/img/article-list-02.png" alt="">
+        </figure>
+        <div class="insights-list-item">
+            <h3>Supply chain managers wish list for 2016</h3>
+            <p>If you could have one new tool for your supply chain in 2016, what would it be? 
+            Take a look at our wish list for supply chain managers in 2016 </p>
+            <a href="#">Read more</a>
+        </div>
+    </article>
+    <!--/ Article -->
+
+    <div class="insights-pagination">
+        <a href="#" class="prev disabled"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Chevron"></use></svg></a>
+        <ul>
+            <li><a href="#" class="page disabled">1</a></li>
+            <li><a href="#" class="page">2</a></li>
+            <li><a href="#" class="page">3</a></li>
+            <li><a href="#" class="page">4</a></li>
+        </ul>
+        <a href="#" class="next"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Chevron"></use></a>
+    </div>
+
+</section>

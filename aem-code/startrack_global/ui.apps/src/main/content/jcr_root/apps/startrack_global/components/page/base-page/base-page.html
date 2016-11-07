@@ -1,0 +1,28 @@
+<!--/*
+
+  ADOBE CONFIDENTIAL
+  __________________
+
+   Copyright 2014 Adobe Systems Incorporated
+   All Rights Reserved.
+
+  NOTICE:  All information contained herein is, and remains
+  the property of Adobe Systems Incorporated and its suppliers,
+  if any.  The intellectual and technical concepts contained
+  herein are proprietary to Adobe Systems Incorporated and its
+  suppliers and are protected by trade secret or copyright law.
+  Dissemination of this information or reproduction of this material
+  is strictly forbidden unless prior written permission is obtained
+  from Adobe Systems Incorporated.
+  
+  Base page component. It includes the head and body templates
+
+*/-->
+<!DOCTYPE HTML>
+<html lang="en">
+    <head data-sly-include="head.html">
+     <script src="//assets.adobedtm.com/bfecad1ae7e5d7a2b8a9353b2d496d9b392db768/ satelliteLib-9c215febcba74f72ca4a2cc8370a7f4b70048c28.js"></script></head>
+    <sly data-sly-use.siteTheme="${'au.com.auspost.startrack_global.core.sightly.SiteThemeSelector'}"></sly>
+    <body data-sly-use.body="body.js" class="${siteTheme.theme}" data-sly-include="body.html">
+    <script type="text/javascript">_satellite.pageBottom();</script></body>
+</html>

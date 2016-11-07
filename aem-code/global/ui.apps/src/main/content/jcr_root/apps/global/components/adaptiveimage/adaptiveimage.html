@@ -1,0 +1,18 @@
+<div data-sly-use.adaptiveImage="${'au.com.auspost.global.core.sightly.AdaptiveImage'}" data-sly-unwrap>
+	<picture>
+		<sly data-sly-list.keyName="${adaptiveImage.finalConfigMap}">
+				<sly data-sly-list.mapVal="${adaptiveImage.finalConfigMap[keyName]}">
+					<sly data-sly-use.rteVal="${'au.com.auspost.global.core.sightly.SightlyStringUtils' @ items=mapVal}">
+						<sly data-sly-list.finalMap="${rteVal.hyphenSeparatedItems}">
+							<source
+							media="(min-width: ${keyName}px)"
+			            	srcset="${adaptiveImage.imagePath}.auspostimage.${finalMap}.low.jpg ${rteVal.hyphenSeparatedItems[finalMap]}"/>
+						</sly>
+			         </sly>
+	            </sly>
+	    	 </sly>
+	    <img src="${adaptiveImage.imagePath}.auspostimage.970.low.jpg" alt="${adaptiveImage.altTextImg}" />
+	</picture>
+</div>
+     
+     

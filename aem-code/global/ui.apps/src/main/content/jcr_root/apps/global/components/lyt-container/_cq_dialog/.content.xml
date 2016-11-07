@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Layout Container"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+            <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <backgroundColor
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="global/components/foundation/customcolorpicker"
+                                    fieldLabel="Background Colour"
+                                    value="rgba(255,255,255,1)"
+                                    name="./backgroundColor"/>
+                            <transparentBg
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                    fieldDescription="Please tick the checkbox to have transparent background"
+                                    fieldLabel="Transparent Background"
+                                    name="./transparentBg"
+                                    text="Transparent Background"
+                                    title="Transparent Background"
+                                    value="{Boolean}true"/>
+                            <containerJustification
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                    fieldLabel="Container Justification"
+                                    name="./containerJustification">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <o1
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Center"
+                                            value="flex-container--center"
+                                            selected="{Boolean}true"/>
+                                    <o2
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Left"
+                                            value=" "/>
+                                    <o3
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Right"
+                                            value="flex-container--right"/>
+                                    <o4
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Space between"
+                                            value="flex-container--between"/>
+                                    <o5
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Space around"
+                                            value="flex-container--around"/>
+                                </items>
+                            </containerJustification>
+                            <paddingVariations
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                    fieldLabel="Padding Variations"
+                                    name="./paddingVariations">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <o1
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Padded"
+                                            value=""
+                                            selected="{Boolean}true"/>
+                                    <o2
+                                            jcr:primaryType="nt:unstructured"
+                                            text="No padding"
+                                            value="no-padding"/>
+                                    <o3
+                                            jcr:primaryType="nt:unstructured"
+                                            text="No top padding"
+                                            value="no-padding--top"/>
+                                    <o4
+                                            jcr:primaryType="nt:unstructured"
+                                            text="No bottom padding"
+                                            value="no-padding--bottom"/>
+                                </items>
+                            </paddingVariations>
+                            <layoutvariation
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                    fieldLabel="Layout Variation"
+                                    name="./layoutvariation">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <o1
+                                            jcr:primaryType="nt:unstructured"
+                                            text="1 col"
+                                            value="flex-container--single-row"
+                                            selected="{Boolean}true"/>
+                                    <o2
+                                            jcr:primaryType="nt:unstructured"
+                                            text="1 col - narrow"
+                                            value="flex-container--narrow-row"/>
+                                    <o3
+                                            jcr:primaryType="nt:unstructured"
+                                            text="1 col - 35% offset"
+                                            value="flex-container--offset-35"/>
+                                    <o4
+                                            jcr:primaryType="nt:unstructured"
+                                            text="2 col - 50/50"
+                                            value="flex-container--multi-50"/>
+                                    <o5
+                                            jcr:primaryType="nt:unstructured"
+                                            text="2 col - 35/65"
+                                            value="flex-container--multi-35-65"/>
+                                    <o6
+                                            jcr:primaryType="nt:unstructured"
+                                            text="2 col - 65/35"
+                                            value="flex-container--multi-65-35"/>
+                                    <o7
+                                            jcr:primaryType="nt:unstructured"
+                                            text="3 col"
+                                            value="flex-container--multi-33"/>
+                                    <o8
+                                            jcr:primaryType="nt:unstructured"
+                                            text="4 col"
+                                            value="flex-container--multi-25"/>
+                                    <o9
+                                            jcr:primaryType="nt:unstructured"
+                                            text="5 col"
+                                            value="flex-container--multi-20"/>
+                                    <o1o
+                                            jcr:primaryType="nt:unstructured"
+                                            text="6 col"
+                                            value="flex-container--multi-16"/>
+                                </items>
+                            </layoutvariation>
+                        </items>
+                    </column>
+                </items>
+
+        </content>
+</jcr:root>

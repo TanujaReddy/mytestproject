@@ -1,0 +1,21 @@
+<sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: Edit Disclaimers Component here</div>
+</sly>
+
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading', nodeToBeCreated='disclaimers-heading'}" />
+
+<div class="article-refs">
+   <h3><sly data-sly-resource="${'disclaimers-heading' @ resourceType='startrack_global/components/rte-components/text-heading'}" /></h3>
+  	 <ol>   
+		<sly data-sly-use.linkIterator="${'au.com.auspost.startrack_global.core.sightly.MultiFieldIterator' @ property='articleLists'}" data-sly-unwrap>						
+        <sly data-sly-list.item="${linkIterator.linkListItems}">
+           <li>
+              
+                
+                <span class="reference">${item.articleListText}</span>
+               
+           </li>
+       </sly>
+   	</sly>
+   </ol>
+ </div>

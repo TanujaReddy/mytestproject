@@ -1,0 +1,44 @@
+<!doctype html>  
+<html lang="en">  
+<head>
+<!-- .container -->
+<!--googleoff: all-->
+<!--googleon: all-->
+    <meta charset="utf-8">
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--googleoff: all-->
+<!--googleon: all-->
+<!-- .container -->
+</head>
+<body>
+    <form action="/content/startrack_corp/startrack/Article/_jcr_content" method="post" class="coral-Form coral-Text cq-dialog foundation-form content foundation-layout-form foundation-layout-form-mode-edit cq-dialog-floating coral-Form--aligned coral--dark page-article" data-cq-dialog-pageeditor="/editor.html/content/startrack_corp/startrack/Article.html" data-foundation-form-ajax="true" style="top: 140.5px; left: 482.5px;">
+        <input id="level1TagsHidden" type="hidden" name="./level1TagsHidden" value="faq">
+        <section id="level1TagsSection" data-name="./level1TagsSection">
+        </section>
+        <input id="level2TagsHidden" type="hidden" name="./level2TagsHidden" value="insights,faq">
+        <section id="level2TagsSection" data-name="./level2TagsSection">
+        </section>
+        <input type="submit" value="Submit">
+    </form>
+    <section>
+    <script>
+        window.Granite = {};
+    </script>
+    <script src="/scripts/jquery.min.js"></script>
+    <script src="/scripts/clientlib.js"></script>
+    <script>
+        if (typeof(document.createEvent) !== 'undefined') {
+            var event = document.createEvent("HTMLEvents");
+            event.initEvent("foundation-contentloaded", true, true);
+            event.eventName = "foundation-contentloaded";
+            document.dispatchEvent(event);
+        } else {
+            event = document.createEventObject();
+            event.eventType = "foundation-contentloaded";
+            event.eventName = "foundation-contentloaded";
+            document.fireEvent("on" + event.eventType, event);
+        }
+    </script>
+</body>
+</html>

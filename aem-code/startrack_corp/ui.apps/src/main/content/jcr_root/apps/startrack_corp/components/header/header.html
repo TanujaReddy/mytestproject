@@ -1,0 +1,164 @@
+<div data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_corp/components/in-page-cta',nodeToBeCreated='menu-page-cta'}"
+		 data-sly-unwrap></div>
+<div data-hook="svgs" class="svg-placeholder"><sly data-sly-include="svg.html" /></div>
+<sly data-sly-use.header="au.com.auspost.startrack_corp.core.components.StartrackHeader">
+	<!-- .container -->
+	<!--googleoff: all-->
+    <header class="outline-header">
+        <nav class="mobile-header">
+            <div itemscope="" itemtype="http://schema.org/Organization">
+                <a itemprop="url" href="/" title="Return to the Homepage" class="st-logo">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#startrack-logo"></use></svg>
+                </a>
+            </div>
+            <div class="mobile-nav--icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="menu">
+            </div>
+        </nav>
+        <nav class="desktop-header">
+            <div itemscope="" itemtype="http://schema.org/Organization">
+                <a itemprop="url" href="/" title="Return to the Homepage" class="st-logo">
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#startrack-logo"></use></svg>
+                </a>
+            </div>
+            <div class="menu">
+                <sly data-sly-list.rootPage="${header.items}">
+                    <sly data-sly-test="${rootPage.childPresent}">
+                       <a href="/" class="has-mega-menu">
+                           <div class="item has-mega-menu" rel="${rootPage.id}_menu">${rootPage.title}</div>
+                       </a>    
+                    </sly>
+                    <sly data-sly-test="${! rootPage.childPresent}">
+                      <a href="/">
+                          <div class="item">${rootPage.title}</div>
+                    </a> 
+                    </sly>
+                </sly>  
+            </div>
+            <div class="search-login">
+                <a class="search-ph" href="#search-modal" rel="search:open" role="button" title="Open search" aria-label="Open search">
+                    <span>Search</span><svg class="search-ph-icon svg-Search-dims">
+                        <use xlink:href="#Search"/>
+                    </svg>
+                </a>
+                <a href="#login" class="btn btn-primary" role="button" title="Login" aria-label="Login" rel="login:open">
+                    Login
+                </a>
+          </div>
+        </nav>
+    </header>
+	<!--googleon: all-->
+	<!-- .container -->
+
+	<!--googleon: all-->
+    <div class="desktop-nav" id="desktop-nav">
+   		<sly data-sly-list.rootPage="${header.items}" >
+            <sly data-sly-test="${rootPage.childPresent}">
+				<div class="mega-nav desktop-only" id="${rootPage.id}_menu">
+                	<sly data-sly-test="${rootPage.secondChildPresent}">
+                    	<sly data-sly-call="${desktopMultiLevelTemplate @ pageList=rootPage}"/>
+                     </sly>
+					 <sly data-sly-test="${!rootPage.secondChildPresent}">
+                     	<sly data-sly-call="${desktopSingleLevelTemplate @ pageList=rootPage}"/>
+                     </sly>
+                     <div class="flex-container flex-container--single-row ${rootPageList.first ? 'is-editable' : ''}">
+                   		<sly data-sly-resource="${'menu-cta' @ resourceType='startrack_corp/components/in-page-cta'}"></sly>
+					</div>
+  				</div>
+	        </sly>    
+   		</sly>
+    </div>   
+
+    <div class="mobile-nav">
+    	<div class="mega-nav mobile-only">
+        	<sly data-sly-list.navParent="${header.items}">
+                <div class="section-wrapper">
+                    <sly data-sly-test="${navParent.childPresent}">
+                        <div class="item has-mega-menu"><span>${navParent.title}</span></div>
+                        <div class="section-content">
+                            <sly data-sly-test="${navParent.secondChildPresent}">
+                                <sly data-sly-list.childParent = "${navParent.items}">
+                                	<sly data-sly-call="${navSectionTemplate @ navItem=childParent}"/>
+                                </sly>        
+                            </sly>
+                            <sly data-sly-test="${!navParent.secondChildPresent}">
+								<sly data-sly-call="${mobileSingleLevelTemplate @ navItem=navParent}"/>
+                             </sly>
+                             <div class="flex-container flex-container--single-row">
+                                <sly data-sly-resource="${'menu-cta' @ resourceType='startrack_corp/components/in-page-cta'}"></sly>
+                            </div>
+                        </div>    
+                    </sly>
+                    <sly data-sly-test="${! navParent.childPresent}">
+                        <div class="item"><a href="${navParent.path}" title="${navParent.title}"><span>${navParent.title}</span></a></div>
+                    </sly>
+                </div>
+            </sly>
+            <div class="search-login">
+                <a class="search-ph" href="#search-modal" rel="search:open" role="button" title="Open search" aria-label="Open search">
+                    <span>Search</span><svg class="search-ph-icon svg-Search-dims">
+                        <use xlink:href="#Search"/>
+                    </svg>
+                </a>
+                <a href="#" class="btn btn-primary" role="button" title="Login" aria-label="Login" rel="login:open">
+                    Login
+                </a>
+            </div>
+
+       </div>
+   </div>   
+</sly>
+<template data-sly-template.desktopSingleLevelTemplate.template="${@ pageList}">
+	   <div class="flex-container flex-container--multi-50">
+       		<div class="nav-section icon-list">
+                    <ul class="nav-list" data-sly-list.navChildItem="${pageList.items}">
+                        <sly data-sly-test="${navChildItemList.count <= pageList.midValue}">
+                            <li class="nav-item"><a class="nav-link" href="${navChildItem.path}" title="${navChildItem.title}"><i><img src="${navChildItem.imagethumbnail}" alt=""></i>${navChildItem.title}</a></li>    
+                          </sly>
+                      </ul>
+              </div> 
+              <div class="nav-section icon-list">
+                    <ul class="nav-list" data-sly-list.navChildItem="${pageList.items}">
+                        <sly data-sly-test="${navChildItemList.count > pageList.midValue}">
+                            <li class="nav-item"><a class="nav-link" href="${navChildItem.path}" title="${navChildItem.title}"><i><img src="${navChildItem.imagethumbnail}" alt=""></i>${navChildItem.title}</a></li>    
+                        </sly>
+                     </ul>      
+              </div> 
+         </div>
+</template>
+
+<template data-sly-template.desktopMultiLevelTemplate.template="${@ pageList}">
+    <div class="flex-container ${pageList.cssValue}">
+    	<sly data-sly-list.childPageItem="${pageList.items}">
+           	<sly data-sly-call="${navSectionTemplate @ navItem=childPageItem}"/>
+        </sly>    
+    </div>
+</template>
+
+<template data-sly-template.mobileSingleLevelTemplate.template="${@ navItem}">
+	<div class="nav-section">
+        <ul class="nav-list__on" data-sly-list.childPage="${navItem.items}">
+            <li class="nav-item"><a class="nav-link" href="${childPage.path}" title="${childPage.title}">${childPage.title}</a></li>
+     	 </ul>
+     </div>
+</template>
+
+<template data-sly-template.navSectionTemplate.template="${@ navItem}">
+    <div class="nav-section">
+        <h3 class="nav-title">${navItem.title}</h3>
+        <ul class="nav-list">
+            <sly data-sly-list.navChildPage="${navItem.items}">
+             	<li class="nav-item"><a class="nav-link" href="${navChildPage.path}" title="${navChildPage.title}">${navChildPage.title}</a></li>
+             </sly>
+        	<li class="nav-item"><a class="nav-all" href="${navItem.path}" title="View all">View all</a></li>    
+    	</ul>
+	</div>
+</template>
+<sly data-sly-test="${!(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <sly data-sly-include="login.html" />
+</sly>
+<!--googleoff: all-->

@@ -1,0 +1,14 @@
+<sly data-sly-use.adaptiveImage="${'au.com.auspost.global.core.sightly.AdaptiveImage'}">
+    <picture class="tile-image">
+        <sly data-sly-list.keyName="${adaptiveImage.finalConfigMap}">
+            <sly data-sly-list.mapVal="${adaptiveImage.finalConfigMap[keyName]}">
+                <sly data-sly-use.rteVal="${'au.com.auspost.startrack_global.core.sightly.SightlyStringUtils' @ items=mapVal}">
+                    <sly data-sly-list.finalMap="${rteVal.hyphenSeparatedItems}">
+                        <source media="(min-width: ${keyName}px)" srcset="${adaptiveImage.imagePath}.auspostimage.${finalMap}.medium.png ${rteVal.hyphenSeparatedItems[finalMap]}"/>
+                    </sly>
+                 </sly>
+            </sly>
+        </sly>
+        ${'<img class=\"tile-image-src\" alt=\"{0}\" src=\"{1}.auspostimage.480.medium.png\" />' @ format=[adaptiveImage.altTextImg, adaptiveImage.imagePath], context='unsafe'}
+    </picture>
+</sly>

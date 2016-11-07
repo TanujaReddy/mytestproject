@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="CTA"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="http://www.adobe.com/go/aem6_1_docs_component_en#Image - Sightly">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <cta-config
+                jcr:primaryType="nt:unstructured"
+                jcr:title="CTA-Layout configuration "
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showCta
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                    fieldDescription="Please select the checkbox to show the CTA"
+                                    fieldLabel="Show CTA"
+                                    name="./showCta"
+                                    text="Show CTA"
+                                    title="Show CTA"
+                                    value="{Boolean}true"
+                                    />
+
+                            <cta-alignment
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                    fieldLabel="Component Type"
+                                    name="./containerType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <horizontal
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Horizontally aligned"
+                                            value="cta-column cta-column--two-col"/>
+                                    <vertical
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Vertically stacked"
+                                            value="cta-column"/>
+                                </items>
+                            </cta-alignment>
+                            <cta-type-config
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                fieldLabel="CTA Type config">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested=""
+                                    name="./ctaTypeConfig">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+
+                                                <ctaType
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldLabel="CTA type"
+                                                    name="./ctaType">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <button
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Button"
+                                                            value="btn"/>
+                                                        <link
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Link"
+                                                            value="link"/>
+                                                    </items>
+                                                </ctaType>
+                                                <ctaStyle
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldLabel="CTA Style"
+                                                    name="./ctaStyle">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <primary
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Primary"
+                                                            value="primary"/>
+                                                        <secondary
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Secondary"
+                                                            value="secondary"/>
+                                                        <tertiary
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Tertiary"
+                                                            value="tertiary"/>
+                                                    </items>
+                                                </ctaStyle>
+                                                <ctaTypeText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="CTA Text"
+                                                    name="./ctaTypeText"/>
+                                                <URL
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="URL"
+                                                    rootPath = "/content"
+                                                    name="./ctaURL"/>
+                                                <parameters
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Additional URL Params"
+                                                    name="./ctaParams"/>
+                                                <openNewTab
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                        fieldDescription="Please check the checkbox to open CTA link in a new tab"
+                                                        fieldLabel="Open CTA in a new tab"
+                                                        name="./openInNewTab"
+                                                        text="Open CTA link in a new tab"
+                                                        title="Open CTA link in a new tab"
+                                                        value="{Boolean}true"
+                                                />
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </cta-type-config>
+                        </items>
+                    </column>
+                </items>
+            </cta-config>
+        </items>
+    </content>
+</jcr:root>

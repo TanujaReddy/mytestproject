@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:crx="http://www.day.com/crx/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:ACL">
+    <deny
+        jcr:primaryType="rep:DenyACE"
+        rep:principalName="staff-editors"
+        rep:privileges="{Name}[jcr:addChildNodes,jcr:versionManagement,crx:replicate,jcr:nodeTypeManagement,jcr:lockManagement,jcr:modifyProperties]"/>
+    <deny0
+        jcr:primaryType="rep:DenyACE"
+        rep:principalName="staff-editors"
+        rep:privileges="{Name}[jcr:addChildNodes,jcr:removeChildNodes,jcr:nodeTypeManagement,jcr:removeNode]">
+        <rep:restrictions
+            jcr:primaryType="rep:Restrictions"
+            rep:glob="*/jcr:content*"/>
+    </deny0>
+</jcr:root>

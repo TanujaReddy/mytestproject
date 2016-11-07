@@ -1,0 +1,20 @@
+<div class="art-carousel" play-speed="2000" transition-time="350" limit="20"></div>
+
+<template class="art-carousel-tpl">
+    <sly data-sly-use.carousel="${'au.com.auspost.startrack_corp.core.components.Carousel' @ maxpages='8', pagetype='insight', pagetype='insight', tagproperty='level2TagsHidden'}">
+        <sly data-sly-list.item="${carousel.items}">
+            <div class="art-card">  
+                <picture>
+                    <source media="(min-width: 480px)" srcset="${item.image}.auspostimage.680.medium.jpg" />
+                    ${'<img alt=\"icon\" src=\"{0}.auspostimage.480.medium.jpg\" />' @ format=item.image, context='unsafe'}
+                </picture>
+                <div>
+                    <p> <strong>Insights</strong> 7 min read </p>
+                    <h3>${item.title}</h3>
+                    <p>${item.body}</p>
+                    <a href="${item.ctaUrl}" title="${item.ctaText}" aria-label="${item.ctaText}">${item.ctaText}</a>
+                </div>
+             </div>
+        </sly>
+    </sly>
+</template>

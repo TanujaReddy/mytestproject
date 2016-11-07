@@ -1,0 +1,38 @@
+<sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring) && properties.toolsHeading ==null}">
+    <div>Author Hint: Edit Tools menu Component here.This component allows to configure Tool menu component.</div>
+</sly>
+
+
+<div class="extranet-tools-intro">
+    <h3 class="extranet-tools-intro-title extranet-tools-intro-title--desktop">${properties.toolsHeading}</h3>
+    <h3 class="extranet-tools-intro-title extranet-tools-intro-title--mobile">
+        <span class="extranet-tools-intro-title--show">Show tools</span>
+        <span class="extranet-tools-intro-title--hide">Hide tools</span>
+        <span class="extranet-tools-intro-title--arrow">&#9662;</span>
+    </h3>
+    <small class="extranet-tools-intro-description">${properties.toolsDescription}</small>
+</div>
+
+<sly data-sly-use.toolMenu="${'au.com.auspost.global.core.sightly.MultiFieldIterator' @ property='toolsMenu'}">
+	<sly data-sly-use.menuId="${'au.com.auspost.global.core.sightly.Analytics' @ currentNodePath=currentNode.path}">
+		<nav class="extranet-tools-nav">
+		    <ul class="extranet-tools-list">
+		        <sly data-sly-list="${toolMenu.linkListItems}">
+		            <li class="extranet-tools-item">
+		                <sly data-sly-use.pathbrowser="${'au.com.auspost.global.core.sightly.PathBrowser' @ paramURL=item.menuURL, ctaParams=item.menuParams}">
+		                <a href="${pathbrowser.formattedURL}" target="${item.menuNewTab == 'true'?'_blank':''}" class="extranet-tools-link" id="${menuId.formattedNodePath}" title="${item.menuName}" data-event="site interaction" data-category="navigation | tools" data-description="${item.menuName}">
+		                    <sly data-sly-use.svg="${'au.com.auspost.global.core.sightly.SightlyStringUtils' @ svgPath=item.toolsIcon}"></sly>
+		                    ${svg.svgItem @ context='unsafe'}
+		                    <span class="extranet-tools-title">${item.menuName}</span>
+		                </a>
+		            </li>
+		        </sly>
+                <li class="extranet-tools-item--menu">
+                  <span class="extranet-tools-link" title="More tools">
+                    <span class="extranet-tools-title">More tools &#9662;</span>
+                  </span>
+                </li>
+		    </ul>
+		</nav>
+	</sly>
+</sly>

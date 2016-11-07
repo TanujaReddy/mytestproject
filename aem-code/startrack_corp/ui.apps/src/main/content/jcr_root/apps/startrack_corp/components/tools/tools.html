@@ -1,0 +1,101 @@
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}" data-sly-unwrap>
+    <div>Author Hint: Edit Tools here</div>
+    
+</div>
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading',nodeToBeCreated='welcome-text'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-body', nodeToBeCreated='welcome-body-text'}" />    
+	<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading', nodeToBeCreated='card-heading-text'}" /> 
+<!-- hero type 1 -->
+<div class="hero hero-type-1">
+	<!-- hero right -->
+    <div class="hero-right"> 
+        <ul class="hero-right-content">
+            <li><a href="#tat" title="Open track and trace" rel="tat:open" aria-controls="tat">
+                <picture><img alt="icon" src="/etc/designs/startrack_corp/clientlib/img/tat-icon.png"></picture>
+                <h2>Track & trace</h2>
+                <p>Find out the status of your delivery</p>
+            </a></li>
+            <li><a href="#swmy" title="Sorry we missed you" rel="swmy:open" aria-controls="swmy">
+                <picture><img alt="icon" src="/etc/designs/startrack_corp/clientlib/img/swmy-icon.png"></picture>
+                <h2>Missed delivery</h2>
+                <p>Redeliver, redirect or collect your missed delivery</p>
+            </a></li>
+            <li><a href="#pbook" title="I want to book a pickup" rel="pbook:open" aria-controls="pbook">
+                <picture><img alt="icon" src="/etc/designs/startrack_corp/clientlib/img/pb-icon.png"></picture>
+                <h2>Book a pickup</h2>
+                <p>The easy way to book your pickup online</p>
+            </a></li>
+            <li><a href="#ttime" title="Open transit time" rel="ttime:open" aria-controls="ttime">
+                <picture><img alt="icon" src="/etc/designs/startrack_corp/clientlib/img/tt-icon.png"></picture>
+                <h2>Calculate transit time</h2>
+                <p>How long will your delivery take?</p>
+            </a></li>
+        </ul>
+    </div><!-- hero right end -->
+    
+    <!-- hero left -->
+    
+    <div class="hero-left"> 
+        <div class="hero-left-image">
+            <div class="hero-bg-image" style="${'background-image: url(\'{0}.auspostimage.680.medium.jpg\')' @ format=properties.imagePathRef, context='unsafe'}"></div>
+            						   
+            
+             <a data-sly-test="${properties.videoUrl != null && properties.videoUrl != ''}" class="hero-bg-icon video" href="${properties.videoUrl}" title="Open video">
+                <svg class="hero-bg-icon svg-Play-Large-dims">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Play-Large"></use>
+                </svg>
+            </a>
+            
+        </div>
+
+        <div class="hero-left-content">
+            <h1> 
+            <sly data-sly-resource="${'welcome-text' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+               
+            </h1>
+
+            <p> 
+                <sly data-sly-resource="${'welcome-body-text' @ resourceType='startrack_global/components/rte-components/text-body'}" />
+            </p>
+
+
+					   
+                                                <a href="${properties.ctaURL}" target="${properties.openInNewTab == 'true'?'_blank':''}" 
+                                                class="btn btn-primary" id="${idgen.formattedNodePath}" 
+                                                title="${properties.ctaTypeText}" data-event="site interaction">${properties.ctaTypeText}</a>
+                                            
+                                       
+          
+        </div>
+    </div>
+    
+    
+    
+	
+	
+ <!-- hero left end -->
+</div><!-- hero type 1 end -->
+
+<br/>
+<br/>
+<br/>
+
+ <div data-sly-test="${(wcmmode.disabled)}" data-sly-unwrap>
+	
+    <sly data-sly-include="tat.html"></sly>
+    <sly data-sly-include="ttime.html"></sly>
+    <sly data-sly-include="pbook.html"></sly>
+    <sly data-sly-include="swmy.html"></sly>
+
+</div>
+<script type='text/javascript'>
+
+window.fabricAPIURL = "${properties.fabricAPIUrl @ context="uri"}";
+window.aaeUrl = "${properties.AaeUrl @ context="uri"}";
+
+
+</script>
+ <!--  <sly data-sly-include="tat.html" data-sly-unwrap></sly>-->
+    
+
+    

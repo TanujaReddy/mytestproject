@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+    jcr:language="in"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="sling:Folder">
+    <aboLogin
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="aboLogin"
+        sling:message="ABO Login"/>
+    <amwayTodayGroup
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="amwayTodayGroup"
+        sling:message="Amway Today"/>
+    <aprilMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="aprilMonth"
+        sling:message="April"/>
+    <aprMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="aprMonth"
+        sling:message="Apr"/>
+    <augMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="augMonth"
+        sling:message="Agu"/>
+    <augustMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="augustMonth"
+        sling:message="Agustus"/>
+    <browserList
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="browserList"
+        sling:message="IE9+, Chrome 39+, Firefox 33+, Safari 8+"/>
+    <browserMessage
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="browserMessage"
+        sling:message="Halaman ini tidak kompatibel dengan browser Anda, silakan melihat halaman dari salah satu browser berikut"/>
+    <btnBack2Top
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="btnBack2Top"
+        sling:message="Back to top"/>
+    <btnFamilySites
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="btnFamilySites"
+        sling:message="Family sites"/>
+    <btnLanguages
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="btnLanguages"
+        sling:message="Bahasa"/>
+    <btnLogin
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="btnLogin"
+        sling:message="Login"/>
+    <btnLogout
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="btnLogout"
+        sling:message="Keluar"/>
+    <btnNext
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="btnNext"
+        sling:message="Selanjutnya"/>
+    <btnPrevious
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="btnPrevious"
+        sling:message="Sebelumnya"/>
+    <categoriesText
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="categoriesText"
+        sling:message="Kategori"/>
+    <decemberMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="decemberMonth"
+        sling:message="Desember"/>
+    <decMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="decMonth"
+        sling:message="Des"/>
+    <familyDialogTitle
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="familyDialogTitle"
+        sling:message="Family Sites"/>
+    <familySiteLinkInput
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="familySiteLinkInput"
+        sling:message="Link"/>
+    <familySiteManagementPanel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="familySiteManagementPanel"
+        sling:message="Family Sites Management"/>
+    <familySitesComponentName
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="familySitesComponentName"
+        sling:message="Situs lain"/>
+    <familySiteTabTitle
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="familySiteTabTitle"
+        sling:message="Items"/>
+    <familySiteTitleAndLink
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="familySiteTitleAndLink"
+        sling:message="Titles and Links"/>
+    <familySiteTitleInput
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="familySiteTitleInput"
+        sling:message="Title"/>
+    <febMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="febMonth"
+        sling:message="Feb"/>
+    <februaryMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="februaryMonth"
+        sling:message="Februari"/>
+    <homePage
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="homePage"
+        sling:message="Halaman Utama"/>
+    <janMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="janMonth"
+        sling:message="Jan"/>
+    <januaryMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="januaryMonth"
+        sling:message="Januari"/>
+    <julMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="julMonth"
+        sling:message="Jul"/>
+    <julyMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="julyMonth"
+        sling:message="Juli"/>
+    <juneMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="juneMonth"
+        sling:message="Juni"/>
+    <junMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="junMonth"
+        sling:message="Jun"/>
+    <languagesTitle
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="languagesTitle"
+        sling:message="Languages"/>
+    <lbByAuthor
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbByAuthor"
+        sling:message="by"/>
+    <lbContact
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbContact"
+        sling:message="Kontak Kami"/>
+    <lbCopyright
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbCopyright"
+        sling:message="Copyright © {0} Amway"/>
+    <lbLoginDes
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbLoginDes"
+        sling:message="Login to received updates on the lastest contents and features."/>
+    <lbNoResult
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbNoResult"
+        sling:message="Tidak ada hasil"/>
+    <lbPrivacyAndSecurity
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbPrivacyAndSecurity"
+        sling:message="Privacy &amp;amp; Security"/>
+    <lbProfile
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbProfile"
+        sling:message="Profil"/>
+    <lbRelatedArticles
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbRelatedArticles"
+        sling:message="Artikel terkait"/>
+    <lbRss
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbRss"
+        sling:message="RSS"/>
+    <lbSetting
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbSetting"
+        sling:message="Pengaturan"/>
+    <lbSiteMap
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbSiteMap"
+        sling:message="Peta Situs"/>
+    <lbTermOfUse
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbTermOfUse"
+        sling:message="Terms Of Use"/>
+    <lbViewMostPopularText
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lbViewMostPopularText"
+        sling:message="Terpopuler"/>
+    <limitGridViewArticlePerPage
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="limitGridViewArticlePerPage"
+        sling:message="The 'Number of article per loading for grid view' value must larger or equal than 4 in order to enable scrolling in desktop browser."/>
+    <limitListViewArticlePerPage
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="limitListViewArticlePerPage"
+        sling:message="The 'Number of article per loading for list view' value must larger or equal than 30 in order to enable scrolling in desktop browser."/>
+    <limitSearchViewArticlePerPage
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="limitSearchViewArticlePerPage"
+        sling:message="The 'Number of article per loading for Search results' value must larger or equal than 50 in order to enable scrolling in desktop browser."/>
+    <linkLoadingImage
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="linkLoadingImage"
+        sling:message="/images/loading.gif"/>
+    <linkNoHeroImage
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="linkNoHeroImage"
+        sling:message="/images/no_hero_image.png"/>
+    <linkNoImage
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="linkNoImage"
+        sling:message="/images/no_image.jpg"/>
+    <linkPrivacySecurity
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="linkPrivacySecurity"
+        sling:message="Privacy Security Link"/>
+    <linkTermOfUse
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="linkTermOfUse"
+        sling:message="Terms of Use Link"/>
+    <marchMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="marchMonth"
+        sling:message="Maret"/>
+    <marMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="marMonth"
+        sling:message="Mar"/>
+    <maxLengthCategory
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="maxLengthCategory"
+        sling:message="20"/>
+    <maxLengthCategoryBreadcrum
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="maxLengthCategoryBreadcrum"
+        sling:message="10"/>
+    <maxLengthTitle
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="maxLengthTitle"
+        sling:message="60"/>
+    <mayMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="mayMonth"
+        sling:message="Mei"/>
+    <mostPopularName
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="mostPopularName"
+        sling:message="/most-popular"/>
+    <mostPopularText
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="mostPopularText"
+        sling:message="Terpopuler"/>
+    <novemberMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="novemberMonth"
+        sling:message="November"/>
+    <novMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="novMonth"
+        sling:message="Nov"/>
+    <numberOfArticleGridView
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="numberOfArticleGridView"
+        sling:message="Number of article per loading for grid view"/>
+    <numberOfArticleGridViewDescription
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="numberOfArticleGridViewDescription"
+        sling:message="Must greater or equal to 4 for enable scrolling"/>
+    <numberOfArticleListView
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="numberOfArticleListView"
+        sling:message="Number of article per loading for list view"/>
+    <numberOfArticleListViewDescription
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="numberOfArticleListViewDescription"
+        sling:message="Must greater or equal to 30 for enable scrolling"/>
+    <numberOfArticleSearchView
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="numberOfArticleSearchView"
+        sling:message="Number of article per loading for Search results"/>
+    <numberOfArticleSearchViewDescription
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="numberOfArticleSearchViewDescription"
+        sling:message="Must greater or equal to 50 for enable scrolling"/>
+    <octMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="octMonth"
+        sling:message="Okt"/>
+    <octoberMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="octoberMonth"
+        sling:message="Oktober"/>
+    <placeholderIBONumber
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="placeholderIBONumber"
+        sling:message="No. ABO"/>
+    <placeholderPasssword
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="placeholderPasssword"
+        sling:message="Kata sandi"/>
+    <placeholderSearch
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="placeholderSearch"
+        sling:message="Pencarian"/>
+    <placeholderTypeHere
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="placeholderTypeHere"
+        sling:message="Type here"/>
+    <privacySecurityLabel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="privacySecurityLabel"
+        sling:message="Privacy Security"/>
+    <privacySercurityTab
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="privacySercurityTab"
+        sling:message="External URL Tab"/>
+    <searchResult
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="searchResult"
+        sling:message="Hasil Pencarian"/>
+    <sepMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="sepMonth"
+        sling:message="Sep"/>
+    <septemberMonth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="septemberMonth"
+        sling:message="September"/>
+    <serverError
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="serverError"
+        sling:message="Kesalahan saat memuat artikel. Silakan coba lagi."/>
+    <serverTimeout
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="serverTimeout"
+        sling:message="Koneksi server terputus. Silakan coba lagi."/>
+    <termOfUseLabel
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="termOfUseLabel"
+        sling:message="Terms Of Use"/>
+    <urlInputDescription
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="urlInputDescription"
+        sling:message="Must input URL's prefix: http:// or https:// or ftp://"/>
+    <urlInputDescriptionPrivacy
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="urlInputDescriptionPrivacy"
+        sling:message="Must input URL's prefix: http:// or https:// or ftp:// or default '#'"/>
+    <userProfileComponentName
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="userProfileComponentName"
+        sling:message="User Profile"/>
+    <userProfileLogin
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="userProfileLogin"
+        sling:message="Login"/>
+    <userProfileLoginDesc
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="userProfileLoginDesc"
+        sling:message="Login to received updates on the lastest contents and features."/>
+    <userProfileLogout
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="userProfileLogout"
+        sling:message="Logout"/>
+</jcr:root>

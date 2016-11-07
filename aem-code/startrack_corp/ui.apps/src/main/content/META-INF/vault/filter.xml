@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/startrack_corp">
+        <exclude pattern="/apps/startrack_corp/install" />
+    </filter>
+    <filter root="/apps/sling/servlet/errorhandler/404.jsp"/>
+    <filter root="/apps/sling/servlet/errorhandler/403.jsp"/>
+    <filter root="/apps/sling/servlet/errorhandler/500.jsp"/>
+    <filter root="/apps/sling/servlet/errorhandler/default.jsp"/>
+
+    <filter root="/etc/designs/startrack_corp/clientlib"/>
+    <filter root="/etc/designs/startrack_corp/cta"/>
+    <filter root="/etc/designs/startrack_corp/search"/>
+    <filter root="/etc/designs/startrack_corp/touch_ui"/>
+    <filter root="/etc/designs/startrack_corp/share/adaptiveImage.json" mode="replace"/>
+    <filter root="/etc/designs/startrack_corp/share/references.json" mode="replace"/>
+    <filter root="/etc/designs/startrack_corp/share/salesforce.json" mode="merge"/>
+    <filter root="/etc/designs/startrack_corp/share/variables.json" mode="merge"/>
+    <filter root="/etc/designs/startrack_corp/share/forms.json" mode="merge"/>
+
+</workspaceFilter>

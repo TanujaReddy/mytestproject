@@ -1,0 +1,482 @@
+<section class="layout-container bg-colour">
+				<div class="layout-container-wrapper"><!-- layout container wrapper -->
+							
+					<h2 class="layout-container-heading"> Help with Services </h2>
+
+					<p class="layout-container-body-copy"> 
+                        This is a test page for the <strong>Help with Serivces form</strong>, which <strong>inherits the generic tool</strong> prototype, and adds more functionality on top of it's base methods and properties. <strong>Click on the button</strong> below to open the tool.
+                    </p>   
+					
+					<p class="layout-container-body-copy">
+						<a class="btn btn-primary" href="#tat" title="Open track & trace" rel="tat:open" role="button" aria-label="Open track & trace" aria-controls="tat"> 
+                            Open help with Services
+                        </a>
+                    </p> 
+						
+				</div><!-- layout container wrapper end -->
+			</section><!-- layout container end -->
+
+			<!-- track and trace -->
+            <!-- tool - tat -->
+<tool id="tat" class="tat no-js" name="tat"></tool>
+<!-- tool template - tat -->
+<template id="tat-tpl" class="tat-tpl">
+    <!-- tat - step 1 -->
+    <tool-step id="tat-step--1" class="help-forms">
+        <!-- form container -->
+        <section class="form-container forms-dropdown" aria-labelledby="help-forms_heading">
+            <!-- heading -->
+            <h1 class="form-heading">
+            	<i><img src="/img/test-thumb.png" alt=""></i><!--
+             --><span id="help-forms_heading">Help with Services</span>
+            </h1>
+            <!-- heading end -->
+            <div class="form-group">
+                <div class="field" aria-labelledby="help-forms_label">
+                    <label id="help-forms_label" for="help-forms" class="field-label"> Type </label>
+                    <div for="help-forms-select" class="field-select medium">
+                        <select id="help-forms-select" name="help-forms" type="select"  required="true">
+                            <option selected="selected" disabled="disabled" hidden="hidden"> Select a service help </option>
+                            <option value="track-trace-help"> Track & Trace </option>
+                            <option value="pickups-help"> Pick-ups </option>
+                            <option value="missed-delivery-help"> Missed Delivery </option>
+                            <option value="other-help"> Other </option>
+                        </select>
+                    </div>
+                    <span id="tat_consignment--type_error" for="tat_consignment--type" class="error-message"> Select a valid type option  </span>
+                </div>
+                <!-- field end -->
+            </div>
+            <!-----------------Trace & trace help-------------------->
+            <form class="form form-active" id="track-trace-help" action="" name="track-trace-help_form" novalidate="true">
+                <fieldset class="form-group" aria-labelledby="tracking-number_label" aria-describedby="track-trace_desc-tracking-number">
+                    <div class="field" aria-labelledby="tracking-number_label">
+                        <label id="tracking-number_label" for="tracking-number" class="field-label"> Tracking number(s) </label>
+                        <input id="tracking-number" name="tracking-number" type="text" class="field-input input-text medium" placeholder="ABCDE, 123456" autocomplete="off" maxlength="70" required="true" validate="ids">
+                        <span id="tracking-number_error" for="tracking-number" class="error-message"> Please entervalid tracking number(s) </span>
+                    </div>
+                    <p id="track-trace_desc-tracking-number" class="no-label">
+                        Please separate multiple numbers by a comma eg. ABCDE, 123456
+                    </p>
+                    <div class="field" aria-labelledby="tracking-message_label">
+                        <label id="tracking-message_label" for="tracking-message" class="field-label"> How can we help you? </label>
+                        <textarea cols="5" rows="5" id="tracking-message" name="message" type="text" class="field-input input-textare medium" required="true"></textarea>
+                        <span id="tracking-message_error" for="tracking-message" class="error-message"> Please enter your message </span>
+                    </div>
+                    <div class="field" aria-labelledby="tracking-first-name_label">
+                        <label class="field-label" for="tracking-first-name">First Name</label>
+                        <input id="tracking-first-name" name="first-name" class="field-input input-text medium" type="text" placeholder="First Name" required="true">
+                        <span id="tracking-first-name_error" for="tracking-first-name" class="error-message"> Please enter your first name </span>
+                    </div>
+                    <div class="field" aria-labelledby="tracking-last-name_label">
+                        <label class="field-label" for="tracking-last-name">Last Name</label>
+                        <input id="tracking-last-name" name="last-name" class="field-input input-text medium" type="text" placeholder="Last Name" required="true">
+                        <span id="tracking-last-name_error" for="tracking-last-name" class="error-message"> Please enter your last name </span>
+                    </div>
+                    <div class="field" aria-labelledby="tracking-position_label">
+                        <label class="tracking-position_label" for="tracking-position">Position/Title</label>
+                        <input id="tracking-position" name="position" class="field-input input-text medium" type="text" placeholder="Position/Title">
+                    </div>
+                    <div class="field" aria-labelledby="tracking-company_label">
+                        <label class="tracking-company_label" for="tracking-company">Company Name</label>
+                        <input id="tracking-company" name="company" class="field-input input-text medium" type="text" placeholder="Company Name">
+                    </div>
+                    <div class="field" aria-labelledby="tracking-postcode_label">
+                        <label class="tracking-postcode_label" for="tracking-postcode">Post Code</label>
+                        <input id="tracking-postcode" name="postcode" class="field-input input-text medium" type="text" placeholder="Post Code" required="true" validate="postcode">
+                        <span id="tracking-postcod_error" for="tracking-postcode" class="error-message"> Please enter a valid post code </span>
+                    </div>
+
+                    <div class="field" aria-labelledby="tracking-contact-type_label">
+	                    <label id="tracking-contact-typelabel" for="tracking-contact-type" class="field-label"> Please contact me via </label>
+	                    <div for="tracking-contact-type" class="field-select medium">
+	                        <select id="tracking-contact-type" name="tracking-contact-type" type="select" default="Email" required="true">
+	                            <option value="Email"> Email </option>
+	                            <option value="Phone"> Phone </option>
+	                        </select>
+		                	<span id="tracking-contact-typee_error" for="tracking-contact-type" class="error-message"> Pleas select a contact type </span>
+		                </div>
+                	</div>
+
+                	<div class="field" aria-labelledby="tracking-email_label">
+                        <label class="tracking-email_label" for="tracking-email">Email</label>
+                        <input id="tracking-email" name="email_" class="field-input input-text medium" type="text" placeholder="Email" required="true" validate="email">
+                        <span id="tracking-postcod_error" for="tracking-email" class="error-message"> Please enter a valid email </span>
+                    </div>
+
+                    <div class="field" aria-labelledby="tracking-phone_label">
+                        <label class="tracking-phone_label" for="tracking-phone">Phone</label>
+                        <input id="tracking-phone" name="phone_" class="field-input input-text medium" type="text" placeholder="Phone" required="true" validate="phone">
+                        <span id="tracking-phone_error" for="tracking-phone" class="error-message"> Please enter a valid phone </span>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group text-center bg-colour--mid-tan" aria-labelledby="track-trace-help_label-btn" aria-describedby="track-trace-help_desc-btn">
+                    <legend id="track-trace-help_label-btn" class="hidden"> Send help </legend>
+                    <p id="track-trace-help_desc-btn" class="hidden"> Click on the button below to Send help </p>
+
+                    <button class="btn btn-primary" type="submit" title="Send help" aria-label="Send help" rel="tool:next" custom="true" > 
+                    	Send help
+                    </button>
+                </fieldset>
+            </form>
+			
+			<!-----------------Pickups help-------------------->
+            <form class="form" id="pickups-help" action="" name="pickups-help_form" novalidate="true">
+                <fieldset class="form-group" aria-labelledby="booking-number_label">
+                    <div class="field" aria-labelledby="booking-number_label">
+                        <label id="booking-number_label" for="booking-number" class="field-label"> Booking number </label>
+                        <input id="booking-number" name="booking-number" type="text" class="field-input input-text medium" autocomplete="off" maxlength="70" required="true" validate="id">
+                        <span id="booking-number_error" for="booking-number" class="error-message"> Please entervalid booking number </span>
+                    </div>
+                    <div class="field" aria-labelledby="booking-message_label">
+                        <label id="booking-message_label" for="booking-message" class="field-label"> How can we help you? </label>
+                        <textarea cols="5" rows="5" id="booking-message" name="message" type="text" class="field-input input-textare medium" required="true"></textarea>
+                        <span id="booking-message_error" for="booking-message" class="error-message"> Please enter your message </span>
+                    </div>
+                    <div class="field" aria-labelledby="booking-first-name_label">
+                        <label class="field-label" for="booking-first-name">First Name</label>
+                        <input id="booking-first-name" name="first-name" class="field-input input-text medium" type="text" placeholder="First Name" required="true">
+                        <span id="booking-first-name_error" for="booking-first-name" class="error-message"> Please enter your first name </span>
+                    </div>
+                    <div class="field" aria-labelledby="booking-last-name_label">
+                        <label class="field-label" for="booking-last-name">Last Name</label>
+                        <input id="booking-last-name" name="last-name" class="field-input input-text medium" type="text" placeholder="Last Name" required="true">
+                        <span id="booking-last-name_error" for="booking-last-name" class="error-message"> Please enter your last name </span>
+                    </div>
+                    <div class="field" aria-labelledby="booking-position_label">
+                        <label class="booking-position_label" for="booking-position">Position/Title</label>
+                        <input id="booking-position" name="position" class="field-input input-text medium" type="text" placeholder="Position/Title">
+                    </div>
+                    <div class="field" aria-labelledby="booking-company_label">
+                        <label class="booking-company_label" for="booking-company">Company Name</label>
+                        <input id="booking-company" name="company" class="field-input input-text medium" type="text" placeholder="Company Name">
+                    </div>
+                    <div class="field" aria-labelledby="booking-postcode_label">
+                        <label class="booking-postcode_label" for="booking-postcode">Post Code</label>
+                        <input id="booking-postcode" name="postcode" class="field-input input-text medium" type="text" placeholder="Post Code" required="true" validate="postcode">
+                        <span id="booking-postcod_error" for="booking-postcode" class="error-message"> Please enter a valid post code </span>
+                    </div>
+
+                    <div class="field" aria-labelledby="booking-contact-type_label">
+	                    <label id="booking-contact-typelabel" for="booking-contact-type" class="field-label"> Please contact me via </label>
+	                    <div for="booking-contact-type" class="field-select medium">
+	                        <select id="booking-contact-type" name="booking-contact-type" type="select" default="Email" required="true">
+	                            <option value="Email"> Email </option>
+	                            <option value="Phone"> Phone </option>
+	                        </select>
+		                	<span id="booking-contact-typee_error" for="booking-contact-type" class="error-message"> Pleas select a contact type </span>
+		                </div>
+                	</div>
+
+                	<div class="field" aria-labelledby="booking-email_label">
+                        <label class="booking-email_label" for="booking-email">Email</label>
+                        <input id="booking-email" name="email_" class="field-input input-text medium" type="text" placeholder="Email" required="true" validate="email">
+                        <span id="booking-postcod_error" for="booking-email" class="error-message"> Please enter a valid email </span>
+                    </div>
+
+                    <div class="field" aria-labelledby="booking-phone_label">
+                        <label class="booking-phone_label" for="booking-phone">Phone</label>
+                        <input id="booking-phone" name="phone_" class="field-input input-text medium" type="text" placeholder="Phone" required="true" validate="phone">
+                        <span id="booking-phone_error" for="booking-phone" class="error-message"> Please enter a valid phone </span>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group text-center bg-colour--mid-tan" aria-labelledby="pickups-help_label-btn" aria-describedby="pickups-help_desc-btn">
+                    <legend id="pickups-help_label-btn" class="hidden"> Send help </legend>
+                    <p id="pickups-help_desc-btn" class="hidden"> Click on the button below to Send help </p>
+
+                    <button class="btn btn-primary" type="submit" title="Send help" aria-label="Send help" rel="tool:next" custom="true" > 
+                    	Send help
+                    </button>
+                </fieldset>
+            </form>
+			
+			<!-----------------Missed Delivery-------------------->
+            <form class="form" id="missed-delivery-help" action="" name="missed-delivery-help_form" novalidate="true">
+                <fieldset class="form-group" aria-labelledby="delivery-number_label">
+                    <div class="field" aria-labelledby="delivery-number_label">
+                        <label id="delivery-number_label" for="delivery-number" class="field-label"> Barcode or Tracking number</label>
+                        <input id="delivery-number" name="delivery-number" type="text" class="field-input input-text medium" autocomplete="off" maxlength="70" required="true" validate="id">
+                        <span id="delivery-number_error" for="delivery-number" class="error-message"> Please enter valid barcode or Tracking number
+ </span>
+                    </div>
+                    <div class="field" aria-labelledby="delivery-message_label">
+                        <label id="delivery-message_label" for="delivery-message" class="field-label"> How can we help you? </label>
+                        <textarea cols="5" rows="5" id="delivery-message" name="message" type="text" class="field-input input-textare medium" required="true"></textarea>
+                        <span id="delivery-message_error" for="delivery-message" class="error-message"> Please enter your message </span>
+                    </div>
+                    <div class="field" aria-labelledby="delivery-first-name_label">
+                        <label class="field-label" for="delivery-first-name">First Name</label>
+                        <input id="delivery-first-name" name="first-name" class="field-input input-text medium" type="text" placeholder="First Name" required="true">
+                        <span id="delivery-first-name_error" for="delivery-first-name" class="error-message"> Please enter your first name </span>
+                    </div>
+                    <div class="field" aria-labelledby="delivery-last-name_label">
+                        <label class="field-label" for="delivery-last-name">Last Name</label>
+                        <input id="delivery-last-name" name="last-name" class="field-input input-text medium" type="text" placeholder="Last Name" required="true">
+                        <span id="delivery-last-name_error" for="delivery-last-name" class="error-message"> Please enter your last name </span>
+                    </div>
+                    <div class="field" aria-labelledby="delivery-position_label">
+                        <label class="delivery-position_label" for="delivery-position">Position/Title</label>
+                        <input id="delivery-position" name="position" class="field-input input-text medium" type="text" placeholder="Position/Title">
+                    </div>
+                    <div class="field" aria-labelledby="delivery-company_label">
+                        <label class="delivery-company_label" for="delivery-company">Company Name</label>
+                        <input id="delivery-company" name="company" class="field-input input-text medium" type="text" placeholder="Company Name">
+                    </div>
+                    <div class="field" aria-labelledby="delivery-postcode_label">
+                        <label class="delivery-postcode_label" for="delivery-postcode">Post Code</label>
+                        <input id="delivery-postcode" name="postcode" class="field-input input-text medium" type="text" placeholder="Post Code" required="true" validate="postcode">
+                        <span id="delivery-postcod_error" for="delivery-postcode" class="error-message"> Please enter a valid post code </span>
+                    </div>
+
+                    <div class="field" aria-labelledby="delivery-contact-type_label">
+	                    <label id="delivery-contact-typelabel" for="delivery-contact-type" class="field-label"> Please contact me via </label>
+	                    <div for="delivery-contact-type" class="field-select medium">
+	                        <select id="delivery-contact-type" name="delivery-contact-type" type="select" default="Email" required="true">
+	                            <option value="Email"> Email </option>
+	                            <option value="Phone"> Phone </option>
+	                        </select>
+		                	<span id="delivery-contact-typee_error" for="delivery-contact-type" class="error-message"> Pleas select a contact type </span>
+		                </div>
+                	</div>
+
+                	<div class="field" aria-labelledby="delivery-email_label">
+                        <label class="delivery-email_label" for="delivery-email">Email</label>
+                        <input id="delivery-email" name="email_" class="field-input input-text medium" type="text" placeholder="Email" required="true" validate="email">
+                        <span id="delivery-postcod_error" for="delivery-email" class="error-message"> Please enter a valid email </span>
+                    </div>
+
+                    <div class="field" aria-labelledby="delivery-phone_label">
+                        <label class="delivery-phone_label" for="delivery-phone">Phone</label>
+                        <input id="delivery-phone" name="phone_" class="field-input input-text medium" type="text" placeholder="Phone" required="true" validate="phone">
+                        <span id="delivery-phone_error" for="delivery-phone" class="error-message"> Please enter a valid phone </span>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group text-center bg-colour--mid-tan" aria-labelledby="missed-delivery-help_label-btn" aria-describedby="missed-delivery-help_desc-btn">
+                    <legend id="missed-delivery-help_label-btn" class="hidden"> Send help </legend>
+                    <p id="missed-delivery-help_desc-btn" class="hidden"> Click on the button below to Send help </p>
+
+                    <button class="btn btn-primary" type="submit" title="Send help" aria-label="Send help" rel="tool:next" custom="true" > 
+                    	Send help
+                    </button>
+                </fieldset>
+            </form>
+
+            <!-----------------Other help-------------------->
+            <form class="form" id="other-help" action="" name="other-help_form" novalidate="true">
+                <fieldset class="form-group" aria-labelledby="delivery-number_label">
+                    <div class="field" aria-labelledby="delivery-message_label">
+                        <label id="other-message_label" for="other-message" class="field-label"> How can we help you? </label>
+                        <textarea cols="5" rows="5" id="other-message" name="message" type="text" class="field-input input-textare medium" required="true"></textarea>
+                        <span id="other-message_error" for="other-message" class="error-message"> Please enter your message </span>
+                    </div>
+                    <div class="field" aria-labelledby="other-first-name_label">
+                        <label class="field-label" for="other-first-name">First Name</label>
+                        <input id="other-first-name" name="first-name" class="field-input input-text medium" type="text" placeholder="First Name" required="true">
+                        <span id="other-first-name_error" for="other-first-name" class="error-message"> Please enter your first name </span>
+                    </div>
+                    <div class="field" aria-labelledby="other-last-name_label">
+                        <label class="field-label" for="other-last-name">Last Name</label>
+                        <input id="other-last-name" name="last-name" class="field-input input-text medium" type="text" placeholder="Last Name" required="true">
+                        <span id="other-last-name_error" for="other-last-name" class="error-message"> Please enter your last name </span>
+                    </div>
+                    <div class="field" aria-labelledby="other-position_label">
+                        <label class="other-position_label" for="other-position">Position/Title</label>
+                        <input id="other-position" name="position" class="field-input input-text medium" type="text" placeholder="Position/Title">
+                    </div>
+                    <div class="field" aria-labelledby="other-company_label">
+                        <label class="other-company_label" for="other-company">Company Name</label>
+                        <input id="other-company" name="company" class="field-input input-text medium" type="text" placeholder="Company Name">
+                    </div>
+                    <div class="field" aria-labelledby="other-postcode_label">
+                        <label class="other-postcode_label" for="other-postcode">Post Code</label>
+                        <input id="other-postcode" name="postcode" class="field-input input-text medium" type="text" placeholder="Post Code" required="true" validate="postcode">
+                        <span id="other-postcod_error" for="other-postcode" class="error-message"> Please enter a valid post code </span>
+                    </div>
+
+                    <div class="field" aria-labelledby="other-contact-type_label">
+	                    <label id="other-contact-typelabel" for="other-contact-type" class="field-label"> Please contact me via </label>
+	                    <div for="other-contact-type" class="field-select medium">
+	                        <select id="other-contact-type" name="other-contact-type" type="select" default="Email" required="true">
+	                            <option value="Email"> Email </option>
+	                            <option value="Phone"> Phone </option>
+	                        </select>
+		                	<span id="other-contact-typee_error" for="other-contact-type" class="error-message"> Pleas select a contact type </span>
+		                </div>
+                	</div>
+
+                	<div class="field" aria-labelledby="other-email_label">
+                        <label class="other-email_label" for="other-email">Email</label>
+                        <input id="other-email" name="email_" class="field-input input-text medium" type="text" placeholder="Email" required="true" validate="email">
+                        <span id="other-postcod_error" for="other-email" class="error-message"> Please enter a valid email </span>
+                    </div>
+
+                    <div class="field" aria-labelledby="other-phone_label">
+                        <label class="other-phone_label" for="other-phone">Phone</label>
+                        <input id="other-phone" name="phone_" class="field-input input-text medium" type="text" placeholder="Phone" required="true" validate="phone">
+                        <span id="other-phone_error" for="other-phone" class="error-message"> Please enter a valid phone </span>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group text-center bg-colour--mid-tan" aria-labelledby="other-help_label-btn" aria-describedby="other-help_desc-btn">
+                    <legend id="other-help_label-btn" class="hidden"> Send help </legend>
+                    <p id="missed-delivery-help_desc-btn" class="hidden"> Click on the button below to Send help </p>
+
+                    <button class="btn btn-primary" type="submit" title="Send help" aria-label="Send help" rel="tool:next" custom="true" > 
+                    	Send help
+                    </button>
+                </fieldset>
+            </form>
+            
+        </section>
+        <!-- form container end -->
+        <!-- tool help -->
+        <section class="tool-help">
+            <br/>
+            <br/>
+            <br/>
+        </section>
+        <!-- tool help end -->
+    </tool-step>
+    <!-- tat - step 1 end -->
+    <!-- tat - step result -->
+    <tool-step id="tat-step--result" class="tat-step tat-step--result">
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="tat-step--result_heading" aria-describedby="tat-step--result_summary">
+            <!-- heading -->
+            <h1 class="form-heading">
+            	<i><img src="/img/test-thumb.png" alt=""></i><!--
+             --><span id="tat-step--result_heading">Track & Trace</span>
+            </h1>
+            <!-- heading end -->
+            <!-- notifications header -->
+            <h3 id="tat-step--result_summary" class="notifications">
+            	You have <span id="tat-tracking_total" class="notifications-count">1</span> delivery item<span id="tat-tracking_plural"></span> in your result
+            </h3>
+            <!-- notifications header end -->
+        </section>
+        <!-- form container end -->
+        <!-- tracking -->
+        <section id="tat-tracking" class="tracking">
+            <!-- tracking container -->
+            <div class="tracking-container" aria-labelledby="tat-tracking--1" aria-describedby="tat-tracking--1_no">
+                <!-- heading -->
+                <h4 id="tat-tracking--1" class="tracking-header">
+					<span>Tracking number</span><br/><!--
+				 --><span id="tat-tracking--1_no" class="tracking-number">ABCD1234567890</span><br/><!--
+
+				--><span class="tracking-status">Frieght Handling</span><!--
+				
+				--><p class="tracking-info"><strong>Service</strong>  Express Post </p><!--
+				--><p class="tracking-info"><strong>Estimated Arrival</strong> 12 Dec 2016, 9:00 <a href="Where's my delivery?">Where's my delivery?</a></p><!--
+				--><p class="tracking-info"><strong>Destination</strong> AUSPOST, D123, L16, 111 BOURKE STREET </p><!--
+
+				 --><a class="tracking-link is-open" href="#tat-tracking--1_article" target="_blank" title="View less" aria-label="View less" aria-controls="tat-tracking--1_article" tracking-number="ABCD1234567890">
+						<span class="tracking-link_text">View less</span><!--
+					 --><span class="tracking-link_arrow">
+							<svg class="svg-Chevron-Down-dims">
+								<use xlink:href="#Chevron-Down"/>
+							</svg>
+						</span>
+					</a><!--
+
+				 --><i class="tracking-icon is-visible" aria-hidden="false"><span class="tracking-count">2</span></i>
+				</h4>
+                <!-- heading end -->
+                <!-- article -->
+                <div id="tat-tracking--1_article" class="tracking-article is-visible" aria-hidden="false">
+                    <!-- article container -->
+                    <article class="article-container" aria-labelledby="tat-article--1" aria-describedby="tat-article--1_status">
+                        <!-- article number -->
+                        <h3 id="tat-article--1" class="article-number">
+							<strong>Article Number</strong> ABCD12345678901 <span class="article-is">is</span>
+							<span id="tat-article--1_status" class="article-status">Frieght Handling</span>
+						</h3>
+                        <!-- article number end -->
+                        <!-- article info -->
+                        <p class="article-info"><strong>Last Tracking Event</strong></p>
+                        <p class="article-info"><strong>Status</strong> At Delivery Depot </p>
+                        <p class="article-info"><strong>Date & Time</strong> 12 Dec 2016, 9:00 </p>
+                        <p class="article-info"><strong>Location</strong> SYD </p>
+                        <!-- article footer -->
+                        <!-- <a class="article-footer" href="#" title="View article tracking history"> View article tracking history </a> -->
+                    </article>
+                    <!-- article container end -->
+                    <!-- article container -->
+                    <article class="article-container" aria-labelledby="tat-article--3" aria-describedby="tat-article--3_status">
+                        <!-- article number -->
+                        <h3 id="tat-article--3" class="article-number">
+							<strong>Article Number</strong> ABCD12345678902 <span class="article-is">is</span>
+							<span id="tat-article--3_status" class="article-status is-delivered">Delivered</span>
+						</h3>
+                        <!-- article number end -->
+                        <!-- article info -->
+                        <p class="article-info"><strong>Last Tracking Event</strong></p>
+                        <p class="article-info"><strong>Status</strong> Delivered and signed by John Doe </p>
+                        <p class="article-info"><strong>Date & Time</strong> 30 Jun 2016, 9:00 </p>
+                        <p class="article-info"><strong>Location</strong> SYD </p>
+                        <!-- article footer -->
+                        <!-- <a class="article-footer" href="#" title="View article tracking history"> View article tracking history </a> -->
+                    </article>
+                    <!-- article container end -->
+                    <!-- article container -->
+                    <article class="article-container" aria-labelledby="tat-article--3" aria-describedby="tat-article--3_status">
+                        <!-- article number -->
+                        <h3 id="tat-article--3" class="article-number">
+							<strong>Article Number</strong> Not available
+							<span id="tat-article--3_status" class="article-status is-error">Error</span>
+						</h3>
+                        <!-- article number end -->
+                        <!-- article info -->
+                        <p class="article-info"><strong>Last Tracking Event</strong></p>
+                        <p class="article-info"><span class="article-info--error">There was a problem in getting information related to your aricle.</span>
+                            <br/> If the problem continues to persist, please <a href="#" title="contact support">contact support</a>.</p>
+                    </article>
+                    <!-- article container end -->
+                </div>
+                <!-- article end -->
+            </div>
+            <!-- tracking container end -->
+        </section>
+        <!-- tracking end -->
+        <!-- tool error -->
+        <section id="tat-error" class="tool-message tool-message--error" aria-labelledby="tat-error_label" aria-describedby="tat-error_desc">
+            <!-- tool error inner -->
+            <div class="tool-message_inner">
+                <h3>
+					<svg><use xlink:href="#Close-Menu"/></svg><!--
+				 --><span id="tat-error_label">An error has occured</span>
+				</h3>
+                <p id="tat-error_desc">
+                    <span id="tat-error_message">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> If the problem continues to persist, please contact support.
+                </p>
+                <h3><a href="#" title="Contact Support"> Contact Support </a></h3>
+            </div>
+            <!-- tool error inner end -->
+            <!-- tool retry -->
+            <tool-retry></tool-retry>
+        </section>
+        <!-- tool error end -->
+        <!-- tool success -->
+        <section id="tat-success" class="tool-message tool-message--success">
+            <!-- tool reset -->
+            <tool-reset></tool-reset>
+        </section>
+        <!-- tool success end -->
+        <!-- tool help -->
+        <section class="tool-help">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </section>
+        <!-- tool help end -->
+    </tool-step>
+    <!-- tat - step result end -->
+</template>

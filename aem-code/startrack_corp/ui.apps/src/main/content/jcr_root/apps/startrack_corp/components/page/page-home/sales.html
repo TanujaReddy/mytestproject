@@ -1,0 +1,189 @@
+<!-- tool - contact us form -->
+<tool id="contact-form" class="contact no-js" name="contact-form"></tool>
+
+<!-- tool template - contact us -->
+<template id="contact-tpl" class="contact-tpl">
+
+    <!-- contact - entry -->
+    <tool-step id="contact--entry" class="contact-step help-forms">
+        <!-- form container -->
+        <section class="form-container" aria-labelledby="contact_heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/contact-icon.png" alt="Contact icon"></i><!--
+                         --><span id="contact-enquiry_heading">Get started</span>
+            </h1>
+
+            <fieldset class="form-group text-center no-padding">
+                <p>If you'd like to talk to us, call 13 2345. We're open 8:00am to 6:00pm <br>
+                    weekdays AEST (excluding National and NSW Public Holidays).</p>
+            </fieldset>
+            <!-- heading end -->
+
+            <!-- form -->
+            <form id="contact-form" class="form" name="contact-form" novalidate="true">
+
+                <!-- fieldset - consignment -->
+                <fieldset class="form-group bg-colour" aria-labelledby="contact-enquiry_label" aria-describedby="contact-enquiry_desc">
+                    <!-- First Name -->
+                    <div class="field" aria-labelledby="first_name_label">
+                        <label id="first_name_label" for="firstName" class="field-label">First name</label>
+                        <input id="firstName" name="firstName" type="text" class="field-input input-text medium" placeholder="First name" required="true" validate="alpha">
+                        <span id="first_name_error" for="first_name" class="error-message">First name is required and must consist of alphabetical text</span>
+                    </div>
+                    <!-- Last Name -->
+                    <div class="field" aria-labelledby="last_name_label">
+                        <label id="last_name_label" for="lastName" class="field-label">Last name</label>
+                        <input id="lastName" name="lastName" type="text" class="field-input input-text medium" placeholder="Last name" required="true" validate="alpha">
+                        <span id="last_name_error" for="last_name" class="error-message">Last name is required and must consist of alphabetical text</span>
+                    </div>
+                    <!-- Job Title -->
+                    <div class="field" aria-labelledby="Job_Title__c_label">
+                        <label id="Job_Title__c_label" for="Job_Title__c" class="field-label">Position / title <span class="instructions">(Optional)</span></label>
+                        <input id="Job_Title__c" name="Job_Title__c" type="text" class="field-input input-text medium" placeholder="Position / title">
+                    </div>
+                    <!-- Company -->
+                    <div class="field" aria-labelledby="company_label">
+                        <label id="company_label" for="company" class="field-label">Company name <span class="instructions">(Optional)</span></label>
+                        <input id="company" name="company" type="text" class="field-input input-text medium" placeholder="Company name">
+                    </div>
+                    <!-- Channel -->
+                    <div class="field" aria-labelledby="Channel_Preference__c_label">
+                        <label id="Channel_Preference__c_label" for="Channel_Preference__c" class="field-label"> Please contact me via </label>
+                        <div for="help-forms-contact-type" class="field-select medium">
+                            <select id="Channel_Preference__c" name="Channel_Preference__c" type="select" default="Email" required="true">
+                                <option value="Email"> Email </option>
+                                <option value="Phone"> Phone </option>
+                            </select>
+                            <span id="Channel_Preference__c_error" for="Channel_Preference__c" class="error-message"> Please select a contact type </span>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="field" aria-labelledby="email_label">
+                        <label id="email_label" for="email" class="field-label">Email</label>
+                        <input id="email" name="email" type="email" class="field-input input-text medium" placeholder="Email" required="true" validate="email">
+                        <span id="email_error" for="email" class="error-message"> Email address is required and must be valid</span>
+                    </div>
+                    <!-- Phone -->
+                    <div class="field" aria-labelledby="phone_label">
+                        <label id="phone_label" for="phone" class="field-label">Phone</label>
+                        <input id="phone" name="phone" type="tel" class="field-input input-text medium" placeholder="Phone" required="true" validate="phone">
+                        <span id="phone_error" for="phone" class="error-message">Enter a 10 digit phone number eg. 0212341234 with no spaces</span>
+                    </div>
+                    <!-- field end -->
+                    <!-- privacy -->
+                    <div class="field" aria-labelledby="contact--confirm_label">
+                        <!-- label - privacy -->
+                        <label id="contact--privacy_label" for="contact--privacy" class="field-label">Privacy notice</label>
+                        <div class="field-static medium" aria-labelledby="contact--confirm_label">
+                            <!-- label - privacy -->
+                            <span class="label" id="contact--privacy">
+                                StarTrack, a business of the Australia Post Group collects your information in order to register your
+                                details for a business account. Without your information, we would be unable to provide this service. Your information
+                                is handled in accordance with the Australia Post Group Privacy Policy which outlines how to access and/or correct your
+                                personal information or make a privacy related complaint. For more information please visit:
+                                <a href="http://www.auspost.com.au/privacy" target="_blank">http://www.auspost.com.au/privacy</a>.
+                            </span>
+                        </div>
+                    </div>
+                    <!-- field end -->
+                    <!-- field - opt-in -->
+                    <div class="field" aria-labelledby="contact_opt-in_label">
+                        <label id="contact_opt-in_label" class="field-label hidden"> I am not a robot </label>
+                        <!-- field - not robot - captcha -->
+                        <div class="field-checkbox" aria-labelledby="contact_opt-in--label">
+                            <input id="contact_opt-in" name="optIn" type="checkbox" value="true" required="true">
+                            <label id="contact_opt-in--label" for="contact_opt-in">
+                                Yes, I would like to be contacted by StarTrack to receive information and advice
+                                about products and services that can assist my business.</label>
+                            <span id="contact_opt-in--error" for="contact_opt-in" class="error-message">Please confirm that you would like to be contacted by StarTrack</span>
+                        </div>
+                    </div>
+                    <!-- field - not robot -->
+                    <div class="field" aria-labelledby="contact_not-robot_label">
+                        <label id="contact_not-robot_label" class="field-label hidden">Opt-in</label>
+                        <!-- field - not robot - captcha -->
+                        <div class="field-checkbox medium" aria-labelledby="contact_not-robot--captcha_label">
+                            <input id="contact_not-robot--captcha" name="isNotRobot" type="checkbox" value="true" required="true">
+                            <label id="contact_not-robot--captcha_label" for="contact_not-robot--captcha"> I am not a robot </label>
+                            <span id="contact_not-robot--captcha_error" for="contact_not-robot--captcha" class="error-message"> Please confirm that you are not a robot </span>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- fieldset - submit -->
+                <fieldset class="form-group text-center bg-colour--mid-tan" aria-labelledby="contact-enquiry_label-btn" aria-describedby="contact-enquiry_desc-btn">
+                    <!-- legend label / description -->
+                    <legend id="contact-enquiry_label-btn" class="hidden"> Send enquiry</legend>
+                    <p id="contact-enquiry_desc-btn" class="hidden"> Click on the button below to send enquiry </p>
+                    <!-- submit -->
+                    <button class="btn btn-primary" role="button" title="Send Enquiry" rel="tool:next"
+                            aria-label="Send Enquiry" aria-controls="contact--result" custom="true" required="true">
+                        Send
+                    </button>
+                </fieldset>
+                <!-- fieldset - submit end -->
+            </form>
+            <!-- form end -->
+        </section>
+        <!-- form container end -->
+    </tool-step>
+
+    <!-- contact - result -->
+    <tool-step id="contact--result" class="contact-step help-forms help-result">
+
+        <!-- header -->
+        <section class="form-container" aria-labelledby="feedback--result_heading">
+
+            <!-- heading -->
+            <h1 class="form-heading">
+                <i><img src="/etc/designs/startrack_corp/clientlib/img/contact-icon.png" alt="Feedback icon"></i><!--
+                             --><span id="feedback--result_heading">Get started</span>
+            </h1>
+            <!-- heading end -->
+
+        </section>
+        <!-- header end -->
+
+        <!-- tool error -->
+        <section id="contact--error" class="tool-message tool-message--error" aria-labelledby="contact--error_label" aria-describedby="contact--error_desc">
+            <!-- tool error inner -->
+            <div class="tool-message_inner">
+                <h3>
+                    <svg><use xlink:href="#Close-Menu"/></svg><!--
+                 --><span id="contact--error_label">Something went wrong.</span>
+                </h3>
+                <p id="contact--error_desc">
+                    <span id="contact--error_message">There was an error processing your request.</span>
+                </p>
+                <p>
+                    Please try again in a while. If the problem continues, please contact us.
+                </p>
+                <h3><a href="#support:open" title="Contact us">Contact us</a></h3>
+            </div><!-- tool error inner end -->
+
+            <!-- tool retry -->
+            <tool-retry></tool-retry>
+        </section><!-- tool error end -->
+
+        <!-- tool success -->
+        <section id="contact--success" class="tool-message tool-message--success">
+            <!-- tool error inner -->
+            <div class="tool-message_inner">
+                <h3>
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#CheckboxTick"></use></svg><!--
+                    --><span id="contact--success_label">Your enquiry has been successfully submitted.</span>
+                </h3>
+                <h4 class="message-subtitle">Thank you for your enquiry.<br>
+                    We will aim to get back to you within 2 business days.<br><br>
+                    Enquiry Id: <b id="contact--enquiry_id"></b>
+                </h4>
+            </div><!-- tool error inner end -->
+
+            <!-- tool reset -->
+            <tool-reset></tool-reset>
+        </section><!-- tool success end -->
+
+    </tool-step>
+
+</template>

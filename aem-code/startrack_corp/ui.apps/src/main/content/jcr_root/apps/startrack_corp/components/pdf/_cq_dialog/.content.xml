@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Edit PDF"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container" class="pdf">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <videoImagePath
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fieldDescription="Drag and drop from the DAM"
+                        fieldLabel="PDF"
+                        fileNameParameter="./pdfPath"
+                        fileReferenceParameter="./pdfPathRef"
+                        mimeTypes="[pdf]"
+                        multiple="{Boolean}false"
+                        name="./pdfPath"
+                        required="{Boolean}true"
+                        title="Upload PDF"
+                        useHTML5="{Boolean}false"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

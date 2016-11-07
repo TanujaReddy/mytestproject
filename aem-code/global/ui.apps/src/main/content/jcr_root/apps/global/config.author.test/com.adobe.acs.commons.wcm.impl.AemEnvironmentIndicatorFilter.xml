@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	xmlns:jcr="http://www.jcp.org/jcr/1.0" jcr:primaryType="sling:OsgiConfig"
+	css-color="green"
+    css-override="#acs-commons-env-indicator { background-color: #800080;color: #FFF;position: fixed;top: 0;left: 50%;width: 126px;margin-left: -63px;height: 30px;font: bold 18px/29px sans-serif;text-align: center;border: solid 1px black;border-top-width: 0;z-index: 100000000000000;}"
+    inner-html="TEST"
+    browser-title-prefix="TEST"/>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Configure Hero banner Microsites Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Text">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"/>
+        <items jcr:primaryType="nt:unstructured">
+            <image
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Image"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <imageSize
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Image Size Variation"
+                                name="./imageSize">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <large
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Large"
+                                        value="large"/>
+                                    <small
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Small"
+                                        value="small"/>
+                                </items>
+                            </imageSize>
+                            <imagePathDesktop
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image location-Desktop"
+                                fileNameParameter="./imageNameDesktop"
+                                fileReferenceParameter="./imagePathRefDesktop"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./imagePathDesktop"
+                                required="{Boolean}true"
+                                title="Upload Image-Desktop"
+                                useHTML5="{Boolean}true"/>
+                            <imageAltTextDesktop
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldDescription="Please enter accessible ALT text for the image above"
+                                fieldLabel="Image ALT text-Desktop"
+                                name="./imageAltTextDesktop"
+                                required="{Boolean}false"/>
+                            <imagePathMobile
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Drag and drop from the DAM"
+                                fieldLabel="Image location-Mobile"
+                                fileNameParameter="./imageNameMobile"
+                                fileReferenceParameter="./imagePathRefMobile"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./imagePathMobile"
+                                required="{Boolean}true"
+                                title="Upload Image-Mobile"
+                                useHTML5="{Boolean}true"/>
+                            <imageAltTextMobile
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldDescription="Please enter accessible ALT text for the image above"
+                                fieldLabel="Image ALT text-Mobile"
+                                name="./imageAltTextMobile"
+                                required="{Boolean}false"/>
+                            <decorative
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Check if the image should be ignored by assistive technology. This applies to decorative images only."
+                                name="./isDecorative"
+                                text="Image is decorative"
+                                value="true"/>
+                        </items>
+                    </columns>
+                </items>
+            </image>
+            <wedge
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Wedge"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showWedge
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Please tick the checkbox to show the wedge"
+                                fieldLabel="Show Wedge"
+                                name="./showWedge"
+                                text="Show Wedge"
+                                title="Show Wedge"
+                                value="{Boolean}true"/>
+                            <locationHorizontal
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Location - Horizontal"
+                                name="./locationHorizontal">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="left"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="right"/>
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center"
+                                        value="center"/>
+                                </items>
+                            </locationHorizontal>
+                            <locationVertical
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Location - Vertical"
+                                name="./locationVertical">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center"
+                                        value="center"/>
+                                    <top
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Top"
+                                        value="top"/>
+                                    <bottom
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Bottom"
+                                        value="bottom"/>
+                                </items>
+                            </locationVertical>
+                            <backgroundColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="global/components/foundation/customcolorpicker"
+                                fieldLabel="Background Colour"
+                                name="./backgroundColor"
+                                value="rgba(255,255,255,1)"/>
+                        </items>
+                    </columns>
+                </items>
+            </wedge>
+            <cta
+                jcr:primaryType="nt:unstructured"
+                jcr:title="CTA"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <cta
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/include"
+                                path="/apps/global/components/shared-dialog/cta-dialog/content/items/cta-config"/>
+                        </items>
+                    </columns>
+                </items>
+            </cta>
+        </items>
+    </content>
+</jcr:root>

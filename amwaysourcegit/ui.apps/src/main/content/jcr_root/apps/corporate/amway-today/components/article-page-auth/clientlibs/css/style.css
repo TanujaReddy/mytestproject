@@ -1,0 +1,45 @@
+.article-v2{
+    background:#fff;
+    padding:10px;
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+  }
+    .article-v2 .article-content{font-size:12px;}
+    .article-v2 .maintitle{
+	color: #3f403c;
+	font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .article-v2 .byline{
+      margin-top:20px;
+	  color: #6d6e71;
+  }
+
+  .article-v2 p{
+    margin-bottom:10px;
+  }
+
+  .article-v2 ol li{
+    list-style:decimal;
+  }
+
+  .article-v2 ul li{
+    list-style:none;
+  }
+
+  .article-v2 .article-details{
+    position:relative;
+  }
+
+  .article-v2 .related-article{
+    position:relative;
+    top:0px;
+  }
+
+  .article-v2 .related-article .related-article-title{
+    font-weight:bold;
+    font-size:14px;
+    color:#6d6e71;
+    background:#fff;
+    margin-top:10px;
+  }

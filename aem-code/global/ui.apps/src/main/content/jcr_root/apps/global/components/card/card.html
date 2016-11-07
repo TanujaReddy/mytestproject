@@ -1,0 +1,60 @@
+<sly data-sly-use.card="${ 'card.js' @ hideCard=properties.hideCard, wcmmode=wcmmode.edit, preview=wcmmode.preview, touch=wcmInit.isTouchAuthoring, imageLocation=properties.imageLocation, type=properties.containerTypeCard, metaText=properties.metaText, metaLocation=properties.metaLocation}" data-sly-test="${card.editing || properties.hideCard==null}">
+
+	<div data-sly-use.inlineEdit="${'au.com.auspost.global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='global/components/rte-components/text-heading',nodeToBeCreated='card-heading-text'}"
+		 data-sly-unwrap></div>
+	<div data-sly-use.inlineEdit="${'au.com.auspost.global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='global/components/rte-components/text-body',nodeToBeCreated='card-body-text'}"
+		 data-sly-unwrap></div>
+	<div data-sly-use.inlineEdit="${'au.com.auspost.global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='global/components/adpativeimage',nodeToBeCreated='adaptiveimage'}"
+		 data-sly-unwrap></div>
+
+
+	<div class="${card.className}">
+
+		<sly data-sly-test="${properties.hideImage == null}">
+			<sly data-sly-test="${card.editing && properties.imagePathRef == null}">
+				<div class="tile-image">
+					<img src="/content/dam/global/card_large.png" alt="Placeholder for Large container"/>
+				</div>
+			</sly>
+
+			<sly data-sly-test="${properties.imagePathRef != null}">
+				<div class="tile-image">
+					<sly data-sly-resource="${'adaptiveimage' @ resourceType='global/components/adaptiveimage'}"></sly>
+				</div>
+			</sly>
+		</sly>
+
+		<sly data-sly-test="${properties.hideContent == null}">
+			<div class="tile-content">
+
+				<div class="tile-content-copy">
+					<sly data-sly-test="${properties.metaText != null && properties.metaLocation =='aboveHeading'}">
+						<p class="tile-meta-info">${properties.metaText}</p>
+					</sly>
+
+					<h3 class="tile-title">
+						<sly data-sly-resource="${'card-heading-text' @ resourceType='global/components/rte-components/text-heading'}"></sly>
+					</h3>
+
+					<sly data-sly-test="${properties.metaText != null && properties.metaLocation =='belowHeading'}">
+						<p class="tile-meta-info">${properties.metaText}</p>
+					</sly>
+
+					<div class="tile-copy">
+						<p><sly data-sly-resource="${'card-body-text' @ resourceType='global/components/rte-components/text-body'}"></sly></p>
+					</div>
+
+				</div>
+				<sly data-sly-test="${properties.showCta =='true'}">
+					<div class="cta-container">
+						<sly data-sly-include="card-cta.html"></sly>
+					</div>
+				</sly>
+			</div>
+
+			<sly data-sly-test="${card.editing == false && properties.linkpath !=null}">
+				<sly data-sly-include="card-clickable.html"></sly>
+			</sly>
+		</sly>
+	</div>
+</sly>

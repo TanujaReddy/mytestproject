@@ -1,0 +1,51 @@
+<div data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading',nodeToBeCreated='textHeading'}" data-sly-unwrap></div>
+<div data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-body',nodeToBeCreated='textBody'}" data-sly-unwrap></div>
+<div data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-body',nodeToBeCreated='textBody2'}" data-sly-unwrap></div>
+
+<!-- Here data-sly-unwrap is removed in edit/authoring mode as textHeading and textBody rte was wrapping div across which breaks
+    lyt-container component authoring dialog -->
+
+<sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: Edit Layout Container here. This layout container allows you to configure the background colour, layout variation and alignment.</div>
+    <div data-sly-use.colorMap="${'au.com.auspost.startrack_global.core.sightly.ColorMappingReader'}" data-sly-unwrap>
+            <section class="layout-container bg-colour${colorMap.colorClass} ${properties.paddingVariations}">
+                <div class="layout-container-wrapper">
+                    <h2 class="layout-container-heading"><div data-sly-resource="${'textHeading' @ resourceType='startrack_global/components/rte-components/text-heading'}"></div></h2>
+                    <p class="layout-container-body-copy"><div data-sly-resource="${'textBody' @ resourceType='startrack_global/components/rte-components/text-body'}"></div></p>
+                    <div class="flex-container ${properties.layoutvariation} ${properties.containerJustification}">
+                       <!-- <div>Author Hint: Place required components here. Remember the layout can be changed in the container dialog options.</div>-->
+                        <div data-sly-resource="${'layoutContainerParsys' @ resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div>
+                    </div>
+                    <p class="layout-container-body-copy layout-container-body-copy--lower"><div data-sly-resource="${'textBody2' @ resourceType='startrack_global/components/rte-components/text-body'}"></div></p>
+                </div>
+            </section>
+    </div>
+</sly>
+
+<div data-sly-use.colorMap="${'au.com.auspost.startrack_global.core.sightly.ColorMappingReader'}" data-sly-unwrap>
+    <sly data-sly-test="${!(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+	
+    <section class="layout-container bg-colour${colorMap.colorClass} ${properties.paddingVariations}">
+        <div class="layout-container-wrapper">
+    		<div data-sly-use.rteVal="${'au.com.auspost.startrack_global.core.sightly.StripTagsRTE' @ subNode='textHeading'}" data-sly-unwrap>
+    			<div data-sly-test ="${rteVal.rteValue}" data-sly-unwrap>
+	            	<h2 class="layout-container-heading"><div data-sly-resource="${'textHeading' @ resourceType='startrack_global/components/rte-components/text-heading'}" data-sly-unwrap></div></h2>
+    			</div>
+    		</div>
+    		<div data-sly-use.rteVal="${'au.com.auspost.startrack_global.core.sightly.StripTagsRTE' @ subNode='textBody'}" data-sly-unwrap>
+    			<div data-sly-test ="${rteVal.rteValue}" data-sly-unwrap>
+            		<p class="layout-container-body-copy"><div data-sly-resource="${'textBody' @ resourceType='startrack_global/components/rte-components/text-body'}" data-sly-unwrap></div></p>
+    			</div>
+    		</div>
+            <div class="flex-container ${properties.layoutvariation} ${properties.containerJustification}">
+                <div data-sly-resource="${'layoutContainerParsys' @ resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div>
+            </div>
+            <div data-sly-use.rteVal="${'au.com.auspost.startrack_global.core.sightly.StripTagsRTE' @ subNode='textBody2'}" data-sly-unwrap>
+                <div data-sly-test ="${rteVal.rteValue}" data-sly-unwrap>
+                    <p class="layout-container-body-copy layout-container-body-copy--lower"><div data-sly-resource="${'textBody2' @ resourceType='startrack_global/components/rte-components/text-body'}" data-sly-unwrap></div></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </sly>
+</div>

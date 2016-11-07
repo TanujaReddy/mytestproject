@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+		  jcr:primaryType="nt:unstructured"
+		  jcr:title="Edit Card"
+		  sling:resourceType="cq/gui/components/authoring/dialog">
+	<content
+			jcr:primaryType="nt:unstructured"
+			sling:resourceType="granite/ui/components/foundation/container">
+		<layout
+				jcr:primaryType="nt:unstructured"
+				sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+				type="nav"/>
+		<items jcr:primaryType="nt:unstructured">
+			<tab1
+					jcr:primaryType="nt:unstructured"
+					jcr:title="Card Configuration"
+					sling:resourceType="granite/ui/components/foundation/section">
+				<layout
+						jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+				<items jcr:primaryType="nt:unstructured">
+					<columns
+							jcr:primaryType="nt:unstructured"
+							sling:resourceType="granite/ui/components/foundation/container">
+
+						<items jcr:primaryType="nt:unstructured">
+							<hideCard
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/checkbox"
+									fieldDescription="Tick to hide the whole card from the production site."
+									fieldLabel="Hide card"
+									name="./hideCard"
+									text="Hide card"
+									title="Hide card"
+									value="{Boolean}true"/>
+							<containerType
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/select"
+									fieldLabel="Component Type"
+									name="./containerTypeCard">
+								<items jcr:primaryType="nt:unstructured">
+									<card
+											jcr:primaryType="nt:unstructured"
+											text="Card"
+											value="card"/>
+									<tile
+											jcr:primaryType="nt:unstructured"
+											text="Tile"
+											value="tile"/>
+								</items>
+							</containerType>
+							<hideContent
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/checkbox"
+									fieldDescription="Tick to hide all the text content on this card"
+									fieldLabel="Hide text content"
+									name="./hideContent"
+									text="Hide Content"
+									title="Hide Content"
+									value="{Boolean}true"/>
+							<hideImage
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/checkbox"
+									fieldDescription="Tick to hide the image on this card"
+									fieldLabel="Hide Image"
+									name="./hideImage"
+									text="Hide Image"
+									title="Hide Image"
+									value="{Boolean}true"/>
+							<imageLocation
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/select"
+									fieldLabel="Image Location"
+									name="./imageLocation">
+								<items jcr:primaryType="nt:unstructured">
+									<top
+											jcr:primaryType="nt:unstructured"
+											text="Top"
+											value="top"/>
+									<bottom
+											jcr:primaryType="nt:unstructured"
+											text="Bottom"
+											value="bottom"/>
+									<left
+											jcr:primaryType="nt:unstructured"
+											text="Left"
+											value="left"/>
+									<right
+											jcr:primaryType="nt:unstructured"
+											text="Right"
+											value="right"/>
+								</items>
+							</imageLocation>
+
+
+							<imagePath
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/fileupload"
+									autoStart="{Boolean}false"
+									class="cq-droptarget"
+									fieldDescription="Drag and drop from the DAM"
+									fieldLabel="Image"
+									fileNameParameter="./imageName"
+									fileReferenceParameter="./imagePathRef"
+									mimeTypes="[image]"
+									multiple="{Boolean}false"
+									name="./imagePath"
+									required="{Boolean}true"
+									title="Upload Image"
+									useHTML5="{Boolean}true"/>
+							<imageAltText
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/textarea"
+									fieldDescription="Provide a textual alternative of the content and function of the image."
+									fieldLabel="Image ALT text"
+									name="./imageAltText"
+									required="{Boolean}false"/>
+							<decorative
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/checkbox"
+									fieldDescription="Check if the image should be ignored by assistive technology. This applies to decorative images only."
+									name="./isDecorative"
+									text="Image is decorative"
+									value="true"/>
+							<metaLocation
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/select"
+									fieldLabel="Meta Text Location"
+									name="./metaLocation">
+								<items jcr:primaryType="nt:unstructured">
+									<aboveHeading
+											jcr:primaryType="nt:unstructured"
+											text="Above Heading"
+											value="aboveHeading"/>
+									<belowHeading
+											jcr:primaryType="nt:unstructured"
+											text="Below Heading"
+											value="belowHeading"/>
+								</items>
+							</metaLocation>
+							<metaText
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/textfield"
+									fieldLabel="Meta Text"
+									name="./metaText"/>
+							<analyticsTitle
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/textfield"
+									fieldLabel="Analytics Title"
+									name="./analyticsTitle"/>
+						</items>
+					</columns>
+				</items>
+			</tab1>
+			<tab2
+					jcr:primaryType="nt:unstructured"
+					jcr:title="Clickable Card"
+					sling:resourceType="granite/ui/components/foundation/section">
+				<layout
+						jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+				<items jcr:primaryType="nt:unstructured">
+					<columns
+							jcr:primaryType="nt:unstructured"
+							sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<decorative
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/checkbox"
+									fieldDescription="Open in New Tab?"
+									name="./clickableCard"
+									value="on"
+									text="Open in New Tab"/>
+							<linkpath
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+									fieldLabel="Link Path"
+									name="./linkpath"
+									rootPath="/content"/>
+							<analyticsTitle
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/form/textfield"
+									fieldLabel="URL Parameters"
+									name="./urlParams"/>
+						</items>
+					</columns>
+				</items>
+			</tab2>
+			<tab3
+					jcr:primaryType="nt:unstructured"
+					jcr:title="CTA"
+					sling:resourceType="granite/ui/components/foundation/section">
+				<layout
+						jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+				<items jcr:primaryType="nt:unstructured">
+					<columns
+							jcr:primaryType="nt:unstructured"
+							sling:resourceType="granite/ui/components/foundation/container">
+						<items jcr:primaryType="nt:unstructured">
+							<cta
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/foundation/include"
+									path="/apps/global/components/shared-dialog/cta-dialog/content/items/cta-config"/>
+						</items>
+					</columns>
+				</items>
+			</tab3>
+		</items>
+	</content>
+</jcr:root>

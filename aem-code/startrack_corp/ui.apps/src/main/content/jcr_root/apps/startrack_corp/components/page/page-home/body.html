@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    window.authTokenUrl = '/bin/StartrackSalesForceAuthService';
+    window.contactFormOid = '00DO00000052xjp';
+    window.contactRecordTypeId = '01290000000X7uA';
+    window.feedbackFormOid = '00GO0000002EiGS';
+    window.helpFormOid = '00GO0000002HM3K';
+
+    var com = com || {};
+    com.onigroup = com.onigroup || {};
+    com.onigroup.gsa = com.onigroup.gsa || {};
+    com.onigroup.util = com.onigroup.util || {};
+    com.onigroup.gsa.constants = com.onigroup.gsa.constants || {};
+    com.onigroup.gsa.settings = com.onigroup.gsa.settings || {};
+</script>
+<sly data-sly-use.search="au.com.auspost.startrack_corp.core.components.SearchConfig" data-sly-list="${search.items}">
+    <script type="text/javascript">${'{0}=\'{1}\';' @ format=[item.name,item.value], context='unsafe'}</script>
+</sly>
+<section class="outline">
+    <sly data-sly-include="header.html"></sly>
+    <sly data-sly-include="search.html"></sly>
+    <sly data-sly-include="content.html"></sly>
+    <sly data-sly-test="${(wcmmode.disabled)}">
+        <sly data-sly-include="feedback.html"></sly>
+        <sly data-sly-include="sales.html"></sly>
+        <sly data-sly-include="help.html"></sly>
+    </sly>
+    <sly data-sly-include="footer.html"></sly>
+</section> 
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" />
+<sly data-sly-call="${clientLib.js @ categories='cq.jquery'}"></sly>
+<sly data-sly-call="${clientLib.js @ categories='ST_clientlib'}"></sly>
+<script type="text/javascript" src="/etc/designs/startrack_corp/search/search/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/etc/designs/startrack_corp/search/search/jquery.history.js"></script>
+<script type="text/javascript" src="/etc/designs/startrack_corp/search/search/StarTrack_search_config.js"></script>
+<script type="text/javascript" src="/etc/designs/startrack_corp/search/search/onigroup_search_core.js"></script>
+<script type="text/javascript" src="/etc/designs/startrack_corp/search/search/StarTrack_search.js"></script>
+<script type="text/javascript" src="/etc/designs/startrack_corp/search/search/StarTrack_search_global.js"></script>
+<script type="text/javascript">_satellite.pageBottom();</script>

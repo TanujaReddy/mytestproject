@@ -1,0 +1,117 @@
+<sly data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: Edit Contact Form Component here</div>
+</sly>
+
+
+                    <!-- contact - sales enquiry -->
+                    <!-- form container -->
+                    <section class="form-container" aria-labelledby="contact_heading">
+                        <!-- heading -->
+                        <h1 class="form-heading">
+                            <i><img src="/etc/designs/startrack_corp/clientlib/img/contact-icon.png" alt=""></i><!--
+                         --><span id="contact-enquiry_heading">Contact us</span>
+                        </h1>
+                        <!-- heading end -->
+                        <!-- form -->
+                        
+                         <form action="${properties.formActionURL}" method="POST" class="form" submit="true" name="contact-enquiry_form " novalidate="true">
+                         
+                      
+                       
+                            <fieldset class="form-group text-center no-legend">
+                                <p>To talk to sales support call 12 24 45 , Monday-Friday 9am-5pm AEST.
+                                <br> You can also find most of the answers in our support section. </p>
+                                <p><a href="${properties.faqURL}" class="btn btn-primary" target="_blank">View Support FAQs</a></p>
+                                <input type="hidden" name="oid" value="00DO00000052xjp">
+                                <input type="hidden" name="retURL" value="styleguide.startrack-dev.vmlaustralia.com">
+                                <input type="hidden" name="Source_WebPage__c" value="http://www.Source-URL.com">
+
+                                <!-- Debug / Optional -->
+                                <input type="hidden" name="debug" value="1">
+                                <input type="hidden" name="debugEmail" value="remon.saddik@vml.com.au">
+                            </fieldset>
+                            <!-- fieldset - Contact us -->
+                            <fieldset class="form-group bg-colour no-legend" aria-labelledby="contact-enquiry_label" aria-describedby="contact-enquiry_desc">
+                                <div class="field" aria-labelledby="first_name_label">
+                                    <label id="first_name_label" for="first_name" class="field-label">First Name</label>
+                                    <input id="first_name" name="first_name" type="text" class="field-input input-text medium" placeholder="First Name" required="true">
+                                    <span id="first_name_error" for="first_name" class="error-message"> Please enter First Name</span>
+                                </div>
+                                <!-- field end -->
+                                <div class="field" aria-labelledby="last_name_label">
+                                    <label id="last_name_label" for="last_name" class="field-label">Last Name</label>
+                                    <input id="last_name" name="last_name" type="text" class="field-input input-text medium" placeholder="Last Name" required="true">
+                                    <span id="last_name_error" for="last_name" class="error-message"> Please enter Last Name</span>
+                                </div>
+                                <!-- field end -->
+                                <div class="field" aria-labelledby="Job_Title__c_label">
+                                    <label id="Job_Title__c_label" for="Job_Title__c" class="field-label">Position/Title</label>
+                                    <input id="Job_Title__c" name="Job_Title__c" type="text" class="field-input input-text medium" placeholder="Position/Title">
+                                </div>
+                                <!-- field end -->
+                                <div class="field" aria-labelledby="company_label">
+                                    <label id="company_label" for="company" class="field-label">Company Name</label>
+                                    <input id="company" name="company" type="text" class="field-input input-text medium" placeholder="Company Name">
+                                </div>
+                                <!-- field end -->
+                                <div class="field" aria-labelledby="Channel_Preference__c_label">
+                                    <label id="Channel_Preference__c_label" for="Channel_Preference__c" class="field-label"> Channel Preference </label>
+                                    <div for="Channel_Preference__c" class="field-select medium">
+                                        <select id="Channel_Preference__c" name="Channel_Preference__c" type="select" default="Email" required="true">
+                                            <option value="Email"> Email </option>
+                                            <option value="Phone"> Phone </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- field end -->
+                                <div class="field" aria-labelledby="email_label">
+                                    <label id="email_label" for="email" class="field-label">Email</label>
+                                    <input id="email" name="email" type="email" class="field-input input-text medium" placeholder="Email" required="true" validate="email">
+                                    <span id="email_error" for="email" class="error-message"> Please enter a valid email address</span>
+                                </div>
+                                <!-- field end -->
+                                <div class="field" aria-labelledby="phone_label">
+                                    <label id="phone_label" for="phone" class="field-label"> Phone</label>
+                                    <input id="phone" name="phone" type="text" class="field-input input-text medium" placeholder="Phone" required="true" validate="phone">
+                                    <span id="phone_error" for="phone" class="error-message"> Please enter a valid phone number  </span>
+                                </div>
+                                <!-- field end -->
+                            </fieldset>
+                            <!-- fieldset - submit -->
+                            <fieldset class="form-group text-center bg-colour--mid-tan" aria-labelledby="contact-enquiry_label-btn" aria-describedby="contact-enquiry_desc-btn">
+                                <!-- legend label / description -->
+                                <legend id="contact-enquiry_label-btn" class="hidden"> Send enquiry</legend>
+                                <p id="contact-enquiry_desc-btn" class="hidden"> Click on the button below to Send enquiry </p>
+                                <!-- submit -->
+                                <button class="btn btn-primary" role="submit" title="Send enquiry" aria-label="Send enquiry" aria-controls="contact-enquiry-result" type="submit" rel="contact:submit">
+                                    Send enquiry
+                                </button>
+                            </fieldset>
+                            <!-- fieldset - submit end -->
+                        </form>
+                        <!-- form end -->
+                    </section>
+                    <!-- form container end -->
+                    
+                    <section class="tool-help">
+				 <form class="form">
+                        <!-- Need Help Start -->
+                        <!-- add after the last fieldset containing the submit button-->
+                        <fieldset class="form-group no-legend need-help bg-colour--mid-tan">
+                            <h3 class="need-help-title">Need Help?</h3>
+                            <section class="need-help-body">
+                                <ul class="need-help-list">                                
+                                    <sly data-sly-use.needhelp="${'au.com.auspost.startrack_corp.core.components.Carousel'}">
+                                        <sly data-sly-list.item="${needHelp.items}">
+                                            <li><a href="${item.finalPath}" target="_blank">${item.title}</a></li>
+                                        </sly>
+                                    </sly>                                   
+                                </ul>
+                      			<a data-sly-test="${properties.needHelpURL1 != null && properties.needHelpURL1 != ''}"  href="${properties.needHelpURL1}" target="_blank">${properties.needHelpText1}</a>
+                                <a data-sly-test="${properties.needHelpURL2 != null && properties.needHelpURL2 != ''}"  href="${properties.needHelpURL2}" target="_blank">${properties.needHelpText2}</a> 
+                                             
+                            </section>
+                        </fieldset>
+                        <!-- Need Help End -->
+          </form>
+		</section><!-- tool help end -->

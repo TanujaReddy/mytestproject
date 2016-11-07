@@ -1,0 +1,51 @@
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_corp/components/adpativeimage', nodeToBeCreated='adaptiveimage'}"/>
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading', nodeToBeCreated='article-heading'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading', nodeToBeCreated='article-title-1'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-body', nodeToBeCreated='article-body-text-1'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading', nodeToBeCreated='article-title-2'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-body', nodeToBeCreated='article-body-text-2'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading', nodeToBeCreated='article-title-3'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-body', nodeToBeCreated='article-body-text-3'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-heading', nodeToBeCreated='article-title-4'}" />
+<sly data-sly-use.inlineEdit="${'au.com.auspost.startrack_global.core.sightly.InlineEditNodeGenerator'@ paramNodeType='startrack_global/components/rte-components/text-body', nodeToBeCreated='article-body-text-4'}" />
+
+<div data-sly-test="${(wcmmode.edit || wcmInit.isTouchAuthoring)}">
+    <div>Author Hint: Edit Article Blade Component here. This component allows to configure Article Blade Component.</div>
+</div>
+<div class="card article">
+    <div class="tile tile--card tile--image-side tile--image-${properties.imageAlign}">
+        <div class="tile-image">
+            <sly data-sly-resource="${'adaptiveimage' @ resourceType='startrack_corp/components/adaptiveimage'}" />
+            <p class="caption">${properties.imageCaption}</p>
+        </div>
+        <div class="tile-content tile--card-content">
+            <h3 data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'h3':'h3'}">
+                <sly data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'div':'sly'}" data-sly-resource="${'article-heading' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+            </h3>
+            <h4 data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'h4':'h4'}" class="tile--card-title">
+                <sly data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'div':'sly'}" data-sly-resource="${'article-title-1' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+            </h4>
+            <p data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'div':'p'}">
+                <sly data-sly-resource="${'article-body-text-1' @ resourceType='startrack_global/components/rte-components/text-body'}"></sly>
+            </p>
+            <h4 data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'h4':'h4'}" class="tile--card-title">
+                <sly data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'div':'sly'}" data-sly-resource="${'article-title-2' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+            </h4>
+            <p data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'div':'p'}">
+                <sly data-sly-resource="${'article-body-text-2' @ resourceType='startrack_global/components/rte-components/text-body'}"></sly>
+            </p>
+            <h4 data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'h4':'h4'}" class="tile--card-title">
+                <sly data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'div':'sly'}" data-sly-resource="${'article-title-3' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+            </h4>
+            <p data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'div':'p'}">
+                <sly data-sly-resource="${'article-body-text-3' @ resourceType='startrack_global/components/rte-components/text-body'}"></sly>
+            </p>
+            <h4 data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'h4':'h4'}" class="tile--card-title">
+                <sly data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'div':'sly'}" data-sly-resource="${'article-title-4' @ resourceType='startrack_global/components/rte-components/text-heading'}" />
+            </h4>
+            <p data-sly-element="${(wcmmode.edit || wcmInit.isTouchAuthoring)? 'div':'p'}">
+                <sly data-sly-resource="${'article-body-text-4' @ resourceType='startrack_global/components/rte-components/text-body'}"></sly>
+            </p>
+        </div>
+    </div>
+</div>

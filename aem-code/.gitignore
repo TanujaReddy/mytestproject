@@ -1,0 +1,59 @@
+############
+# Eclipse
+############
+
+# We must include the .project files so that we can switch between branches in Eclipse
+#.project
+# We must NOT include the .metadata, .settings and .classpath files, these are workstation dependent
+.classpath
+.settings
+.metadata
+# Ignore Sonar generated files
+.sonar
+# Ignore log files (jcr.log etc)
+**.log
+.settings\*
+.settings/*
+*.prefs
+*.classpath
+############
+# packages
+############
+
+*.jar
+*.war
+*.class
+**target/
+
+############
+# AEM
+############
+
+**/content/src/main/content/jcr_root/libs
+.vlt
+.vlt-sync.log
+.vlt-sync-config.properties 
+content/dam
+**/content/bin
+**/bundle/bin
+
+###########
+# Intelli J
+###########
+
+*.iml
+.idea/
+
+*.brackets.json
+
+#eclipse
+.settings
+.classpath
+.project
+target
+bin
+startrack-corp
+# npm
+node_modules
+npm-debug.log
+npm-debug.log.*

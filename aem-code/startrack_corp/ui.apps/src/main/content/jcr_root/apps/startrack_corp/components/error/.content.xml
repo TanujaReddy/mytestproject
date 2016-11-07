@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="Drag this component to configure Startrack Error"
+    jcr:primaryType="cq:Component"
+    jcr:title="StarTrack Error"
+    allowedParents="[*/parsys]"
+    componentGroup="StarTrack">
+    <cq:template jcr:primaryType="cq:Template"
+        errorTitle="Error"
+        errorSubTitle="An unexpected error has occurred."
+        errorBody="Please check the URL for any possible spelling errors. If you are still having trouble, try searching our site for the information you need."
+        errorHomeUrl="/"
+        errorImagePathRef="/etc/designs/startrack_corp/clientlib/img/404.png"/>
+</jcr:root>

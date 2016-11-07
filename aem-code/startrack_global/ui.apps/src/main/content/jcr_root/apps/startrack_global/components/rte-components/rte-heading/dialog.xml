@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Text"
+    title="Text"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <tab1
+            jcr:primaryType="cq:Widget"
+            anchor="100%"
+            title="Text"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <text
+                        jcr:primaryType="cq:Widget"
+                        hideLabel="{Boolean}true"
+                        name="./text"
+                        removeSingleParagraphContainer="{Boolean}true"
+                        singleParagraphContainerReplacement="span"
+                        useFixedInlineToolbar="{Boolean}true"
+                        xtype="richtext">
+                    <rtePlugins jcr:primaryType="nt:unstructured">
+                        <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="specialchars">
+                            <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                <chars jcr:primaryType="nt:unstructured">
+                                    <copyright
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="©"/>
+                                    <trademark
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="™"/>
+                                    <registered
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="®"/>
+                                    <emDash
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="—"/>
+                                    <pound
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="£"/>
+                                    <nbsp
+                                            jcr:primaryType="nt:unstructured"
+                                            entity=" "/>
+                                </chars>
+                            </specialCharsConfig>
+                        </misctools>
+                        <links jcr:primaryType="nt:unstructured">
+                            <linkDialogConfig
+                                    jcr:primaryType="nt:unstructured"
+                                    height="{Long}316">
+                                <linkAttributes jcr:primaryType="cq:WidgetCollection">
+                                    <linkAdvanced
+                                            jcr:primaryType="cq:Widget"
+                                            collapsed="{Boolean}true"
+                                            collapsible="{Boolean}true"
+                                            inputValue="advanced"
+                                            name="./linkdialog/cq:adhocLinkTrackingTab"
+                                            title="Link tracking"
+                                            xtype="dialogfieldset">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <enable
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="enabletracking"
+                                                    fieldDescription="override analytics framework settings"
+                                                    fieldLabel="Custom link tracking"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEnableTracking"
+                                                    xtype="checkbox">
+                                                <listeners
+                                                        jcr:primaryType="nt:unstructured"
+                                                        check="function(component){var dlg=component.findParentByType('rtelinkdialog');dlg.enableSCFields(component.checked);}"/>
+                                            </enable>
+                                            <events
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="adhocevents"
+                                                    fieldDescription="e.g.: event2, event7"
+                                                    fieldLabel="Include SiteCatalyst events"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEvents"
+                                                    xtype="textfield"/>
+                                            <evars
+                                                    jcr:primaryType="nt:unstructured"
+                                                    attribute="adhocevars"
+                                                    fieldDescription="e.g.: eVar1: pagedata.url, prop4: 'const'"
+                                                    fieldLabel="Include SiteCatalyst variables"
+                                                    name="./linkdialog/cq:adhocLinkTrackingEvars"
+                                                    xtype="textfield"/>
+                                        </items>
+                                    </linkAdvanced>
+                                </linkAttributes>
+                            </linkDialogConfig>
+                        </links>
+                        <edit
+                                jcr:primaryType="nt:unstructured"
+                                defaultPasteMode="plaintext"
+                                features="[cut,copy,paste-plaintext,paste-wordhtml,paste-default]"
+                                stripHtmlTags="{Boolean}true"/>
+                        <spellcheck
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        <undo
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        <customjustify
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+
+                    </rtePlugins>
+                    <uiSettings jcr:primaryType="nt:unstructured">
+                        <cui jcr:primaryType="nt:unstructured">
+                            <inline
+                                    jcr:primaryType="nt:unstructured"
+                                    toolbar="[links#modifylink,links#unlink,customjustify#customjustifyleft,customjustify#customjustifycenter,customjustify#customjustifyright,fullscreen#start,control#close,control#save]"/>
+                            <fullscreen
+                                    jcr:primaryType="nt:unstructured"
+                                    toolbar="[links#modifylink,links#unlink,links#anchor,subsuperscript#subscript,subsuperscript#superscript,edit#cut,edit#copy,edit#paste-plaintext,findreplace#find,undo#undo,undo#redo,customjustify#customjustifyleft,customjustify#customjustifycenter,customjustify#customjustifyright,spellcheck#checktext,misctools#specialchars,fullscreen#start,control#close,control#save]">
+                            </fullscreen>
+                        </cui>
+                    </uiSettings>
+                    <htmlRules jcr:primaryType="nt:unstructured">
+                        <docType
+                                jcr:primaryType="nt:unstructured"
+                                defaultEditBlock="h1"/>
+                        <blockHandling
+                                jcr:primaryType="nt:unstructured"
+                                removeSingleParagraphContainer="{Boolean}true"/>
+                    </htmlRules>
+                </text>
+                <isRichTextFlag
+                        jcr:primaryType="cq:Widget"
+                        ignoreData="{Boolean}true"
+                        name="./textIsRich"
+                        value="true"
+                        xtype="hidden"/>
+                 </items>
+        </tab1>
+    </items>
+</jcr:root>
